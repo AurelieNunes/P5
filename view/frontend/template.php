@@ -54,13 +54,13 @@
                 <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
-                            <a class="nav-link text-light" aria-current="page" href="index.php?action=homeView.php">Accueil</a>
+                            <a class="nav-link text-light" aria-current="page" href="view/frontend/homeView.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=listSellersView.php">Commerçants</a>
+                            <a class="nav-link text-light" href="view/frontend/listSellersView.php">Commerçants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=listCategoryView.php">Catégories</a>
+                            <a class="nav-link text-light" href="view/frontend/listCategoryView.php">Catégories</a>
                         </li>
                     </ul>
                     <form class="d-flex w-50">
@@ -72,17 +72,17 @@
                             <a class="nav-link text-light">Bonjour !</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=loginView.php">Se connecter</a>
+                            <a class="nav-link text-light" href="view/frontend/loginView.php">Se connecter</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link text-light" href="index.php?action=subscribeView.php">S'inscrire</a>
+                        <a class="nav-link text-light" href="view/frontend/subscribeView.php">S'inscrire</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=accountClientView.php"><i
+                            <a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
                                     class="text-light fas fa-user"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=cartView.php"><i
+                            <a class="nav-link text-light" href="view/frontend/cartView.php"><i
                                     class="text-light fas fa-shopping-cart"></i></a>
                         </li>
 

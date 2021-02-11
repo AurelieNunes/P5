@@ -8410,14 +8410,11 @@ ol {
   padding: 30px;
 }
 
-.subscribe-formSeller {
+.subscribe-formSeller, .subscribe-formCustomer {
   width: 100%;
   max-width: 330px;
-}
-
-.subscribe-formCustomer {
-  width: 100%;
-  max-width: 330px;
+  display: flex;
+  flex-direction: column;
 }
 
 #subscribe-Seller {
@@ -8460,10 +8457,14 @@ ol {
   width: 100%;
 }
 
+.login-submit{
+  border: 2px solid #ff9900;
+  padding: 30px;
+}
+
 #loginForms {
   display: flex;
   justify-content: space-around;
-  border: 2px solid #ff9900;
   padding: 30px;
   width: 100%;
 }
@@ -8472,6 +8473,13 @@ ol {
   padding: 15px;
   margin: auto;
 }
+
+.submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 #login-pro {
   border-right: 2px solid #ff9900;
