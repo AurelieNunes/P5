@@ -9,7 +9,7 @@ class CustomerManager extends Manager
     public function subscribeCustomer($pseudo,$mail,$pass)
     {
         $db = $this->dbConnect();
-        $newCustomer = $db->prepare('INSERT INTO customer (pseudo, mail, pass, subscribe_date) VALUES (?, ?, ?, CURDATE(), 0');
+        $newCustomer = $db->prepare('INSERT INTO customer (pseudo, mail, pass, subscribe_date) VALUES (?, ?, ?, CURDATE())');
         $newCustomer->execute(array($pseudo, $mail, $pass));
 
         return $newCustomer;
@@ -25,7 +25,8 @@ class CustomerManager extends Manager
         return $customer;
     }
 
-    public function checkPseudo($pseudo) {
+    public function checkPseudo($pseudo) 
+    {
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT pseudo FROM customer WHERE pseudo = ?');
 		$req->execute(array($pseudo));

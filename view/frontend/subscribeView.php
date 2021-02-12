@@ -34,12 +34,15 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
       <div id="subscribe-Seller">
         <h1 class="h5">Vous êtes un professionnel ? </h1>
         <form class="subscribe-formSeller mx-auto" action="index.php?action=addSeller" method="POST">
+        <label for="nameSeller" class="visually-hidden">Nom de la société</label>
+          <input type="text" id="nameSeller" class="form-controlSeller" placeholder="Nom de la société" name="nameSeller"
+            required autofocus>
           <label for="inputEmailSeller" class="visually-hidden">Adresse email</label>
           <input type="email" id="inputEmailSeller" class="form-controlSeller" placeholder="Email" name="mailSeller"
             required autofocus>
           <label for="inputPasswordSeller" class="visually-hidden">Mot de passe</label>
           <input type="password" id="inputPasswordSeller" class="form-controlSeller" placeholder="Mot de passe"
-            name="passwordSeller" required>
+            name="passSeller" required>
           <label for="pass_confirm" class="visually-hidden">Confirmez votre mot de passe</label>
           <input class="form-controlSeller" type="password" name="pass_confirmSeller" id="pass_confirmSeller"
             placeholder="Mot de Passe" name="pass_confirmSeller" required />

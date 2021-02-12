@@ -36,6 +36,26 @@ try {
                 loginCustomer(strip_tags($_POST['pseudoCustomer']), strip_tags($_POST['passCustomer']));
 				break;
 
+            case 'subscribeSeller' :
+                displaySubscribeSeller();
+                break;
+            
+            case 'addSeller':
+                if (!empty($_POST['nameSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller']) && !empty($_POST['mailSeller']) && !empty($_POST['siret'])) {
+                    if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
+                        if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
+                            addSeller(strip_tags($_POST['nameSeller']), strip_tags($_POST['passSeller']), strip_tags($_POST['mailSeller']), $_POST['siret']);
+                        } else {
+                            throw new Exception('Les deux mots de passe ne correspondent pas.');
+                        }
+                    } else {
+                        throw new Exception('Pas d\'adresse mail valide.');
+                    }
+                } else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+                break;
+
             default :
                 require('view/frontend/homeView.php');
             }           

@@ -1,6 +1,7 @@
 <?php
 
 use P5\model\CustomerManager;
+use P5\model\SellerManager;
 
 require_once './model/Manager.php';
 
@@ -25,8 +26,7 @@ function addCustomer ($pseudo,$pass,$mail){
 
     if (!$usernameValidity && !$mailValidity) {
         // Hachage du mot de passe
-        $pass = password_hash($_POST['passwordCustomer'], PASSWORD_DEFAULT);
-        
+        $pass = password_hash($_POST['passCustomer'], PASSWORD_DEFAULT);
         $newCustomer = $customerManager->subscribeCustomer($pseudo, $pass, $mail);
         $newCustomer;
         
@@ -58,4 +58,39 @@ function loginCustomer($pseudo){
         	header('Location: index.php?action=login&account-status=unsuccess-login');
         }
     }
+}
+
+function displaySubscribeSeller(){
+    require ('view/frontend/subscribeView.php');
+}
+
+function addSeller($name,$siret,$pass,$mail)
+{
+    $sellerManager = new SellerManager();
+    $nameSellerCheck = $sellerManager->checkName($name);
+    $mailSellerCheck = $sellerManager->checkMail($mail);
+    $siretSellerCheck = $sellerManager->checkSiret($siret);
+
+    if ($nameSellerCheck) {
+        header('Location: index.php?action=subscribe&error=invalidUsername');	
+    }
+
+    if ($mailSellerCheck) {
+        header('Location: index.php?action=subscribe&error=invalidMail');
+    }
+
+    if ($siretSellerCheck) {
+        header('Location:index.php?action=subscribe&error=invalidSiret');
+    }
+
+    if (!$nameSellerCheck && !$mailSellerCheck && !$siretSellerCheck) {
+        // Hachage du mot de passe
+        $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
+        $newSeller = $sellerManager->subscribeSeller($name, $siret, $pass, $mail);
+        $newSeller;
+        
+        // redirige vers page d'accueil avec le nouveau paramètre
+ 
+       header('Location: index.php?account-status=account-successfully-created');
+}
 }

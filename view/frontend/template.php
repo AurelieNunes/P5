@@ -72,10 +72,10 @@
                             <a class="nav-link text-light">Bonjour !</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/loginView.php">Se connecter</a>
+                            <a class="nav-link text-light" href="index.php?action=loginCsutomer">Se connecter</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link text-light" href="view/frontend/subscribeView.php">S'inscrire</a>
+                        <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
