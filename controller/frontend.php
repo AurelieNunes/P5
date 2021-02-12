@@ -9,12 +9,11 @@ function displaySubscribeCustomer(){
 }
 
 function addCustomer ($pseudo,$pass,$mail){
-    var_dump($pseudo,$mail,$pass);
+
     $customerManager = new CustomerManager();
 
     $usernameValidity = $customerManager->checkPseudo($pseudo);
 	$mailValidity = $customerManager->checkMail($mail);
-    var_dump($usernameValidity,$mailValidity);
 
     if ($usernameValidity) {
         header('Location: index.php?action=subscribe&error=invalidUsername');	

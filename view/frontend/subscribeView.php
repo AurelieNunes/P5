@@ -33,7 +33,7 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
 
       <div id="subscribe-Seller">
         <h1 class="h5">Vous êtes un professionnel ? </h1>
-        <form class="subscribe-formSeller mx-auto" action="index.php?action=addSeller">
+        <form class="subscribe-formSeller mx-auto" action="index.php?action=addSeller" method="POST">
           <label for="inputEmailSeller" class="visually-hidden">Adresse email</label>
           <input type="email" id="inputEmailSeller" class="form-controlSeller" placeholder="Email" name="mailSeller"
             required autofocus>
@@ -46,13 +46,15 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
           <label for="siret" class="visually-hidden">N° de Siret</label>
           <input class="form-controlSeller" type="siret" name="siret" id="siret" placeholder="00000000000000"
             name="siret" required />
+            <button class="w-50 btn btn-lg btn-primary mx-auto text-center d-flex justify-content-center" type="submit"
+      value="S'inscrire">S'inscrire </button>
         </form>
       </div>
 
 
       <div id="subscribe-customer">
         <h1 class="h5">Vous êtes un particulier ?</h1>
-        <form class="subscribe-formCustomer mx-auto" action="index.php?action=addCustomer" method="post">
+        <form class="subscribe-formCustomer mx-auto" action="index.php?action=addCustomer" method="POST">
           <label for="pseudoCustomer" class="visually-hidden">Pseudo</label>
           <input type="text" id="pseudoCustomer" class="form-controlCustomer" placeholder="Pseudo" name="pseudoCustomer"
             required autofocus>
@@ -65,6 +67,8 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
           <label for="pass_confirmCustomer" class="visually-hidden">Confirmez votre mot de passe</label>
           <input class="pass_confirmCustomer" type="password" name="pass_confirmCustomer" id="pass_confirmCustomer"
             placeholder="Confirmer mot de passe" name="pass_confirmCustomer" required />
+            <button class="w-50 btn btn-lg btn-primary mx-auto text-center d-flex justify-content-center" type="submit"
+      value="S'inscrire">S'inscrire </button>
         </form>
       </div>
     </div>
@@ -73,9 +77,7 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
         <input type="checkbox" value="remember-me"> Se souvenir de moi
       </label>
     </div>
-    <button class="w-50 btn btn-lg btn-primary mx-auto text-center d-flex justify-content-center" type="submit"
-      value="S'inscrire">S'inscrire </button>
-
+    
   </div>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2025</p>
 </section>
