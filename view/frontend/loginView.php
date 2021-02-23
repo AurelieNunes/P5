@@ -1,55 +1,65 @@
 <?php $title = "Connexion"; ?>
-
 <?php ob_start(); ?>
 <link rel="stylesheet" href="../../public/css/style.css" />
-<section class="form-signin ">
+
+
+<section class="form-signin col-6 mx-auto">
   <?php
-if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {
-	
+if (isset($_GET['account-status']) && $_GET['account-status'] == 'unsuccess-login') {
 	echo '<p id="error" class="alert alert-dismissible alert-danger text-center">Mauvais identifiant ou mot de passe !<p>';
 } ?>
 
-  <div>
+  <div class="col-6 mx-auto">
+    <p class="text-center col-6 mx-auto">
+      <img class="col-10" src="public/img/logo2.png" alt="logo site"></p>
     <h1 class="h4 mb-3 fw-normal text-center">Connexion</h1>
-    <p class="text-center">
-      <img class="mb-4" src="public/img/logo2.png" alt="logo site" width="72" height="57"></p>
   </div>
-  <div class="login-submit">
-    <div id="loginForms">
 
-      <div id="login-pro">
-        <h1 class="h5">Vous êtes un professionnel ? </h1>
-        <form action="index.php?action=loginSubmitSeller" class="subscribe-form mx-auto">
-          <label for="inputEmail" class="visually-hidden">Adresse email</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-          <label for="inputPassword" class="visually-hidden">Mot de passe</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="login-submit col-12 mx-auto">
+    <div id="loginForms" class="d-flex col-12 justify-content-around">
+      <div id="login-Seller" class="mx-auto">
+        <h1 class="h5 text-center">Professionnel </h1>
+        <form action="index.php?action=loginSubmitSeller" class="d-flex flex-column col-12 mx-auto" method="POST">
+          <label for="mailSubmit" class="visually-hidden">Mail</label>
+          <input type="text" id="mailSubmitSeller" class="form-control" name="mailSubmitSeller"
+            placeholder="Email" required autofocus>
+          <label for="passSubmitSeller" class="visually-hidden">Mot de passe</label>
+          <input type="password" id="passSubmitSeller" class="form-control" placeholder="Password"
+            name="passSubmitSeller" required>
+          <a class="forgetPass text-center mb-3" href="#">J'ai oublié mon mot de passe</a>
+          <button class="col-12 mx-auto test-center d-flex justify-content-center btn btn-lg btn-primary " type="submit">Se connecter</button>
         </form>
       </div>
 
+      <!-- <div class="login-submit"> -->
+        <div id="loginForms" class="mx-auto">
+          <h1 class="h5 text-center">Particulier</h1>
+          <form action="index.php?action=loginSubmitCustomer"
+            class="d-flex flex-column col-12 mx-auto" method="POST">
+            <label for="mailSubmit" class="visually-hidden">Mail</label>
+          <input type="text" id="mailSubmitCustomer" class="form-control" name="mailSubmitCustomer"
+            placeholder="Email" required autofocus>
+            <label for="inputPassword" class="visually-hidden">Mot de passe</label>
+            <input type="password" id="passSubmitCustomer" class="form-control" placeholder="Mot de Passe"
+              name="passSubmitCustomer" required>
+            <a class="forgetPass text-center mb-3" href="#">J'ai oublié mon mot de passe</a>
+            <button class="col-12 mx-auto btn btn-lg btn-primary text-center d-flex justify-content-center" type="submit">Se connecter</button>
+          </form>
+        </div>
+    </div>
 
-      <div id="login-personnel">
-        <h1 class="h5">Vous êtes un particulier ?</h1>
-        <form action="index.php?action=loginSubmitCustomer" class="subscribe-form mx-auto">
-          <label for="inputEmail" class="visually-hidden">Adresse email</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-          <label for="inputPassword" class="visually-hidden">Mot de passe</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        </form>
+        <div class="submit text-center">
+          <div class="checkbox mb-3 text-center">
+            <label>
+              <input type="checkbox" value="remember-me"> Se souvenir de moi
+            </label>
+          </div>
+          <a class="text-center text-primary h6" href="index.php?action=subscribeCustomer">Pas encore inscrit ? C'est
+            ici</a>
+        </div>
       </div>
-    </div>
-    <div class="submit">
-      <div class="checkbox mb-3 text-center">
-        <label>
-          <input type="checkbox" value="remember-me"> Se souvenir de moi
-        </label>
-      </div>
-      <a class="forgetPass text-center" href="#">J'ai oublié mon mot de passe</a>
-      <button class="w-50 btn btn-lg btn-primary " type="submit">Se connecter</button>
-      <a class="text-center" href="index.php?action=subscribe">Pas encore inscrit? C'est ici</a>
-    </div>
-  </div>
-  <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2025</p>
+
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2025</p>
 </section>
 
 

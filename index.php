@@ -2,21 +2,26 @@
 session_start();
 
 require './controller/frontend.php';
+require './controller/backend.php';
 require './model/CustomerManager.php';
+require './model/SellerManager.php';
+require './model/ProductManager.php';
 
 try {
     if(isset($_GET['action'])){
         switch ($_GET['action'])
         {
             case 'subscribeCustomer':
-				displaySubscribeCustomer();
+                /* Affichage inscription Client*/
+				displaySubscribe();
 				break;
             
             case 'addCustomer':
-            if (!empty($_POST['pseudoCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer']) && !empty($_POST['mailCustomer'])) {
+                /* Inscription Client*/
+            if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mailCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer'])) {
                 if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
                     if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
-                        addCustomer(strip_tags($_POST['pseudoCustomer']), strip_tags($_POST['passCustomer']), strip_tags($_POST['mailCustomer']));
+                        addCustomer(strip_tags($_POST['lastName']),strip_tags($_POST['firstName']), strip_tags($_POST['mailCustomer']), strip_tags($_POST['passCustomer']));
                     } else {
                         throw new Exception('Les deux mots de passe ne correspondent pas.');
                     }
@@ -28,23 +33,32 @@ try {
             }
             break;
 
-            case 'displayLoginCustomer' :
-                displayLoginCustomer();
+            case 'loginCustomer' :
+                /* Affichage connexion Client*/
+                displayLogin();
                 break;
 
-            case 'loginCustomer' :
-                loginCustomer(strip_tags($_POST['pseudoCustomer']), strip_tags($_POST['passCustomer']));
+            case 'loginSeller' :
+                /* Affichage connexion Vendeur*/
+                displayLogin();
+                break;
+
+            case 'loginSubmitCustomer' :
+                /* Connexion client */
+                loginSubmitCustomer(strip_tags($_POST['mailSubmitCustomer']), strip_tags($_POST['passSubmitCustomer']));
 				break;
 
             case 'subscribeSeller' :
-                displaySubscribeSeller();
+                /* Affichage inscription vendeur */
+                displaySubscribe();
                 break;
             
             case 'addSeller':
-                if (!empty($_POST['nameSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller']) && !empty($_POST['mailSeller']) && !empty($_POST['siret'])) {
+                /* Ajout vendeur */
+                if (!empty($_POST['companySeller']) && !empty($_POST['siret']) && !empty($_POST['mailSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller'])) {
                     if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
                         if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
-                            addSeller(strip_tags($_POST['nameSeller']), strip_tags($_POST['passSeller']), strip_tags($_POST['mailSeller']), $_POST['siret']);
+                            addSeller(strip_tags($_POST['companySeller']), strip_tags($_POST['siret']), strip_tags($_POST['mailSeller']), strip_tags($_POST['passSeller']));
                         } else {
                             throw new Exception('Les deux mots de passe ne correspondent pas.');
                         }
@@ -56,6 +70,36 @@ try {
                 }
                 break;
 
+            case 'loginSubmitSeller' :
+                /* connexion vendeur */
+                loginSubmitSeller(strip_tags($_POST['mailSubmitSeller']), strip_tags($_POST['passSubmitSeller']));
+                break;
+            
+            case 'dashboardSeller' :
+                displayDashboardSeller();
+                break;
+
+            case 'createItem' :
+                if (isset($_SESSION)){
+                    displayCreateItem();
+                    break;
+                }
+            
+            case 'newItem':
+                if (!empty($_POST['id_seller']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem'])&& !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
+                    var_dump('test');
+                    die;
+                        newItem($_POST['id_seller'],$_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
+                    } else {
+                        throw new Exception('Contenu vide !');
+                    }
+                    break;
+    
+            case 'logout':
+                /* déconnexion */
+                logout();
+                break;
+
             default :
                 require('view/frontend/homeView.php');
             }           
@@ -63,5 +107,6 @@ try {
     require('view/frontend/homeView.php'); }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
+    // var_dump($errorMessage);
     require('view/frontend/errorView.php');
 }

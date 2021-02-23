@@ -3,28 +3,17 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <?php ob_start(); ?>
 
-<?php
-// si compte bien créé, affiche message de confirmation à l'utilisateur
-if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
-	echo '<div class="alert alert-dismissible alert-success text-center" id="success">
-	<p><strong>Votre compte a bien été créé !</strong></p>
-	<button type="button" class="close" data-dismiss="alert">&times;</button></div>';
-}
 
-if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
-	echo '<p class="alert alert-dismissible alert-warning text-center" id="success">Vous êtes bien deconnecté !</p>';
-}
-?>
 
 
 <!-- START THE FEATURETTES -->
-<div class="row featurette">
-<h2 class="h6 featurette-heading w-100 text-center mt-3">Bienvenu sur mes p'tites emplettes narbonnaises !</h2>
-  <div class="presentation d-flex justify-content-around">
-    <p class="lead text-justify">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits ! En click&collect
+<div class="row featurette col-6">
+<h2 class="h6 featurette-heading col-12 text-center mt-3">Bienvenue sur mes p'tites emplettes narbonnaises !</h2>
+  <div class="presentation d-flex col-12 align-items-center justify-center">
+    <p class="lead text-justify col-6">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits ! En click&collect
       ou en livraison, passez vos achats en toute sérénité !</p>
-    <div class="img-logo">
-    <img class="img-presentation img-fluid mx-auto" src="public/img/logo.png" alt="logo web" />
+    <div class="img-logo col-4">
+    <img class="img-presentation img-fluid mx-auto" src="public/img/logo2.png" alt="logo web" />
     </div>
   </div>
   

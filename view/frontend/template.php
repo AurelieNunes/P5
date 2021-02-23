@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
 
-    <link rel="icon" type="image/png" href="../../public/img/logo2.png">
-    <meta name="description" content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
+    <link rel="icon" type="image/png" href="./public/img/Logo2.png">
+    <meta name="description"
+        content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
 
     <meta name="author" content="NUNES Aurélie" />
 
@@ -27,7 +28,7 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="public/css/style.css"/>
+    <link rel="stylesheet" href="public/css/style.css" />
 </head>
 
 <body>
@@ -35,27 +36,24 @@
         <div class="jumbotron fixed-top">
             <div class="home-title d-flex justify-content-around">
                 <p class="logo">
-                    <img src="public/img/logo2.png" alt="logo site">
+                    <img src="./public/img/Logo.png" alt="logo site">
                 </p>
                 <h1 class="title text-primary">Mes P'tites Emplettes Narbonnaises</h1>
                 <p class="narbonne">
-                    <img src="../../public/img/narbonne.jpg" alt="">
+                    <img src="./public/img/narbonne.jpg" alt="">
                 </p>
             </div>
         </div>
 
         <nav class="navbar navbar-expand-md navbar bg-primary fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Bienvenu !</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
-                            <a class="nav-link text-light" aria-current="page" href="view/frontend/homeView.php">Accueil</a>
+                            <a class="nav-link text-light" aria-current="page"
+                                href="view/frontend/homeView.php">Accueil</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="view/frontend/listSellersView.php">Commerçants</a>
                         </li>
@@ -63,29 +61,34 @@
                             <a class="nav-link text-light" href="view/frontend/listCategoryView.php">Catégories</a>
                         </li>
                     </ul>
-                    <form class="d-flex w-50">
-                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-light">Bonjour !</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=loginCsutomer">Se connecter</a>
-                        </li>
-                        <li class="nav-item">
+                    <ul class="navbar-nav">
+                        <?php 
+                        if (!empty($_SESSION))  {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                        }
+                        
+                        if (!empty($_SESSION['mailSubmitCustomer'])) {
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</li>';
+                        }
+
+                        if(!empty($_SESSION['mailSubmitCustomer'])){
+                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
+                            class="text-light fas fa-user"></i></a></li>';
+                        }
+                        ?>
+
+                        <!-- <li class="nav-item">
+                            <a class="nav-link text-light" href="index.php?action=loginCustomer">Se connecter</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item m-auto">
                             <a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
                                     class="text-light fas fa-user"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/cartView.php"><i
-                                    class="text-light fas fa-shopping-cart"></i></a>
-                        </li>
-
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -97,7 +100,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <!-- /.container -->
-        <section class="container marketing">
+        <section class="container marketing col-12">
 
             <?= $content ?>
 

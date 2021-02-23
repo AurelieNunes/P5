@@ -5,15 +5,19 @@ use P5\model\SellerManager;
 
 require_once './model/Manager.php';
 
-function displaySubscribeCustomer(){
+function displaySubscribe(){
     require('view/frontend/subscribeView.php');
 }
 
-function addCustomer ($pseudo,$pass,$mail){
+function displayLogin(){
+    require('view/frontend/loginView.php');
+}
+
+function addCustomer ($lastName,$firstName,$mail,$pass){
 
     $customerManager = new CustomerManager();
 
-    $usernameValidity = $customerManager->checkPseudo($pseudo);
+    $usernameValidity = $customerManager->checkLastName($lastName);
 	$mailValidity = $customerManager->checkMail($mail);
 
     if ($usernameValidity) {
@@ -27,7 +31,7 @@ function addCustomer ($pseudo,$pass,$mail){
     if (!$usernameValidity && !$mailValidity) {
         // Hachage du mot de passe
         $pass = password_hash($_POST['passCustomer'], PASSWORD_DEFAULT);
-        $newCustomer = $customerManager->subscribeCustomer($pseudo, $pass, $mail);
+        $newCustomer = $customerManager->subscribeCustomer($lastName, $firstName, $mail, $pass);
         $newCustomer;
         
         // redirige vers page d'accueil avec le nouveau paramètre
@@ -35,15 +39,58 @@ function addCustomer ($pseudo,$pass,$mail){
 }
 }
 
-function displayLoginCustomer(){
-    require('view/frontend/loginView.php');
+// function displaySubscribeSeller(){
+//     require('view/backend/subscribeView.php');
+// }
+
+// function displayLoginSeller(){
+//     require('view/backend/loginView.php');
+// }
+
+function addSeller($company,$siret,$mail, $pass)
+{
+    $sellerManager = new SellerManager();
+
+    $companySellerCheck = $sellerManager->checkCompany($company);
+    $siretSellerCheck = $sellerManager->checkSiret($siret);
+    $mailSellerCheck = $sellerManager->checkMail($mail);
+
+
+    if ($companySellerCheck) {
+        header('Location: index.php?action=subscribe&error=invalidUsername');	
+    }
+
+    if ($siretSellerCheck) {
+        header('Location:index.php?action=subscribe&error=invalidSiret');
+    }
+
+    if ($mailSellerCheck) {
+        header('Location: index.php?action=subscribe&error=invalidMail');
+    }
+
+    
+
+    if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck ) {
+        // Hachage du mot de passe
+        $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
+        $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
+        $newSeller;
+        // var_dump($newSeller);
+        // die;
+        // redirige vers page d'accueil avec le nouveau paramètre
+ 
+       header('Location: index.php?action=sellerPanel');
 }
 
-function loginCustomer($pseudo){
-    $customerManager = new CustomerManager();
-    $customer = $customerManager->loginCustomer($pseudo);
+}
 
-    $isPasswordCorrect = password_verify($_POST['pass'], $customer['pass']);
+
+function loginSubmitCustomer($mail,$pass){
+    
+    $customerManager = new CustomerManager();
+    $customer = $customerManager->loginCustomer($mail);
+    
+    $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
 
 	if (!$customer) {
         header('Location: index.php?action=login&account-status=unsuccess-login');
@@ -51,7 +98,7 @@ function loginCustomer($pseudo){
     else {
     	if ($isPasswordCorrect) {
     		$_SESSION['id'] = $customer['id'];
-			$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
+			$_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
     		header('Location: index.php');
     	}
         else {
@@ -60,37 +107,34 @@ function loginCustomer($pseudo){
     }
 }
 
-function displaySubscribeSeller(){
-    require ('view/frontend/subscribeView.php');
+function displayDashboardSeller(){
+    require 'view/backend/dashboardSellerView.php';
 }
 
-function addSeller($name,$siret,$pass,$mail)
-{
+function loginSubmitSeller($mail,$pass){
     $sellerManager = new SellerManager();
-    $nameSellerCheck = $sellerManager->checkName($name);
-    $mailSellerCheck = $sellerManager->checkMail($mail);
-    $siretSellerCheck = $sellerManager->checkSiret($siret);
+    $seller = $sellerManager->loginSeller($mail);
 
-    if ($nameSellerCheck) {
-        header('Location: index.php?action=subscribe&error=invalidUsername');	
+    $isPasswordCorrect = password_verify($_POST['passSubmitSeller'], $seller['pass']);
+
+	if (!$seller) {
+        header('Location: index.php?action=login&account-status=unsuccess-login');
     }
-
-    if ($mailSellerCheck) {
-        header('Location: index.php?action=subscribe&error=invalidMail');
+    else {
+    	if ($isPasswordCorrect) {
+    		$_SESSION['id'] = $seller['id'];
+			$_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
+    		header('Location: index.php?action=dashboardSeller');
+    	}
+        else {
+        	header('Location: index.php?action=login&account-status=unsuccess-login');
+        }
     }
-
-    if ($siretSellerCheck) {
-        header('Location:index.php?action=subscribe&error=invalidSiret');
-    }
-
-    if (!$nameSellerCheck && !$mailSellerCheck && !$siretSellerCheck) {
-        // Hachage du mot de passe
-        $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
-        $newSeller = $sellerManager->subscribeSeller($name, $siret, $pass, $mail);
-        $newSeller;
-        
-        // redirige vers page d'accueil avec le nouveau paramètre
- 
-       header('Location: index.php?account-status=account-successfully-created');
 }
+
+function logout() {
+	$_SESSION = array();
+	session_destroy();
+
+	header('Location: index.php?logout=success');
 }

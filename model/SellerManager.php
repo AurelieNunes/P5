@@ -5,33 +5,33 @@ use \P5\model\Manager;
 
 class SellerManager extends Manager 
 {
-    public function subscribeSeller($name,$siret, $mail, $pass)
+    public function subscribeSeller($company, $siret, $mail, $pass)
     {
         $db = $this->dbConnect();
-        $newSeller = $db->prepare('INSERT INTO seller (name,siret, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
-        $newSeller->execute(array($name, $siret, $mail, $pass));
+        $newSeller = $db->prepare('INSERT INTO seller (company, siret, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
+        $newSeller->execute(array($company, $siret, $mail, $pass));
 
         return $newSeller;
     }
 
-    public function loginSeller($name)
+    public function loginSeller($mail)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pass FROM seller WHERE name = ?');
-        $req->execute(array($name));
+        $req = $db->prepare('SELECT id, pass FROM seller WHERE mail = ?');
+        $req->execute(array($mail));
         $seller = $req->fetch();
 
         return $seller;
     }
 
-    public function checkName($name)
+    public function checkCompany($company)
     {
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT name FROM seller WHERE name = ?');
-		$req->execute(array($name));
-		$nameSeller = $req->fetch();
+		$req = $db->prepare('SELECT company FROM seller WHERE company = ?');
+		$req->execute(array($company));
+		$companySeller = $req->fetch();
 
-		return $nameSeller;
+		return $companySeller;
 	}
 
     public function checkMail($mail) {

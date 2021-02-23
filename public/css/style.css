@@ -4223,6 +4223,7 @@ tbody.collapse.show {
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  margin-top: 400px;
 }
 
 .alert-heading {
@@ -4248,6 +4249,7 @@ tbody.collapse.show {
   color: #855000;
   background-color: #ffebcc;
   border-color: #ffe2b8;
+  margin-top: 400px;
 }
 .alert-primary hr {
   border-top-color: #ffd89f;
@@ -8235,7 +8237,7 @@ h3 {
 -------------------------------------------------- */
 /*logo*/
 .logo {
-  width: 60px;
+  width: 15%;
   height: auto;
 }
 .logo img {
@@ -8243,7 +8245,7 @@ h3 {
 }
 
 .narbonne {
-  width: 100px;
+  width: 10%;
   height: auto;
 }
 .narbonne img {
@@ -8259,7 +8261,15 @@ h3 {
 }
 
 .main-template {
-  margin-top: 300px;
+  margin-top: 250px;
+}
+
+.main-template-back {
+  margin-top: 10%;
+}
+
+#error {
+  margin-top: 400px;
 }
 
 /* CUSTOMIZE THE PRESENTATION
@@ -8393,33 +8403,28 @@ ol {
 }
 
 /*-------------------------------------------------- */
+/* LOGIN VIEW
+ -------------------------------------------------- */
+.form-signin {
+  border: solid 2px var(--primary);
+  border-radius: 80px;
+}
+
+#login-Seller {
+  border-right: solid 2px var(--primary);
+  padding-right: 110px;
+}
+/*-------------------------------------------------- */
 /* SUBSCRIBE VIEW
  -------------------------------------------------- */
-.marketing {
-  width: 100%;
-}
-
-.subscribes {
-  border: 2px solid #ff9900;
-  padding: 30px;
-}
-
-#subscribeForms {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-}
-
-.subscribe-formSeller, .subscribe-formCustomer {
-  width: 100%;
-  max-width: 330px;
-  display: flex;
-  flex-direction: column;
+#subscribeFrame {
+  border: solid 2px var(--primary);
+  border-radius: 5%;
 }
 
 #subscribe-Seller {
-  border-right: 2px solid #ff9900;
-  padding-right: 90px;
+  border-right: solid 2px var(--primary);
+  padding-right: 40px;
 }
 
 .form-signin .checkbox {
@@ -8453,39 +8458,6 @@ ol {
 /*-------------------------------------------------- */
 /* SIGNIN VIEW
  -------------------------------------------------- */
-.marketing {
-  width: 100%;
-}
-
-.login-submit{
-  border: 2px solid #ff9900;
-  padding: 30px;
-}
-
-#loginForms {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-  width: 100%;
-}
-
-.form-signin {
-  padding: 15px;
-  margin: auto;
-}
-
-.submit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-#login-pro {
-  border-right: 2px solid #ff9900;
-  padding-right: 90px;
-}
-
 .form-signin .checkbox {
   font-weight: 400;
 }
@@ -8676,7 +8648,7 @@ body {
  */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 300px;
   bottom: 0;
   left: 0;
   z-index: 100;
