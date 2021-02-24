@@ -1,19 +1,19 @@
 <?php
-
 use P5\model\CustomerManager;
 use P5\model\SellerManager;
+use P5\model\ItemsManager;
 
 require_once './model/Manager.php';
 
 function displaySubscribe(){
-    require('view/frontend/subscribeView.php');
+    require('view/frontend/common/subscribeView.php');
 }
 
 function displayLogin(){
-    require('view/frontend/loginView.php');
+    require('view/frontend/common/loginView.php');
 }
 
-function addCustomer ($lastName,$firstName,$mail,$pass){
+function addCustomer($lastName,$firstName,$mail,$pass){
 
     $customerManager = new CustomerManager();
 
@@ -108,7 +108,7 @@ function loginSubmitCustomer($mail,$pass){
 }
 
 function displayDashboardSeller(){
-    require 'view/backend/dashboardSellerView.php';
+    require 'view/frontend/seller/dashboardSellerView.php';
 }
 
 function loginSubmitSeller($mail,$pass){
@@ -138,3 +138,29 @@ function logout() {
 
 	header('Location: index.php?logout=success');
 }
+
+function displayCreateItem(){
+    require 'view/frontend/seller/createItemSellerView.php';
+}
+
+function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
+{
+    // var_dump('test');
+    // die();
+    $itemsManager = new ItemsManager();
+    
+    $itemAdd = $itemsManager->createItem($id_seller,$ref, $nameItem, $descriptionItem, $price, $size, $stock);
+    $itemAdd;
+    if ($itemAdd === false) {
+        throw new Exception('Impossible d\'ajouter l\'article !');
+    }
+    else {
+        Header ('Location: index.php?action=dashboardSeller=seller&new-item=success');
+    }
+
+    // var_dump($itemAdd);
+    // die();
+}
+
+
+

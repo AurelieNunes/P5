@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
 
-    <link rel="icon" type="image/png" href="./public/img/Logo2.png">
+    <link rel="icon" type="image/png" href="/public/img/Logo2.png">
     <meta name="description"
         content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
 
@@ -28,7 +28,7 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
 </head>
 
 <body>
@@ -51,14 +51,14 @@
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
                             <a class="nav-link text-light" aria-current="page"
-                                href="view/frontend/homeView.php">Accueil</a>
+                                href="view/frontend/customer/homeView.php">Accueil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/listSellersView.php">Commerçants</a>
+                            <a class="nav-link text-light" href="view/frontend/customer/listSellersView.php">Commerçants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/listCategoryView.php">Catégories</a>
+                            <a class="nav-link text-light" href="view/frontend/customer/listCategoryView.php">Catégories</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -74,7 +74,7 @@
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
-                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
+                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="view/frontend/customer/dashboardClientView.php"><i
                             class="text-light fas fa-user"></i></a></li>';
                         }
                         ?>

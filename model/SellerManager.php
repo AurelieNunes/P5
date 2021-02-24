@@ -51,4 +51,21 @@ class SellerManager extends Manager
         $siretCheck = $req->fetch();
         return $siretCheck;
     }
+
+    public function getSellers()
+    {
+        $db = $this->dbConnect();
+        $sellers = $db->query('SELECT id, company from seller');
+
+        return $sellers;
+    }
+
+    public function deleteSeller($sellerId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM seller WHERE id=?');
+        $deleteSeller = $req->execute((array($sellerId)));
+
+        return $deleteSeller;
+    }
 }

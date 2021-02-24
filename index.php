@@ -5,7 +5,8 @@ require './controller/frontend.php';
 require './controller/backend.php';
 require './model/CustomerManager.php';
 require './model/SellerManager.php';
-require './model/ProductManager.php';
+require './model/ItemsManager.php';
+
 
 try {
     if(isset($_GET['action'])){
@@ -86,27 +87,36 @@ try {
                 }
             
             case 'newItem':
-                if (!empty($_POST['id_seller']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem'])&& !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
-                    var_dump('test');
-                    die;
-                        newItem($_POST['id_seller'],$_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
-                    } else {
+
+                if (isset($_GET['mailSubmitSeller']) && $_GET['mailSubmitSeller'] > 0){
+                if (!empty($_SESSION['mailSubmitSeller']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
+                        newItem($_GET['id'], $_SESSION['mailSubmitSeller'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
+                } else {
                         throw new Exception('Contenu vide !');
+                    } 
+                } else {
+                        throw new Exception ('pas d articles');
                     }
                     break;
-    
-            case 'logout':
+                    // var_dump($_POST['ref']);
+                    // var_dump($_POST['nameItem']);
+                    // var_dump($_POST['descriptionItem']);
+                    // var_dump($_POST['price']);
+                    // var_dump($_POST['size']);
+                    // var_dump($_POST['stock']);
+                    // die();
+                case 'logout':
                 /* déconnexion */
                 logout();
                 break;
 
             default :
-                require('view/frontend/homeView.php');
+                require('view/frontend/customer/homeView.php');
             }           
 } else {
-    require('view/frontend/homeView.php'); }
+    require('view/frontend/customer/homeView.php'); }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
     // var_dump($errorMessage);
-    require('view/frontend/errorView.php');
+    require('view/frontend/common/errorView.php');
 }

@@ -44,4 +44,21 @@ class CustomerManager extends Manager
 		return $mailValidity;
 	}
 
+    public function getCustomers()
+    {
+        $db = $this->dbConnect();
+        $customers = $db->query('SELECT id, mail FROM customer');
+
+        return $customers;
+    }
+
+    public function deleteCustomer($customerId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM customer WHERE id =?');
+        $deletedCustomer = $req->execute(array($customerId));
+
+        return $deletedCustomer;
+    }
+
 }

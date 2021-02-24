@@ -1,7 +1,7 @@
 <?php $title = "Inscrivez-vous"; ?>
 
 <?php ob_start(); ?>
-<link rel="stylesheet" href="../../public/css/style.css" />
+<link rel="stylesheet" href="/public/css/style.css" />
 
 <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 

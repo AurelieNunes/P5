@@ -1,6 +1,6 @@
 <?php $title = "Connexion"; ?>
 <?php ob_start(); ?>
-<link rel="stylesheet" href="../../public/css/style.css" />
+<link rel="stylesheet" href="/public/css/style.css" />
 
 
 <section class="form-signin col-6 mx-auto">
