@@ -148,9 +148,11 @@ function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $
     // var_dump('test');
     // die();
     $itemsManager = new ItemsManager();
-    
+
     $itemAdd = $itemsManager->createItem($id_seller,$ref, $nameItem, $descriptionItem, $price, $size, $stock);
     $itemAdd;
+    // var_dump($itemAdd);
+    // die();
     if ($itemAdd === false) {
         throw new Exception('Impossible d\'ajouter l\'article !');
     }

@@ -55,7 +55,7 @@ class SellerManager extends Manager
     public function getSellers()
     {
         $db = $this->dbConnect();
-        $sellers = $db->query('SELECT id, company from seller');
+        $sellers = $db->query('SELECT id, company from seller WHERE id=?,company=?');
 
         return $sellers;
     }
