@@ -16,4 +16,11 @@ class ItemsManager extends Manager
         // die();
         return $addItem;
     }
+
+    public function getItem($id_seller)
+    {
+        $db=$this->dbConnect();
+        $item = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller');
+        $item->execute(array($id_seller));
+    }
 }

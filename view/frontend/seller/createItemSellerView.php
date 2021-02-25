@@ -7,7 +7,7 @@
 	<div id="managerBlock" class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 		<div id="updateBlock">
-			<form class="d-flex flex-column" id="addItem" action="index.php?action=newItem&amp;id=<?= htmlspecialchars ($id_seller['id']) ?>" method="POST">
+			<form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST">
                 
                 <label for="ref">Référence</label>
                 <input class="mb-2 col-2" name="ref" id="ref" required />

@@ -87,8 +87,7 @@ try {
                 }
             
             case 'newItem':
-
-                if (isset($_GET['mailSubmitSeller']) && $_GET['mailSubmitSeller'] > 0){
+                if (isset($_GET['id']) && $_GET['id'] > 0){
                 if (!empty($_SESSION['mailSubmitSeller']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
                         newItem($_GET['id'], $_SESSION['mailSubmitSeller'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
                 } else {
