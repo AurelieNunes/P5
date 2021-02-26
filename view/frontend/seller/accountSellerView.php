@@ -1,11 +1,11 @@
-<?php $title = "Créer mon compte"; ?>
+<?php $title = "Mon compte"; ?>
 
 <?php ob_start(); ?>
 
 <!-- Custom styles for this template -->
-<link href="../../public/css/registration-client.css" rel="stylesheet">
+<link href="../../../public/css/style.css" rel="stylesheet">
 
-<section class="form-registration-client">
+<section class="form-registration-seller">
     <div class="container">
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="../../public/img/logo.png" alt="" width="72" height="57">
@@ -18,40 +18,40 @@
                 <div class="row g-3">
 
                     <div class="col-sm-6">
-                        <label for="firstName" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="firstName">
+                        <label for="companySeller" class="form-label">Nom de la société</label>
+                        <input type="text" name="companySeller" class="form-control" id="companySeller">
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Prénom</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="">
+                        <label for="siret" class="form-label">N° de Siret</label>
+                        <input type="text" class="form-control" id="siret" placeholder="00000000000000" name="siret">
                     </div>
 
                     <div class="col-12">
-                        <label for="email" class="form-label">Email </label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <label for="email" class="form-label">Adresse Email </label>
+                        <input type="email" class="form-control" id="mailSeller" name="mailSeller" placeholder="you@example.com">
                     </div>
 
-                    <h4 class="h6 w-100 mx-auto mt-5 mb-3 text-center">Adresse de livraison</h4>
+                    <h4 class="h6 w-100 mx-auto mt-5 mb-3 text-center">Adresse</h4>
 
                     <div class="col-12">
                         <label for="address" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="address">
+                        <input type="text" class="form-control" id="address" name="address">
                     </div>
 
                     <div class="col-md-4">
                         <label for="cp" class="form-label">Code Postal</label>
-                        <input type="text" class="form-control" id="CP" placeholder="CP">
+                        <input type="text" class="form-control" id="CP" placeholder="CP" name="cp">
                     </div>
 
                     <div class="col-md-8">
                         <label for="city" class="form-label">Ville</label>
-                        <input type="text" class="form-control" id="city" placeholder="Ville">
+                        <input type="text" class="form-control" id="city" placeholder="Ville" name="city">
                     </div>
 
                     <div class="col-md-4">
                         <label for="tel" class="form-label">N° de téléphone</label>
-                        <input type="text" class="form-control" id="tel">
+                        <input type="text" class="form-control" id="tel" name="telSeller">
                     </div>
                 </div>
 

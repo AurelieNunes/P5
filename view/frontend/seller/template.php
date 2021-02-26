@@ -88,7 +88,7 @@
         </section>
     </main>
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer-seller">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex mb-2">
             <ul class="navbar-nav mr-auto w-100 justify-content-around">
                 <li class="nav-item active">

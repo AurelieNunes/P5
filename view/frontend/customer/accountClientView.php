@@ -3,9 +3,9 @@
 <?php ob_start(); ?>
 
 <!-- Custom styles for this template -->
-<link href="../../public/css/registration-client.css" rel="stylesheet">
+<link href="../../../public/css/style.css" rel="stylesheet">
 
-<section class ="form-registration-client">
+<section class ="form-registration-customer">
 <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../../public/img/logo.png" alt="" width="72" height="57">

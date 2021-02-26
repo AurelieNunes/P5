@@ -87,15 +87,11 @@ try {
                 }
             
             case 'newItem':
-                // if (isset($_GET['id_seller']) && $_GET['id_seller'] > 0){
                 if (!empty($_SESSION['id']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
                         newItem($_SESSION['id'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
                 } else {
                         throw new Exception('Contenu vide !');
                     } 
-                // } else {
-                //         throw new Exception ('pas d articles');
-                    // }
                     break;
                     // var_dump($_GET['id']);
                     // var_dump($_SESSION['mailSubmitSeller']);
@@ -106,10 +102,15 @@ try {
                     // var_dump($_POST['size']);
                     // var_dump($_POST['stock']);
                     // die();
-                case 'logout':
-                /* déconnexion */
-                logout();
-                break;
+            
+            // case 'listItemsSeller' :
+            //     listItemsSeller($itemId);
+            //     break;
+
+            case 'logout':
+            /* déconnexion */
+            logout();
+            break;
 
             default :
                 require('view/frontend/customer/homeView.php');

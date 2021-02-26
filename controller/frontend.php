@@ -157,11 +157,21 @@ function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $
         throw new Exception('Impossible d\'ajouter l\'article !');
     }
     else {
-        Header ('Location: index.php?action=dashboardSeller=seller&new-item=success');
+        Header ('Location: index.php?action=dashboardSeller&new-item=success');
     }
 
     // var_dump($itemAdd);
     // die();
+}
+
+function listItemsSeller($itemId)
+{
+    $itemsManager = new ItemsManager();
+    $items = $itemsManager->getItemsSeller($itemId);
+    // var_dump($items);
+    // die();
+
+    Header ('Location: index.php?action=listItemsSeller');
 }
 
 

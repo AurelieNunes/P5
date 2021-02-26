@@ -1,0 +1,52 @@
+	<?php
+			$countItem = 0;
+			while ($items = $items->fetch()) 
+			// var_dump($items);
+			// die();
+				{
+					if (!empty($item)) {
+		?>
+
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				<p><a href="index.php?action=listItems">
+                <?= $item['nameItem']; ?></a></p>
+				<p><?= $item['descriptionItem']; ?></p> <p><?= $item['price']; ?> </p>
+				<div <?= $countItem++ ?>></div>
+			</li>
+		</ul>
+			<?php
+						} else {
+					        echo "<p>Pas d'articles !</p>";
+					}
+				}
+			$items->closeCursor();
+		?>
+
+
+		///////////////////////////////////////////////
+		ITEMSMANAGER
+
+		//Mettre à jour article
+    // public function updateItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
+    // {
+    //     $db = $this->dbConnect();
+    //     $req = $db -> prepare("UPDATE items SET id_seller=?, ref=?,nameItem=?, descriptionItem=?, price=?, size=?, stock=? WHERE id=?");
+    //     $req->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock));
+    //     $updateItem = $req->fetch();
+
+    //     return $updateItem;
+    // }
+
+    //Supprimer un article
+    // public function deleteItem($itemId)
+    // {
+    //     $db = $this->dbConnect();
+    //     $req = $db->prepare("DELETE FROM items WHERE id=?");
+    //     $req->execute(array($itemId));
+    //     $deletedItem = $req->fetch();
+
+    //     return $deletedItem;
+    // }
+
+	
