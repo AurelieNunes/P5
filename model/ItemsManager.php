@@ -17,31 +17,30 @@ class ItemsManager extends Manager
         
         return $addItem;
     }
-
-    //Récup tous les articles
-    // public function getItems(){
-    //     // var_dump('ok');
-    //     // die();
-    //     $db = $this->dbConnect();
-    //     $req = $db->query('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items');
-    //     // var_dump($req);
-    //     // die();
-    //     return $req;
-    // }
-
-    //Récup un article selon l'id du vendeur
-    public function getItemsSeller($itemId)
+    
+    //Récup articles selon vendeur
+    public function getItemsSeller($sellerId)
     {
-        // var_dump($itemId);
-        // die();
-        $db=$this->dbConnect();
-        $itemsSeller = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller=?');
-        $itemsSeller->execute(array($itemId));
+        $db = $this->dbConnect();
+        $itemsSeller = $db-> prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $itemsSeller->execute(array($sellerId));
         // var_dump($itemsSeller);
         // die();
+        //C:\wamp64\www\P5\model\ItemsManager.php:27:
+// object(PDOStatement)[4]
+// public 'queryString' => string 'SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?' (length=105)
         return $itemsSeller;
     }
 
-    //Récupérer tous les articles du vendeur 
-    //
+    //Récup tous les articles
+    public function getItems()
+    {
+        // var_dump('ok');
+        // die();
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items ORDER BY id');
+        // var_dump($req);
+        // die();
+        return $req;
+    }
 }

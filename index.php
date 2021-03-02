@@ -102,10 +102,20 @@ try {
                     // var_dump($_POST['size']);
                     // var_dump($_POST['stock']);
                     // die();
+
+            case 'allItems':
+                getAllItems();
+                // var_dump('ok');
+                // die();
+                break;
             
-            // case 'listItemsSeller' :
-            //     listItemsSeller($itemId);
-            //     break;
+            case 'listItemsSeller' :
+                // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
+                // getItemsSellerId();
+                var_dump(getItemsSellerId());
+                die();
+                // }
+                break;
 
             case 'logout':
             /* déconnexion */
@@ -113,10 +123,10 @@ try {
             break;
 
             default :
-                require('view/frontend/customer/homeView.php');
+                require('view/frontend/common/homeView.php');
             }           
 } else {
-    require('view/frontend/customer/homeView.php'); }
+    require('view/frontend/common/homeView.php'); }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
     // var_dump($errorMessage);

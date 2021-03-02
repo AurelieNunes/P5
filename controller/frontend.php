@@ -68,8 +68,6 @@ function addSeller($company,$siret,$mail, $pass)
         header('Location: index.php?action=subscribe&error=invalidMail');
     }
 
-    
-
     if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck ) {
         // Hachage du mot de passe
         $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
@@ -81,7 +79,6 @@ function addSeller($company,$siret,$mail, $pass)
  
        header('Location: index.php?action=sellerPanel');
 }
-
 }
 
 
@@ -164,15 +161,33 @@ function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $
     // die();
 }
 
-function listItemsSeller($itemId)
+// Récup articles d'un vendeur
+function getItemsSellerId()
 {
     $itemsManager = new ItemsManager();
-    $items = $itemsManager->getItemsSeller($itemId);
-    // var_dump($items);
+    $sellerManager = new SellerManager();
+    $item = $itemsManager-> getItemsSeller($_SESSION['id']);
+    // var_dump($item);
     // die();
+    if ($item) {
+        $seller = $sellerManager->getSeller($_SESSION['id']);
+        // var_dump($seller);
+        // die();
 
-    Header ('Location: index.php?action=listItemsSeller');
+        $idSeller = $_SESSION['id'];
+        // var_dump($idSeller);
+        // die();
+    } else {
+        header('Location : index.php');
+    }
+    require ('view/frontend/seller/listItems.php');
 }
 
+//Récupérer tous les articles
+function getAllItems()
+{
+    $itemsManager = new ItemsManager();
+    $items = $itemsManager->getItems();
 
-
+   require ('view/frontend/common/homeView.php');
+}

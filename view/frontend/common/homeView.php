@@ -3,9 +3,6 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <?php ob_start(); ?>
 
-
-
-
 <!-- START THE FEATURETTES -->
 <div class="row featurette col-6">
 <h2 class="h6 featurette-heading col-12 text-center mt-3">Bienvenue sur mes p'tites emplettes narbonnaises !</h2>
@@ -114,7 +111,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p class="linkShop"><a href="#">promod</a></p>
         </div>
         <div class="img-seller">
-          <img src="public/img/narbonne.jpg" />
+          <img src="../../../public/img/narbonne.jpg" />
         </div>
       </div>
     </div>
@@ -123,4 +120,4 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('./view/frontend/common/template.php'); ?>
+<?php require('template.php'); ?>

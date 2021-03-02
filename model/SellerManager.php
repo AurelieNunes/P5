@@ -46,16 +46,29 @@ class SellerManager extends Manager
     public function checkSiret($siret)
     {
         $db= $this->dbConnect();
-        $req = $db->prepare('SELECT siret FROM seller WHERE siret =?');
+        $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
         $req->execute(array($siret));
         $siretCheck = $req->fetch();
         return $siretCheck;
     }
 
+    public function getSeller($sellerId)
+    {
+        
+        $db= $this->dbConnect();
+        $req = $db->prepare('SELECT id, company, siret, mail, pass, DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');
+        $req->execute(array($sellerId));
+        $seller = $req->fetch();
+        // var_dump($seller);
+        // die();
+        //renvoie false
+        return $seller;
+    }
+
     public function getSellers()
     {
         $db = $this->dbConnect();
-        $sellers = $db->query('SELECT id, company from seller WHERE id=?,company=?');
+        $sellers = $db->query('SELECT id, company from seller WHERE id = ?,company = ?');
 
         return $sellers;
     }
@@ -63,7 +76,7 @@ class SellerManager extends Manager
     public function deleteSeller($sellerId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM seller WHERE id=?');
+        $req = $db->prepare('DELETE FROM seller WHERE id = ?');
         $deleteSeller = $req->execute((array($sellerId)));
 
         return $deleteSeller;
