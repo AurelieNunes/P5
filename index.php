@@ -111,9 +111,9 @@ try {
             
             case 'listItemsSeller' :
                 // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
-                // getItemsSellerId();
-                var_dump(getItemsSellerId());
-                die();
+                getItemsSellerId();
+                // var_dump(getItemsSellerId());
+                // die();
                 // }
                 break;
 

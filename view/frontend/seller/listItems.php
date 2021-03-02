@@ -11,28 +11,24 @@
 		<p class="returnLink">
 			<a href="index.php?action=dashboardSeller">Retour au menu</a>
 		</p>
-		<?php
-			$countItem = 0;
-				while ($item = $items->fetch()) 
-					{
-						// var_dump('ok');
-						// die();
-						if (!empty($item)) {
-					?>
+		
 		<h1 class="text-center">Liste des Articles</h1>
 		<div class="listItems">
 			<ul class="list-group">
+			<?php
+				foreach($items as $item) 
+					{
+						// var_dump($items);
+						// die();
+						if (!empty($items)) {
+					?>
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-					<? $item['nameItem']; ?>
-					<div <?= $countItem++ ?>></div>
+					<?= $item['nameItem']; ?>
 				</li>
 			</ul>
 			<?php
-	} else {
-			echo "<p>Pas d'articles !</p>";
-			}
-				}
-				$items->closeCursor();
+						}
+				}	
 		?>
 		</div>
 	</div>

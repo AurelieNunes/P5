@@ -166,16 +166,12 @@ function getItemsSellerId()
 {
     $itemsManager = new ItemsManager();
     $sellerManager = new SellerManager();
-    $item = $itemsManager-> getItemsSeller($_SESSION['id']);
-    // var_dump($item);
+    $items = $itemsManager-> getItemsSeller($_SESSION['id']);
+    // var_dump($items);
     // die();
-    if ($item) {
+    if ($items) {
         $seller = $sellerManager->getSeller($_SESSION['id']);
         // var_dump($seller);
-        // die();
-
-        $idSeller = $_SESSION['id'];
-        // var_dump($idSeller);
         // die();
     } else {
         header('Location : index.php');
@@ -188,6 +184,8 @@ function getAllItems()
 {
     $itemsManager = new ItemsManager();
     $items = $itemsManager->getItems();
+    // var_dump($items);
+    // die();
 
    require ('view/frontend/common/homeView.php');
 }

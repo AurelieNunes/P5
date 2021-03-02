@@ -22,13 +22,12 @@ class ItemsManager extends Manager
     public function getItemsSeller($sellerId)
     {
         $db = $this->dbConnect();
-        $itemsSeller = $db-> prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
-        $itemsSeller->execute(array($sellerId));
+        $req = $db-> prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $req->execute(array($sellerId));
+        $itemsSeller = $req->fetchAll();
         // var_dump($itemsSeller);
         // die();
-        //C:\wamp64\www\P5\model\ItemsManager.php:27:
-// object(PDOStatement)[4]
-// public 'queryString' => string 'SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?' (length=105)
+       
         return $itemsSeller;
     }
 
