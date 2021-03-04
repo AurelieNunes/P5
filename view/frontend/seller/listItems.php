@@ -1,19 +1,17 @@
-<?php $title = "Liste des Produits"; ?>
+<?php $title = "Produits en Ligne"; ?>
 <?php ob_start(); ?>
 
 <link href="../../../public/css/style.css" rel="stylesheet">
 
 <!-- Gestion des Artciles -->
 <section id="listItems" class="mx-auto pt-5">
-	<!-- <a href="index.php?action=listItemsSeller"></a> -->
-
 	<div id="managerBlock" class="mx-auto">
 		<p class="returnLink">
 			<a href="index.php?action=dashboardSeller">Retour au menu</a>
 		</p>
 		
-		<h1 class="text-center">Liste des Articles</h1>
-		<div class="listItems">
+		<h1 class="text-center">Produits en Ligne</h1>
+		<div class="listItems col-6 mx-auto">
 			<ul class="list-group">
 			<?php
 				foreach($items as $item) 
@@ -22,9 +20,19 @@
 						// die();
 						if (!empty($items)) {
 					?>
+				<div class="card border-primary mb-2 text-center">
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-					<?= $item['nameItem']; ?>
+				<div class="card-header">
+					<p class="text-center"><?= $item['nameItem'];?></p>
+				</div>
+					<p>Référence : <?= $item['ref'];?></p>
+					<p>Prix : <?= $item['price'];?> €</p>
+					<p>Stock : <?= $item['stock'];?></p>
+					<div class="link-ReadMore">
+					<a class="nav-link" href="index.php?action=item">Lire la suite ...</a>
+				</div>
 				</li>
+				</div>
 			</ul>
 			<?php
 						}

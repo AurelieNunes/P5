@@ -12,7 +12,6 @@ class ItemsManager extends Manager
         // die();
         $db = $this->dbConnect();
         $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock) VALUES (?,?,?,?,?,?,?)');
-        
         $addItem->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock));
         
         return $addItem;
@@ -22,7 +21,7 @@ class ItemsManager extends Manager
     public function getItemsSeller($sellerId)
     {
         $db = $this->dbConnect();
-        $req = $db-> prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
         $itemsSeller = $req->fetchAll();
         // var_dump($itemsSeller);
@@ -31,15 +30,29 @@ class ItemsManager extends Manager
         return $itemsSeller;
     }
 
-    //Récup tous les articles
-    public function getItems()
+    //Récup un article selon son id
+    public function getItem($itemId)
     {
-        // var_dump('ok');
-        // die();
+        var_dump('testModel');
+        die();
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller,ref, nameItem, descriptionItem, price, size, stock FROM items ORDER BY id');
-        // var_dump($req);
-        // die();
-        return $req;
-    }
+        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
+        $req->execute(array($itemId));
+        $item = $req->fetchAll();
+        var_dump($item);
+        die();
+        return $item;
+        }
+
+    // //Récup tous les articles
+    // public function getItems()
+    // {
+    //     // var_dump('ok');
+    //     // die();
+    //     $db = $this->dbConnect();
+    //     $req = $db->prepare('SELECT * FROM items ORDER BY id');
+    //     // var_dump($req);
+    //     // die();
+    //     return $req;
+    // }
 }

@@ -174,18 +174,31 @@ function getItemsSellerId()
         // var_dump($seller);
         // die();
     } else {
-        header('Location : index.php');
+        header('Location : index.php?=dashboardSeller');
     }
     require ('view/frontend/seller/listItems.php');
 }
 
-//Récupérer tous les articles
-function getAllItems()
-{
-    $itemsManager = new ItemsManager();
-    $items = $itemsManager->getItems();
-    // var_dump($items);
-    // die();
+    //Recup article selon son id
+    function getItemId($itemId)
+    {   
+        var_dump('test');
+        die();
 
-   require ('view/frontend/common/homeView.php');
-}
+        $itemsManager = new ItemsManager();
+        $idItem = $itemsManager->getItem($itemId);
+
+        var_dump($idItem);
+        die();
+        require ('view/frontend/seller/itemView.php');
+    }
+
+    // //Récupérer tous les articles
+    // function getAllItems()
+    // {
+    //     $itemsManager = new ItemsManager();
+    //     $items = $itemsManager->getItems();
+    //     // var_dump($items);
+    //     // die();
+    //     require ('view/frontend/common/homeView.php');
+    // }

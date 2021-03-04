@@ -103,18 +103,28 @@ try {
                     // var_dump($_POST['stock']);
                     // die();
 
-            case 'allItems':
-                getAllItems();
-                // var_dump('ok');
-                // die();
-                break;
+            // case 'allItems':
+            //     getAllItems();
+            //     // var_dump('ok');
+            //     // die();
+            //     break;
             
             case 'listItemsSeller' :
-                // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
                 getItemsSellerId();
-                // var_dump(getItemsSellerId());
+                break;
+            
+            case 'item':
+                var_dump('ok');
+                die();
+                // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
+                // var_dump('test');
                 // die();
-                // }
+                getItemId($_GET['id']);
+            // } else {
+            //     // var_dump('nop');
+            //     // die();
+            //     throw new Exception('Aucun article à afficher');
+            // }
                 break;
 
             case 'logout':
@@ -125,9 +135,12 @@ try {
             default :
                 require('view/frontend/common/homeView.php');
             }           
-} else {
-    require('view/frontend/common/homeView.php'); }
-} catch (Exception $e) {
+} else 
+{
+    require('view/frontend/common/homeView.php'); 
+}
+} catch (Exception $e) 
+{
     $errorMessage = $e->getMessage();
     // var_dump($errorMessage);
     require('view/frontend/common/errorView.php');
