@@ -180,16 +180,12 @@ function getItemsSellerId()
 }
 
     //Recup article selon son id
-    function getItemId($itemId)
-    {   
-        var_dump('test');
-        die();
-
+    function getItemId()
+    {  
         $itemsManager = new ItemsManager();
-        $idItem = $itemsManager->getItem($itemId);
-
-        var_dump($idItem);
-        die();
+        $idItem = $itemsManager->getItem($_GET['id']);
+        // var_dump($idItem);
+        // die();
         require ('view/frontend/seller/itemView.php');
     }
 

@@ -33,16 +33,16 @@ class ItemsManager extends Manager
     //Récup un article selon son id
     public function getItem($itemId)
     {
-        var_dump('testModel');
-        die();
+        // var_dump('testModel');
+        // die();
         $db = $this->dbConnect();
-        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
+        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
         $req->execute(array($itemId));
         $item = $req->fetchAll();
-        var_dump($item);
-        die();
+        // var_dump($item);
+        // die();
         return $item;
-        }
+    }
 
     // //Récup tous les articles
     // public function getItems()

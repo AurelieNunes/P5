@@ -114,12 +114,14 @@ try {
                 break;
             
             case 'item':
-                var_dump('ok');
-                die();
+                // var_dump('ok');
+                // die();
                 // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
                 // var_dump('test');
                 // die();
-                getItemId($_GET['id']);
+                getItemId();
+                // var_dump(getItemId());
+                // die();
             // } else {
             //     // var_dump('nop');
             //     // die();
