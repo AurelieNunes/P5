@@ -183,8 +183,8 @@ function getItemsSellerId()
     function getItemId()
     {  
         $itemsManager = new ItemsManager();
-        $idItem = $itemsManager->getItem($_GET['id']);
-        // var_dump($idItem);
+        $item = $itemsManager->getItem($_GET['id']);
+        // var_dump($item);
         // die();
         require ('view/frontend/seller/itemView.php');
     }

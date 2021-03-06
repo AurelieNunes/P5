@@ -38,7 +38,7 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
         $req->execute(array($itemId));
-        $item = $req->fetchAll();
+        $item = $req->fetch();
         // var_dump($item);
         // die();
         return $item;
