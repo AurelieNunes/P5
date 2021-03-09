@@ -205,11 +205,11 @@ function getItemsSellerId()
     function submitUpdate()
     {
         // var_dump('test2');
-        // die();
+        // die(); //ok
         $itemsManager = new ItemsManager();
         $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
         // var_dump($updated);
-        // die();
+        // die(); //false
 
         Header ('Location : index.php?action=dashboardSeller&updateItem=success');
     }
