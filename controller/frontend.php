@@ -176,21 +176,42 @@ function getItemsSellerId()
     } else {
         header('Location : index.php?=dashboardSeller');
     }
-    require ('view/frontend/seller/listItems.php');
+    require ('view/frontend/seller/listItemsView.php');
 }
 
     //Recup article selon son id
-    function getItemId($itemId)
-    {   
-        var_dump('test');
-        die();
-
+    function getItemId()
+    {  
         $itemsManager = new ItemsManager();
-        $idItem = $itemsManager->getItem($itemId);
-
-        var_dump($idItem);
-        die();
+        $item = $itemsManager->getItem($_GET['id']);
+        // var_dump($item);
+        // die();
         require ('view/frontend/seller/itemView.php');
+    }
+
+    //Modifier un article
+    function displayUpdate() 
+    {
+        // var_dump('testDisplay');
+        // die(); ok
+        $itemsManager = new ItemsManager();
+        $item = $itemsManager->getItem($_GET['id']);
+        // var_dump($item);
+        // die();
+        require ('view/frontend/seller/updateItemView.php');
+    }
+
+    // //soumettre modif article
+    function submitUpdate()
+    {
+        // var_dump('test2');
+        // die();
+        $itemsManager = new ItemsManager();
+        $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
+        // var_dump($updated);
+        // die();
+
+        Header ('Location : index.php?action=dashboardSeller&updateItem=success');
     }
 
     // //Récupérer tous les articles

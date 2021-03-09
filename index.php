@@ -114,17 +114,34 @@ try {
                 break;
             
             case 'item':
-                var_dump('ok');
-                die();
+                // var_dump('ok');
+                // die();
                 // if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
                 // var_dump('test');
                 // die();
-                getItemId($_GET['id']);
+                getItemId();
+                // var_dump(getItemId());
+                // die();
             // } else {
             //     // var_dump('nop');
             //     // die();
             //     throw new Exception('Aucun article à afficher');
             // }
+                break;
+
+            case 'updateItem' :
+                // var_dump('testdisplayindex');
+                // die();
+                displayUpdate();
+				break;
+                
+
+            case 'updateItem' :
+                var_dump('test');
+                die();
+                submitUpdate();
+                // var_dump(submitUpdate($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']));
+                // die();
                 break;
 
             case 'logout':

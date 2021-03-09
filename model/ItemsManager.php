@@ -33,16 +33,30 @@ class ItemsManager extends Manager
     //Récup un article selon son id
     public function getItem($itemId)
     {
-        var_dump('testModel');
+        // var_dump('testModel');
+        // die();
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
+        $req->execute(array($itemId));
+        $item = $req->fetch();
+        // var_dump($item);
+        // die();
+        return $item;
+    }
+
+    // //Mettre à jour article
+    public function updateItem($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId)
+    {
+        var_dump('testmodel');
         die();
         $db = $this->dbConnect();
-        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
-        $req->execute(array($itemId));
-        $item = $req->fetchAll();
-        var_dump($item);
-        die();
-        return $item;
-        }
+        $req = $db->prepare('UPDATE items SET ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
+        $req->execute(array($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
+        $itemUpdate = $req->fetch();
+        // var_dump($itemUpdate);
+        // die();
+        return $itemUpdate;
+    }
 
     // //Récup tous les articles
     // public function getItems()

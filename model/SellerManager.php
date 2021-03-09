@@ -61,7 +61,6 @@ class SellerManager extends Manager
         $seller = $req->fetch();
         // var_dump($seller);
         // die();
-        //renvoie false
         return $seller;
     }
 

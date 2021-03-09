@@ -9,11 +9,11 @@
 		<p class="returnLink">
 			<a href="index.php?action=dashboardSeller">Retour au menu</a>
 		</p>
-		
+
 		<h1 class="text-center">Produits en Ligne</h1>
 		<div class="listItems col-6 mx-auto">
 			<ul class="list-group">
-			<?php
+				<?php
 				foreach($items as $item) 
 					{
 						// var_dump($items);
@@ -21,17 +21,18 @@
 						if (!empty($items)) {
 					?>
 				<div class="card border-primary mb-2 text-center">
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-				<div class="card-header">
-					<p class="text-center"><?= $item['nameItem'];?></p>
-				</div>
-					<p>Référence : <?= $item['ref'];?></p>
-					<p>Prix : <?= $item['price'];?> €</p>
-					<p>Stock : <?= $item['stock'];?></p>
-					<div class="link-ReadMore">
-					<a class="nav-link" href="index.php?action=item">Lire la suite ...</a>
-				</div>
-				</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<div class="card-header">
+							<p class="text-center"><?= $item['nameItem'];?></p>
+						</div>
+						<p>Référence : <?= $item['ref'];?></p>
+						<p>Prix : <?= $item['price'];?> €</p>
+						<p>Stock : <?= $item['stock'];?></p>
+						<div class="link-ReadMore">
+							<a class="nav-link" href="index.php?action=item&amp;id=<?= $item['id']; ?>">Lire la suite
+								...</a>
+						</div>
+					</li>
 				</div>
 			</ul>
 			<?php
