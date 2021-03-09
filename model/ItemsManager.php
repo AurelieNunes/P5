@@ -47,11 +47,13 @@ class ItemsManager extends Manager
     // //Mettre à jour article
     public function updateItem($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId)
     {
-        var_dump('testmodel');
-        die();
+        // var_dump('testmodel');
+        // die();
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE items SET ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
         $req->execute(array($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
+        // var_dump($req);
+        // die();
         $itemUpdate = $req->fetch();
         // var_dump($itemUpdate);
         // die();

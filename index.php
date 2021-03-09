@@ -129,19 +129,17 @@ try {
             // }
                 break;
 
-            case 'updateItem' :
+            case 'displayUpdateItem' :
                 // var_dump('testdisplayindex');
                 // die();
                 displayUpdate();
 				break;
                 
 
-            case 'updateItem' :
-                var_dump('test');
-                die();
+            case 'submitUpdate' :
+                // var_dump('test');
+                // die(); //ok
                 submitUpdate();
-                // var_dump(submitUpdate($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']));
-                // die();
                 break;
 
             case 'logout':

@@ -20,7 +20,7 @@
             <p>Taille : <?= $item['size']; ?></p>
             <p>En stock : <?= $item['stock']; ?></p>
             <p class="update-link">
-                <a href="index.php?action=updateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
+                <a href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
             </p>
         </div>
     </div>

@@ -6,7 +6,7 @@
 	<div id="managerBlock" class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 		<div id="updateBlock">
-			<form class="d-flex flex-column" id="updateItem" action="index.php?action=updateItem&amp;id=<?= intval($item['id']); ?>" method="POST">
+			<form class="d-flex flex-column" id="updateItem" action="index.php?action=submitUpdate" method="POST">
                 
                 <label for="ref">Référence</label>
                 <input type="text" class="mb-2 col-2" name="ref" id="ref" value="<?= htmlspecialchars($item['ref']); ?>"/>
@@ -15,7 +15,7 @@
                 <input class="mb-2 col-6" type="text" name="nameItem" id="nameItem" value="<?= htmlspecialchars($item['nameItem']); ?>"/>
 
                 <label for="description">Description </label>
-				<textarea name="descriptionItem" rows="20" cols="40" class="mb-3" value="<?= htmlspecialchars($item['descriptionItem']); ?>"></textarea>
+				<textarea name="descriptionItem" rows="20" cols="40" class="mb-3" id="descriptionItemUpdate"><?= htmlspecialchars($item['descriptionItem']); ?></textarea>
 
                 <div class="infos d-flex">
                     <label for="price" class="mr-2">Prix</label>
