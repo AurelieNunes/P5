@@ -208,10 +208,12 @@ function getItemsSellerId()
         // die(); //ok
         $itemsManager = new ItemsManager();
         $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
+        // var_dump($_POST['stock']);
+        // die(); //ok
         // var_dump($updated);
         // die(); //false
 
-        Header ('Location : index.php?action=dashboardSeller&updateItem=success');
+        header ('Location : index.php?action=dashboardSeller&update-status=success');
     }
 
     // //Récupérer tous les articles
