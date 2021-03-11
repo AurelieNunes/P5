@@ -21,11 +21,11 @@ function addCustomer($lastName,$firstName,$mail,$pass){
 	$mailValidity = $customerManager->checkMail($mail);
 
     if ($usernameValidity) {
-        header('Location: index.php?action=subscribe&error=invalidUsername');	
+        Header('Location: index.php?action=subscribe&error=invalidUsername');	
     }
 
     if ($mailValidity) {
-        header('Location: index.php?action=subscribe&error=invalidMail');
+        Header('Location: index.php?action=subscribe&error=invalidMail');
     }
 
     if (!$usernameValidity && !$mailValidity) {
@@ -35,7 +35,7 @@ function addCustomer($lastName,$firstName,$mail,$pass){
         $newCustomer;
         
         // redirige vers page d'accueil avec le nouveau paramètre
-        header('Location: index.php?account-status=account-successfully-created');
+        Header('Location: index.php?account-status=account-successfully-created');
 }
 }
 
@@ -57,15 +57,15 @@ function addSeller($company,$siret,$mail, $pass)
 
 
     if ($companySellerCheck) {
-        header('Location: index.php?action=subscribe&error=invalidUsername');	
+        Header('Location: index.php?action=subscribe&error=invalidUsername');	
     }
 
     if ($siretSellerCheck) {
-        header('Location:index.php?action=subscribe&error=invalidSiret');
+        Header('Location:index.php?action=subscribe&error=invalidSiret');
     }
 
     if ($mailSellerCheck) {
-        header('Location: index.php?action=subscribe&error=invalidMail');
+        Header('Location: index.php?action=subscribe&error=invalidMail');
     }
 
     if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck ) {
@@ -77,10 +77,9 @@ function addSeller($company,$siret,$mail, $pass)
         // die;
         // redirige vers page d'accueil avec le nouveau paramètre
  
-       header('Location: index.php?action=sellerPanel');
+       Header('Location: index.php?action=sellerPanel');
 }
 }
-
 
 function loginSubmitCustomer($mail,$pass){
     
@@ -90,16 +89,16 @@ function loginSubmitCustomer($mail,$pass){
     $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
 
 	if (!$customer) {
-        header('Location: index.php?action=login&account-status=unsuccess-login');
+        Header('Location: index.php?action=login&account-status=unsuccess-login');
     }
     else {
     	if ($isPasswordCorrect) {
     		$_SESSION['id'] = $customer['id'];
 			$_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
-    		header('Location: index.php');
+    		Header('Location: index.php');
     	}
         else {
-        	header('Location: index.php?action=login&account-status=unsuccess-login');
+        	Header('Location: index.php?action=login&account-status=unsuccess-login');
         }
     }
 }
@@ -115,16 +114,16 @@ function loginSubmitSeller($mail,$pass){
     $isPasswordCorrect = password_verify($_POST['passSubmitSeller'], $seller['pass']);
 
 	if (!$seller) {
-        header('Location: index.php?action=login&account-status=unsuccess-login');
+        Header('Location: index.php?action=login&account-status=unsuccess-login');
     }
     else {
     	if ($isPasswordCorrect) {
     		$_SESSION['id'] = $seller['id'];
 			$_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
-    		header('Location: index.php?action=dashboardSeller');
+    		Header('Location: index.php?action=dashboardSeller');
     	}
         else {
-        	header('Location: index.php?action=login&account-status=unsuccess-login');
+        	Header('Location: index.php?action=login&account-status=unsuccess-login');
         }
     }
 }
@@ -133,7 +132,7 @@ function logout() {
 	$_SESSION = array();
 	session_destroy();
 
-	header('Location: index.php?logout=success');
+	Header('Location: index.php?logout=success');
 }
 
 function displayCreateItem(){
@@ -174,7 +173,7 @@ function getItemsSellerId()
         // var_dump($seller);
         // die();
     } else {
-        header('Location : index.php?=dashboardSeller');
+        Header('Location : index.php?=dashboardSeller');
     }
     require ('view/frontend/seller/listItemsView.php');
 }
@@ -212,8 +211,8 @@ function getItemsSellerId()
         // die(); //ok
         // var_dump($updated);
         // die(); //false
-
-        header ('Location : index.php?action=dashboardSeller&update-status=success');
+        Header ('Location:index.php?action=dashboardSeller&submit-u
+        pdate=success');
     }
 
     // //Récupérer tous les articles

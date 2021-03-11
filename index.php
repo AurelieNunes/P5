@@ -139,6 +139,8 @@ try {
                 // var_dump('testindex');
                 // die(); //ok
                 submitUpdate($_GET['id']);
+                // var_dump(submitUpdate($_GET['id']));
+                // die();
                 break;
 
             case 'logout':

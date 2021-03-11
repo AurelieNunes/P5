@@ -6,7 +6,7 @@
 	<h1 class="text-center">Ajout Article</h1>
 	<div id="managerBlock" class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
-		<div id="updateBlock">
+		<div id="addBlock">
 			<form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST">
                 
                 <label for="ref">Référence</label>

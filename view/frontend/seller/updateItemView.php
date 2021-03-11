@@ -3,16 +3,16 @@
 
 <section id="updateItem" class="mx-auto pt-5">
 	<h1 class="text-center">Modifier un article</h1>
-	<div id="managerBlock" class="mx-auto">
+	<div class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 		<div id="updateBlock">
-			<form class="d-flex flex-column" id="updateItem" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>" method="POST">
+			<form class="d-flex flex-column" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>" method="POST">
                 
                 <label for="ref">Référence</label>
                 <input type="text" class="mb-2 col-2" name="ref" id="ref" value="<?= htmlspecialchars($item['ref']); ?>"/>
 
 				<label for="name">Nom du produit : </label>
-                <input class="mb-2 col-6" type="text" name="nameItem" id="nameItem" value="<?= htmlspecialchars($item['nameItem']); ?>"/>
+                <input class="mb-2 col-6" type="text" name="nameItem" value="<?= htmlspecialchars($item['nameItem']); ?>"/>
 
                 <label for="description">Description </label>
 				<textarea name="descriptionItem" rows="20" cols="40" class="mb-3" id="descriptionItemUpdate"><?= htmlspecialchars($item['descriptionItem']); ?></textarea>
