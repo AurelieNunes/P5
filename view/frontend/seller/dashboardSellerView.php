@@ -25,18 +25,11 @@
           produits</a></button>
     </div>
 
-    <!-- Modifier un Produit -->
+    <!-- Mon compte -->
     <div class="headPost mb-4 text-center">
-      <h3>Modifier un produit</h3>
-      <button class="btn btn-primary" id="updateItem"><a class="text-white"
-          href="index.php?action=updateItem">Modifier</a></button>
-    </div>
-
-    <!-- Supprimer un Produit -->
-    <div class="headPost mb-4 text-center">
-      <h3>Supprimer</h3>
-      <button class="btn btn-primary" id="deleteItem"><a class="text-white"
-          href="index.php?action=deleteItem">Supprimer</a></button>
+      <h3>Mon compte</h3>
+      <button class="btn btn-primary" id="accountSeller"><a class="text-white"
+          href="index.php?action=accountSeller">Mon compte</a></button>
     </div>
 
     <div class="row">
@@ -49,23 +42,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?action=listItems">
+              <a class="nav-link" href="index.php?action=listItemsSeller">
                 Liste des Produits
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php?action=updateItem">
-                Mettre à jour
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Supprimer un article
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php?action=deleteItem">
-                Stock
               </a>
             </li>
             <li class="nav-item ml-3">

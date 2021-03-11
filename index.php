@@ -80,11 +80,15 @@ try {
                 displayDashboardSeller();
                 break;
 
+            case 'accountSeller' :
+                displayAccountSeller();
+                break;
+
             case 'createItem' :
                 if (isset($_SESSION)){
                     displayCreateItem();
                     break;
-                }
+                };
             
             case 'newItem':
                 if (!empty($_SESSION['id']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
@@ -142,6 +146,12 @@ try {
                 // var_dump(submitUpdate($_GET['id']));
                 // die();
                 break;
+            
+            case 'deleteItem' :
+                deleteItem(intval($_GET['id']));
+                // var_dump('test');
+                // die();
+                break; 
 
             case 'logout':
                 /* déconnexion */
@@ -151,13 +161,13 @@ try {
             default :
                 require('view/frontend/common/homeView.php');
             }           
-} else 
-{
-    require('view/frontend/common/homeView.php'); 
-}
-} catch (Exception $e) 
-{
-    $errorMessage = $e->getMessage();
-    // var_dump($errorMessage);
-    require('view/frontend/common/errorView.php');
-}
+    } else 
+        {
+            require('view/frontend/common/homeView.php'); 
+        }
+    } catch (Exception $e) 
+        {
+            $errorMessage = $e->getMessage();
+            // var_dump($errorMessage);
+            require('view/frontend/common/errorView.php');
+        }

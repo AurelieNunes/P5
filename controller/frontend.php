@@ -5,178 +5,184 @@ use P5\model\ItemsManager;
 
 require_once './model/Manager.php';
 
-function displaySubscribe(){
-    require('view/frontend/common/subscribeView.php');
-}
-
-function displayLogin(){
-    require('view/frontend/common/loginView.php');
-}
-
-function addCustomer($lastName,$firstName,$mail,$pass){
-
-    $customerManager = new CustomerManager();
-
-    $usernameValidity = $customerManager->checkLastName($lastName);
-	$mailValidity = $customerManager->checkMail($mail);
-
-    if ($usernameValidity) {
-        Header('Location: index.php?action=subscribe&error=invalidUsername');	
+    function displaySubscribe(){
+        require('view/frontend/common/subscribeView.php');
     }
 
-    if ($mailValidity) {
-        Header('Location: index.php?action=subscribe&error=invalidMail');
+    function displayLogin(){
+        require('view/frontend/common/loginView.php');
     }
 
-    if (!$usernameValidity && !$mailValidity) {
-        // Hachage du mot de passe
-        $pass = password_hash($_POST['passCustomer'], PASSWORD_DEFAULT);
-        $newCustomer = $customerManager->subscribeCustomer($lastName, $firstName, $mail, $pass);
-        $newCustomer;
+    function addCustomer($lastName,$firstName,$mail,$pass){
+
+        $customerManager = new CustomerManager();
+
+        $usernameValidity = $customerManager->checkLastName($lastName);
+        $mailValidity = $customerManager->checkMail($mail);
+
+        if ($usernameValidity) {
+            Header('Location: index.php?action=subscribe&error=invalidUsername');	
+        }
+
+        if ($mailValidity) {
+            Header('Location: index.php?action=subscribe&error=invalidMail');
+        }
+
+        if (!$usernameValidity && !$mailValidity) {
+            // Hachage du mot de passe
+            $pass = password_hash($_POST['passCustomer'], PASSWORD_DEFAULT);
+            $newCustomer = $customerManager->subscribeCustomer($lastName, $firstName, $mail, $pass);
+            $newCustomer;
+            
+            // redirige vers page d'accueil avec le nouveau paramètre
+            Header('Location: index.php?account-status=account-successfully-created');
+        }
+    }
+
+    // function displaySubscribeSeller(){
+    //     require('view/backend/subscribeView.php');
+    // }
+
+    // function displayLoginSeller(){
+    //     require('view/backend/loginView.php');
+    // }
+
+    function addSeller($company,$siret,$mail, $pass)
+    {
+        $sellerManager = new SellerManager();
+
+        $companySellerCheck = $sellerManager->checkCompany($company);
+        $siretSellerCheck = $sellerManager->checkSiret($siret);
+        $mailSellerCheck = $sellerManager->checkMail($mail);
+
+
+        if ($companySellerCheck) {
+            Header('Location: index.php?action=subscribe&error=invalidUsername');	
+        }
+
+        if ($siretSellerCheck) {
+            Header('Location:index.php?action=subscribe&error=invalidSiret');
+        }
+
+        if ($mailSellerCheck) {
+            Header('Location: index.php?action=subscribe&error=invalidMail');
+        }
+
+        if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck ) {
+            // Hachage du mot de passe
+            $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
+            $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
+            $newSeller;
+            // var_dump($newSeller);
+            // die;
+            // redirige vers page d'accueil avec le nouveau paramètre
+    
+        Header('Location: index.php?action=sellerPanel');
+        }
+    }
+
+    function loginSubmitCustomer($mail,$pass){
         
-        // redirige vers page d'accueil avec le nouveau paramètre
-        Header('Location: index.php?account-status=account-successfully-created');
-}
-}
+        $customerManager = new CustomerManager();
+        $customer = $customerManager->loginCustomer($mail);
+        
+        $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
 
-// function displaySubscribeSeller(){
-//     require('view/backend/subscribeView.php');
-// }
-
-// function displayLoginSeller(){
-//     require('view/backend/loginView.php');
-// }
-
-function addSeller($company,$siret,$mail, $pass)
-{
-    $sellerManager = new SellerManager();
-
-    $companySellerCheck = $sellerManager->checkCompany($company);
-    $siretSellerCheck = $sellerManager->checkSiret($siret);
-    $mailSellerCheck = $sellerManager->checkMail($mail);
-
-
-    if ($companySellerCheck) {
-        Header('Location: index.php?action=subscribe&error=invalidUsername');	
-    }
-
-    if ($siretSellerCheck) {
-        Header('Location:index.php?action=subscribe&error=invalidSiret');
-    }
-
-    if ($mailSellerCheck) {
-        Header('Location: index.php?action=subscribe&error=invalidMail');
-    }
-
-    if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck ) {
-        // Hachage du mot de passe
-        $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
-        $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
-        $newSeller;
-        // var_dump($newSeller);
-        // die;
-        // redirige vers page d'accueil avec le nouveau paramètre
- 
-       Header('Location: index.php?action=sellerPanel');
-}
-}
-
-function loginSubmitCustomer($mail,$pass){
-    
-    $customerManager = new CustomerManager();
-    $customer = $customerManager->loginCustomer($mail);
-    
-    $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
-
-	if (!$customer) {
-        Header('Location: index.php?action=login&account-status=unsuccess-login');
-    }
-    else {
-    	if ($isPasswordCorrect) {
-    		$_SESSION['id'] = $customer['id'];
-			$_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
-    		Header('Location: index.php');
-    	}
+        if (!$customer) {
+            Header('Location: index.php?action=login&account-status=unsuccess-login');
+        }
         else {
-        	Header('Location: index.php?action=login&account-status=unsuccess-login');
+            if ($isPasswordCorrect) {
+                $_SESSION['id'] = $customer['id'];
+                $_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
+                Header('Location: index.php');
+            }
+            else {
+                Header('Location: index.php?action=login&account-status=unsuccess-login');
+            }
         }
     }
-}
 
-function displayDashboardSeller(){
-    require 'view/frontend/seller/dashboardSellerView.php';
-}
-
-function loginSubmitSeller($mail,$pass){
-    $sellerManager = new SellerManager();
-    $seller = $sellerManager->loginSeller($mail);
-
-    $isPasswordCorrect = password_verify($_POST['passSubmitSeller'], $seller['pass']);
-
-	if (!$seller) {
-        Header('Location: index.php?action=login&account-status=unsuccess-login');
+    function displayDashboardSeller(){
+        require 'view/frontend/seller/dashboardSellerView.php';
     }
-    else {
-    	if ($isPasswordCorrect) {
-    		$_SESSION['id'] = $seller['id'];
-			$_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
-    		Header('Location: index.php?action=dashboardSeller');
-    	}
+
+    function displayAccountSeller(){
+        require 'view/frontend/seller/accountSellerView.php';
+    }
+   
+    function loginSubmitSeller($mail,$pass){
+        $sellerManager = new SellerManager();
+        $seller = $sellerManager->loginSeller($mail);
+
+        $isPasswordCorrect = password_verify($_POST['passSubmitSeller'], $seller['pass']);
+
+        if (!$seller) {
+            Header('Location: index.php?action=login&account-status=unsuccess-login');
+        }
         else {
-        	Header('Location: index.php?action=login&account-status=unsuccess-login');
+            if ($isPasswordCorrect) {
+                $_SESSION['id'] = $seller['id'];
+                $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
+                Header('Location: index.php?action=dashboardSeller');
+            }
+            else {
+                Header('Location: index.php?action=login&account-status=unsuccess-login');
+            }
         }
     }
-}
 
-function logout() {
-	$_SESSION = array();
-	session_destroy();
+    function logout() {
+        $_SESSION = array();
+        session_destroy();
 
-	Header('Location: index.php?logout=success');
-}
-
-function displayCreateItem(){
-    require 'view/frontend/seller/createItemSellerView.php';
-}
-
-function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
-{
-    // var_dump('test');
-    // die();
-    $itemsManager = new ItemsManager();
-
-    $itemAdd = $itemsManager->createItem($id_seller,$ref, $nameItem, $descriptionItem, $price, $size, $stock);
-    $itemAdd;
-    // var_dump($itemAdd);
-    // die();
-    if ($itemAdd === false) {
-        throw new Exception('Impossible d\'ajouter l\'article !');
-    }
-    else {
-        Header ('Location: index.php?action=dashboardSeller&new-item=success');
+        Header('Location: index.php?logout=success');
     }
 
-    // var_dump($itemAdd);
-    // die();
-}
+    function displayCreateItem(){
+        require 'view/frontend/seller/createItemSellerView.php';
+    }
 
-// Récup articles d'un vendeur
-function getItemsSellerId()
-{
-    $itemsManager = new ItemsManager();
-    $sellerManager = new SellerManager();
-    $items = $itemsManager-> getItemsSeller($_SESSION['id']);
-    // var_dump($items);
-    // die();
-    if ($items) {
-        $seller = $sellerManager->getSeller($_SESSION['id']);
-        // var_dump($seller);
+    function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
+    {
+        // var_dump('test');
         // die();
-    } else {
-        Header('Location : index.php?=dashboardSeller');
+        $itemsManager = new ItemsManager();
+
+        $itemAdd = $itemsManager->createItem($id_seller,$ref, $nameItem, $descriptionItem, $price, $size, $stock);
+        $itemAdd;
+        // var_dump($itemAdd);
+        // die();
+
+        
+        if ($itemAdd === false) {
+            throw new Exception('Impossible d\'ajouter l\'article !');
+        }
+        else {
+            Header ('Location: index.php?action=dashboardSeller&new-item=success');
+        }
+
+        // var_dump($itemAdd);
+        // die();
     }
-    require ('view/frontend/seller/listItemsView.php');
-}
+
+    // Récup articles d'un vendeur
+    function getItemsSellerId()
+    {
+        $itemsManager = new ItemsManager();
+        $sellerManager = new SellerManager();
+        $items = $itemsManager-> getItemsSeller($_SESSION['id']);
+        // var_dump($items);
+        // die();
+        if ($items) {
+            $seller = $sellerManager->getSeller($_SESSION['id']);
+            // var_dump($seller);
+            // die();
+        } else {
+            Header('Location : index.php?=dashboardSeller');
+        }
+        require ('view/frontend/seller/listItemsView.php');
+    }
 
     //Recup article selon son id
     function getItemId()
@@ -211,9 +217,19 @@ function getItemsSellerId()
         // die(); //ok
         // var_dump($updated);
         // die(); //false
-        Header ('Location:index.php?action=dashboardSeller&submit-u
-        pdate=success');
+        Header ('Location:index.php?action=dashboardSeller&submit-update=success');
     }
+
+    // supprimer article vendeur
+    function deleteItem($itemId)
+    {
+        $itemsManager = new ItemsManager();
+        $deletedItem = $itemsManager->removeItem($itemId);
+
+        Header('Location: index.php?action=dashboardSeller&delete-item=success');
+    }
+
+
 
     // //Récupérer tous les articles
     // function getAllItems()

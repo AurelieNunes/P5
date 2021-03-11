@@ -49,4 +49,38 @@
     //     return $deletedItem;
     // }
 
+
+	//////////////////////////////////////////////////////////////////////////
+	UPLOAD IMAGE 
+	/////////////////////////////////////////////////////////////////////////
+	if(isset($_POST) && !empty($_POST))
+    {
+        if($_FILES['monfichier']['error'] == 0)
+        var_dump($_FILES);
+            die();
+        {
+            //test taille
+            if($_FILES['monfichier']['size'] > 15000000)
+            {
+                $error = "Votre fichier est trop lourd";
+            }
+            //test extension
+            $extension = strchr($_FILES['monfichier']['name'], '.');
+            if($extension != '.jpg')
+            {
+                $error = "votre fichier n est pas conforme";
+            } else {
+                $error = "pb formulaire";
+            }
+            // au final
+            if(!isset($error))
+            {
+                move_uploaded_file($_FILES['monfichier']['tmp_name'], 'img/'.$_FILES['monfichier']['name']);
+                echo 'Le fichier est chargé';
+            }
+        }
+    }
+
+	
+
 	
