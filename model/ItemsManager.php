@@ -48,15 +48,15 @@ class ItemsManager extends Manager
     public function updateItem($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId)
     {
         // var_dump('testmodel');
-        // die();
+        // die(); //ok
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE items SET ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
         $req->execute(array($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
-        // var_dump($req);
-        // die();
+        // var_dump($itemId);
+        // die(); //ok
         $itemUpdate = $req->fetch();
         // var_dump($itemUpdate);
-        // die();
+        // die(); //boolean false
         return $itemUpdate;
     }
 

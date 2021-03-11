@@ -20,6 +20,7 @@
     <!-- Liste des Produits -->
     <div class="headPost mb-4 text-center">
       <h3>Produits en Ligne</h3>
+      
       <button class="btn btn-primary" id="listItems"><a class="text-white" href="index.php?action=listItemsSeller">Liste des
           produits</a></button>
     </div>

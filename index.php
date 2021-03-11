@@ -135,17 +135,18 @@ try {
                 displayUpdate();
 				break;
                 
-
             case 'submitUpdate' :
-                // var_dump('test');
+                // var_dump('testindex');
                 // die(); //ok
-                submitUpdate();
+                submitUpdate($_GET['id']);
+                // var_dump(submitUpdate($_GET['id']));
+                // die();
                 break;
 
             case 'logout':
-            /* déconnexion */
-            logout();
-            break;
+                /* déconnexion */
+                logout();
+                break;
 
             default :
                 require('view/frontend/common/homeView.php');
