@@ -8,7 +8,7 @@
 <section class="form-registration-seller">
     <div class="container">
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="../../public/img/logo.png" alt="" width="72" height="57">
+            <img class="d-block mx-auto mb-4" src="public/img/logo2.png" alt="logo" width="80" height="80">
             <h2>Détails du compte</h2>
         </div>
 

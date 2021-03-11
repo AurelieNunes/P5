@@ -22,6 +22,9 @@
             <p class="update-link">
                 <a href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
             </p>
+            <p class ="delete-link">
+                <a href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Supprimer cet article</a>
+            </p>
         </div>
     </div>
 </section>

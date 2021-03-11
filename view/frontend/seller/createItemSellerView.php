@@ -7,7 +7,7 @@
 	<div id="managerBlock" class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 		<div id="addBlock">
-			<form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST">
+			<form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST" enctype="multipart/form-data">
                 
                 <label for="ref">Référence</label>
                 <input class="mb-2 col-2" name="ref" id="ref" required />
@@ -29,9 +29,9 @@
                     <input class="mb-2 col-2 mr-2" type="number" name="stock" id="stock" required />
                 </div>
 
-                <!-- <label for="img" class="mt-5">Importer une image</label>
-                <input type="file" class="mb-3" name="img" />
-                <input type="submit" value="Envoyer le fichier" /> -->
+                <label for="img" class="mt-5">Importer une image</label>
+                <input type="file" class="mb-3" name="monfichier" />
+                <input type="submit" class="col-3" value="Envoyer le fichier" />
 
 				<button class="mb-5 col-4 mx-auto" type="submit" value="Ajouter">Ajouter</button>
 			</form>

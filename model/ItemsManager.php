@@ -60,6 +60,16 @@ class ItemsManager extends Manager
         return $itemUpdate;
     }
 
+    // Sup article
+    public function removeItem($itemId){
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM items WHERE id=?');
+        $req->execute(array($itemId));
+        $deleted = $req->fetch();
+
+        return $deleted;
+    }
+
     // //Récup tous les articles
     // public function getItems()
     // {
