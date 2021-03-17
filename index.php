@@ -87,16 +87,28 @@ try {
             case 'createItem' :
                 if (isset($_SESSION)){
                     displayCreateItem();
-                    break;
-                };
+                break;
+                }
             
+            case 'upload' :
+                // var_dump('test index');
+                // die();
+                upload();
+                break;
+                    
             case 'newItem':
-                if (!empty($_SESSION['id']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size']) && !empty($_POST['stock'])) {
-                        newItem($_SESSION['id'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
-                } else {
-                        throw new Exception('Contenu vide !');
-                    } 
-                    break;
+                    // var_dump($_SESSION['id']);
+                    // var_dump($_SESSION['mailSubmitSeller']);
+                    // var_dump($_POST['ref']);
+                    // var_dump($_POST['nameItem']);
+                    // var_dump($_POST['descriptionItem']);
+                    // var_dump($_POST['price']);
+                    // var_dump($_POST['size']);
+                    // var_dump($_POST['stock']);
+                    // var_dump($_POST['picture1']);
+                    // die();
+                if (!empty($_SESSION['id']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size'])
+                ) {
                     // var_dump($_GET['id']);
                     // var_dump($_SESSION['mailSubmitSeller']);
                     // var_dump($_POST['ref']);
@@ -105,7 +117,14 @@ try {
                     // var_dump($_POST['price']);
                     // var_dump($_POST['size']);
                     // var_dump($_POST['stock']);
+                    // var_dump($_POST['picture1']);
                     // die();
+                        newItem ($_SESSION['id'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
+                } else {
+                        throw new Exception('Contenu vide !');
+                    } 
+                break;
+                    
 
             // case 'allItems':
             //     getAllItems();

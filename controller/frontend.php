@@ -143,28 +143,67 @@ require_once './model/Manager.php';
         require 'view/frontend/seller/createItemSellerView.php';
     }
 
+    function upload()
+    {
+        // var_dump($_FILES);
+        // die();
+        // ENCTYPE SUPPORTED
+        if (!empty($_FILES)) {
+            // FILE ARE SEND
+            
+            if (($_FILES['picture1']['size']) !== 0) {
+                $extension = explode('/', $_FILES['picture1']['type'])[1];
+                // var_dump($extension);
+                // die();
+                // EXTENSION ARE IN GOOD FORMAT
+                if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+                    // FILE AREN'T TO BIG
+                    if ($_FILES['picture1']['size'] < 1000000) {
+                        $name = $_FILES['picture1']['name'];
+                        $tmp_name = $_FILES['picture1']['tmp_name'];
+                        $path = 'assets/pictures/' . $name;
+                    //   if  (file_exists ($path)){
+                    //       echo 'ok';
+                    //   }
+                        // var_dump($path);
+                        // die();
+                        move_uploaded_file($tmp_name, $path);
+                    } else {
+                        throw new Error('size too big');
+                    }
+                } else {
+                    throw new Error('no good format');
+                }
+            } else {
+                throw new Error('thx add files');
+            }
+        } else {
+            throw new Error('Entype multipart/form-data is missing');
+        }
+    }
+
     function newItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
     {
-        // var_dump('test');
-        // die();
+        var_dump('test front newItem');
+        die();
+        // $uploaded = upload($path);
         $itemsManager = new ItemsManager();
 
         $itemAdd = $itemsManager->createItem($id_seller,$ref, $nameItem, $descriptionItem, $price, $size, $stock);
         $itemAdd;
-        // var_dump($itemAdd);
+        // var_dump();
         // die();
-
-        
+    
         if ($itemAdd === false) {
             throw new Exception('Impossible d\'ajouter l\'article !');
         }
         else {
-            Header ('Location: index.php?action=dashboardSeller&new-item=success');
-        }
-
+             Header ('Location: index.php?action=dashboardSeller&new-item=success');
+            }
+    }
         // var_dump($itemAdd);
         // die();
-    }
+    
 
     // Récup articles d'un vendeur
     function getItemsSellerId()

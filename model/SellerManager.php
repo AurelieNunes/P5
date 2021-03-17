@@ -72,6 +72,15 @@ class SellerManager extends Manager
         return $sellers;
     }
 
+    public function completeAccountSeller($address,$cp,$citySeller,$tel)
+    {
+        $db = $this->dbConnect();
+        $completed = $db->prepare('INSERT INTO seller (address,cp,citySeller,tel) VALUES (?,?,?,?)');
+        $completed->execute(array($address,$cp,$citySeller,$tel));
+
+        return $completed;
+    }
+
     public function deleteSeller($sellerId)
     {
         $db = $this->dbConnect();

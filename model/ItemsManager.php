@@ -11,17 +11,19 @@ class ItemsManager extends Manager
         // var_dump($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock);
         // die();
         $db = $this->dbConnect();
-        $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock) VALUES (?,?,?,?,?,?,?)');
+        $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock, picture1) VALUES (?,?,?,?,?,?,?,?)');
         $addItem->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock));
         
         return $addItem;
+        // var_dump($addItem);
+        // die();
     }
     
     //Récup articles selon vendeur
     public function getItemsSeller($sellerId)
     {
         $db = $this->dbConnect();
-        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock, picture1 FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
         $itemsSeller = $req->fetchAll();
         // var_dump($itemsSeller);
@@ -36,7 +38,7 @@ class ItemsManager extends Manager
         // var_dump('testModel');
         // die();
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
+        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock, picture1 FROM items WHERE id = ?');
         $req->execute(array($itemId));
         $item = $req->fetch();
         // var_dump($item);
