@@ -1,35 +1,63 @@
 <?php
+
 namespace P5\model;
 
 use \P5\model\Manager;
 
-class ItemsManager extends Manager 
+class ItemsManager extends Manager
 {
+    /**
+     * Get all ref in DATABASE
+     * @return array tableau de string qui correspond à ttes les ref de la bdd
+     */
+    public function getAllRef(): array
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT ref FROM items');
+        $refs = $req -> fetchAll();
+
+        return $refs;
+    }
+
+    /**
+     * Add item in DATABASE
+     * @param string
+     * @param int
+     *
+     */
     //Ajout d'un article
-    public function createItem ($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock) 
+    public function createItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path): void
     {
         // var_dump($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock);
         // die();
         $db = $this->dbConnect();
-        $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock) VALUES (?,?,?,?,?,?,?)');
-        $addItem->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock));
-        
-        return $addItem;
+        $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock, url_img) VALUES (?,?,?,?,?,?,?,?)');
+        $addItem->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path));
     }
-    
+
+    /**
+     * Get all item of one seller
+     * @return array retourne un tableau contenant tous les articles d'un vendeur
+     * @param int $sellerId
+     */
     //Récup articles selon vendeur
-    public function getItemsSeller($sellerId)
+    public function getItemsSeller($sellerId): array
     {
         $db = $this->dbConnect();
-        $req = $db-> prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
         $itemsSeller = $req->fetchAll();
         // var_dump($itemsSeller);
         // die();
-       
+
         return $itemsSeller;
     }
 
+    /**
+     * Get item by id
+     * @return array tableau avec toutes les informations d'un article selon son id
+     * @param int $itemId
+     */
     //Récup un article selon son id
     public function getItem($itemId)
     {
@@ -44,6 +72,10 @@ class ItemsManager extends Manager
         return $item;
     }
 
+    /**
+     * Update item
+     * 
+     */
     // //Mettre à jour article
     public function updateItem($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId)
     {
@@ -60,8 +92,15 @@ class ItemsManager extends Manager
         return $itemUpdate;
     }
 
+    /**
+     * Delete item by id
+     * 
+     * @param int $itemId
+     * @return ...
+     */
     // Sup article
-    public function removeItem($itemId){
+    public function removeItem($itemId)
+    {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM items WHERE id=?');
         $req->execute(array($itemId));

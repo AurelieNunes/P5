@@ -14,29 +14,15 @@
 
         <div class="col-md-7 col-lg-8 mx-auto">
             <h4 class="h5 mb-3">Informations</h4>
-            <form class="needs-validation" novalidate>
+
+            <form action="index.php?action=dashboardSeller&addInfoSeller=success" class="needs-validation" method="POST">
                 <div class="row g-3">
-
-                    <div class="col-sm-6">
-                        <label for="companySeller" class="form-label">Nom de la société</label>
-                        <input type="text" name="companySeller" class="form-control" id="companySeller">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="siret" class="form-label">N° de Siret</label>
-                        <input type="text" class="form-control" id="siret" placeholder="00000000000000" name="siret">
-                    </div>
-
-                    <div class="col-12">
-                        <label for="email" class="form-label">Adresse Email </label>
-                        <input type="email" class="form-control" id="mailSeller" name="mailSeller" placeholder="you@example.com">
-                    </div>
 
                     <h4 class="h6 w-100 mx-auto mt-5 mb-3 text-center">Adresse</h4>
 
                     <div class="col-12">
                         <label for="address" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="address" name="address">
+                        <input type="text" class="form-control" id="addressSeller" name="addressSeller">
                     </div>
 
                     <div class="col-md-4">
@@ -46,7 +32,7 @@
 
                     <div class="col-md-8">
                         <label for="city" class="form-label">Ville</label>
-                        <input type="text" class="form-control" id="city" placeholder="Ville" name="city">
+                        <input type="text" class="form-control" id="citySeller" placeholder="Ville" name="citySeller">
                     </div>
 
                     <div class="col-md-4">
@@ -60,18 +46,19 @@
                 <h4 class="h6 mb-3 text-center changePassword">Changer mon mot de passe</h4>
                 <div class="password mb-5">
                     <label for="inputPassword" class="visually-hidden">Mot de passe</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password">
                     <label for="pass_confirm" class="visually-hidden">Confirmez votre mot de passe</label>
                     <input class="form-control" type="password" name="pass_confirm" id="pass_confirm"
-                        placeholder="Password" required />
+                        placeholder="Password"/>
                 </div>
 
                 <hr class="my-4">
+                
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Enregister les modifications</button>
                 <div class="deleteAccount">
                     <a href="#">Supprimer mon compte</a>
                 </div>
-
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Enregister les modifications</button>
             </form>
         </div>
     </div>
