@@ -1,4 +1,7 @@
 <?php
+
+use P5\utils\Utils;
+
 session_start();
 
 require './controller/frontend.php';
@@ -9,51 +12,50 @@ require './model/ItemsManager.php';
 
 
 try {
-    if(isset($_GET['action'])){
-        switch ($_GET['action'])
-        {
+    if (isset($_GET['action'])) {
+        switch ($_GET['action']) {
             case 'subscribeCustomer':
                 /* Affichage inscription Client*/
-				displaySubscribe();
-				break;
-            
+                displaySubscribe();
+                break;
+
             case 'addCustomer':
                 /* Inscription Client*/
-            if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mailCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer'])) {
-                if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
-                    if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
-                        addCustomer(strip_tags($_POST['lastName']),strip_tags($_POST['firstName']), strip_tags($_POST['mailCustomer']), strip_tags($_POST['passCustomer']));
+                if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mailCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer'])) {
+                    if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
+                        if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
+                            addCustomer(strip_tags($_POST['lastName']), strip_tags($_POST['firstName']), strip_tags($_POST['mailCustomer']), strip_tags($_POST['passCustomer']));
+                        } else {
+                            throw new Exception('Les deux mots de passe ne correspondent pas.');
+                        }
                     } else {
-                        throw new Exception('Les deux mots de passe ne correspondent pas.');
+                        throw new Exception('Pas d\'adresse mail valide.');
                     }
                 } else {
-                    throw new Exception('Pas d\'adresse mail valide.');
+                    throw new Exception('Tous les champs ne sont pas remplis !');
                 }
-            } else {
-                throw new Exception('Tous les champs ne sont pas remplis !');
-            }
-            break;
+                break;
 
-            case 'loginCustomer' :
+            case 'loginCustomer':
                 /* Affichage connexion Client*/
                 displayLogin();
                 break;
 
-            case 'loginSeller' :
+            case 'loginSeller':
                 /* Affichage connexion Vendeur*/
                 displayLogin();
                 break;
 
-            case 'loginSubmitCustomer' :
+            case 'loginSubmitCustomer':
                 /* Connexion client */
                 loginSubmitCustomer(strip_tags($_POST['mailSubmitCustomer']), strip_tags($_POST['passSubmitCustomer']));
-				break;
+                break;
 
-            case 'subscribeSeller' :
+            case 'subscribeSeller':
                 /* Affichage inscription vendeur */
                 displaySubscribe();
                 break;
-            
+
             case 'addSeller':
                 /* Ajout vendeur */
                 if (!empty($_POST['companySeller']) && !empty($_POST['siret']) && !empty($_POST['mailSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller'])) {
@@ -71,71 +73,60 @@ try {
                 }
                 break;
 
-            case 'loginSubmitSeller' :
+            case 'loginSubmitSeller':
                 /* connexion vendeur */
                 loginSubmitSeller(strip_tags($_POST['mailSubmitSeller']), strip_tags($_POST['passSubmitSeller']));
                 break;
-            
-            case 'dashboardSeller' :
+
+            case 'dashboardSeller':
                 displayDashboardSeller();
                 break;
 
-            case 'accountSeller' :
+            case 'accountSeller':
                 displayAccountSeller();
                 break;
 
-            case 'createItem' :
-                if (isset($_SESSION)){
+            case 'createItem':
+                if (isset($_SESSION)) {
                     displayCreateItem();
-                break;
+                    break;
                 }
-            
-            case 'upload' :
-                // var_dump('test index');
-                // die();
-                upload();
-                break;
-                    
-            case 'newItem':
-                    // var_dump($_SESSION['id']);
-                    // var_dump($_SESSION['mailSubmitSeller']);
-                    // var_dump($_POST['ref']);
-                    // var_dump($_POST['nameItem']);
-                    // var_dump($_POST['descriptionItem']);
-                    // var_dump($_POST['price']);
-                    // var_dump($_POST['size']);
-                    // var_dump($_POST['stock']);
-                    // var_dump($_POST['picture1']);
-                    // die();
-                if (!empty($_SESSION['id']) && !empty($_POST['ref']) && !empty($_POST['nameItem']) && !empty($_POST['descriptionItem']) && !empty($_POST['price']) && !empty($_POST['size'])
-                ) {
-                    // var_dump($_GET['id']);
-                    // var_dump($_SESSION['mailSubmitSeller']);
-                    // var_dump($_POST['ref']);
-                    // var_dump($_POST['nameItem']);
-                    // var_dump($_POST['descriptionItem']);
-                    // var_dump($_POST['price']);
-                    // var_dump($_POST['size']);
-                    // var_dump($_POST['stock']);
-                    // var_dump($_POST['picture1']);
-                    // die();
-                        newItem ($_SESSION['id'], $_POST['ref'], $_POST['nameItem'],$_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock']);
-                } else {
-                        throw new Exception('Contenu vide !');
-                    } 
-                break;
-                    
 
-            // case 'allItems':
-            //     getAllItems();
-            //     // var_dump('ok');
-            //     // die();
-            //     break;
-            
-            case 'listItemsSeller' :
+            case 'newItem':
+                $utils = new Utils();
+                if ($utils->isIsset([
+                        $_SESSION['id'],
+                        $_POST['ref'],
+                        $_POST['nameItem'],
+                        $_POST['descriptionItem'],
+                        $_POST['price'],
+                        $_POST['size']
+                    ])) {
+                    newItem(
+                        $_SESSION['id'],
+                        $_POST['ref'],
+                        $_POST['nameItem'],
+                        $_POST['descriptionItem'],
+                        $_POST['price'],
+                        $_POST['size'],
+                        $_POST['stock']
+                    );
+                } else {
+                    throw new Exception('Contenu vide !');
+                }
+                break;
+
+
+                // case 'allItems':
+                //     getAllItems();
+                //     // var_dump('ok');
+                //     // die();
+                //     break;
+
+            case 'listItemsSeller':
                 getItemsSellerId();
                 break;
-            
+
             case 'item':
                 // var_dump('ok');
                 // die();
@@ -145,48 +136,46 @@ try {
                 getItemId();
                 // var_dump(getItemId());
                 // die();
-            // } else {
-            //     // var_dump('nop');
-            //     // die();
-            //     throw new Exception('Aucun article à afficher');
-            // }
+                // } else {
+                //     // var_dump('nop');
+                //     // die();
+                //     throw new Exception('Aucun article à afficher');
+                // }
                 break;
 
-            case 'displayUpdateItem' :
+            case 'displayUpdateItem':
                 // var_dump('testdisplayindex');
                 // die();
                 displayUpdate();
-				break;
-                
-            case 'submitUpdate' :
+                break;
+
+            case 'submitUpdate':
                 // var_dump('testindex');
                 // die(); //ok
                 submitUpdate($_GET['id']);
                 // var_dump(submitUpdate($_GET['id']));
                 // die();
                 break;
-            
-            case 'deleteItem' :
+
+            case 'deleteItem':
                 deleteItem(intval($_GET['id']));
                 // var_dump('test');
                 // die();
-                break; 
+                break;
 
             case 'logout':
                 /* déconnexion */
                 logout();
                 break;
 
-            default :
+            default:
                 require('view/frontend/common/homeView.php');
-            }           
-    } else 
-        {
-            require('view/frontend/common/homeView.php'); 
         }
-    } catch (Exception $e) 
-        {
-            $errorMessage = $e->getMessage();
-            // var_dump($errorMessage);
-            require('view/frontend/common/errorView.php');
-        }
+    } else {
+        require('view/frontend/common/homeView.php');
+    }
+} catch (Exception $e) {
+    $errorMessage = $e->getMessage();
+    // var_dump($errorMessage);
+    require('view/frontend/common/errorView.php');
+}

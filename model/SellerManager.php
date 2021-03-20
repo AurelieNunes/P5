@@ -5,16 +5,23 @@ use \P5\model\Manager;
 
 class SellerManager extends Manager 
 {
-    public function subscribeSeller($company, $siret, $mail, $pass)
+    /**
+     * Add seller in DATABASE
+     * @param string/int $company,$siret, $mail, $pass
+     */
+    public function subscribeSeller(string $company, int $siret, string $mail, string $pass): void
     {
         $db = $this->dbConnect();
         $newSeller = $db->prepare('INSERT INTO seller (company, siret, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
         $newSeller->execute(array($company, $siret, $mail, $pass));
-
-        return $newSeller;
     }
 
-    public function loginSeller($mail)
+    /**
+     * Get seller
+     * @param string $mail
+     * @return array
+     */
+    public function loginSeller(string $mail): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, pass FROM seller WHERE mail = ?');
@@ -24,7 +31,12 @@ class SellerManager extends Manager
         return $seller;
     }
 
-    public function checkCompany($company)
+    /**
+     * Check company name seller
+     * @param string $company
+     * @return
+     */
+    public function checkCompany(string $company)
     {
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT company FROM seller WHERE company = ?');
@@ -34,7 +46,12 @@ class SellerManager extends Manager
 		return $companySeller;
 	}
 
-    public function checkMail($mail) {
+    /**
+     * Check mail seller
+     * @param string $mail
+     * @return
+     */
+    public function checkMail(string $mail) {
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
 		$req->execute(array($mail));
@@ -43,7 +60,12 @@ class SellerManager extends Manager
 		return $mailSeller;
 	}
 
-    public function checkSiret($siret)
+    /**
+     * check siret number
+     * @param int $siret
+     * @return 
+     */
+    public function checkSiret(int $siret)
     {
         $db= $this->dbConnect();
         $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
@@ -52,9 +74,13 @@ class SellerManager extends Manager
         return $siretCheck;
     }
 
-    public function getSeller($sellerId)
+    /**
+     * Get seller by id
+     * @param int $sellerId
+     * @return array
+     */
+    public function getSeller(int $sellerId): array
     {
-        
         $db= $this->dbConnect();
         $req = $db->prepare('SELECT id, company, siret, mail, pass, DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');
         $req->execute(array($sellerId));
@@ -64,24 +90,11 @@ class SellerManager extends Manager
         return $seller;
     }
 
-    public function getSellers()
-    {
-        $db = $this->dbConnect();
-        $sellers = $db->query('SELECT id, company from seller WHERE id = ?,company = ?');
-
-        return $sellers;
-    }
-
-    public function completeAccountSeller($address,$cp,$citySeller,$tel)
-    {
-        $db = $this->dbConnect();
-        $completed = $db->prepare('INSERT INTO seller (address,cp,citySeller,tel) VALUES (?,?,?,?)');
-        $completed->execute(array($address,$cp,$citySeller,$tel));
-
-        return $completed;
-    }
-
-    public function deleteSeller($sellerId)
+    /*
+     * Delete seller by id
+     * @param int $sellerId
+     */
+    public function deleteSeller(int $sellerId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM seller WHERE id = ?');

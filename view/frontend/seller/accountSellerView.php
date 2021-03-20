@@ -15,12 +15,7 @@
         <div class="col-md-7 col-lg-8 mx-auto">
             <h4 class="h5 mb-3">Informations</h4>
 
-            <div class="col-sm-6">
-                <h6><?= $_SESSION['companySeller']; ?></h6>
-                <p>N° de Siret : <?= $_SESSION['siret']; ?></p>
-            </div>
-
-            <form action="index.php?action=addInfo=success" class="needs-validation" method="POST">
+            <form action="index.php?action=dashboardSeller&addInfoSeller=success" class="needs-validation" method="POST">
                 <div class="row g-3">
 
                     <h4 class="h6 w-100 mx-auto mt-5 mb-3 text-center">Adresse</h4>
