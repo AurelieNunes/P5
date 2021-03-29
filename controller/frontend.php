@@ -8,9 +8,14 @@ use P5\utils\Utils;
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
 
-function displaySubscribe()
+function displayCreateItem()
 {
-    require('view/frontend/common/subscribeView.php');
+    require 'view/frontend/seller/createItemSellerView.php';
+}
+
+function displayDashboardSeller()
+{
+    require 'view/frontend/seller/dashboardSellerView.php';
 }
 
 function displayLogin()
@@ -18,7 +23,16 @@ function displayLogin()
     require('view/frontend/common/loginView.php');
 }
 
-function addCustomer($lastName, $firstName, $mail, $pass)
+function displaySubscribe()
+{
+    require('view/frontend/common/subscribeView.php');
+}
+
+/**
+ * Add Customer
+ * @param string $lastName, $firstName, $mail, $pass
+ */
+function addCustomer(string $lastName, string $firstName, string $mail, string $pass): void
 {
 
     $customerManager = new CustomerManager();
@@ -45,15 +59,12 @@ function addCustomer($lastName, $firstName, $mail, $pass)
     }
 }
 
-// function displaySubscribeSeller(){
-//     require('view/backend/subscribeView.php');
-// }
-
-// function displayLoginSeller(){
-//     require('view/backend/loginView.php');
-// }
-
-function addSeller($company, $siret, $mail, $pass)
+/**
+ * Add seller
+ * @param string $company, $mail, $pass
+ * @param int $siret
+ */
+function addSeller(string $company, int $siret, string $mail, string $pass): void
 {
     $sellerManager = new SellerManager();
 
@@ -83,8 +94,46 @@ function addSeller($company, $siret, $mail, $pass)
         // die;
         // redirige vers page d'accueil avec le nouveau paramètre
 
-        Header('Location: index.php?action=sellerPanel');
+        Header('Location: index.php?action=dashboardSeller');
     }
+}
+
+/**
+ * Delete item by Id
+ * @param int $itemId
+ */
+function deleteItem(int $itemId): void
+{
+    $itemsManager = new ItemsManager();
+    $deletedItem = $itemsManager->removeItem($itemId);
+
+    Header('Location: index.php?action=dashboardSeller&delete-item=success');
+}
+
+/**
+ * Update Item
+ */
+function displayUpdate(): void
+{
+    // var_dump('testDisplay');
+    // die(); ok
+    $itemsManager = new ItemsManager();
+    $item = $itemsManager->getItem($_GET['id']);
+    // var_dump($item);
+    // die();
+    require('view/frontend/seller/updateItemView.php');
+}
+
+/**
+ * Display update Seller account
+ */
+function displayUpdateSeller()
+{
+    $sellerManager = new SellerManager();
+    $seller = $sellerManager->getSeller($_SESSION['id']);
+    // var_dump($seller);
+    // die();boolean false
+    require('view/frontend/seller/updateSellerView.php');
 }
 
 /**
@@ -105,7 +154,52 @@ function isUniqueRef(string $ref): bool
     return true;
 }
 
-function loginSubmitCustomer($mail, $pass)
+/**
+ * Get item by id
+ */
+function getItemId(): void
+{
+    $itemsManager = new ItemsManager();
+    $item = $itemsManager->getItem($_GET['id']);
+    // var_dump($item);
+    // die();
+    require('view/frontend/seller/itemView.php');
+}
+
+/**
+ * Get all items by seller
+ */
+function getItemsSellerId(): void
+{
+    $itemsManager = new ItemsManager();
+    $sellerManager = new SellerManager();
+    $items = $itemsManager->getItemsSeller($_SESSION['id']);
+    // var_dump($items);
+    // die();
+    if ($items) {
+        $seller = $sellerManager->getSeller($_SESSION['id']);
+        // var_dump($seller);
+        // die();
+    } else {
+        Header('Location : index.php?=dashboardSeller');
+    }
+    require('view/frontend/seller/listItemsView.php');
+}
+
+// function getSellerbyId()
+// {
+//     $sellerManager = new SellerManager();
+//     $sellerbyId =$sellerManager->getSeller($_SESSION['id']);
+
+//     require('view/frontend/seller/updateSellerView.php');
+
+// }
+
+/**
+ * Submit login customer
+ * @param string $mail, $pass
+ */
+function loginSubmitCustomer(string $mail, string $pass): void
 {
 
     $customerManager = new CustomerManager();
@@ -126,17 +220,11 @@ function loginSubmitCustomer($mail, $pass)
     }
 }
 
-function displayDashboardSeller()
-{
-    require 'view/frontend/seller/dashboardSellerView.php';
-}
-
-function displayAccountSeller()
-{
-    require 'view/frontend/seller/accountSellerView.php';
-}
-
-function loginSubmitSeller($mail, $pass): void
+/**
+ * Submit login seller
+ * @param string $mail, $pass
+ */
+function loginSubmitSeller(string $mail, string $pass): void
 {
     $sellerManager = new SellerManager();
     $seller = $sellerManager->loginSeller($mail);
@@ -156,7 +244,10 @@ function loginSubmitSeller($mail, $pass): void
     }
 }
 
-function logout()
+/**
+ * Logout
+ */
+function logout(): void
 {
     $_SESSION = array();
     session_destroy();
@@ -164,11 +255,11 @@ function logout()
     Header('Location: index.php?logout=success');
 }
 
-function displayCreateItem()
-{
-    require 'view/frontend/seller/createItemSellerView.php';
-}
-
+/**
+ * New item
+ * @param int $id_seller, $price, $stock
+ * @param string $ref, $nameItem, $descriptionItem, $size
+ */
 function newItem(int $id_seller, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
 {
     // ETAPE 1 CONTROL DE L'ARTICLE
@@ -225,65 +316,26 @@ function newItem(int $id_seller, string $ref, string $nameItem, string $descript
     }
 }
 
-// Récup articles d'un vendeur
-function getItemsSellerId()
+/**
+ * Update item
+ */
+function submitUpdate(): void
 {
-    $itemsManager = new ItemsManager();
-    $sellerManager = new SellerManager();
-    $items = $itemsManager->getItemsSeller($_SESSION['id']);
-    // var_dump($items);
-    // die();
-    if ($items) {
-        $seller = $sellerManager->getSeller($_SESSION['id']);
-        // var_dump($seller);
-        // die();
-    } else {
-        Header('Location : index.php?=dashboardSeller');
-    }
-    require('view/frontend/seller/listItemsView.php');
-}
-
-//Recup article selon son id
-function getItemId()
-{
-    $itemsManager = new ItemsManager();
-    $item = $itemsManager->getItem($_GET['id']);
-    // var_dump($item);
-    // die();
-    require('view/frontend/seller/itemView.php');
-}
-
-//Modifier un article
-function displayUpdate()
-{
-    // var_dump('testDisplay');
-    // die(); ok
-    $itemsManager = new ItemsManager();
-    $item = $itemsManager->getItem($_GET['id']);
-    // var_dump($item);
-    // die();
-    require('view/frontend/seller/updateItemView.php');
-}
-
-// //soumettre modif article
-function submitUpdate()
-{
-    // var_dump('test2');
-    // die(); //ok
     $itemsManager = new ItemsManager();
     $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
-    // var_dump($_POST['stock']);
-    // die(); //ok
-    // var_dump($updated);
-    // die(); //false
+
     Header('Location:index.php?action=dashboardSeller&submit-update=success');
 }
 
-// supprimer article vendeur
-function deleteItem($itemId)
+/**
+ * Update seller info
+ */
+function submitUpdateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId)
 {
-    $itemsManager = new ItemsManager();
-    $deletedItem = $itemsManager->removeItem($itemId);
+    $sellerManager = new SellerManager();
+    $sellerUp = $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId);
+    // var_dump($sellerUp);
+    // die();
 
-    Header('Location: index.php?action=dashboardSeller&delete-item=success');
+    Header('Location:index.php?action=dashboardSeller&submit-update-seller=success');
 }
