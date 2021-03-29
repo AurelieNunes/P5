@@ -45,14 +45,14 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-md navbar bg-primary fixed-top">
-        <div class="collapse navbar-collapse justify-content-around primary" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
-                <li class="nav-item active">
-                    <a class="nav-link text-light" aria-current="page" href="dashboardSellerView.php">Accueil</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <?php 
+            <div class="collapse navbar-collapse justify-content-around primary" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" aria-current="page" href="dashboardSellerView.php">Accueil</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <?php 
                         if (!empty($_SESSION))  {
                             echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
                         } else {
@@ -63,15 +63,15 @@
                             echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
                         }
                         ?>
-                </li>
-                <!-- <li class="nav-item">
+                    </li>
+                    <!-- <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=loginCustomer">Se connecter</a>
                         </li> -->
-                <!-- <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
                         </li> -->
-            </ul>
-        </div>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -106,7 +106,6 @@
                         <p>Contact</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </footer>

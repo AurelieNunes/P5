@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class="container-fluid d-flex">
-  <a href="index.php?action=sellerPanel"></a>
+  <a href="index.php?action=dashboardSeller"></a>
   <section id="adminPanel" class="col-12">
     <div class="jumbotron mb-0 pb-5 bg-primary">
       <h1 class="text-center">

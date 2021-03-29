@@ -17,7 +17,7 @@ class CustomerManager extends Manager
 		$req->execute(array($lastName));
 		$usernameValidity = $req->fetch();
 
-		return $usernameValidity;
+        return $usernameValidity;
 	}
 
     /**
@@ -46,6 +46,21 @@ class CustomerManager extends Manager
         $deletedCustomer = $req->execute(array($customerId));
 
         return $deletedCustomer;
+    }
+
+    /**
+     * Get customer by id
+     * @param int $customerId
+     * @return array
+     */
+    public function getCustomer($customerId): array
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, lastName, firstName,addressCustomer, cpCustomer, cityCustomer, telCustomer, mail, pass FROM customer WHERE id=?');
+        $req->execute(array($customerId));
+        $customer = $req->fetch();
+
+        return $customer;
     }
 
     /**
@@ -85,5 +100,20 @@ class CustomerManager extends Manager
         $db = $this->dbConnect();
         $newCustomer = $db->prepare('INSERT INTO customer (lastName, firstName, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
         $newCustomer->execute(array($lastName, $firstName, $mail, $pass));
+    }
+
+    /**
+     * Update info customer
+     */
+    public function updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId)
+    {
+        // var_dump('test db');
+        // die();
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE customer SET addressCustomer=?, cpCustomer=?, cityCustomer=?, telCustomer=? WHERE id=?');
+        $req->execute(array($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId));
+        $customerUpdate = $req->fetch();
+
+        return $customerUpdate;
     }
 }

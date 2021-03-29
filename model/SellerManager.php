@@ -67,7 +67,7 @@ class SellerManager extends Manager
      * @param int $sellerId
      * @return array
      */
-    public function getSeller($sellerId)
+    public function getSeller($sellerId): array
     {
         $db= $this->dbConnect();
         $req = $db->prepare('SELECT id, company, addressSeller, cpSeller, citySeller, siret, telSeller, mail, pass DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');

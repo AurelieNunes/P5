@@ -79,9 +79,19 @@ try {
                 }
                 break;
 
+            case 'accountCustomer' :
+                displayAccountCustomer();
+                break;
+
             case 'dashboardSeller':
                 displayDashboardSeller();
                 break;
+
+            case 'deleteAccountCustomer' :
+                deleteAccountCustomer($_SESSION['id']);
+            
+            case 'deleteAccountSeller':
+                deleteAccountSeller($_SESSION['id']);
 
             case 'deleteItem':
                 deleteItem(intval($_GET['id']));
@@ -155,6 +165,12 @@ try {
 
             case 'submitUpdate':
                 submitUpdate($_GET['id']);
+                break;
+
+            case 'submitUpdateCustomer':
+                // var_dump('test index');
+                // die();
+                submitUpdateCustomer($_POST['addressCustomer'],$_POST['cpCustomer'], $_POST['cityCustomer'], $_POST['telCustomer'], $_SESSION['id']);
                 break;
 
             case 'submitUpdateSeller':
