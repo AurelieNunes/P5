@@ -29,7 +29,7 @@
     <div class="headPost mb-4 text-center">
       <h3>Mon compte</h3>
       <button class="btn btn-primary" id="accountSeller"><a class="text-white"
-          href="index.php?action=accountSeller">Mon compte</a></button>
+          href="index.php?action=displayUpdateSeller">Mon compte</a></button>
     </div>
 
     <div class="row">
@@ -47,7 +47,7 @@
               </a>
             </li>
             <li class="nav-item ml-3">
-              <a href="index.php?action=accountSeller">
+              <a href="index.php?action=displayUpdateSeller">
                 Mon Compte
               </a>
             </li>
