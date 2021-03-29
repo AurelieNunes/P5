@@ -13,6 +13,11 @@ function displayCreateItem()
     require 'view/frontend/seller/createItemSellerView.php';
 }
 
+function displayAccountCustomer()
+{
+    require 'view/frontend/customer/accountClientView.php';
+}
+
 function displayDashboardSeller()
 {
     require 'view/frontend/seller/dashboardSellerView.php';
@@ -96,6 +101,30 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
 
         Header('Location: index.php?action=dashboardSeller');
     }
+}
+
+/**
+ * Delete Account Customer
+ */
+function deleteAccountCustomer($customerId)
+{
+    $customerManager = new CustomerManager();
+    $deletedCustomer = $customerManager->deleteCustomer($customerId);
+
+    Header('Location: index.php?action=home&delete-account=success');
+}
+
+
+/**
+ * Delete Account Seller
+ * 
+ */
+function deleteAccountSeller($sellerId)
+{
+    $sellerManager = new SellerManager();
+    $deletedSeller = $sellerManager->deleteSeller($sellerId);
+
+    Header ('Location: index.php?action=dashboardSeller&delete-account=success');
 }
 
 /**
@@ -325,6 +354,17 @@ function submitUpdate(): void
     $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
 
     Header('Location:index.php?action=dashboardSeller&submit-update=success');
+}
+
+/**
+ * Update customer info
+ */
+function submitUpdateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId)
+{
+    $customerManager = new CustomerManager();
+    $customerUp = $customerManager->updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId);
+
+    Header('Location:index.php?action=accountClientView&submit-update-customer=success');
 }
 
 /**

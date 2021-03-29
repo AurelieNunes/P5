@@ -6,20 +6,28 @@
 	<div class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 		<div id="update">
-			<form class="d-flex flex-column" action="index.php?action=submitUpdateSeller&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
-                
-                <label for="ref">Adresse</label>
-                <input type="text" class="mb-2 col-6" name="addressSeller" value="<?= htmlspecialchars($seller['addressSeller']); ?>"/>
+			<form class="d-flex flex-column"
+				action="index.php?action=submitUpdateSeller&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
+
+				<label for="ref">Adresse</label>
+				<input type="text" class="mb-2 col-6" name="addressSeller"
+					value="<?= htmlspecialchars($seller['addressSeller']); ?>" />
 
 				<label for="cp">Code postal</label>
-                <input class="mb-2 col-6" type="number" name="cpSeller" value="<?= htmlspecialchars($seller['cpSeller']); ?>"/>
+				<input class="mb-2 col-6" type="number" name="cpSeller"
+					value="<?= htmlspecialchars($seller['cpSeller']); ?>" />
 
-                <label for="citySeller">Ville</label>
-                <input class="mb-2 col-6" type="text" name="citySeller" value="<?= htmlspecialchars($seller['citySeller']); ?>"/>
+				<label for="citySeller">Ville</label>
+				<input class="mb-2 col-6" type="text" name="citySeller"
+					value="<?= htmlspecialchars($seller['citySeller']); ?>" />
 
-                <label for="tel" class="mr-2">Téléphone</label>
-                <input class="mb-2 col-2 mr-2" type="number" name="telSeller" value="<?= htmlspecialchars($seller['telSeller']); ?>">
+				<label for="tel" class="mr-2">Téléphone</label>
+				<input class="mb-2 col-2 mr-2" type="number" name="telSeller"
+					value="<?= htmlspecialchars($seller['telSeller']); ?>">
 
+				<div class="deleteAccount">
+					<a href="index.php?action=deleteAccountSeller">Supprimer mon compte</a>
+				</div>
 				<button class="mb-5 col-4 mx-auto" type="submit" value="Modifier">Modifier</button>
 			</form>
 		</div>

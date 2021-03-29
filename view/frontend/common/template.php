@@ -74,7 +74,7 @@
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
-                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="view/frontend/customer/dashboardClientView.php"><i
+                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="index.php?action=accountCustomer"><i
                             class="text-light fas fa-user"></i></a></li>';
                         }
                         ?>

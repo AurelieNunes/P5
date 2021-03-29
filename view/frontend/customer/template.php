@@ -55,10 +55,12 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/customer/listSellersView.php">Commerçants</a>
+                            <a class="nav-link text-light"
+                                href="view/frontend/customer/listSellersView.php">Commerçants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/customer/listCategoryView.php">Catégories</a>
+                            <a class="nav-link text-light"
+                                href="view/frontend/customer/listCategoryView.php">Catégories</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
