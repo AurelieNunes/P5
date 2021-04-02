@@ -28,25 +28,55 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link href="../../public/css/style.css" rel="stylesheet">
+    <link href="./public/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="jumbotron fixed-top">
             <div class="home-title d-flex justify-content-around">
-                <p class="logo">
-                    <img src="../../public/img/logo2.png" alt="logo site">
+                <p class="logo col-1">
+                    <img src="public/img/logo2.png" alt="logo site">
                 </p>
                 <h1 class="title text-primary">Mes P'tites Emplettes Narbonnaises</h1>
                 <p class="narbonne">
-                    <img src="../../public/img/narbonne.jpg" alt="">
+                    <img src="public/img/narbonne.jpg" alt="">
                 </p>
             </div>
         </div>
+        <nav class="navbar navbar-expand-md navbar bg-primary fixed-top">
+            <div class="collapse navbar-collapse justify-content-around primary" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" aria-current="page" href="dashboardSellerView.php">Accueil</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <?php 
+                        if (!empty($_SESSION))  {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginSeller">Connexion / Inscription</a></li>';
+                        }
+                        
+                        if (!empty($_SESSION)) {
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
+                        }
+                        ?>
+                    </li>
+                    <!-- <li class="nav-item">
+                            <a class="nav-link text-light" href="index.php?action=loginCustomer">Se connecter</a>
+                        </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
+                        </li> -->
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <main class="main-template">
+
+    <main class="main-template-back">
         <!-- Marketing messaging and featurettes
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -56,9 +86,9 @@
             <?= $content ?>
 
         </section>
-        </main>
+    </main>
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer-seller">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex mb-2">
             <ul class="navbar-nav mr-auto w-100 justify-content-around">
                 <li class="nav-item active">
@@ -76,7 +106,6 @@
                         <p>Contact</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </footer>

@@ -1,0 +1,86 @@
+	<?php
+			$countItem = 0;
+			while ($items = $items->fetch()) 
+			// var_dump($items);
+			// die();
+				{
+					if (!empty($item)) {
+		?>
+
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				<p><a href="index.php?action=listItems">
+                <?= $item['nameItem']; ?></a></p>
+				<p><?= $item['descriptionItem']; ?></p> <p><?= $item['price']; ?> </p>
+				<div <?= $countItem++ ?>></div>
+			</li>
+		</ul>
+			<?php
+						} else {
+					        echo "<p>Pas d'articles !</p>";
+					}
+				}
+			$items->closeCursor();
+		?>
+
+
+		///////////////////////////////////////////////
+		ITEMSMANAGER
+
+		//Mettre à jour article
+    // public function updateItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock)
+    // {
+    //     $db = $this->dbConnect();
+    //     $req = $db -> prepare("UPDATE items SET id_seller=?, ref=?,nameItem=?, descriptionItem=?, price=?, size=?, stock=? WHERE id=?");
+    //     $req->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock));
+    //     $updateItem = $req->fetch();
+
+    //     return $updateItem;
+    // }
+
+    //Supprimer un article
+    // public function deleteItem($itemId)
+    // {
+    //     $db = $this->dbConnect();
+    //     $req = $db->prepare("DELETE FROM items WHERE id=?");
+    //     $req->execute(array($itemId));
+    //     $deletedItem = $req->fetch();
+
+    //     return $deletedItem;
+    // }
+
+
+	//////////////////////////////////////////////////////////////////////////
+	UPLOAD IMAGE 
+	/////////////////////////////////////////////////////////////////////////
+	if(isset($_POST) && !empty($_POST))
+    {
+        if($_FILES['monfichier']['error'] == 0)
+        var_dump($_FILES);
+            die();
+        {
+            //test taille
+            if($_FILES['monfichier']['size'] > 15000000)
+            {
+                $error = "Votre fichier est trop lourd";
+            }
+            //test extension
+            $extension = strchr($_FILES['monfichier']['name'], '.');
+            if($extension != '.jpg')
+            {
+                $error = "votre fichier n est pas conforme";
+            } else {
+                $error = "pb formulaire";
+            }
+            // au final
+            if(!isset($error))
+            {
+                move_uploaded_file($_FILES['monfichier']['tmp_name'], 'img/'.$_FILES['monfichier']['name']);
+                echo 'Le fichier est chargé';
+            }
+        }
+    }
+
+	
+
+	
