@@ -56,11 +56,11 @@
 
                         <li class="nav-item">
                             <a class="nav-link text-light"
-                                href="view/frontend/customer/listSellersView.php">Commerçants</a>
+                                href="index.php?action=getItems">Commerçants</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light"
-                                href="view/frontend/customer/listCategoryView.php">Catégories</a>
+                                href="index.php?action=category">Catégories</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

@@ -97,6 +97,10 @@ try {
                 deleteItem(intval($_GET['id']));
                 break;
 
+            case 'listItemSellers':
+                displayListSellers();
+                break;
+                
             case 'displayUpdateItem':
                 displayUpdate();
                 break;
@@ -107,11 +111,22 @@ try {
                 displayUpdateSeller();
                 break;
 
+            // case 'getItems' :
+            //     var_dump('test routeur');
+            //     die();
+            //     getItems();
+            //     break;
+
+            case 'listSellers' :
+                getAllSellers();
+                break;
+                
             case 'item':
                 getItemId();
                 break;
 
             case 'listItemsSeller':
+                /* Items of Seller */
                 getItemsSellerId();
                 break;
 

@@ -23,6 +23,11 @@ function displayDashboardSeller()
     require 'view/frontend/seller/dashboardSellerView.php';
 }
 
+function displayListSellers()
+{
+    require 'view/frontend/customer/listSellersView.php';
+}
+
 function displayLogin()
 {
     require('view/frontend/common/loginView.php');
@@ -110,10 +115,11 @@ function deleteAccountCustomer($customerId)
 {
     $customerManager = new CustomerManager();
     $deletedCustomer = $customerManager->deleteCustomer($customerId);
+    $_SESSION = array();
+    session_destroy();
 
     Header('Location: index.php?action=home&delete-account=success');
 }
-
 
 /**
  * Delete Account Seller
@@ -123,6 +129,8 @@ function deleteAccountSeller($sellerId)
 {
     $sellerManager = new SellerManager();
     $deletedSeller = $sellerManager->deleteSeller($sellerId);
+    $_SESSION = array();
+    session_destroy();
 
     Header ('Location: index.php?action=dashboardSeller&delete-account=success');
 }
@@ -195,6 +203,21 @@ function getItemId(): void
     require('view/frontend/seller/itemView.php');
 }
 
+// /**
+//  * Get all Items
+//  */
+// function getItems()
+// {
+//     // var_dump('test controller');
+//     // die();
+//     $itemsManager = new ItemsManager();
+//     $allItems = $itemsManager->getAllItems();
+//     // var_dump($allItems);
+//     // die();
+
+//     require('view/frontend/customer/listSellersView.php');
+// }
+
 /**
  * Get all items by seller
  */
@@ -223,6 +246,17 @@ function getItemsSellerId(): void
 //     require('view/frontend/seller/updateSellerView.php');
 
 // }
+
+/**
+ * Get All sellers
+ */
+function getAllSellers()
+{
+    $sellerManager = new SellerManager();
+    $allSellers = $sellerManager->allSellers();
+
+    require('view/frontend/customer/listSellersView.php');
+}
 
 /**
  * Submit login customer
@@ -309,7 +343,7 @@ function newItem(int $id_seller, string $ref, string $nameItem, string $descript
     // RECUPERATION ID VENDEUR
     // AJOUTS A LA BDD
     $utils = new Utils();
-    if (!$utils->isEmpty([$ref, $nameItem, $descriptionItem, $price, $size, $stock])) {
+    if (!$utils->isEmpty([$ref, $nameItem, $descriptionItem, $price, $stock])) {
         if (!isUniqueRef($ref)) {
             throw new Error('Ref déjà existante');
         }
