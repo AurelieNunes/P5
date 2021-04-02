@@ -63,11 +63,22 @@ class SellerManager extends Manager
     }
 
     /**
+     * Get All Sellers
+     */
+    public function allSellers()
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM seller');
+        $sellers = $req->fetchAll();
+        return $sellers;
+    }
+
+    /**
      * Get seller by id
      * @param int $sellerId
-     * @return array
+     * @return bool
      */
-    public function getSeller($sellerId): array
+    public function getSeller($sellerId): bool
     {
         $db= $this->dbConnect();
         $req = $db->prepare('SELECT id, company, addressSeller, cpSeller, citySeller, siret, telSeller, mail, pass DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');

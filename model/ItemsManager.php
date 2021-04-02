@@ -19,6 +19,22 @@ class ItemsManager extends Manager
     }
 
     /**
+     * Get all Items in DATABASE
+     */
+    public function getAllItems()
+    {
+        var_dump('ok');
+        die();
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM items ORDER BY id');
+        $items = $req->fetchAll();
+        var_dump($items);
+        die();
+        return $items;
+
+    }
+
+    /**
      * Get all ref in DATABASE
      * @return array tableau de string qui correspond à ttes les ref de la bdd
      */
@@ -33,7 +49,7 @@ class ItemsManager extends Manager
 
     /**
      * Get item by id
-     * @return array tableau avec toutes les informations d'un article selon * son id
+     * @return array tableau avec toutes les informations d'un article selon son id
      * @param int $itemId
      */
     public function getItem(int $itemId): array
@@ -62,7 +78,6 @@ class ItemsManager extends Manager
 
     /**
      * Delete item by id
-     * 
      * @param int $itemId
      * @return ...
      */
@@ -94,16 +109,4 @@ class ItemsManager extends Manager
         // die(); //boolean false
         return $itemUpdate;
     }
-
-    // //Récup tous les articles
-    // public function getItems()
-    // {
-    //     // var_dump('ok');
-    //     // die();
-    //     $db = $this->dbConnect();
-    //     $req = $db->prepare('SELECT * FROM items ORDER BY id');
-    //     // var_dump($req);
-    //     // die();
-    //     return $req;
-    // }
 }

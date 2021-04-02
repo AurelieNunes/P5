@@ -1,11 +1,11 @@
 <?php $title = "Modifier mes informations"; ?>
 <?php ob_start(); ?>
 
-<section id="updateItem" class="mx-auto pt-5">
+<section id="updateSeller" class="mx-auto pt-5">
 	<h1 class="text-center">Modifier mes informations</h1>
 	<div class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
-		<div id="update">
+		<div id="updateAccountSeller">
 			<form class="d-flex flex-column"
 				action="index.php?action=submitUpdateSeller&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
 

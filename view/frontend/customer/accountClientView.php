@@ -1,11 +1,11 @@
 <?php $title = "Modifier mes informations"; ?>
 <?php ob_start(); ?>
 
-<section id="updateItem" class="mx-auto pt-5">
+<section id="updateCustomer" class="mx-auto pt-5">
 	<h1 class="text-center">Modifier mes informations</h1>
 	<div class="mx-auto">
 		<p class="returnLink"><a href="index.php?action=home">Retour au menu</a></p>
-		<div id="update">
+		<div id="updateAccountCustomer">
 			<form class="d-flex flex-column"
 				action="index.php?action=submitUpdateCustomer&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
 
@@ -14,7 +14,7 @@
 					 />
 
 				<label for="cp">Code postal</label>
-				<input class="mb-2 col-6" type="number" name="cpCustomer"
+				<input class="mb-2 col-2" type="number" name="cpCustomer"
 				/>
 
 				<label for="citySeller">Ville</label>
