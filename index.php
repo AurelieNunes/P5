@@ -77,6 +77,10 @@ try {
                     }
                 break;
             
+            case 'category' :
+                displayCategory();
+                break;
+
             case 'createItem':
                 if (isset($_SESSION)) {
                     displayCreateItem();
@@ -119,13 +123,6 @@ try {
             case 'item':
                 getItemId();
                 break;
-
-            // case 'listingSellers':
-            //     //Liste All Sellers
-            //     // var_dump('test');
-            //     // die();ok
-            //     displayListSellers();
-            //     break;
 
             case 'listItemsSeller':
                 /* Items of Seller */

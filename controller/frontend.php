@@ -8,14 +8,19 @@ use P5\utils\Utils;
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
 
-function displayCreateItem()
+function displayCategory()
 {
-    require 'view/frontend/seller/createItemSellerView.php';
+    require 'view/frontend/customer/listCategoryView.php';
 }
 
 function displayAccountCustomer()
 {
     require 'view/frontend/customer/updateCustomerView.php';
+}
+
+function displayCreateItem()
+{
+    require 'view/frontend/seller/createItemSellerView.php';
 }
 
 function displayDashboardSeller()

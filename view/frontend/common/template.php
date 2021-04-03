@@ -58,7 +58,7 @@
                             <a class="nav-link text-light" href="index.php?action=listSellers">Commerçants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="view/frontend/customer/listCategoryView.php">Catégories</a>
+                            <a class="nav-link text-light" href="index.php?action=category">Catégories</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
