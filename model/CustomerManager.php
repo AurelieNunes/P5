@@ -55,11 +55,14 @@ class CustomerManager extends Manager
      */
     public function getCustomer($customerId): array
     {
+        // var_dump('db test');
+        // die();
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, lastName, firstName,addressCustomer, cpCustomer, cityCustomer, telCustomer, mail, pass FROM customer WHERE id=?');
         $req->execute(array($customerId));
         $customer = $req->fetch();
-
+        // var_dump($customer);
+        // die();
         return $customer;
     }
 

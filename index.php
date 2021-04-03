@@ -107,6 +107,15 @@ try {
                 displayUpdateSeller();
                 break;
 
+            case 'displayAccountCustomer':
+                displayAccountCustomer();
+                break;
+
+            case 'getCustomer' :
+                // var_dump('test index');
+                // die();
+                getCustomerById($_SESSION['id']);
+
             case 'item':
                 getItemId();
                 break;

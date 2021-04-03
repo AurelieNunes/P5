@@ -15,18 +15,13 @@ function displayCreateItem()
 
 function displayAccountCustomer()
 {
-    require 'view/frontend/customer/accountClientView.php';
+    require 'view/frontend/customer/updateCustomerView.php';
 }
 
 function displayDashboardSeller()
 {
     require 'view/frontend/seller/dashboardSellerView.php';
 }
-
-// function displayListSellers()
-// {
-//     require 'view/frontend/customer/listSellersView.php';
-// }
 
 function displayLogin()
 {
@@ -193,11 +188,17 @@ function isUniqueRef(string $ref): bool
 
 /**
  * Get customer by Id
+ * 
  */
 function getCustomerById()
 {
+    // var_dump('test controller');
+    // die();
     $customerManager= new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
+    // var_dump($customerCo);
+    // die();
+    
 
     require('view/frontend/customer/accountClientView.php');
 }

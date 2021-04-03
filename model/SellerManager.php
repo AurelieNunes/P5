@@ -64,8 +64,9 @@ class SellerManager extends Manager
 
     /**
      * Get All Sellers
+     * @return array
      */
-    public function allSellers()
+    public function allSellers(): array
     {
         // var_dump('DATABASE');
         // die();ok
