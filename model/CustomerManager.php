@@ -71,7 +71,7 @@ class CustomerManager extends Manager
      * @param string $mail
      * @return array with mail customer
      */
-    public function loginCustomer(string $mail): array
+    public function loginCustomer(string $mail)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, pass FROM customer WHERE mail = ?');
