@@ -15,6 +15,10 @@ try {
     if (isset($_GET['action'])) {
         switch ($_GET['action']) {
 
+            case 'accountCustomer' :
+                displayAccountCustomer();
+                break;
+
             case 'addCustomer':
                 /* Inscription Client*/
                 $utils = new Utils();
@@ -79,10 +83,6 @@ try {
                 }
                 break;
 
-            case 'accountCustomer' :
-                displayAccountCustomer();
-                break;
-
             case 'dashboardSeller':
                 displayDashboardSeller();
                 break;
@@ -96,10 +96,6 @@ try {
             case 'deleteItem':
                 deleteItem(intval($_GET['id']));
                 break;
-
-            case 'listItemSellers':
-                displayListSellers();
-                break;
                 
             case 'displayUpdateItem':
                 displayUpdate();
@@ -111,23 +107,26 @@ try {
                 displayUpdateSeller();
                 break;
 
-            // case 'getItems' :
-            //     var_dump('test routeur');
-            //     die();
-            //     getItems();
-            //     break;
-
-            case 'listSellers' :
-                getAllSellers();
-                break;
-                
             case 'item':
                 getItemId();
                 break;
 
+            // case 'listingSellers':
+            //     //Liste All Sellers
+            //     // var_dump('test');
+            //     // die();ok
+            //     displayListSellers();
+            //     break;
+
             case 'listItemsSeller':
                 /* Items of Seller */
                 getItemsSellerId();
+                break;
+
+            case 'listSellers' :
+                // var_dump('index');
+                // die();
+                getAllSellers();
                 break;
 
             case 'loginCustomer':
@@ -205,12 +204,6 @@ try {
                 /* Affichage inscription Client*/
                 displaySubscribe();
                 break;
-
-                // case 'allItems':
-                //     getAllItems();
-                //     // var_dump('ok');
-                //     // die();
-                //     break;
 
             default:
                 require('view/frontend/common/homeView.php');

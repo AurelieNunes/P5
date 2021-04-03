@@ -63,19 +63,6 @@ class CustomerManager extends Manager
         return $customer;
     }
 
-    /**
-     * Get all customers
-     * 
-     */
-    public function getCustomers(): bool
-    {
-        $db = $this->dbConnect();
-        $customers = $db->query('SELECT id, mail FROM customer');
-
-        return $customers;
-    }
-
-
      /**
      * Login customer
      * @param string $mail

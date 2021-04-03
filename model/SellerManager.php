@@ -67,9 +67,13 @@ class SellerManager extends Manager
      */
     public function allSellers()
     {
+        // var_dump('DATABASE');
+        // die();ok
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM seller');
+        $req = $db->query('SELECT * FROM seller');
         $sellers = $req->fetchAll();
+        // var_dump($sellers);
+        // die();return plusieurs array
         return $sellers;
     }
 

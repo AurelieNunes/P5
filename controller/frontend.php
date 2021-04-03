@@ -23,10 +23,10 @@ function displayDashboardSeller()
     require 'view/frontend/seller/dashboardSellerView.php';
 }
 
-function displayListSellers()
-{
-    require 'view/frontend/customer/listSellersView.php';
-}
+// function displayListSellers()
+// {
+//     require 'view/frontend/customer/listSellersView.php';
+// }
 
 function displayLogin()
 {
@@ -192,6 +192,17 @@ function isUniqueRef(string $ref): bool
 }
 
 /**
+ * Get customer by Id
+ */
+function getCustomerById()
+{
+    $customerManager= new CustomerManager();
+    $customerCo = $customerManager->getCustomer($_SESSION['id']);
+
+    require('view/frontend/customer/accountClientView.php');
+}
+
+/**
  * Get item by id
  */
 function getItemId(): void
@@ -252,9 +263,12 @@ function getItemsSellerId(): void
  */
 function getAllSellers()
 {
+    // var_dump('test controller');
+    // die();ok
     $sellerManager = new SellerManager();
     $allSellers = $sellerManager->allSellers();
-
+    // var_dump($allSellers);
+    // die(); //retourne plusieurs array
     require('view/frontend/customer/listSellersView.php');
 }
 

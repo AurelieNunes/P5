@@ -56,7 +56,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link text-light"
-                                href="index.php?action=getItems">Commerçants</a>
+                                href="index.php?action=listSellers">Commerçants</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light"
@@ -76,7 +76,7 @@
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
-                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="view/frontend/customer/dashboardClientView.php"><i
+                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="index.php?action=submitUpdateCustomer"><i
                             class="text-light fas fa-user"></i></a></li>';
                         }
                         ?>
