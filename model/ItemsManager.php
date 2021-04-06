@@ -19,17 +19,31 @@ class ItemsManager extends Manager
     }
 
     /**
+     * Get all Categories
+     */
+    public function getAllCategories()
+    {
+        // var_dump('test model');
+        // die(); OK
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT * FROM categories');
+        $categories = $req->fetchAll();
+
+        return $categories;
+    }
+
+    /**
      * Get all Items in DATABASE
      */
     public function getAllItems()
     {
-        var_dump('ok');
-        die();
+        // var_dump('ok');
+        // die();
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM items ORDER BY id');
         $items = $req->fetchAll();
-        var_dump($items);
-        die();
+        // var_dump($items);
+        // die();
         return $items;
 
     }

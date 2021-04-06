@@ -39,19 +39,14 @@
                         <div class="select w-50">
                             <select>
                                 <option>Catégorie</option>
-                                <option value="1">Ameublement</option>
-                                <option value="2">Bijouterie</option>
-                                <option value="3">Caviste</option>
-                                <option value="4">Cosmétique</option>
-                                <option value="5">Décoration</option>
-                                <option value="6">Epicerie fine</option>
-                                <option value="7">Librairie</option>
-                                <option value="8">Maroquinerie</option>
-                                <option value="9">Mercerie</option>
-                                <option value="10">Minéraux</option>
-                                <option value="11">Mode</option>
-                                <option value="12">Puériculture</option>
-                                <option value="13">Souvenirs</option>
+                                <?php 
+                                    foreach($categories as $category)
+                                    {
+                                ?>
+                                <option><?= $category['category_Name'] ?></option>
+                                <?php
+                                    }
+                                ?>
                             </select>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 <?php $title = "Catégories"; ?>
 
 <?php ob_start(); ?>
-<link href="../../public/css/style.css" rel="stylesheet"/>
 <section class="category text-center">
     <div class="listing">
         <ol>

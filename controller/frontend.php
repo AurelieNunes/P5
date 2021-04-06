@@ -20,6 +20,9 @@ function displayAccountCustomer()
 
 function displayCreateItem()
 {
+    $itemsManager = new ItemsManager();
+    $categories = $itemsManager->getAllCategories();
+
     require 'view/frontend/seller/createItemSellerView.php';
 }
 
@@ -190,6 +193,16 @@ function isUniqueRef(string $ref): bool
     }
     return true;
 }
+
+// function getCategories()
+// {
+//     var_dump('test controller');
+//     die();
+//     $itemsManager = new ItemsManager();
+//     $category = $itemsManager->getAllCategories();
+
+//     return $category;
+// }
 
 /**
  * Get customer by Id

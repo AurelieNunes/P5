@@ -80,24 +80,7 @@
             }
         }
     }
-
-///////////////////////////////////////////////////////////////////////////
-Categorie
-
-1) où définir la categorie ?
-    -> lors du post de l article par le vendeur
-        -> dc c est lié à l article
-
-2) comment choisir la catégorie ?
-    -> via un menu déroulant ds la création de l article 
-
-3) comment définir la catégorie ?
-    -> Exemple : Si on choisit déco, alors il faut que l objet aille dans cette catégorie 
-    Comment ? 
-    -> Créer une table category qui sera liée à l article
-    -> Ajouter un champ categryid ds la table artcile
-
-
+////////////////////////////////////////////////////////////////////////
 // ETAPE 1 CONTROLE DE L'ARTICLE
     // ARTICLE PAS VIDE
     // VERIFICATION ARTICLE UNIQUE
@@ -114,6 +97,25 @@ Categorie
     // ETAPE 3 AJOUTS EN BDD
     // SOUS ETAPE 1
     // RECUPERATION ID VENDEUR
-    // AJOUTS A LA BDD	
+    // AJOUTS A LA BDD
+
+///////////////////////////////////////////////////////////////////////////
+Categorie
+
+1) où définir la categorie ?
+    -> lors du post de l article par le vendeur
+        -> dc c est lié à l article //OK
+
+2) comment choisir la catégorie ?
+    -> via un menu déroulant ds la création de l article //OK
+
+3) comment définir la catégorie ?
+    -> Exemple : Si on choisit déco, alors il faut que l objet aille dans cette catégorie 
+    Comment ? 
+    -> Créer une table category qui sera liée à l article //OK
+    -> Ajouter un champ categryid ds la table artcile //OK
+
+
+	
 
 	
