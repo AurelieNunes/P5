@@ -8398,36 +8398,76 @@ h3 {
 
 /* CUSTOMIZE THE LIST CATEGORY VIEW
  -------------------------------------------------- */
-ol {
-  list-style: none;
+/*Réinitilaisation de la liste déroulante*/
+select {
+  appearance: none;
+  outline: 0;
+  border: 0 !important;
+  background: #F9F9F9;
+  background-image: none;
+  box-shadow: none;
+  font-size: 1.2em;
 }
 
-#menu-vertical, #menu-vertical ul {
-  padding:0;
-  margin:0;
-  list-style:none;
-  width: 180px; /* seule ligne rajoutée */
+/* Ajout des couleurs de fond pour chaque option
+select option[value="1"] {
+  background: #2E6DB4;
+  color: white;
 }
 
-#menu-vertical li {
+select option[value="2"] {
+  background: #107C11;
+  color: white;
+}
+
+select option[value="3"] {
+  background: #E70009;
+  color: white;
+}
+
+select option[value="4"] {
+  background: black;
+  color: white;
+} */
+
+/* Mise en forme de la div .select*/
+.select {
   position: relative;
-  background:#EFEFEF; /* juste pour cacher le texte de la page en-dessous */
+  width: 350px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #CED4DA;
 }
 
-#menu-vertical a {
-  display:block;
-  text-decoration: none;
-  color: #000;
+/* Mise en forme de la balise select*/
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 15px;
+  color: #555555;
+  cursor: pointer;
 }
 
-#menu-vertical ul {
+
+/* Mise en place de la flèche */
+.select::after {
+  content: '\276F';
   position: absolute;
-  left:-999em;
+  top: 20%;
+  right: 0;
+  padding: 0 15px;
+  background: white;
+  pointer-events: none;
+  transform: rotate(90deg);
+  font-size: 1.5em;
+  background: #F9F9F9;
 }
 
-#menu-vertical li:hover ul {
-  top: 0;
-  left: 180px;
+
+.select:hover::after {
+  color: #FA6141;
 }
 
 /*-------------------------------------------------- */
