@@ -116,6 +116,23 @@ Categorie
     -> Ajouter un champ categryid ds la table artcile //OK
 
 
-	
+Donc déjà étape 1:
 
-	
+Implémentation de mon menu déroulant (<select>) dans ma vue avec mes catégories en options //OK
+
+étape 2:
+Dans mon controller, récuperer la catégorie sélectionnée
+    Etape 2.1 Récuperer les données du formulaire
+    Etape 2.2 "Analyser" les données du formulaire récuperer pour écrire une Etape 2.3
+
+
+étape 3:
+envoyer tout ca au model pour créer mon article et mettre le champ categoryId
+
+///////////////////////////////////////////////////////////////////////////////
+CATEGORIE 
+
+1) VUE AVEC TTES LES CATEGORIES
+2) VUE ARTICLES PAR CATEGORIES
+
+//////////////////////////////////////////////////////////////////////////////

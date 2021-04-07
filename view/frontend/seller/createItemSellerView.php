@@ -2,7 +2,6 @@
 
 <?php ob_start(); ?>
 
-
 <section id="createItem" class="mx-auto pt-5">
     <h1 class="text-center">Ajout Article</h1>
     <div id="managerBlock" class="mx-auto">
@@ -37,13 +36,13 @@
                     </div>
                     <div class="bloc w-50">
                         <div class="select w-50">
-                            <select>
-                                <option>Catégorie</option>
+                            <select name='categories'>
+                                <option value="">Choisissez la catégorie</option>
                                 <?php 
                                     foreach($categories as $category)
                                     {
                                 ?>
-                                <option><?= $category['category_Name'] ?></option>
+                                <option value='<?= $category['id']; ?>'><?= $category['category_Name'];?></option>
                                 <?php
                                     }
                                 ?>

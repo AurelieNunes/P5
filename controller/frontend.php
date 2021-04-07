@@ -194,15 +194,6 @@ function isUniqueRef(string $ref): bool
     return true;
 }
 
-// function getCategories()
-// {
-//     var_dump('test controller');
-//     die();
-//     $itemsManager = new ItemsManager();
-//     $category = $itemsManager->getAllCategories();
-
-//     return $category;
-// }
 
 /**
  * Get customer by Id
@@ -356,25 +347,9 @@ function logout(): void
  * @param int $id_seller, $price, $stock
  * @param string $ref, $nameItem, $descriptionItem, $size
  */
-function newItem(int $id_seller, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
+function newItem(int $id_seller,int $category, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
 {
-    // ETAPE 1 CONTROL DE L'ARTICLE
-    // ARTICLE PAS VIDE
-    // VERIFICATION ARTICLE UNIQUE
 
-    // ETAPE 2 GESTION DE L'IMAGE
-    // SOUS ETAPE 1 VERIFICATION
-    // VERIFICATION PAS VIDE
-    // VERIFICATION PAS TROP GROSSE
-    // VERIFICATION FORMAT SUPPORTER
-    // SOUS ETAPE 2
-    // UPLOAD DE L'IMAGE
-    // RECUPERATION DE L'URL
-
-    // ETAPE 3 AJOUTS EN BDD
-    // SOUS ETAPE 1
-    // RECUPERATION ID VENDEUR
-    // AJOUTS A LA BDD
     $utils = new Utils();
     if (!$utils->isEmpty([$ref, $nameItem, $descriptionItem, $price, $stock])) {
         if (!isUniqueRef($ref)) {
@@ -388,10 +363,11 @@ function newItem(int $id_seller, string $ref, string $nameItem, string $descript
                         $name = $_FILES['picture']['name'];
                         $tmp_name = $_FILES['picture']['tmp_name'];
                         $path = 'assets/pictures/' . $name;
-
                         move_uploaded_file($tmp_name, $path);
+
                         $itemsManager = new ItemsManager();
-                        $itemsManager->createItem($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path);
+
+                        $itemsManager->createItem($id_seller, $category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path);
 
                         Header('Location: index.php?action=dashboardSeller&new-item=success');
                     } else {

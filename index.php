@@ -163,20 +163,22 @@ try {
                 $utils = new Utils();
                 if ($utils->isIsset([
                     $_SESSION['id'],
+                    $_POST['categories'],
                     $_POST['ref'],
                     $_POST['nameItem'],
                     $_POST['descriptionItem'],
                     $_POST['price'],
-                    $_POST['size']
+                    $_POST['size'],
                     ])) {
                         newItem(
                             $_SESSION['id'],
+                            $_POST['categories'],
                             $_POST['ref'],
                             $_POST['nameItem'],
                             $_POST['descriptionItem'],
                             $_POST['price'],
                             $_POST['size'],
-                            $_POST['stock']
+                            $_POST['stock'],
                         );
                 } else {
                     throw new Exception('Contenu vide !');

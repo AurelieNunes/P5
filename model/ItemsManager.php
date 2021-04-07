@@ -11,11 +11,13 @@ class ItemsManager extends Manager
      * @param string
      * @param int
      */
-    public function createItem(int $id_seller,string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, string $path): void
+    public function createItem(int $id_seller,int $category,string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, string $path): void
     {
         $db = $this->dbConnect();
-        $addItem = $db->prepare('INSERT INTO items (id_seller, ref, nameItem, descriptionItem, price, size, stock, url_img) VALUES (?,?,?,?,?,?,?,?)');
-        $addItem->execute(array($id_seller, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path));
+        $addItem = $db->prepare('INSERT INTO items (id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img) VALUES (?,?,?,?,?,?,?,?,?)');
+        $addItem->execute(array($id_seller,$category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path));
+        // var_dump($addItem);
+        // die();//OK
     }
 
     /**
@@ -28,7 +30,8 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM categories');
         $categories = $req->fetchAll();
-
+        // var_dump($categories);
+        // die();//return arrays
         return $categories;
     }
 
