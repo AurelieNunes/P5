@@ -1,52 +1,28 @@
 <?php $title = "Catégories"; ?>
 
 <?php ob_start(); ?>
-<section class="category text-center">
-    <div class="listing">
-        <ol>
-            <li>
-                <a href="#"><i class="fas fa-chair mr-2"></i>Ameublement</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-ring mr-2"></i>Bijouterie</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-wine-bottle mr-2"></i>Caviste</a>
-            </li>
-            <li>
-                <a href="#">Cosmétique</a>
-            </li>
-            <li>
-                <a href="#">Décoration</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-utensils mr-2"></i>Epicerie fine</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-book mr-2"></i>Librairie</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-shopping-bag mr-2"></i>Maroquinerie</a>
-            </li>
-            <li>
-                <a href="#">Mercerie</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-gem mr-2"></i>Minéraux</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-tshirt mr-2"></i>Mode</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-baby mr-2"></i>Puériculture</a>
-            </li>
-            <li>
-                <a href="#">Souvenirs</a>
-            </li>
-        </ol>
+<section class="category text-center col-12 mx-auto">
+    <div class="listing col-10 mx-auto d-flex flex-wrap align-items-center">
+
+    <?php 
+        foreach($categories as $category)
+            {
+    ?>
+
+        <div class="card col-3 mr-2 ml-2 mb-2">
+            <img class="card-img-top col-10 mx-auto" src="<?= $category['path_cat']; ?>" alt="<?= $category['url_path']; ?>">
+            <div class="card-body">
+                <h5 class="card-title h6"><?= $category['category_Name']; ?></h5>
+                <a href="index.php?action=displayItemsByCategory" class="btn btn-primary">Aller voir</a>
+            </div>
+        </div>
+    <?php
+        }
+    ?>
+
     </div>
 </section>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('./view/frontend/common/template.php'); ?>
+<?php require('./view/frontend/customer/template.php'); ?>

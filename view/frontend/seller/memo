@@ -132,7 +132,9 @@ envoyer tout ca au model pour créer mon article et mettre le champ categoryId
 ///////////////////////////////////////////////////////////////////////////////
 CATEGORIE 
 
-1) VUE AVEC TTES LES CATEGORIES
+1) VUE AVEC TTES LES CATEGORIES //OK
 2) VUE ARTICLES PAR CATEGORIES
+    //etape 1 Article selon categorie ou categorie selon l article??
+    //etape 2 Lorsque je click sur la catégorie je veux recupérer les articles de la categorie
 
 //////////////////////////////////////////////////////////////////////////////

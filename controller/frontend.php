@@ -10,6 +10,8 @@ require_once './utils/Utils.php';
 
 function displayCategory()
 {
+    $itemsManager = new ItemsManager();
+    $categories = $itemsManager->getAllCategories();
     require 'view/frontend/customer/listCategoryView.php';
 }
 
@@ -29,6 +31,18 @@ function displayCreateItem()
 function displayDashboardSeller()
 {
     require 'view/frontend/seller/dashboardSellerView.php';
+}
+
+function displayItemsByCategory($category_id)
+{
+    // var_dump('test controller');
+    // die();
+    $itemsManager = new ItemsManager();
+
+    $itemsCategories = $itemsManager->getItemsByCategory($category_id);
+    var_dump($itemsCategories);
+    die();
+    require 'view/frontend/customer/itemsByCategoryView.php';
 }
 
 function displayLogin()
@@ -394,7 +408,7 @@ function newItem(int $id_seller,int $category, string $ref, string $nameItem, st
 function submitUpdate(): void
 {
     $itemsManager = new ItemsManager();
-    $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
+    $updated = $itemsManager->updateItem($_POST['category_id'],$_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_POST['url_img'], $_GET['id']);
 
     Header('Location:index.php?action=dashboardSeller&submit-update=success');
 }

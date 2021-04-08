@@ -48,7 +48,6 @@ class ItemsManager extends Manager
         // var_dump($items);
         // die();
         return $items;
-
     }
 
     /**
@@ -72,21 +71,40 @@ class ItemsManager extends Manager
     public function getItem(int $itemId): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id = ?');
+        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_image FROM items WHERE id = ?');
         $req->execute(array($itemId));
         $item = $req->fetch();
+        
         return $item;
     }
 
     /**
-     * Get all item of one seller
+     * Get items by category
+     */
+    public function getItemsByCategory($category_id)
+    {
+        // var_dump('test model');
+        // die(); //OK
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE category_id = ?');
+        $req->execute(array($category_id));
+        $itemsByCat = $req->fetch();
+        // var_dump($itemsByCat);
+        // die();
+
+        return $itemsByCat;
+    }
+
+
+     /**
+    * Get all item of one seller
      * @return array retourne un tableau contenant tous les articles d'un vendeur
      * @param int $sellerId
      */
     public function getItemsSeller(int $sellerId): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, ref, nameItem, descriptionItem, price, size, stock FROM items WHERE id_seller = ?');
+        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
         $itemsSeller = $req->fetchAll();
 
@@ -112,15 +130,15 @@ class ItemsManager extends Manager
     /**
      * Update item
      * @return bool
-     * @param int $price $stock $itemId
+     * @param int $category_id $price $stock $itemId
      * @param string $ref, $nameItem, $descriptionItem, $size
      */
     // //Mettre à jour article
-    public function updateItem(string $ref, string $nameItem, string $descriptionItem, int $price,string $size, int $stock, int $itemId): bool
+    public function updateItem(int $category, string $ref, string $nameItem, string $descriptionItem, int $price,string $size, int $stock, int $itemId): bool
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE items SET ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
-        $req->execute(array($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
+        $req = $db->prepare('UPDATE items SET category_id=?, ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
+        $req->execute(array($category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
         $itemUpdate = $req->fetch();
         // var_dump($itemUpdate);
         // die(); //boolean false

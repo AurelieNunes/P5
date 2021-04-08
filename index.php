@@ -105,6 +105,12 @@ try {
                 displayUpdate();
                 break;
 
+            case 'displayItemsByCategory':
+                // var_dump('test routeur');
+                // die();//OK
+                displayItemsByCategory($category_id);
+                break;
+
             case 'displayUpdateSeller' :
                 // var_dump('test update');
                 // die(); ok
