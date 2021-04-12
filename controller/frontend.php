@@ -8,6 +8,9 @@ use P5\utils\Utils;
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
 
+/**
+ * Display Category
+ */
 function displayCategory()
 {
     $itemsManager = new ItemsManager();
@@ -15,11 +18,17 @@ function displayCategory()
     require 'view/frontend/customer/listCategoryView.php';
 }
 
+/**
+ * Display Account Customer
+ */
 function displayAccountCustomer()
 {
     require 'view/frontend/customer/updateCustomerView.php';
 }
 
+/**
+ * Display create item
+ */
 function displayCreateItem()
 {
     $itemsManager = new ItemsManager();
@@ -28,28 +37,52 @@ function displayCreateItem()
     require 'view/frontend/seller/createItemSellerView.php';
 }
 
+/**
+ * Display dashboard seller
+ */
 function displayDashboardSeller()
 {
     require 'view/frontend/seller/dashboardSellerView.php';
 }
 
-function displayItemsByCategory($category_id)
+/**
+ * Display home
+ */
+function displayHome()
 {
-    // var_dump('test controller');
-    // die();
-    $itemsManager = new ItemsManager();
-
-    $itemsCategories = $itemsManager->getItemsByCategory($category_id);
-    var_dump($itemsCategories);
-    die();
-    require 'view/frontend/customer/itemsByCategoryView.php';
+    require 'view/frontend/common/homeView.php';
 }
 
+/**
+ * display items by category
+ * @param int $category_id
+ */
+function displayItemsByCategory(int $category_id)
+{
+    // var_dump($category_id);
+    // die();
+    $itemsManager = new ItemsManager();
+    
+    $itemsCategories = $itemsManager->getItemsByCategory($category_id);
+    // var_dump($itemsCategories);
+    // die();//return tableau de l article
+    $categories = $itemsManager->getCategoryById($category_id);
+    // var_dump($categories);
+    // die(); //return tableau 
+    require('view/frontend/customer/itemsByCategoryView.php');
+}
+
+/**
+ * Display login view
+ */
 function displayLogin()
 {
     require('view/frontend/common/loginView.php');
 }
 
+/**
+ * Display subscribe view
+ */
 function displaySubscribe()
 {
     require('view/frontend/common/subscribeView.php');
@@ -127,8 +160,9 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
 
 /**
  * Delete Account Customer
+ * @param int $customerId
  */
-function deleteAccountCustomer($customerId)
+function deleteAccountCustomer(int $customerId)
 {
     $customerManager = new CustomerManager();
     $deletedCustomer = $customerManager->deleteCustomer($customerId);
@@ -140,9 +174,9 @@ function deleteAccountCustomer($customerId)
 
 /**
  * Delete Account Seller
- * 
+ * @param int $sellerId
  */
-function deleteAccountSeller($sellerId)
+function deleteAccountSeller(int $sellerId)
 {
     $sellerManager = new SellerManager();
     $deletedSeller = $sellerManager->deleteSeller($sellerId);
@@ -165,7 +199,7 @@ function deleteItem(int $itemId): void
 }
 
 /**
- * Update Item
+ * Display update Item
  */
 function displayUpdate(): void
 {
@@ -179,7 +213,7 @@ function displayUpdate(): void
 }
 
 /**
- * Display update Seller account
+ * Display update seller account
  */
 function displayUpdateSeller()
 {
@@ -207,7 +241,6 @@ function isUniqueRef(string $ref): bool
     }
     return true;
 }
-
 
 /**
  * Get customer by Id
@@ -298,11 +331,11 @@ function getAllSellers()
 
 /**
  * Submit login customer
- * @param string $mail, $pass
+ * @param string $mail
+ * @param string $pass
  */
 function loginSubmitCustomer(string $mail, string $pass): void
 {
-
     $customerManager = new CustomerManager();
     $customer = $customerManager->loginCustomer($mail);
 
@@ -323,7 +356,9 @@ function loginSubmitCustomer(string $mail, string $pass): void
 
 /**
  * Submit login seller
- * @param string $mail, $pass
+ * @param string $mail
+ * @param string $pass
+ * @return void
  */
 function loginSubmitSeller(string $mail, string $pass): void
 {
@@ -338,6 +373,7 @@ function loginSubmitSeller(string $mail, string $pass): void
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $seller['id'];
             $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
+            $_SESSION['isAdmin'] = $seller['isAdmin'];
             Header('Location: index.php?action=dashboardSeller');
         } else {
             Header('Location: index.php?action=login&account-status=unsuccess-login');
@@ -347,6 +383,7 @@ function loginSubmitSeller(string $mail, string $pass): void
 
 /**
  * Logout
+ * @return void
  */
 function logout(): void
 {
@@ -358,12 +395,17 @@ function logout(): void
 
 /**
  * New item
- * @param int $id_seller, $price, $stock
- * @param string $ref, $nameItem, $descriptionItem, $size
+ * @param int $id_seller
+ * @param int $price
+ * @param int $stock
+ * @param string $ref
+ * @param string $nameItem
+ * @param string $descriptionItem
+ * @param string $size
+ * @return void
  */
 function newItem(int $id_seller,int $category, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
 {
-
     $utils = new Utils();
     if (!$utils->isEmpty([$ref, $nameItem, $descriptionItem, $price, $stock])) {
         if (!isUniqueRef($ref)) {
@@ -404,6 +446,7 @@ function newItem(int $id_seller,int $category, string $ref, string $nameItem, st
 
 /**
  * Update item
+ * @return void
  */
 function submitUpdate(): void
 {
@@ -415,8 +458,13 @@ function submitUpdate(): void
 
 /**
  * Update customer info
+ * @param string $addressCustomer
+ * @param string $cityCustomer
+ * @param int $cpCustomer
+ * @param int $telCustomer
+ * @param int $customerId
  */
-function submitUpdateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId)
+function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId)
 {
     $customerManager = new CustomerManager();
     $customerUp = $customerManager->updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId);
@@ -426,8 +474,13 @@ function submitUpdateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $tel
 
 /**
  * Update seller info
+ * @param string $addressSeller
+ * @param string $citySeller
+ * @param int $cpSeller
+ * @param int $telSeller
+ * @param int $sellerId
  */
-function submitUpdateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId)
+function submitUpdateSeller(string $addressSeller, int $cpSeller, string $citySeller, int $telSeller, int $sellerId)
 {
     $sellerManager = new SellerManager();
     $sellerUp = $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId);

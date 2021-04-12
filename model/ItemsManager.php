@@ -22,8 +22,9 @@ class ItemsManager extends Manager
 
     /**
      * Get all Categories
+     * @return array
      */
-    public function getAllCategories()
+    public function getAllCategories(): array
     {
         // var_dump('test model');
         // die(); OK
@@ -36,9 +37,28 @@ class ItemsManager extends Manager
     }
 
     /**
-     * Get all Items in DATABASE
+     * Get categories by id
+     * @param int $category_id
+     * @return array
      */
-    public function getAllItems()
+    public function getCategoryById(int $category_id): array
+    {
+        $db=$this->dbConnect();
+        $req = $db->prepare('SELECT id, category_Name, path_cat, url_path from categories WHERE id=?');
+        // var_dump($req);
+        // die();
+        $req->execute(array($category_id));
+        $categoryId= $req->fetch();
+        // var_dump($categoryId);
+        // die();
+        return $categoryId;
+    }
+    
+    /**
+     * Get all Items in DATABASE
+     * @return array
+     */
+    public function getAllItems(): array
     {
         // var_dump('ok');
         // die();
@@ -80,9 +100,13 @@ class ItemsManager extends Manager
 
     /**
      * Get items by category
+     * @param int $category_id
+     * @return array
      */
-    public function getItemsByCategory($category_id)
+    public function getItemsByCategory(int $category_id): array
     {
+        // var_dump($category_id);
+        // die(); 
         // var_dump('test model');
         // die(); //OK
         $db = $this->dbConnect();

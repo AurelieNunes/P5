@@ -86,7 +86,7 @@ class SellerManager extends Manager
     public function getSeller($sellerId): bool
     {
         $db= $this->dbConnect();
-        $req = $db->prepare('SELECT id, company, addressSeller, cpSeller, citySeller, siret, telSeller, mail, pass DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');
+        $req = $db->prepare('SELECT id, company, addressSeller, cpSeller, citySeller, siret, telSeller, mail, pass, isAdmin DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');
         $req->execute(array($sellerId));
         $seller = $req->fetch();
         // var_dump($seller);
@@ -102,10 +102,11 @@ class SellerManager extends Manager
     public function loginSeller(string $mail): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pass FROM seller WHERE mail = ?');
+        $req = $db->prepare('SELECT id, pass, isAdmin FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $seller = $req->fetch();
-
+        // var_dump($seller);
+        // die();
         return $seller;
     }
 
@@ -113,18 +114,24 @@ class SellerManager extends Manager
      * Add seller in DATABASE
      * @param string $company, $mail, $pass
      * @param int $siret
+     * @return void
      */
     public function subscribeSeller(string $company, int $siret, string $mail, string $pass): void
     {
         $db = $this->dbConnect();
-        $newSeller = $db->prepare('INSERT INTO seller (company, siret, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
+        $newSeller = $db->prepare('INSERT INTO seller (company, siret, mail, pass, subscribe_date, isAdmin) VALUES (?, ?, ?, ?, CURDATE(),0)');
         $newSeller->execute(array($company, $siret, $mail, $pass));
     }
 
     /**
      * Update seller info
+     * @param string $addressSeller
+     * @param string $citySeller
+     * @param int $cpSeller
+     * @param int $telSeller
+     * @param int $sellerId
      */
-    public function updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId)
+    public function updateSeller(string $addressSeller, int $cpSeller, string $citySeller, int $telSeller, int $sellerId)
     {
         // var_dump('test db');
         // die();

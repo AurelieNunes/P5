@@ -51,7 +51,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
                             <a class="nav-link text-light" aria-current="page"
-                                href="view/frontend/customer/homeView.php">Accueil</a>
+                                href="index.php?action=home">Accueil</a>
                         </li>
 
                         <li class="nav-item">

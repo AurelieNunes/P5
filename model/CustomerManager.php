@@ -53,7 +53,7 @@ class CustomerManager extends Manager
      * @param int $customerId
      * @return array
      */
-    public function getCustomer($customerId): array
+    public function getCustomer(int $customerId): array
     {
         // var_dump('db test');
         // die();
@@ -83,7 +83,11 @@ class CustomerManager extends Manager
 
     /**
      * Add customer at DATABASE
-     * @param string $lastName, $firstName, $maim, $pass
+     * @param string $lastName
+     * @param string $firstName
+     * @param string $mail
+     * @param string $pass
+     * @return void
      */
     public function subscribeCustomer(string $lastName, string $firstName, string $mail, string $pass): void
     {
@@ -94,8 +98,13 @@ class CustomerManager extends Manager
 
     /**
      * Update info customer
+     * @param string $addressCustomer
+     * @param string $cityCustomer
+     * @param int $cpCustomer
+     * @param int $telCustomer
+     * @param int $customerId
      */
-    public function updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId)
+    public function updateCustomer(string $addressCustomer,int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId)
     {
         // var_dump('test db');
         // die();

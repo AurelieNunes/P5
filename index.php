@@ -1,5 +1,4 @@
 <?php
-
 use P5\utils\Utils;
 
 session_start();
@@ -77,6 +76,22 @@ try {
                     }
                 break;
             
+            case 'adminLogin':
+                var_dump('routeur login');
+                die();
+                loginAdmin();
+                break;
+    
+            case 'admin':
+                var_dump('routeur');
+                die();
+                if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
+                    displayAdmin();
+                } else {
+                    throw new Exception('Administrateur non identifié');
+                }
+                break;
+                
             case 'category' :
                 displayCategory();
                 break;
@@ -96,6 +111,7 @@ try {
             
             case 'deleteAccountSeller':
                 deleteAccountSeller($_SESSION['id']);
+                break;
 
             case 'deleteItem':
                 deleteItem(intval($_GET['id']));
@@ -108,7 +124,9 @@ try {
             case 'displayItemsByCategory':
                 // var_dump('test routeur');
                 // die();//OK
-                displayItemsByCategory($category_id);
+                displayItemsByCategory($_GET['category_id']);
+                // var_dump($_GET['category_id']);
+                // die(); //return id de la catégorie
                 break;
 
             case 'displayUpdateSeller' :
@@ -125,6 +143,11 @@ try {
                 // var_dump('test index');
                 // die();
                 getCustomerById($_SESSION['id']);
+                break;
+
+            case 'home' :
+                displayHome();
+                break;
 
             case 'item':
                 getItemId();
