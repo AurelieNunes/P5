@@ -99,7 +99,7 @@ class SellerManager extends Manager
      * @param string $mail
      * @return array
      */
-    public function loginSeller(string $mail): array
+    public function loginSeller(string $mail)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, pass, isAdmin FROM seller WHERE mail = ?');

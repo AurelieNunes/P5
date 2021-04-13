@@ -76,21 +76,21 @@ try {
                     }
                 break;
             
-            case 'adminLogin':
-                var_dump('routeur login');
-                die();
-                loginAdmin();
-                break;
-    
             case 'admin':
-                var_dump('routeur');
-                die();
+                // var_dump('routeur');
+                // die();
                 if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
-                    displayAdmin();
-                } else {
-                    throw new Exception('Administrateur non identifié');
-                }
+                displayAdmin();
+                    } else {
+                        throw new Exception('Administrateur non identifié');
+                    }
                 break;
+
+            // case 'adminLogin':
+            //     var_dump('routeur login');
+            //     die();
+            //     loginAdmin();
+            //     break;
                 
             case 'category' :
                 displayCategory();
@@ -112,9 +112,21 @@ try {
             case 'deleteAccountSeller':
                 deleteAccountSeller($_SESSION['id']);
                 break;
+            
+            case 'deleteCustomer':
+                deleteCustomer($_GET['id']);
+                break;
 
             case 'deleteItem':
                 deleteItem(intval($_GET['id']));
+                break;
+            
+            case 'deleteItemByAdmin':
+                deleteItemByAdmin(intval($_GET['id']));
+                break;
+
+            case 'deleteSeller':
+                deleteSeller($_GET['id']);
                 break;
                 
             case 'displayUpdateItem':
@@ -188,6 +200,20 @@ try {
                 logout();
                 break;
         
+            case 'manageCustomers':
+                manageAllCustomers();
+                break;
+
+            case 'manageSellers':
+                manageAllSellers();
+                break;
+
+            case 'manageItems':
+                // var_dump('index');
+                // die();
+                manageAllItems();
+                break;
+
             case 'newItem':
                 $utils = new Utils();
                 if ($utils->isIsset([

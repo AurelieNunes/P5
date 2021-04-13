@@ -49,6 +49,21 @@ class CustomerManager extends Manager
     }
 
     /**
+     * Get All customers
+     * @return array
+     */
+    public function getAllCustomers(): array
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT * FROM customer');
+        $customers = $req->fetchAll();
+        // var_dump($customers);
+        // die();
+
+        return $customers;
+    }
+
+    /**
      * Get customer by id
      * @param int $customerId
      * @return array

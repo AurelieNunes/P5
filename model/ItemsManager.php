@@ -63,7 +63,7 @@ class ItemsManager extends Manager
         // var_dump('ok');
         // die();
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM items ORDER BY id');
+        $req = $db->query('SELECT * FROM items ORDER BY id');
         $items = $req->fetchAll();
         // var_dump($items);
         // die();

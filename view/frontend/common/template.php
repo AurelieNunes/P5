@@ -50,10 +50,8 @@
                 <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
-                            <a class="nav-link text-light" aria-current="page"
-                                href="index.php?action=home">Accueil</a>
+                            <a class="nav-link text-light" aria-current="page" href="index.php?action=home">Accueil</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=listSellers">Commerçants</a>
                         </li>
@@ -77,6 +75,10 @@
                             echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="index.php?action=getCustomer"><i
                             class="text-light fas fa-user"></i></a></li>';
                         }
+
+                        if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
+							echo '<li class="nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
+							}
                         ?>
 
                         <!-- <li class="nav-item">

@@ -58,18 +58,14 @@
                         } else {
                             echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginSeller">Connexion / Inscription</a></li>';
                         }
-                        
+                        if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
+							echo '<li class="nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
+							}
                         if (!empty($_SESSION)) {
                             echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
                         }
                         ?>
                     </li>
-                    <!-- <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=loginCustomer">Se connecter</a>
-                        </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
-                        </li> -->
                 </ul>
             </div>
         </nav>

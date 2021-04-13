@@ -154,7 +154,7 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
         // die;
         // redirige vers page d'accueil avec le nouveau paramètre
 
-        Header('Location: index.php?action=dashboardSeller');
+        Header('Location: index.php?action=loginSeller');
     }
 }
 
@@ -373,8 +373,12 @@ function loginSubmitSeller(string $mail, string $pass): void
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $seller['id'];
             $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
-            $_SESSION['isAdmin'] = $seller['isAdmin'];
-            Header('Location: index.php?action=dashboardSeller');
+            if($_SESSION['isAdmin'] = $seller['isAdmin']){
+                Header('Location: index.php?action=admin');
+            }
+            else {
+                Header('Location: index.php?action=dashboardSeller');
+            }
         } else {
             Header('Location: index.php?action=login&account-status=unsuccess-login');
         }
