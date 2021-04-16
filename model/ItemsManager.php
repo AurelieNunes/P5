@@ -44,7 +44,7 @@ class ItemsManager extends Manager
     public function getCategoryById(int $category_id): array
     {
         $db=$this->dbConnect();
-        $req = $db->prepare('SELECT id, category_Name, path_cat, url_path from categories WHERE id=?');
+        $req = $db->prepare('SELECT id, category_Name, path_cat, url_path FROM categories WHERE id=?');
         // var_dump($req);
         // die();
         $req->execute(array($category_id));
@@ -53,7 +53,7 @@ class ItemsManager extends Manager
         // die();
         return $categoryId;
     }
-    
+
     /**
      * Get all Items in DATABASE
      * @return array
@@ -88,14 +88,13 @@ class ItemsManager extends Manager
      * @return array tableau avec toutes les informations d'un article selon son id
      * @param int $itemId
      */
-    public function getItem(int $itemId): array
+    public function getItem($itemId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_image FROM items WHERE id = ?');
-        $req->execute(array($itemId));
-        $item = $req->fetch();
-        
-        return $item;
+        $item = $db->query('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_image FROM items WHERE id = ?');
+        // var_dump($item);
+        // die();//bool false
+        // return $item;
     }
 
     /**
@@ -135,6 +134,20 @@ class ItemsManager extends Manager
         return $itemsSeller;
     }
 
+    /**
+     * Get random id by items
+     * @return array with 3 items randoms
+     */
+    public function randomItems(): array
+    {
+        $db = $this->dbConnect();
+        $req = $db-> query('SELECT * FROM items ORDER BY rand() LIMIT 3');
+        $randomItem = $req->fetchAll();
+        // var_dump($randomItem);
+        // die();
+        return $randomItem;
+    }
+    
     /**
      * Delete item by id
      * @param int $itemId

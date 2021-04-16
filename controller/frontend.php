@@ -46,14 +46,6 @@ function displayDashboardSeller()
 }
 
 /**
- * Display home
- */
-function displayHome()
-{
-    require 'view/frontend/common/homeView.php';
-}
-
-/**
  * display items by category
  * @param int $category_id
  */
@@ -199,6 +191,19 @@ function deleteItem(int $itemId): void
 }
 
 /**
+ * Description Item
+ * 
+ */
+function descriptionItem(): void
+{
+    $itemsManager = new ItemsManager();
+    $itemsDetails = $itemsManager->getItem($_GET['itemId']);
+    // var_dump($itemsDetails);
+    // die();//bool false
+    require('view/frontend/customer/descriptionProductView.php');
+}
+
+/**
  * Display update Item
  */
 function displayUpdate(): void
@@ -222,6 +227,21 @@ function displayUpdateSeller()
     // var_dump($seller);
     // die();boolean false
     require('view/frontend/seller/updateSellerView.php');
+}
+
+/**
+ * Get items in random
+ */
+function displayHome()
+{
+    // var_dump('test controller');
+    // die();
+    $itemsManager = new ItemsManager();
+    $itemsRandom = $itemsManager->randomItems();
+    // var_dump($itemsRandom);
+    // die();//return array avec les 3 items
+    // return $itemsRandom;
+    require('view/frontend/common/homeView.php');
 }
 
 /**
@@ -255,7 +275,6 @@ function getCustomerById()
     // var_dump($customerCo);
     // die();
     
-
     require('view/frontend/customer/accountClientView.php');
 }
 

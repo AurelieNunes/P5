@@ -85,12 +85,6 @@ try {
                         throw new Exception('Administrateur non identifié');
                     }
                 break;
-
-            // case 'adminLogin':
-            //     var_dump('routeur login');
-            //     die();
-            //     loginAdmin();
-            //     break;
                 
             case 'category' :
                 displayCategory();
@@ -128,11 +122,11 @@ try {
             case 'deleteSeller':
                 deleteSeller($_GET['id']);
                 break;
-                
-            case 'displayUpdateItem':
-                displayUpdate();
+            
+            case 'displayAccountCustomer':
+                displayAccountCustomer();
                 break;
-
+    
             case 'displayItemsByCategory':
                 // var_dump('test routeur');
                 // die();//OK
@@ -140,15 +134,15 @@ try {
                 // var_dump($_GET['category_id']);
                 // die(); //return id de la catégorie
                 break;
+            
+            case 'displayUpdateItem':
+                displayUpdate();
+                break;
 
             case 'displayUpdateSeller' :
                 // var_dump('test update');
                 // die(); ok
                 displayUpdateSeller();
-                break;
-
-            case 'displayAccountCustomer':
-                displayAccountCustomer();
                 break;
 
             case 'getCustomer' :
@@ -158,12 +152,23 @@ try {
                 break;
 
             case 'home' :
+                // var_dump('router');
+                // die();
                 displayHome();
+                // var_dump($_GET['itemId']);
+                // die();
                 break;
 
             case 'item':
                 getItemId();
                 break;
+
+            // case 'descriptionItem':
+            //     /*See more item of home*/
+            //     // var_dump('router');
+            //     // die();
+            //     descriptionItem();
+            //     break;
 
             case 'listItemsSeller':
                 /* Items of Seller */
@@ -204,14 +209,15 @@ try {
                 manageAllCustomers();
                 break;
 
-            case 'manageSellers':
-                manageAllSellers();
-                break;
-
+            
             case 'manageItems':
                 // var_dump('index');
                 // die();
                 manageAllItems();
+                break;
+
+            case 'manageSellers':
+                manageAllSellers();
                 break;
 
             case 'newItem':
@@ -257,14 +263,14 @@ try {
                 // var_dump(submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_SESSION['id']));
                 // die();
                 break;
+            
+            case 'subscribeCustomer':
+                /* Affichage inscription Client*/
+                displaySubscribe();
+                break;
     
             case 'subscribeSeller':
                 /* Affichage inscription vendeur */
-                displaySubscribe();
-                break;
-
-            case 'subscribeCustomer':
-                /* Affichage inscription Client*/
                 displaySubscribe();
                 break;
 

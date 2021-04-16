@@ -143,4 +143,18 @@ class SellerManager extends Manager
         // die();boolean false
         return $sellerUpdate;
     }
+
+    /**
+     * Get seller By id Items
+     */
+    public function getSellersByItem($itemId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE id_seller = ?');
+        $req->execute(array($itemId));
+        $sellerByItem = $req->fetch();
+        // var_dump($sellerByItem);
+        // die();//bool false
+        return $sellerByItem;
+    }
 }

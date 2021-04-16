@@ -2,7 +2,6 @@
 use P5\model\CustomerManager;
 use P5\model\SellerManager;
 use P5\model\ItemsManager;
-use P5\utils\Utils;
 
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
