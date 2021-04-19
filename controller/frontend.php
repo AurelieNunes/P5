@@ -8,72 +8,6 @@ use P5\utils\Utils;
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
 
-/**
- * Display Category
- */
-function displayCategory()
-{
-    $itemsManager = new ItemsManager();
-    $categories = $itemsManager->getAllCategories();
-    require 'view/frontend/customer/listCategoryView.php';
-}
-
-/**
- * Display Account Customer
- */
-function displayAccountCustomer()
-{
-    require 'view/frontend/customer/updateCustomerView.php';
-}
-
-/**
- * Display create item
- */
-function displayCreateItem()
-{
-    $itemsManager = new ItemsManager();
-    $categories = $itemsManager->getAllCategories();
-
-    require 'view/frontend/seller/createItemSellerView.php';
-}
-
-/**
- * Display dashboard seller
- */
-function displayDashboardSeller()
-{
-    require 'view/frontend/seller/dashboardSellerView.php';
-}
-
-/**
- * display items by category
- * @param int $category_id
- */
-function displayItemsByCategory(int $category_id)
-{
-    $itemsManager = new ItemsManager();
-    
-    $itemsCategories = $itemsManager->getItemsByCategory($category_id);
-    $categories = $itemsManager->getCategoryById($category_id);
-
-    require('view/frontend/customer/itemsByCategoryView.php');
-}
-
-/**
- * Display login view
- */
-function displayLogin()
-{
-    require('view/frontend/common/loginView.php');
-}
-
-/**
- * Display subscribe view
- */
-function displaySubscribe()
-{
-    require('view/frontend/common/subscribeView.php');
-}
 
 /**
  * Add Customer
@@ -137,8 +71,6 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
         $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
         $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
         $newSeller;
-        // var_dump($newSeller);
-        // die;
         // redirige vers page d'accueil avec le nouveau paramètre
 
         Header('Location: index.php?action=loginSeller');
@@ -187,15 +119,110 @@ function deleteItem(int $itemId): void
 
 /**
  * Description Item
- * 
+ * @param int $itemId
+ * @return array
  */
-function descriptionItem(): void
+function descriptionItem(int $itemId)
 {
     $itemsManager = new ItemsManager();
-    $itemsDetails = $itemsManager->getItem($_GET['itemId']);
-    // var_dump($itemsDetails);
-    // die();//bool false
+    // $sellerManager = new SellerManager();
+    $itemsDetails = $itemsManager->getItem($itemId);
+    // $seller = $sellerManager -> getSellerCompanyById($sellerId);
+    // var_dump($seller);
+    // die();
+    
     require('view/frontend/customer/descriptionProductView.php');
+}
+
+/**
+ * Display Account Customer
+ */
+function displayAccountCustomer()
+{
+    require 'view/frontend/customer/updateCustomerView.php';
+}
+
+/**
+ * Display Category
+ */
+function displayCategory()
+{
+    $itemsManager = new ItemsManager();
+    $categories = $itemsManager->getAllCategories();
+    require 'view/frontend/customer/listCategoryView.php';
+}
+
+/**
+ * Display create item
+ */
+function displayCreateItem()
+{
+    $itemsManager = new ItemsManager();
+    $categories = $itemsManager->getAllCategories();
+
+    require 'view/frontend/seller/createItemSellerView.php';
+}
+
+/**
+ * Display dashboard seller
+ */
+function displayDashboardSeller()
+{
+    require 'view/frontend/seller/dashboardSellerView.php';
+}
+
+/**
+ * Get items in random
+ */
+function displayHome()
+{
+    $itemsManager = new ItemsManager();
+    $sellerManager = new SellerManager();
+    $itemsRandom = $itemsManager->randomItems();
+    $sellerRandom = $sellerManager->randomSellers();
+    // var_dump($sellerRandom);
+    // die();
+
+    $sellers = [];
+
+    foreach ($itemsRandom as $item) {
+        $sellerId = $item['id_seller'];
+        $seller = $sellerManager->getSellerCompanyById($sellerId);
+    
+        $sellers[$sellerId] = $seller;
+    }
+
+    require('view/frontend/common/homeView.php');
+}
+
+/**
+ * display items by category
+ * @param int $category_id
+ */
+function displayItemsByCategory(int $category_id)
+{
+    $itemsManager = new ItemsManager();
+    
+    $itemsCategories = $itemsManager->getItemsByCategory($category_id);
+    $categories = $itemsManager->getCategoryById($category_id);
+
+    require('view/frontend/customer/itemsByCategoryView.php');
+}
+
+/**
+ * Display login view
+ */
+function displayLogin()
+{
+    require('view/frontend/common/loginView.php');
+}
+
+/**
+ * Display subscribe view
+ */
+function displaySubscribe()
+{
+    require('view/frontend/common/subscribeView.php');
 }
 
 /**
@@ -225,42 +252,17 @@ function displayUpdateSeller()
 }
 
 /**
- * Get items in random
+ * Get All sellers
  */
-function displayHome()
+function getAllSellers()
 {
-    $itemsManager = new ItemsManager();
+    // var_dump('test controller');
+    // die();ok
     $sellerManager = new SellerManager();
-    $itemsRandom = $itemsManager->randomItems();
-
-    $sellers = [];
-
-    foreach ($itemsRandom as $item) {
-        $sellerId = $item['id_seller'];
-        $seller = $sellerManager->getSellerCompanyById($sellerId);
-    
-        $sellers[$sellerId] = $seller;
-    }
-
-    require('view/frontend/common/homeView.php');
-}
-
-/**
- * Is looking if the ref given as parametere already exist in the DATABASE. Return true if dont exist.
- * @param string $ref
- * @return bool
- */
-function isUniqueRef(string $ref): bool
-{
-    $itemsManager = new ItemsManager();
-    $allRefs = $itemsManager->getAllRef();
-
-    foreach ($allRefs as $refDB) {
-        if ($refDB[0] === $ref) {
-            return false;
-        }
-    }
-    return true;
+    $allSellers = $sellerManager->allSellers();
+    // var_dump($allSellers);
+    // die(); //retourne plusieurs array
+    require('view/frontend/customer/listSellersView.php');
 }
 
 /**
@@ -291,21 +293,6 @@ function getItemId(): void
     require('view/frontend/seller/itemView.php');
 }
 
-// /**
-//  * Get all Items
-//  */
-// function getItems()
-// {
-//     // var_dump('test controller');
-//     // die();
-//     $itemsManager = new ItemsManager();
-//     $allItems = $itemsManager->getAllItems();
-//     // var_dump($allItems);
-//     // die();
-
-//     require('view/frontend/customer/listSellersView.php');
-// }
-
 /**
  * Get all items by seller
  */
@@ -326,33 +313,29 @@ function getItemsSellerId(): void
     require('view/frontend/seller/listItemsView.php');
 }
 
-// function getSellerbyId()
-// {
-//     $sellerManager = new SellerManager();
-//     $sellerbyId =$sellerManager->getSeller($_SESSION['id']);
-
-//     require('view/frontend/seller/updateSellerView.php');
-
-// }
-
 /**
- * Get All sellers
+ * Is looking if the ref given as parametere already exist in the DATABASE. Return true if dont exist.
+ * @param string $ref
+ * @return bool
  */
-function getAllSellers()
+function isUniqueRef(string $ref): bool
 {
-    // var_dump('test controller');
-    // die();ok
-    $sellerManager = new SellerManager();
-    $allSellers = $sellerManager->allSellers();
-    // var_dump($allSellers);
-    // die(); //retourne plusieurs array
-    require('view/frontend/customer/listSellersView.php');
+    $itemsManager = new ItemsManager();
+    $allRefs = $itemsManager->getAllRef();
+
+    foreach ($allRefs as $refDB) {
+        if ($refDB[0] === $ref) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**
  * Submit login customer
  * @param string $mail
  * @param string $pass
+ * @return void
  */
 function loginSubmitCustomer(string $mail, string $pass): void
 {

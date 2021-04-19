@@ -37,7 +37,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p class="title-product h5"><?= $randomItem['nameItem'];
           ?></p>
           <p class="price h6">Prix : <?= $randomItem['price'];?> €</p>
-          <p class="link h6">Vendeur :<?= $seller[0] ?> </p>
+          <p class="link h6">Vendeur : <?= $seller[0] ?> </p>
           <p class="link-ReadMore">
             <a class="nav-link h6" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir plus...</a>
           </p>
@@ -52,14 +52,19 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- NEW SELLERS OF THE WEEK -->
 <section class="newSellers">
-  <h1 class="text-center">Les P'tits Nouveaux !</h1>
+  <h1 class="text-center">Les P'tits Commerçants !</h1>
 
   <div class="newSeller row">
+  <?php foreach ($sellerRandom as $randomSeller) 
+    {
+    ?>
     <div class="featurette-seller">
-      <p class="nameSeller text-center">Promod</p>
+      <p class="nameSeller text-center"><?= $randomSeller['company'];?></p>
       <div class="content-seller d-flex">
         <div class="seller">
-          <p class="addressSeller">rue jules ferry<br>11100<br>Narbonne</p>
+          <p class="addressSeller text-primary"><?= $randomSeller['addressSeller'];?></p><br>
+          <p><?= $randomSeller['cpSeller'];?></p><br>
+          <p><?= $randomSeller['citySeller'];?></p>
           <p class="linkShop"><a href="#">promod</a></p>
         </div>
         <div class="img-seller">
@@ -67,33 +72,11 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
         </div>
       </div>
     </div>
-
-    <div class="featurette-seller">
-      <p class="nameSeller text-center">Promod</p>
-      <div class="content-seller d-flex">
-        <div class="seller">
-          <p class="addressSeller">rue jules ferry<br>11100<br>Narbonne</p>
-          <p class="linkShop"><a href="#">promod</a></p>
-        </div>
-        <div class="img-seller">
-          <img src="public/img/narbonne.jpg" />
-        </div>
-      </div>
-    </div>
-
-    <div class="featurette-seller">
-      <p class="nameSeller text-center">Promod</p>
-      <div class="content-seller d-flex">
-        <div class="seller">
-          <p class="addressSeller">rue jules ferry<br>11100<br>Narbonne</p>
-          <p class="linkShop"><a href="#">promod</a></p>
-        </div>
-        <div class="img-seller">
-          <img src="../../../public/img/narbonne.jpg" />
-        </div>
-      </div>
-    </div>
+    <?php
+    }
+    ?>
   </div>
+
 </section>
 
 <?php $content = ob_get_clean(); ?>

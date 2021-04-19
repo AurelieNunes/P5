@@ -37,24 +37,6 @@ class ItemsManager extends Manager
     }
 
     /**
-     * Get categories by id
-     * @param int $category_id
-     * @return array
-     */
-    public function getCategoryById(int $category_id): array
-    {
-        $db=$this->dbConnect();
-        $req = $db->prepare('SELECT id, category_Name, path_cat, url_path FROM categories WHERE id=?');
-        // var_dump($req);
-        // die();
-        $req->execute(array($category_id));
-        $categoryId= $req->fetch();
-        // var_dump($categoryId);
-        // die();
-        return $categoryId;
-    }
-
-    /**
      * Get all Items in DATABASE
      * @return array
      */
@@ -84,17 +66,36 @@ class ItemsManager extends Manager
     }
 
     /**
-     * Get item by id
-     * @return array tableau avec toutes les informations d'un article selon son id
-     * @param int $itemId
+     * Get categories by id
+     * @param int $category_id
+     * @return array
      */
-    public function getItem($itemId)
+    public function getCategoryById(int $category_id): array
+    {
+        $db=$this->dbConnect();
+        $req = $db->prepare('SELECT id, category_Name, path_cat, url_path FROM categories WHERE id=?');
+        // var_dump($req);
+        // die();
+        $req->execute(array($category_id));
+        $categoryId= $req->fetch();
+        // var_dump($categoryId);
+        // die();
+        return $categoryId;
+    }
+
+    /**
+     * Get item by id
+     * @param int $itemId
+     * @return array tableau avec toutes les informations d'un article selon son id
+     */
+    public function getItem(int $itemId): array
     {
         $db = $this->dbConnect();
-        $item = $db->query('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_image FROM items WHERE id = ?');
-        // var_dump($item);
-        // die();//bool false
-        // return $item;
+        $req = $db->prepare('SELECT * FROM items WHERE id = ?');
+        $req->execute(array($itemId));
+        $item = $req ->fetch();
+
+        return $item;
     }
 
     /**

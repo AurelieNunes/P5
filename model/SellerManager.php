@@ -6,6 +6,22 @@ use \P5\model\Manager;
 class SellerManager extends Manager 
 {
     /**
+     * Get All Sellers
+     * @return array
+     */
+    public function allSellers(): array
+    {
+        // var_dump('DATABASE');
+        // die();ok
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT * FROM seller');
+        $sellers = $req->fetchAll();
+        // var_dump($sellers);
+        // die();return plusieurs array
+        return $sellers;
+    }
+
+    /**
      * Check company name seller
      * @param string $company
      * @return
@@ -19,20 +35,6 @@ class SellerManager extends Manager
 
 		return $companySeller;
 	}
-
-    /**
-     * Check siret number
-     * @param int $siret
-     * 
-     */
-    public function checkSiret(int $siret)
-    {
-        $db= $this->dbConnect();
-        $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
-        $req->execute(array($siret));
-        $siretCheck = $req->fetch();
-        return $siretCheck;
-    }
 
     /**
      * Check mail seller
@@ -50,6 +52,20 @@ class SellerManager extends Manager
 	}
 
     /**
+     * Check siret number
+     * @param int $siret
+     * 
+     */
+    public function checkSiret(int $siret)
+    {
+        $db= $this->dbConnect();
+        $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
+        $req->execute(array($siret));
+        $siretCheck = $req->fetch();
+        return $siretCheck;
+    }
+
+    /**
      * Delete seller by id
      * @param int $sellerId
      */
@@ -63,19 +79,18 @@ class SellerManager extends Manager
     }
 
     /**
-     * Get All Sellers
+     * Get seller by id
+     * @param int $sellerId
      * @return array
      */
-    public function allSellers(): array
+    public function getSeller($sellerId): array
     {
-        // var_dump('DATABASE');
-        // die();ok
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM seller');
-        $sellers = $req->fetchAll();
-        // var_dump($sellers);
-        // die();return plusieurs array
-        return $sellers;
+        $db= $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM seller WHERE id = ?');
+        $req->execute(array($sellerId));
+        $seller = $req->fetch();
+
+        return $seller;
     }
 
     /**
@@ -95,21 +110,6 @@ class SellerManager extends Manager
     }
 
     /**
-     * Get seller by id
-     * @param int $sellerId
-     * @return array
-     */
-    public function getSeller($sellerId): array
-    {
-        $db= $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM seller WHERE id = ?');
-        $req->execute(array($sellerId));
-        $seller = $req->fetch();
-
-        return $seller;
-    }
-
-    /**
      * Login seller
      * @param string $mail
      * @return array
@@ -123,6 +123,19 @@ class SellerManager extends Manager
         // var_dump($seller);
         // die();
         return $seller;
+    }
+
+     /**
+     * Get random Seller
+     * @return array with 3 sellers random
+     */
+    public function randomSellers(): array
+    {
+        $db = $this->dbConnect();
+        $req = $db-> query('SELECT * FROM seller ORDER BY rand() LIMIT 3');
+        $randomSeller = $req->fetchAll();
+
+        return $randomSeller;
     }
 
     /**

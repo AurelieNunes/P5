@@ -123,16 +123,17 @@ try {
                 deleteSeller($_GET['id']);
                 break;
             
+            case 'descriptionItem':
+                /*See more item of home*/
+                descriptionItem($_GET['itemId']);
+                break;
+
             case 'displayAccountCustomer':
                 displayAccountCustomer();
                 break;
     
             case 'displayItemsByCategory':
-                // var_dump('test routeur');
-                // die();//OK
                 displayItemsByCategory($_GET['category_id']);
-                // var_dump($_GET['category_id']);
-                // die(); //return id de la catégorie
                 break;
             
             case 'displayUpdateItem':
@@ -140,35 +141,20 @@ try {
                 break;
 
             case 'displayUpdateSeller' :
-                // var_dump('test update');
-                // die(); ok
                 displayUpdateSeller();
                 break;
 
             case 'getCustomer' :
-                // var_dump('test index');
-                // die();
                 getCustomerById($_SESSION['id']);
                 break;
 
             case 'home' :
-                // var_dump('router');
-                // die();
                 displayHome();
-                // var_dump($_GET['itemId']);
-                // die();
                 break;
 
             case 'item':
                 getItemId();
                 break;
-
-            // case 'descriptionItem':
-            //     /*See more item of home*/
-            //     // var_dump('router');
-            //     // die();
-            //     descriptionItem();
-            //     break;
 
             case 'listItemsSeller':
                 /* Items of Seller */
@@ -211,8 +197,6 @@ try {
 
             
             case 'manageItems':
-                // var_dump('index');
-                // die();
                 manageAllItems();
                 break;
 
@@ -251,17 +235,11 @@ try {
                 break;
 
             case 'submitUpdateCustomer':
-                // var_dump('test index');
-                // die();
                 submitUpdateCustomer($_POST['addressCustomer'],$_POST['cpCustomer'], $_POST['cityCustomer'], $_POST['telCustomer'], $_SESSION['id']);
                 break;
 
             case 'submitUpdateSeller':
-                // var_dump('test index');
-                // die();
                 submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_SESSION['id']);
-                // var_dump(submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_SESSION['id']));
-                // die();
                 break;
             
             case 'subscribeCustomer':
@@ -282,6 +260,6 @@ try {
     }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
-    // var_dump($errorMessage);
+
     require('view/frontend/common/errorView.php');
 }
