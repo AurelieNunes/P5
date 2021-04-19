@@ -135,7 +135,8 @@ CATEGORIE
 1) VUE AVEC TTES LES CATEGORIES //OK
 2) VUE ARTICLES PAR CATEGORIES
     //etape 1 Article selon categorie ou categorie selon l article??
-    //etape 2 Lorsque je click sur la catégorie je veux recupérer les articles de la categorie
+    //etape 2 Lorsque je click sur la catégorie je veux recupérer les articles 
+    de la categorie
 
 //////////////////////////////////////////////////////////////////////////////
 Tu cherche à faire quoi ?
@@ -143,3 +144,36 @@ Afficher l'image de ma catégorie.
 J'ai besoin de quoi ?
 Les données de ma catégorie en bdd 
 Comment je recupere ma catégorie ?
+
+
+///////////////////////////////////////////////////////////////////////////////
+HOME
+ETAPE 1 
+1) VUE DE L ACCUEIL
+    //Récupérer les articles //OK
+    3 articles au hasard
+        -> Random //OK
+    
+        -> ttes les infos des articles //OK
+    
+    //Récuperer le vendeur lié à l article
+            -> je veux récupérer l'id seller de la table items // OK
+            -> Comment ? // OK
+             On parcours notre tableau de donnée pour aller chercher sur chaque article l'id seller.
+             -> Recuperer l'identé du vendeur via ca table
+             -> Comment ?
+              -> Requete sql qui va va cherche selon id_seller
+              
+
+        -> afficher chaque vendeur
+
+-> J'ai quoi ? 
+    Toutes les informatiions de mon item
+-> Je veux quoi ? 
+    l'id du vendeur (id_seller)
+-> Comment je récupère les informatiions du vendeur selon son id ??
+
+//////////////////////////////////////////////////
+
+ETAPE 2
+    // Récupérer les 3 derniers vendeurs qui ont rejoins

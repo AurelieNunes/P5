@@ -104,16 +104,10 @@ class ItemsManager extends Manager
      */
     public function getItemsByCategory(int $category_id): array
     {
-        // var_dump($category_id);
-        // die(); 
-        // var_dump('test model');
-        // die(); //OK
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE category_id = ?');
         $req->execute(array($category_id));
-        $itemsByCat = $req->fetch();
-        // var_dump($itemsByCat);
-        // die();
+        $itemsByCat = $req->fetchAll();
 
         return $itemsByCat;
     }
@@ -129,7 +123,7 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
-        $itemsSeller = $req->fetchAll();
+        $itemsSeller = $req->fetch();
 
         return $itemsSeller;
     }

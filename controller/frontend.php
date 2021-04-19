@@ -51,16 +51,11 @@ function displayDashboardSeller()
  */
 function displayItemsByCategory(int $category_id)
 {
-    // var_dump($category_id);
-    // die();
     $itemsManager = new ItemsManager();
     
     $itemsCategories = $itemsManager->getItemsByCategory($category_id);
-    // var_dump($itemsCategories);
-    // die();//return tableau de l article
     $categories = $itemsManager->getCategoryById($category_id);
-    // var_dump($categories);
-    // die(); //return tableau 
+
     require('view/frontend/customer/itemsByCategoryView.php');
 }
 
@@ -234,13 +229,19 @@ function displayUpdateSeller()
  */
 function displayHome()
 {
-    // var_dump('test controller');
-    // die();
     $itemsManager = new ItemsManager();
+    $sellerManager = new SellerManager();
     $itemsRandom = $itemsManager->randomItems();
-    // var_dump($itemsRandom);
-    // die();//return array avec les 3 items
-    // return $itemsRandom;
+
+    $sellers = [];
+
+    foreach ($itemsRandom as $item) {
+        $sellerId = $item['id_seller'];
+        $seller = $sellerManager->getSellerCompanyById($sellerId);
+    
+        $sellers[$sellerId] = $seller;
+    }
+
     require('view/frontend/common/homeView.php');
 }
 

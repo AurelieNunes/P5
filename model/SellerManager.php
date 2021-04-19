@@ -79,18 +79,33 @@ class SellerManager extends Manager
     }
 
     /**
-     * Get seller by id
+     * Return the name of one seller
      * @param int $sellerId
-     * @return bool
+     * @return array
      */
-    public function getSeller($sellerId): bool
+    public function getSellerCompanyById(int $sellerId):array
     {
         $db= $this->dbConnect();
-        $req = $db->prepare('SELECT id, company, addressSeller, cpSeller, citySeller, siret, telSeller, mail, pass, isAdmin DATE_FORMAT(subscribe_date, \'%d/%m/%Y à %Hh%imin%ss\') FROM seller WHERE id = ?');
+        $req = $db->prepare('SELECT company FROM seller WHERE id= ?');
+        $req->execute(array($sellerId));
+
+        $company = $req->fetch();        
+
+        return $company;
+    }
+
+    /**
+     * Get seller by id
+     * @param int $sellerId
+     * @return array
+     */
+    public function getSeller($sellerId): array
+    {
+        $db= $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM seller WHERE id = ?');
         $req->execute(array($sellerId));
         $seller = $req->fetch();
-        // var_dump($seller);
-        // die();
+
         return $seller;
     }
 
@@ -144,17 +159,4 @@ class SellerManager extends Manager
         return $sellerUpdate;
     }
 
-    /**
-     * Get seller By id Items
-     */
-    public function getSellersByItem($itemId)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE id_seller = ?');
-        $req->execute(array($itemId));
-        $sellerByItem = $req->fetch();
-        // var_dump($sellerByItem);
-        // die();//bool false
-        return $sellerByItem;
-    }
 }

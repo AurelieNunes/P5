@@ -25,6 +25,9 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
   <?php
   foreach($itemsRandom as $randomItem)
   {
+    $idSeller = $randomItem['id_seller'];
+    $seller = $sellers[$idSeller];
+   
   ?>
     <div class="featurette-product text-align-center">
       <div class="img-product mx-auto mt-2">
@@ -34,7 +37,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p class="title-product h5"><?= $randomItem['nameItem'];
           ?></p>
           <p class="price h6">Prix : <?= $randomItem['price'];?> €</p>
-          <!-- <p class="link h6">Vendeur : </p> -->
+          <p class="link h6">Vendeur :<?= $seller[0] ?> </p>
           <p class="link-ReadMore">
             <a class="nav-link h6" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir plus...</a>
           </p>
