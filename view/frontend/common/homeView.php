@@ -19,10 +19,10 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- SELECTION PROFUCT OF THE WEEK -->
 <section class="selectionWeek">
-  <h1 class="text-center mt-0 mb-0">La P'tite Sélection de la Semaine</h1>
+  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">La P'tite Sélection de la Semaine</h1>
 
   <div class="productWeek row justify-content-around m-0 flex-wrap">
-  <?php
+    <?php
   foreach($itemsRandom as $randomItem)
   {
     $idSeller = $randomItem['id_seller'];
@@ -32,14 +32,22 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
     <div class="featurette-product text-align-center">
       <div class="img-product mx-auto mt-2">
         <img class="img-product1" src="<?= $randomItem['url_img'];
-        ?>"/>
+        ?>" />
         <div class="product pt-2">
-          <p class="title-product h5"><?= $randomItem['nameItem'];
+          <p class="title-product h5 text-center"><?= $randomItem['nameItem'];
           ?></p>
           <p class="price h6">Prix : <?= $randomItem['price'];?> €</p>
-          <p class="link h6">Vendeur : <?= $seller[0] ?> </p>
-          <p class="link-ReadMore">
-            <a class="nav-link h6" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir plus...</a>
+          <p class="link-seller h6">
+            <a class="nav-link h6 text-primary"
+              href="index.php?action=cardSeller&amp;id_seller= <?= $idSeller; ?>"><?= $seller[0]; ?></a>
+          </p>
+          <!-- <?php
+            // var_dump($idSeller);
+            // die();
+          ?> -->
+          <p class="link-ReadMore text-center">
+            <a class="nav-link h6" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir
+              plus...</a>
           </p>
         </div>
       </div>
@@ -52,10 +60,10 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- NEW SELLERS OF THE WEEK -->
 <section class="newSellers">
-  <h1 class="text-center">Les P'tits Commerçants !</h1>
+  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">Les P'tits Commerçants !</h1>
 
   <div class="newSeller row">
-  <?php foreach ($sellerRandom as $randomSeller) 
+    <?php foreach ($sellerRandom as $randomSeller) 
     {
     ?>
     <div class="featurette-seller">

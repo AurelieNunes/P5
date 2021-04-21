@@ -105,9 +105,25 @@ class SellerManager extends Manager
         $req->execute(array($sellerId));
 
         $company = $req->fetch();        
-
+        // var_dump($company);
+        // die();
         return $company;
     }
+
+    /**
+     * Get Seller By Company
+     */
+    // public function getSellerByCompany(string $companyName)
+    // {
+    //     $db = $this->dbConnect();
+    //     $req = $db->prepare('SELECT * FROM seller WHERE company=?');
+    //     $req->execute(array($companyName));
+
+    //     $companyName = $req->fetch();
+    //     // var_dump($companyName);
+    //     // die();
+    //     return $companyName;
+    // }
 
     /**
      * Login seller

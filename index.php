@@ -85,6 +85,14 @@ try {
                         throw new Exception('Administrateur non identifié');
                     }
                 break;
+
+            case 'cardSeller' :
+                // var_dump('router');
+                // die();
+                displayCardSeller($_GET['id_seller']);
+                // var_dump(displayCardSeller($_GET['id_seller']));
+                // die();
+                break;
                 
             case 'category' :
                 displayCategory();

@@ -7,12 +7,12 @@
     <div class="jumbotron col-12">
         <img class="card-img-top col-6 mx-auto" src="<?= $categories['path_cat']; ?>" alt="<?= $categories['url_path'];?>">
 
-        <h1 class="display-4 text-primary"><?= $categories['category_Name']; ?></h1>
+        <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto"><?= $categories['category_Name']; ?></h1>
     </div>
     <?php
         foreach ($itemsCategories as $item) {
             ?>
-    <article class="card" style="width: 18rem;">
+    <article class="card mx-auto" style="width: 18rem;">
         <img class="card-img-top" src="<?= $item['url_img']; ?>" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title"><?= $item['nameItem']; ?></h5>

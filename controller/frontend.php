@@ -143,12 +143,28 @@ function displayAccountCustomer()
 }
 
 /**
+ * Display Card Seller
+ * @param $sellerId
+ * @return array
+ */
+function displayCardSeller(int $sellerId)
+{
+    $sellerManager = new SellerManager();
+    $itemsManager = new ItemsManager();
+    $seller = $sellerManager->getSellerCompanyById($sellerId);
+    $allItems = $itemsManager->getItemsSeller($_GET['id_seller']);
+
+    require 'view/frontend/customer/sellerView.php';
+}
+
+/**
  * Display Category
  */
 function displayCategory()
 {
     $itemsManager = new ItemsManager();
     $categories = $itemsManager->getAllCategories();
+
     require 'view/frontend/customer/listCategoryView.php';
 }
 

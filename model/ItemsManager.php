@@ -74,12 +74,9 @@ class ItemsManager extends Manager
     {
         $db=$this->dbConnect();
         $req = $db->prepare('SELECT id, category_Name, path_cat, url_path FROM categories WHERE id=?');
-        // var_dump($req);
-        // die();
         $req->execute(array($category_id));
         $categoryId= $req->fetch();
-        // var_dump($categoryId);
-        // die();
+
         return $categoryId;
     }
 
@@ -106,7 +103,7 @@ class ItemsManager extends Manager
     public function getItemsByCategory(int $category_id): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE category_id = ?');
+        $req = $db->prepare('SELECT * FROM items WHERE category_id = ?');
         $req->execute(array($category_id));
         $itemsByCat = $req->fetchAll();
 
@@ -124,7 +121,7 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img FROM items WHERE id_seller = ?');
         $req->execute(array($sellerId));
-        $itemsSeller = $req->fetch();
+        $itemsSeller = $req->fetchAll();
 
         return $itemsSeller;
     }
@@ -138,8 +135,7 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db-> query('SELECT * FROM items ORDER BY rand() LIMIT 3');
         $randomItem = $req->fetchAll();
-        // var_dump($randomItem);
-        // die();
+
         return $randomItem;
     }
     
@@ -172,8 +168,7 @@ class ItemsManager extends Manager
         $req = $db->prepare('UPDATE items SET category_id=?, ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
         $req->execute(array($category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
         $itemUpdate = $req->fetch();
-        // var_dump($itemUpdate);
-        // die(); //boolean false
+
         return $itemUpdate;
     }
 }
