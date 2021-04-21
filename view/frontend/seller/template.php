@@ -38,7 +38,7 @@
                 <p class="logo col-1">
                     <img src="public/img/logo2.png" alt="logo site">
                 </p>
-                <h1 class="title text-primary">Mes P'tites Emplettes Narbonnaises</h1>
+                <h1 class="title text-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
                 <p class="narbonne">
                     <img src="public/img/narbonne.jpg" alt="">
                 </p>
@@ -48,21 +48,30 @@
             <div class="collapse navbar-collapse justify-content-around primary" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" aria-current="page" href="dashboardSellerView.php">Accueil</a>
+                        <a class="h6 mb-0 nav-link text-light" aria-current="page" href="index.php?action=home">Accueil</a>
                     </li>
+                    <li class="nav-item">
+                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=listSellers">Commerçants</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=category">Catégories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
+                        </li>
                 </ul>
                 <ul class="navbar-nav">
                     <?php 
                         if (!empty($_SESSION))  {
-                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                            echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
                         } else {
-                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginSeller">Connexion / Inscription</a></li>';
+                            echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginSeller">Connexion / Inscription</a></li>';
                         }
                         if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
-							echo '<li class="nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
+							echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
 							}
                         if (!empty($_SESSION)) {
-                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
+                            echo '<li class="h6 mb-0 nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
                         }
                         ?>
                     </li>

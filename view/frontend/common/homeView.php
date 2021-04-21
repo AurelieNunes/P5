@@ -19,7 +19,8 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- SELECTION PROFUCT OF THE WEEK -->
 <section class="selectionWeek">
-  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">La P'tite Sélection de la Semaine</h1>
+  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">La P'tite Sélection de la
+    Semaine</h1>
 
   <div class="productWeek row justify-content-around m-0 flex-wrap">
     <?php
@@ -37,14 +38,11 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p class="title-product h5 text-center"><?= $randomItem['nameItem'];
           ?></p>
           <p class="price h6">Prix : <?= $randomItem['price'];?> €</p>
+          <p class="price h6">En stock : <?= $randomItem['stock'];?></p>
           <p class="link-seller h6">
             <a class="nav-link h6 text-primary"
               href="index.php?action=cardSeller&amp;id_seller= <?= $idSeller; ?>"><?= $seller[0]; ?></a>
           </p>
-          <!-- <?php
-            // var_dump($idSeller);
-            // die();
-          ?> -->
           <p class="link-ReadMore text-center">
             <a class="nav-link h6" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir
               plus...</a>
@@ -60,7 +58,8 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- NEW SELLERS OF THE WEEK -->
 <section class="newSellers">
-  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">Les P'tits Commerçants !</h1>
+  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">Les P'tits Commerçants !
+  </h1>
 
   <div class="newSeller row">
     <?php foreach ($sellerRandom as $randomSeller) 
@@ -73,7 +72,10 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p class="addressSeller text-primary"><?= $randomSeller['addressSeller'];?></p><br>
           <p><?= $randomSeller['cpSeller'];?></p><br>
           <p><?= $randomSeller['citySeller'];?></p>
-          <p class="linkShop"><a href="#">promod</a></p>
+          <p class="link-seller h6">
+            <a class="nav-link h6 text-primary"
+              href="index.php?action=cardSeller&amp;id_seller= <?= $idSeller; ?>"><?= $seller[0]; ?></a>
+          </p>
         </div>
         <div class="img-seller">
           <img src="public/img/narbonne.jpg" />

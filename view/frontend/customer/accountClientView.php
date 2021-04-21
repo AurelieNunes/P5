@@ -16,8 +16,8 @@
 						<p>Adresse : <?= $customerCo['addressCustomer']; ?></p>
 						<p>Code Postal : <?= $customerCo['cpCustomer']; ?>
 							<p>Ville : <?= $customerCo['cityCustomer']; ?></p>
-						<p>Tel : <?= $customerCo['telCustomer']; ?></p>
-						<p>Mail : <?= $customerCo['mail']; ?></p>
+							<p>Tel : <?= $customerCo['telCustomer']; ?></p>
+							<p>Mail : <?= $customerCo['mail']; ?></p>
 					</div>
 				</li>
 			</ul>

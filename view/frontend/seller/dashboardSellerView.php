@@ -4,9 +4,9 @@
 <div class="container-fluid d-flex">
   <a href="index.php?action=dashboardSeller"></a>
   <section id="adminPanel" class="col-12">
-    <div class="jumbotron mb-0 pb-5 bg-primary">
+    <div class="jumbotron mb-5 pb-5 bg-primary">
       <h1 class="text-center">
-        <p class="text-center">Tableau de Bord</p>
+        <p class="text-center text-white">Tableau de Bord</p>
       </h1>
     </div>
 
@@ -20,8 +20,9 @@
     <!-- Liste des Produits -->
     <div class="headPost mb-4 text-center">
       <h3>Produits en Ligne</h3>
-      
-      <button class="btn btn-primary" id="listItems"><a class="text-white" href="index.php?action=listItemsSeller">Liste des
+
+      <button class="btn btn-primary" id="listItems"><a class="text-white" href="index.php?action=listItemsSeller">Liste
+          des
           produits</a></button>
     </div>
 

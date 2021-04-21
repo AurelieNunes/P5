@@ -1,7 +1,7 @@
 <?php $title = "Qui sommes-nous ?";?>
 
 <?php ob_start();?>
-
+<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
 <section class="mt-5 mb-5" id="About">
     <div class="mypicture mx-auto">
         <img src="public/images/Portrait.jpg" alt="Jean Forterochie avec bandeau et lunettes de soleil qui sourit" />

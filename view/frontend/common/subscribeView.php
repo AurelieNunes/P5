@@ -59,14 +59,14 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
         <h1 class="h5">Vous êtes un particulier ?</h1>
         <form class="subscribe-formCustomer mx-auto d-flex flex-column align-items-center col-12"
           action="index.php?action=addCustomer" method="POST">
-         
+
           <label for="lastName" class="visually-hidden">Nom</label>
-          <input type="text" id="lastName" class="form-controlCustomer col-8" placeholder="Nom"
-            name="lastName" required autofocus>
-          
+          <input type="text" id="lastName" class="form-controlCustomer col-8" placeholder="Nom" name="lastName" required
+            autofocus>
+
           <label for="firstName" class="visually-hidden">Prénom</label>
-          <input type="text" id="firstName" class="form-controlCustomer col-8" placeholder="Prénom"
-            name="firstName" required autofocus>
+          <input type="text" id="firstName" class="form-controlCustomer col-8" placeholder="Prénom" name="firstName"
+            required autofocus>
 
           <label for="mailCustomer" class="visually-hidden">Adresse email</label>
           <input type="email" id="mailCustomer" class="form-controlCustomer col-8" placeholder="Email"

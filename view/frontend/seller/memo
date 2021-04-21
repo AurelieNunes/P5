@@ -176,4 +176,38 @@ ETAPE 1
 //////////////////////////////////////////////////
 
 ETAPE 2
-    // Récupérer les 3 derniers vendeurs qui ont rejoins
+    // Récupérer les 3 derniers vendeurs qui ont rejoint
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////// A FAIRE ////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                -- VUE DU CLIENT --
+
+ONGLET HOME =>          1/ API METEO
+                        2/ PARTIE VENDEURS
+                            1/ Lien qui envoie sur le vendeur dans la description //OK
+                            2/ Slider
+                        3/ FOOTER
+                            1/ RGPD
+                            2/ Mentions légales
+
+ONGLET COMMERCANTS =>   1/ Créer card seller avec lien pour voir tous ses articles 
+                        2/ Ajouter photo de la boutique 
+                        3/ Bouton contacter vendeur
+                        4/ Lien retour à l'accueil
+
+ONGLET CATEGORIES =>   OK
+
+ONGLET CONNEXION =>    OK
+
+ONGLET INSCRIPTION =>  OK
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SELLERVIEW =>           1/ Insérer image boutique vendeur
+                        2/ Texte de présentation de la boutique
+                        3/ Bouton Contater le vendeur
+                        4/ Améliorer la vue

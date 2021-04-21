@@ -2,12 +2,14 @@
 
 <?php ob_start(); ?>
 <section class="category text-center col-12 mx-auto">
-<p class="returnLink w-50"><a href="index.php?action=category">Retour à la liste</a></p>
-    
-    <div class="jumbotron col-12">
-        <img class="card-img-top col-6 mx-auto" src="<?= $categories['path_cat']; ?>" alt="<?= $categories['url_path'];?>">
+    <p class="returnLink w-50"><a class="h6 text-primary" href="index.php?action=category">Retour à la liste</a></p>
 
-        <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto"><?= $categories['category_Name']; ?></h1>
+    <div class="jumbotron col-12">
+        <img class="card-img-top col-6 mx-auto" src="<?= $categories['path_cat']; ?>"
+            alt="<?= $categories['url_path'];?>">
+
+        <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">
+            <?= $categories['category_Name']; ?></h1>
     </div>
     <?php
         foreach ($itemsCategories as $item) {
@@ -21,8 +23,8 @@
             <p class="card-text">Prix :<?= $item['price']; ?> €</p>
             <p class="card-text">Taille :<?= $item['size']; ?></p>
             <p class="card-text">En stock :<?= $item['stock']; ?></p>
-        </article>
-        <?php
+    </article>
+    <?php
         }
         ?>
     </div>
