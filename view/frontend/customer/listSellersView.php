@@ -10,11 +10,13 @@
         <?php   
         foreach($allSellers as $sellers)
         { 
+            // var_dump($sellers);
+            // die();
         ?>
         <li
             class="card d-flex flex-row w-25 mx-auto mb-3 mt-3 list-group-item justify-content-around align-items-center">
             <div class="img-seller w-50">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="<?= $sellers['url_pathShop']; ?>" class="card-img-top" alt="image boutique">
             </div>
             <div class="info-seller w-50">
                 <p class="link-seller h6">
@@ -25,6 +27,9 @@
                 <p><?= $sellers['cpSeller']; ?>
                     <?= $sellers['citySeller']; ?></p>
                 <p><?= $sellers['telSeller']; ?></p>
+                <p class="link-ReadMore text-center">
+            <a class="nav-link h6" href="index.php?action=cardSeller&amp;id_seller=<?= $sellers['id']; ?>">Voir tous les articles</a>
+          </p>
             </div>
         </li>
     </ul>

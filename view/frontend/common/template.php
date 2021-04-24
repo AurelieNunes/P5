@@ -125,18 +125,18 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex mb-2">
             <ul class="navbar-nav mr-auto w-100 justify-content-around">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?action=about">
-                        <p>RGPD</p>
+                    <a class="h6 nav-link text-light mb-0" href="index.php?action=about">
+                        <p class="mb-0">RGPD</p>
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link text-light" href="#">
-                        <p>Mentions Légales</p>
+                    <a class="nav-link h6 nav-link text-light mb-0" href="#">
+                        <p class="mb-0">Mentions Légales</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
-                        <p>Contact</p>
+                    <a class="h6 nav-link text-light mb-0" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
+                        <p class="mb-0">Contact</p>
                     </a>
                 </li>
 

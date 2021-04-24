@@ -19,8 +19,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- SELECTION PROFUCT OF THE WEEK -->
 <section class="selectionWeek">
-  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">La P'tite Sélection de la
-    Semaine</h1>
+  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">La P'tite Sélection de la Semaine</h1>
 
   <div class="productWeek row justify-content-around m-0 flex-wrap">
     <?php
@@ -74,7 +73,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
           <p><?= $randomSeller['citySeller'];?></p>
           <p class="link-seller h6">
             <a class="nav-link h6 text-primary"
-              href="index.php?action=cardSeller&amp;id_seller= <?= $idSeller; ?>"><?= $seller[0]; ?></a>
+              href="index.php?action=cardSeller&amp;id_seller= <?= $randomSeller['id']; ?>"><?= $randomSeller['company']; ?></a>
           </p>
         </div>
         <div class="img-seller">

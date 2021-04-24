@@ -122,17 +122,17 @@
             <ul class="navbar-nav mr-auto w-100 justify-content-around">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php?action=about">
-                        <p>RGPD</p>
+                        <p class="mb-0">RGPD</p>
                     </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link text-light" href="#">
-                        <p>Mentions Légales</p>
+                        <p class="mb-0">Mentions Légales</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
-                        <p>Contact</p>
+                        <p class="mb-0">Contact</p>
                     </a>
                 </li>
 

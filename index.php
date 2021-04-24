@@ -87,11 +87,7 @@ try {
                 break;
 
             case 'cardSeller' :
-                // var_dump('router');
-                // die();
                 displayCardSeller($_GET['id_seller']);
-                // var_dump(displayCardSeller($_GET['id_seller']));
-                // die();
                 break;
                 
             case 'category' :
@@ -247,7 +243,8 @@ try {
                 break;
 
             case 'submitUpdateSeller':
-                submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_SESSION['id']);
+                submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_POST['descriptionShop'], $_SESSION['id']);
+                
                 break;
             
             case 'subscribeCustomer':

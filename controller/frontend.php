@@ -102,7 +102,7 @@ function deleteAccountSeller(int $sellerId)
     $_SESSION = array();
     session_destroy();
 
-    Header ('Location: index.php?action=dashboardSeller&delete-account=success');
+    Header ('Location: index.php?action=home&delete-account=success');
 }
 
 /**
@@ -125,11 +125,7 @@ function deleteItem(int $itemId): void
 function descriptionItem(int $itemId)
 {
     $itemsManager = new ItemsManager();
-    // $sellerManager = new SellerManager();
     $itemsDetails = $itemsManager->getItem($itemId);
-    // $seller = $sellerManager -> getSellerCompanyById($sellerId);
-    // var_dump($seller);
-    // die();
     
     require('view/frontend/customer/descriptionProductView.php');
 }
@@ -262,8 +258,7 @@ function displayUpdateSeller()
 {
     $sellerManager = new SellerManager();
     $seller = $sellerManager->getSeller($_SESSION['id']);
-    // var_dump($seller);
-    // die();boolean false
+
     require('view/frontend/seller/updateSellerView.php');
 }
 
@@ -275,8 +270,9 @@ function getAllSellers()
     // var_dump('test controller');
     // die();ok
     $sellerManager = new SellerManager();
+    $itemsManager = new ItemsManager();
     $allSellers = $sellerManager->allSellers();
-    // var_dump($allSellers);
+    // var_dump($allItems);
     // die(); //retourne plusieurs array
     require('view/frontend/customer/listSellersView.php');
 }
@@ -461,7 +457,7 @@ function newItem(int $id_seller,int $category, string $ref, string $nameItem, st
         }
         // $refExist = $itemsManager->getItemsSeller(['ref']);
         // var_dump($refExist);
-        die();
+        // die();
     } else {
         throw new Error('Au moin champ est vide');
     }
@@ -497,18 +493,47 @@ function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $
 
 /**
  * Update seller info
+ * @param string $descriptionShop
  * @param string $addressSeller
  * @param string $citySeller
  * @param int $cpSeller
  * @param int $telSeller
  * @param int $sellerId
  */
-function submitUpdateSeller(string $addressSeller, int $cpSeller, string $citySeller, int $telSeller, int $sellerId)
+function submitUpdateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, int $sellerId)
 {
-    $sellerManager = new SellerManager();
-    $sellerUp = $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId);
-    // var_dump($sellerUp);
-    // die();
+    if ($_FILES['pictureShop']['size'] !== 0) {
+        $extension = explode('/', $_FILES['pictureShop']['type'])[1];
+        // var_dump($extension);
+        // die();
+        if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+            // var_dump($extension);
+            // die();
+            if ($_FILES['pictureShop']['size'] < 1000000) {
+                // var_dump('test');
+                // die();
+                $name = $_FILES['pictureShop']['name'];
+                // var_dump($name);
+                // die();
+                $tmp_name = $_FILES['pictureShop']['tmp_name'];
+                // var_dump($tmp_name);
+                // die();
+                $urlPathShop = 'assets/pictures/' . $name;
+                // var_dump($urlPathShop);
+                // die();
+                move_uploaded_file($tmp_name, $urlPathShop);
 
+                $sellerManager = new SellerManager();
+                $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $descriptionShop, $urlPathShop, $sellerId);
+                
+            } else {
+                throw new Exception('too big');
+            }
+        } else {
+            throw new Exception('no good extension');
+        }
+    } else {
+        throw new Exception('file is empty');
+    }
     Header('Location:index.php?action=dashboardSeller&submit-update-seller=success');
 }

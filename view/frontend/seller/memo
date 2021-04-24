@@ -194,10 +194,10 @@ ONGLET HOME =>          1/ API METEO
                             1/ RGPD
                             2/ Mentions légales
 
-ONGLET COMMERCANTS =>   1/ Créer card seller avec lien pour voir tous ses articles 
-                        2/ Ajouter photo de la boutique 
+ONGLET COMMERCANTS =>   1/ Créer card seller avec lien pour voir tous ses articles //OK
+                        2/ Ajouter photo de la boutique //OK
                         3/ Bouton contacter vendeur
-                        4/ Lien retour à l'accueil
+                        4/ Lien retour à l'accueil //OK
 
 ONGLET CATEGORIES =>   OK
 
@@ -207,7 +207,12 @@ ONGLET INSCRIPTION =>  OK
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-SELLERVIEW =>           1/ Insérer image boutique vendeur
-                        2/ Texte de présentation de la boutique
+SELLERVIEW =>           1/ Insérer image boutique vendeur //OK
+                        2/ Texte de présentation de la boutique //OK
                         3/ Bouton Contater le vendeur
                         4/ Améliorer la vue
+
+/////////////////////////////////// MODIF A FAIRE //////////////////////////////////////////////////
+Recuperer texte et photo du vendeur dans la vue SELLERVIEW
+Pb epicerie fine 1 article/2
+Rajouter € dans les descriptions articles et listes articles 

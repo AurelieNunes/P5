@@ -11,13 +11,10 @@ class SellerManager extends Manager
      */
     public function allSellers(): array
     {
-        // var_dump('DATABASE');
-        // die();ok
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM seller');
         $sellers = $req->fetchAll();
-        // var_dump($sellers);
-        // die();return plusieurs array
+
         return $sellers;
     }
 
@@ -111,21 +108,6 @@ class SellerManager extends Manager
     }
 
     /**
-     * Get Seller By Company
-     */
-    // public function getSellerByCompany(string $companyName)
-    // {
-    //     $db = $this->dbConnect();
-    //     $req = $db->prepare('SELECT * FROM seller WHERE company=?');
-    //     $req->execute(array($companyName));
-
-    //     $companyName = $req->fetch();
-    //     // var_dump($companyName);
-    //     // die();
-    //     return $companyName;
-    // }
-
-    /**
      * Login seller
      * @param string $mail
      * @return array
@@ -171,21 +153,18 @@ class SellerManager extends Manager
      * Update seller info
      * @param string $addressSeller
      * @param string $citySeller
+     * @param string $urlPathShop
      * @param int $cpSeller
      * @param int $telSeller
      * @param int $sellerId
      */
-    public function updateSeller(string $addressSeller, int $cpSeller, string $citySeller, int $telSeller, int $sellerId)
+    public function updateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, string $urlPathShop, int $sellerId)
     {
-        // var_dump('test db');
-        // die();
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE seller SET addressSeller=?, cpSeller=?, citySeller=?, telSeller=? WHERE id=?');
-        $req->execute(array($addressSeller, $cpSeller, $citySeller, $telSeller, $sellerId));
+        $req = $db->prepare('UPDATE seller SET addressSeller=?, cpSeller=?, citySeller=?, telSeller=?, descriptionShop=?, url_pathShop=? WHERE id=?');
+        $req->execute(array($addressSeller, $cpSeller, $citySeller, $telSeller,$descriptionShop,$urlPathShop, $sellerId));
         $sellerUpdate = $req->fetch();
-        // var_dump($sellerUpdate);
-        // die();boolean false
+
         return $sellerUpdate;
     }
-
 }
