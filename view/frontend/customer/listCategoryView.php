@@ -2,7 +2,10 @@
 
 <?php ob_start(); ?>
 <p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
-<section class="category text-center col-12 mx-auto">
+
+<section id="categoryList">
+<h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">Toutes les catégories</h1>
+
     <div class="listing col-10 mx-auto d-flex flex-wrap justify-content-around align-items-center">
         <?php 
             foreach($categories as $category)

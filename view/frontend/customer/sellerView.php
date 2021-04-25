@@ -2,11 +2,12 @@
 $title = "Boutique"; ?>
 
 <?php ob_start(); ?>
-<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
+<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=listSellers">Retour à la liste des commerçants</a></p>
 <!-- START THE FEATURETTES -->
 <div class="row featurette mx-auto col-6 mb-5">
     <h2 class="text-center h6 col-12 mt-3 featurette-heading ">Bienvenue sur ma boutique</h2>
     <div class="presentation d-flex col-12 align-items-center justify-center">
+        
         <p class="lead text-justify col-6">Lorem ipsum dolor sit amet consectetur adipisicing Dolorum praesentium
             veniam, adipisci accusantium ad distinctio dignissimos dolor</p>
         <div class="img-logo col-4">

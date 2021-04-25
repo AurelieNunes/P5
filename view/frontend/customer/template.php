@@ -33,15 +33,19 @@
 
 <body>
     <header>
-        <div class="jumbotron fixed-top">
-            <div class="home-title d-flex justify-content-around">
+        <div class="jumbotron fixed-top pt-4">
+            <div class="home-title d-flex justify-content-around align-items-center">
                 <p class="logo">
                     <img src="./public/img/Logo.png" alt="logo site">
                 </p>
                 <h1 class="title text-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
-                <p class="narbonne">
-                    <img src="./public/img/narbonne.jpg" alt="">
-                </p>
+                <div id="widget">
+                    <div class="widgetCityName"></div>
+                    <div class="widgetCurrentTemp"></div>
+                    <!-- <div class="widgetMinTemp"></div>
+                    <div class="widgetMaxTemp"></div> -->
+                    <div class="widgetCurrentWeather"></div>
+                </div>
             </div>
         </div>
 
@@ -139,6 +143,8 @@
             </ul>
         </nav>
     </footer>
+    <!-- JS -->
+    <script src="./public/JS/weather.js"></script>
 </body>
 
 </html>

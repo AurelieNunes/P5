@@ -11,23 +11,25 @@
         <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">
             <?= $categories['category_Name']; ?></h1>
     </div>
-    <?php
-        foreach ($itemsCategories as $item) {
+    <div class="d-flex row justify-around">
+        <?php
+            foreach ($itemsCategories as $item) {
+                ?>
+        <article class="card mx-auto col-4">
+            <img class="card-img-top mt-4" src="<?= $item['url_img']; ?>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><?= $item['nameItem']; ?></h5>
+                <p class="card-text">Ref :<?= $item['ref']; ?></p>
+                <p class="card-text">Descritpion :<?= $item['descriptionItem']; ?></p>
+                <p class="card-text">Prix :<?= $item['price']; ?> €</p>
+                <p class="card-text">Taille :<?= $item['size']; ?></p>
+                <p class="card-text">En stock :<?= $item['stock']; ?></p>
+        </article>
+        <?php
+            }
             ?>
-    <article class="card mx-auto" style="width: 18rem;">
-        <img class="card-img-top" src="<?= $item['url_img']; ?>" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title"><?= $item['nameItem']; ?></h5>
-            <p class="card-text">Ref :<?= $item['ref']; ?></p>
-            <p class="card-text">Descritpion :<?= $item['descriptionItem']; ?></p>
-            <p class="card-text">Prix :<?= $item['price']; ?> €</p>
-            <p class="card-text">Taille :<?= $item['size']; ?></p>
-            <p class="card-text">En stock :<?= $item['stock']; ?></p>
-    </article>
-    <?php
-        }
-        ?>
     </div>
+    
 </section>
 
 <?php $content = ob_get_clean(); ?>

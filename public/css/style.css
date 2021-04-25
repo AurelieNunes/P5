@@ -379,7 +379,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .lead {
@@ -8256,12 +8256,34 @@ h3 {
   background-color: #fff;
 }
 
+#widget {
+  width: 20%;
+  height: 200px;
+}
+
+.widgetCityName {
+  margin-top: 4px;
+  color : white;
+  text-align :center;
+  font-size: 24px;
+}
+
+.widgetCurrentTemp, .widgetCurrentWeather {
+  margin-left: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.widgetCurrentWeather {
+  font-size: 28px;
+}
+
 .navbar {
-  margin-top: 200px;
+  margin-top: 250px;
 }
 
 .main-template {
-  margin-top: 250px;
+  margin-top: 300px;
 }
 
 .main-template-back {
@@ -8324,6 +8346,7 @@ h3 {
 .featurette-product .img-product img {
   width: 100%;
 }
+
 
 /* .product {
   padding-top: 20px;
@@ -8806,6 +8829,7 @@ body {
  -------------------------------------------------- */
 #adminPanel .row nav {
   top : 268px;
+  /* height: 450px; */
 }
 
 /*-------------------------------------------------- */

@@ -65,19 +65,18 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
     {
     ?>
     <div class="featurette-seller">
-      <p class="nameSeller text-center"><?= $randomSeller['company'];?></p>
-      <div class="content-seller d-flex">
-        <div class="seller">
-          <p class="addressSeller text-primary"><?= $randomSeller['addressSeller'];?></p><br>
-          <p><?= $randomSeller['cpSeller'];?></p><br>
-          <p><?= $randomSeller['citySeller'];?></p>
-          <p class="link-seller h6">
-            <a class="nav-link h6 text-primary"
+    <p class="link-seller h6">
+            <a class="nav-link h6 text-primary text-center"
               href="index.php?action=cardSeller&amp;id_seller= <?= $randomSeller['id']; ?>"><?= $randomSeller['company']; ?></a>
           </p>
+      <div class="content-seller d-flex mx-auto">
+        <div class="seller col-4 m-auto">
+          <p class="addressSeller mb-0"><?= $randomSeller['addressSeller'];?></p>
+          <p class="mb-0"><?= $randomSeller['cpSeller'];?><?= $randomSeller['citySeller'];?></p>
+          
         </div>
-        <div class="img-seller">
-          <img src="public/img/narbonne.jpg" />
+        <div class="img-sellerShop col-8 mb-4">
+          <img class="col-12" src="<?= $randomSeller['url_pathShop'];?>" />
         </div>
       </div>
     </div>

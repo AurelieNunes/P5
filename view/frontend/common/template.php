@@ -29,19 +29,24 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./public/css/style.css" />
+
 </head>
 
 <body>
     <header>
-        <div class="jumbotron fixed-top">
-            <div class="home-title d-flex justify-content-around">
+        <div class="jumbotron fixed-top pt-4">
+            <div class="home-title d-flex justify-content-around align-items-center">
                 <p class="logo">
                     <img src="./public/img/Logo.png" alt="logo site">
                 </p>
                 <h1 class="title text-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
-                <p class="narbonne">
-                    <img src="./public/img/narbonne.jpg" alt="">
-                </p>
+                <div id="widget">
+                    <div class="widgetCityName"></div>
+                    <div class="widgetCurrentTemp"></div>
+                    <!-- <div class="widgetMinTemp"></div>
+                    <div class="widgetMaxTemp"></div> -->
+                    <div class="widgetCurrentWeather"></div>
+                </div>
             </div>
         </div>
 
@@ -50,7 +55,8 @@
                 <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
                         <li class="nav-item active">
-                            <a class="h6 nav-link text-light mb-0" aria-current="page" href="index.php?action=home">Accueil</a>
+                            <a class="h6 nav-link text-light mb-0" aria-current="page"
+                                href="index.php?action=home">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="h6 nav-link text-light mb-0" href="index.php?action=listSellers">Commerçants</a>
@@ -135,7 +141,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="h6 nav-link text-light mb-0" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
+                    <a class="h6 nav-link text-light mb-0"
+                        href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
                         <p class="mb-0">Contact</p>
                     </a>
                 </li>
@@ -143,6 +150,9 @@
             </ul>
         </nav>
     </footer>
+
+    <!-- JS -->
+    <script src="./public/JS/weather.js"></script>
 </body>
 
 </html>

@@ -10,31 +10,37 @@
         <?php   
         foreach($allSellers as $sellers)
         { 
-            // var_dump($sellers);
-            // die();
+            if ($sellers['isAdmin'] != '1'){
         ?>
-        <li
-            class="card d-flex flex-row w-25 mx-auto mb-3 mt-3 list-group-item justify-content-around align-items-center">
-            <div class="img-seller w-50">
-                <img src="<?= $sellers['url_pathShop']; ?>" class="card-img-top" alt="image boutique">
-            </div>
-            <div class="info-seller w-50">
-                <p class="link-seller h6">
-                    <a class="nav-link h6 text-primary"
-                        href="index.php?action=cardSeller&amp;id_seller= <?= $sellers['id']; ?>"><?= $sellers['company']; ?></a>
-                </p>
-                <p><?= $sellers['addressSeller']; ?></p>
-                <p><?= $sellers['cpSeller']; ?>
-                    <?= $sellers['citySeller']; ?></p>
-                <p><?= $sellers['telSeller']; ?></p>
-                <p class="link-ReadMore text-center">
-            <a class="nav-link h6" href="index.php?action=cardSeller&amp;id_seller=<?= $sellers['id']; ?>">Voir tous les articles</a>
-          </p>
+        <li class="card col-6 mx-auto mb-4">
+            <p class="link-seller h2">
+                <a class="nav-link h2 text-primary text-center"
+                    href="index.php?action=cardSeller&amp;id_seller= <?= $sellers['id']; ?>"><?= $sellers['company']; ?></a>
+            </p>
+            <div class="infoCard d-flex justify-content-around col-12">
+                <div class="img-seller col-6">
+                    <img src="<?= $sellers['url_pathShop']; ?>" class="card-img-top" alt="image boutique">
+                </div>
+                <div class="info-seller col-6 text-center">
+                    <p class="h5 text-primary">Où nous trouver ?</p>
+                    <p class="h6"><?= $sellers['addressSeller']; ?></p>
+                    <p class="h6"><?= $sellers['cpSeller']; ?>
+                        <?= $sellers['citySeller']; ?></p>
+                    <p class="h6">Tel : <?= $sellers['telSeller']; ?></p>
+                    <p class="h5 text-primary">Nous contacter : </p>
+                    <p class="h6"><?= $sellers['mail']; ?></p>
+                    <p class="link-ReadMore text-center">
+                        <a class="nav-link h4"
+                            href="index.php?action=cardSeller&amp;id_seller=<?= $sellers['id']; ?>">Voir tous les
+                            articles</a>
+                    </p>
+                </div>
             </div>
         </li>
     </ul>
     <?php 
         }
+    }
     ?>
 </section>
 
