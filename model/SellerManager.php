@@ -1,9 +1,10 @@
 <?php
+
 namespace P5\model;
 
 use \P5\model\Manager;
 
-class SellerManager extends Manager 
+class SellerManager extends Manager
 {
     /**
      * Get All Sellers
@@ -25,28 +26,28 @@ class SellerManager extends Manager
      */
     public function checkCompany(string $company)
     {
-		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT company FROM seller WHERE company = ?');
-		$req->execute(array($company));
-		$companySeller = $req->fetch();
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT company FROM seller WHERE company = ?');
+        $req->execute(array($company));
+        $companySeller = $req->fetch();
 
-		return $companySeller;
-	}
+        return $companySeller;
+    }
 
     /**
      * Check mail seller
      * @param string $mail
      * @return
      */
-    public function checkMail(string $mail) 
+    public function checkMail(string $mail)
     {
-		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
-		$req->execute(array($mail));
-		$mailSeller = $req->fetch();
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
+        $req->execute(array($mail));
+        $mailSeller = $req->fetch();
 
-		return $mailSeller;
-	}
+        return $mailSeller;
+    }
 
     /**
      * Check siret number
@@ -55,7 +56,7 @@ class SellerManager extends Manager
      */
     public function checkSiret(int $siret)
     {
-        $db= $this->dbConnect();
+        $db = $this->dbConnect();
         $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
         $req->execute(array($siret));
         $siretCheck = $req->fetch();
@@ -82,7 +83,7 @@ class SellerManager extends Manager
      */
     public function getSeller($sellerId): array
     {
-        $db= $this->dbConnect();
+        $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM seller WHERE id = ?');
         $req->execute(array($sellerId));
         $seller = $req->fetch();
@@ -95,13 +96,13 @@ class SellerManager extends Manager
      * @param int $sellerId
      * @return array
      */
-    public function getSellerCompanyById(int $sellerId):array
+    public function getSellerCompanyById(int $sellerId): array
     {
-        $db= $this->dbConnect();
+        $db = $this->dbConnect();
         $req = $db->prepare('SELECT company FROM seller WHERE id= ?');
         $req->execute(array($sellerId));
 
-        $company = $req->fetch();        
+        $company = $req->fetch();
         // var_dump($company);
         // die();
         return $company;
@@ -123,14 +124,14 @@ class SellerManager extends Manager
         return $seller;
     }
 
-     /**
+    /**
      * Get random Seller
      * @return array with 3 sellers random
      */
     public function randomSellers(): array
     {
         $db = $this->dbConnect();
-        $req = $db-> query('SELECT * FROM seller ORDER BY rand() LIMIT 3');
+        $req = $db->query('SELECT * FROM seller ORDER BY rand() LIMIT 3');
         $randomSeller = $req->fetchAll();
 
         return $randomSeller;
@@ -153,16 +154,15 @@ class SellerManager extends Manager
      * Update seller info
      * @param string $addressSeller
      * @param string $citySeller
-     * @param string $urlPathShop
      * @param int $cpSeller
      * @param int $telSeller
      * @param int $sellerId
      */
-    public function updateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, string $urlPathShop, int $sellerId)
+    public function updateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, int $sellerId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE seller SET addressSeller=?, cpSeller=?, citySeller=?, telSeller=?, descriptionShop=?, url_pathShop=? WHERE id=?');
-        $req->execute(array($addressSeller, $cpSeller, $citySeller, $telSeller,$descriptionShop,$urlPathShop, $sellerId));
+        $req = $db->prepare('UPDATE seller SET addressSeller=?, cpSeller=?, citySeller=?, telSeller=?, descriptionShop=? WHERE id=?');
+        $req->execute(array($addressSeller, $cpSeller, $citySeller, $telSeller, $descriptionShop, $sellerId));
         $sellerUpdate = $req->fetch();
 
         return $sellerUpdate;

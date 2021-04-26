@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 :root {
-  --blue: #007bff;
+  /* --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #dc3545;
+  --red: #dc3545; */
   --orange: #ff9900;
-  --yellow: #ffc107;
+  /* --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
-  --cyan: #17a2b8;
+  --cyan: #17a2b8; */
   --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
+  /* --gray: #6c757d;
+  --gray-dark: #343a40; */
   --primary: #ff9900;
   --secondary: #123a62;
   --success: #007bff;
@@ -382,10 +382,10 @@ h6, .h6 {
   font-size: 1.25rem;
 }
 
-.lead {
+/* .lead {
   font-size: 3rem;
   font-weight: 300;
-}
+} */
 
 .display-1 {
   font-size: 6rem;
@@ -8235,7 +8235,7 @@ h3 {
 -------------------------------------------------- */
 /* CUSTOMIZE THE JUMBOTRON
 -------------------------------------------------- */
-/*logo*/
+/* LOGO */
 .logo {
   width: 15%;
   height: auto;
@@ -8244,18 +8244,11 @@ h3 {
   width: 100%;
 }
 
-.narbonne {
-  width: 10%;
-  height: auto;
-}
-.narbonne img {
-  width: 100%;
-}
-
 .jumbotron {
   background-color: #fff;
 }
 
+/*  WIDGET METEO */
 #widget {
   width: 20%;
   height: 200px;
@@ -8278,6 +8271,7 @@ h3 {
   font-size: 28px;
 }
 
+/* NAVBAR */
 .navbar {
   margin-top: 250px;
 }
@@ -8287,7 +8281,7 @@ h3 {
 }
 
 .main-template-back {
-  margin-top: 13%;
+  margin-top: 15%;
 }
 
 #error {
@@ -8300,10 +8294,6 @@ h3 {
   width: 100%;
 }
 
-.lead {
-  font-size: 18px;
-}
-
 .featurette {
   width: 80%;
   border: solid 4px #ff9900;
@@ -8312,25 +8302,15 @@ h3 {
 }
 .featurette .presentation {
   width: 60%;
-  margin: auto;
+  /* margin: auto; */
 }
 .featurette .presentation .img-logo {
   width: 100%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 /* CUSTOMIZE THE PRODUCT OF THE WEEK
  -------------------------------------------------- */
-/* .selectionWeek h1 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-} */
-/* 
-.productWeek {
-  justify-content: space-between;
-  margin: 0;
-} */
-
 .featurette-product {
   width: 20%;
   height: auto;
@@ -8339,76 +8319,55 @@ h3 {
 }
 .featurette-product .img-product {
   height: auto;
-  /* margin: auto;
-  margin-top: 10px; */
   width: 90%;
 }
 .featurette-product .img-product img {
   width: 100%;
 }
 
-
-/* .product {
-  padding-top: 20px;
-} */
-
-/* .product .description-product, .product .link {
-  font-size: 18px;
-}
-.product .description-product .price, .product .link .price {
-  font-size: 22px;
-} */
-
-/* .featurette-divider {
-  margin-top: 20px;
-} */
-
 /* CUSTOMIZE THE NEW SELLERS
  -------------------------------------------------- */
-.newSellers {
+/* .newSellers {
   margin-bottom: 40px;
-}
-.newSellers h1 {
+} */
+/* .newSellers h1 {
   margin-bottom: 30px;
-}
+} */
 
-.newSeller {
+/* .newSeller {
   justify-content: space-between;
   margin: 0;
-}
+} */
 
 .featurette-seller {
   width: 30%;
   border: solid 1px;
 }
-.featurette-seller .img-seller {
+/* .featurette-seller .img-seller {
   height: auto;
   margin: auto;
   margin-top: 10px;
   width: 50%;
-}
-.featurette-seller .img-seller img {
+} */
+/* .featurette-seller .img-seller img {
   width: 100%;
-}
-
+} */
+/* 
 .nameSeller {
   font-size: 24px;
 }
 
 .content-seller {
   margin-left: 20px;
-}
-.content-seller .addressSeller {
-  font-size: 16px;
-}
+} */
 
 /* CUSTOMIZE THE SELLER VIEW
  -------------------------------------------------- */
 .featurette-product-seller {
   width: 40%;
   border: 1px solid;
-  margin: auto;
-  text-align: center;
+  /* margin: auto;
+  text-align: center; */
 }
 
 .img-product-seller {

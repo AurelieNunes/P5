@@ -7,11 +7,11 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 <div class="row featurette mx-auto col-6">
 
   <h2 class="h6 featurette-heading col-12 text-center mt-3">Bienvenue sur mes p'tites emplettes narbonnaises !</h2>
-  <div class="presentation d-flex col-12 align-items-center justify-center">
-    <p class="lead text-justify col-6">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits
+  <div class="presentation d-flex col-12 align-items-center justify-center m-auto">
+    <p class="lead text-justify col-6 h5">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits
       ! En click&collect
       ou en livraison, passez vos achats en toute sérénité !</p>
-    <div class="img-logo col-4">
+    <div class="img-logo m-auto col-4">
       <img class="img-presentation img-fluid mx-auto" src="public/img/logo2.png" alt="logo web" />
     </div>
   </div>
@@ -56,32 +56,34 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 <hr class="featurette-divider mt-4">
 
 <!-- NEW SELLERS OF THE WEEK -->
-<section class="newSellers">
-  <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">Les P'tits Commerçants !
+<section class="newSellers mb-40">
+  <h1 class="mb-30 text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto font-italic">Les P'tits Commerçants !
   </h1>
 
-  <div class="newSeller row">
+  <div class="newSeller row justify-content-between m-0">
     <?php foreach ($sellerRandom as $randomSeller) 
     {
+      if ($randomSeller['isAdmin'] != '1'){
     ?>
     <div class="featurette-seller">
-    <p class="link-seller h6">
-            <a class="nav-link h6 text-primary text-center"
+    <p class="link-seller">
+            <a class="nav-link h5 text-primary text-center"
               href="index.php?action=cardSeller&amp;id_seller= <?= $randomSeller['id']; ?>"><?= $randomSeller['company']; ?></a>
           </p>
-      <div class="content-seller d-flex mx-auto">
-        <div class="seller col-4 m-auto">
-          <p class="addressSeller mb-0"><?= $randomSeller['addressSeller'];?></p>
-          <p class="mb-0"><?= $randomSeller['cpSeller'];?><?= $randomSeller['citySeller'];?></p>
-          
+      <div class="content-seller d-flex mx-auto ml-20">
+        <div class="seller col-4 m-auto pr-0">
+          <p class="addressSeller mb-0 h6 text-primary col-12">Adresse</p>
+          <p class="mb-0 h6 col-12"> <?= $randomSeller['addressSeller'];?></p>
+          <p class="mb-0 h6 col-12"><?= $randomSeller['cpSeller'];?> <?= $randomSeller['citySeller'];?></p>
         </div>
-        <div class="img-sellerShop col-8 mb-4">
+        <div class="img-sellerShop col-8 mb-4 pl-0 pr-0">
           <img class="col-12" src="<?= $randomSeller['url_pathShop'];?>" />
         </div>
       </div>
     </div>
     <?php
     }
+  }
     ?>
   </div>
 

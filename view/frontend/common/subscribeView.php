@@ -83,11 +83,6 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
       </div>
     </div>
     <div class="submit text-center">
-      <div class="checkbox mb-3 text-center">
-        <label>
-          <input type="checkbox" value="remember-me"> Se souvenir de moi
-        </label>
-      </div>
       <a class="text-center text-primary h6" href="index.php?action=loginCustomer">Se connecter</a>
     </div>
   </div>

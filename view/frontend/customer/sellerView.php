@@ -6,13 +6,12 @@ $title = "Boutique"; ?>
 <!-- START THE FEATURETTES -->
 <div class="row featurette mx-auto col-6 mb-5">
     <h2 class="text-center h6 col-12 mt-3 featurette-heading ">Bienvenue sur ma boutique</h2>
-    <div class="presentation d-flex col-12 align-items-center justify-center">
+    <div class="presentation d-flex col-12 align-items-center justify-center mb-4 mt-4">
         
-        <p class="lead text-justify col-6">Lorem ipsum dolor sit amet consectetur adipisicing Dolorum praesentium
-            veniam, adipisci accusantium ad distinctio dignissimos dolor</p>
+        <p class="lead text-justify col-6"><?= $sellerAllInfo['descriptionShop'];?></p>
         <div class="img-logo col-4">
             <!--img boutique-->
-            <img class="img-presentation img-fluid mx-auto" src="../../../public/img/logo.png" alt="logo web" />
+            <img class="img-presentation img-fluid mx-auto" src="<?= $sellerAllInfo['url_pathShop'];?>"/>
         </div>
     </div>
 </div>
@@ -24,18 +23,26 @@ $title = "Boutique"; ?>
         <?php
             foreach ($allItems as $allItem) {
         ?>
-        <div class="featurette-product-seller mt-5">
+        <div class="featurette-product-seller mt-5 text-center mx-auto">
             <div class="img-product-seller mx-auto mt-5">
+            <h5 class="title-product mb-4"><?= $allItem['nameItem'];?></h5>
                 <img class="img-product1" src="<?= $allItem['url_img'];?>" />
                 <div class="product">
-                    <p class="title-product"><?= $allItem['nameItem'];?></p>
                     <p><?= $allItem['ref'];?></p>
-                    <p class="description-product">Description : <?= $allItem['descriptionItem'];?></p>
-                    <p class="price">Prix : <?= $allItem['price'];?></p>
-                    <p class="stock">En stock :
+                    <p class="description-product h6"><?= $allItem['descriptionItem'];?></p>
+                    <p class="price h6"><u>Prix :</u> <?= $allItem['price'];?>€</p>
+                    <p class="stock h6 mb-4">En stock :
                         <?= $allItem['stock'];?>
                     </p>
-                    <p class="size"><?= $allItem['size'];?></p>
+                    <?php
+                        if(!empty($allItem['size']))
+                        {
+                    ?>
+                    <p class="size h6 mb-4">Taille : <?= $allItem['size'];?></p>
+                    <?php
+                        }
+                    ?>
+                    <button class="btn btn-primary mb-4"><a class="nav-link text-white" href="mailto:<?= $sellerAllInfo['mail'];?>?subject=Informations<?= $allItem['ref'];?>&body=Bonjour,">Contacter le vendeur</a></button> 
                 </div>
             </div>
         </div>

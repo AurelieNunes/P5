@@ -176,7 +176,7 @@ ETAPE 1
 //////////////////////////////////////////////////
 
 ETAPE 2
-    // Récupérer les 3 derniers vendeurs qui ont rejoint
+    // Récupérer vendeur random
 
 
 
@@ -186,7 +186,7 @@ ETAPE 2
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                 -- VUE DU CLIENT --
 
-ONGLET HOME =>          1/ API METEO
+ONGLET HOME =>          1/ API METEO //OK
                         2/ PARTIE VENDEURS
                             1/ Lien qui envoie sur le vendeur dans la description //OK
                             2/ Slider
@@ -196,7 +196,7 @@ ONGLET HOME =>          1/ API METEO
 
 ONGLET COMMERCANTS =>   1/ Créer card seller avec lien pour voir tous ses articles //OK
                         2/ Ajouter photo de la boutique //OK
-                        3/ Bouton contacter vendeur
+                        3/ Bouton contacter vendeur //OK
                         4/ Lien retour à l'accueil //OK
 
 ONGLET CATEGORIES =>   OK
@@ -209,10 +209,26 @@ ONGLET INSCRIPTION =>  OK
 
 SELLERVIEW =>           1/ Insérer image boutique vendeur //OK
                         2/ Texte de présentation de la boutique //OK
-                        3/ Bouton Contater le vendeur
-                        4/ Améliorer la vue
+                        3/ Bouton Contater le vendeur //OK
+                        4/ Améliorer la vue //OK
 
 /////////////////////////////////// MODIF A FAIRE //////////////////////////////////////////////////
-Recuperer texte et photo du vendeur dans la vue SELLERVIEW
+Recuperer texte et photo du vendeur dans la vue SELLERVIEW //OK
 Pb epicerie fine 1 article/2
-Rajouter € dans les descriptions articles et listes articles 
+Rajouter € dans les descriptions articles et listes articles //OK
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////// SLIDER /////////////////////////////////////////
+Ce que je veux faire : 
+    -> Je veux que les featurette produits passent toutes seules
+
+Ce dont j ai besoin POUR SLIDER HTML/CSS :
+    -> ID SLIDER
+    -> TOUTES LES IMAGES
+
+Ce que j'ai :
+    -> Une boucle 
+        -> qui contient 3 featurettes avec ses images
+

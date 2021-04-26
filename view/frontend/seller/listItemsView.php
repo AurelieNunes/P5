@@ -9,15 +9,15 @@
 		<p class="returnLink">
 			<a href="index.php?action=dashboardSeller">Retour au menu</a>
 		</p>
+		<div class="jumbotron bg-primary">
+			<h1 class="text-center text-white">Produits en Ligne</h1>
+		</div>
 
-		<h1 class="text-center">Produits en Ligne</h1>
-		<div class="listItems col-6 mx-auto">
+		<div class="listItems col-10 mx-auto">
 			<ul class="list-group">
 				<?php
 				foreach($items as $item) 
 					{
-						// var_dump($items);
-						// die();
 						if (!empty($items)) {
 					?>
 				<div class="card border-primary mb-2 text-center">

@@ -18,15 +18,15 @@
                 </div>
 
 				<label for="ref">Adresse</label>
-				<input type="text" class="mb-2 col-6" name="addressSeller"
+				<input type="text" class="mb-2 col-4" name="addressSeller"
 					value="<?= htmlspecialchars($seller['addressSeller']); ?>" />
 
 				<label for="cp">Code postal</label>
-				<input class="mb-2 col-6" type="number" name="cpSeller"
+				<input class="mb-2 col-2" type="number" name="cpSeller"
 					value="<?= htmlspecialchars($seller['cpSeller']); ?>" />
 
 				<label for="citySeller">Ville</label>
-				<input class="mb-2 col-6" type="text" name="citySeller"
+				<input class="mb-2 col-4" type="text" name="citySeller"
 					value="<?= htmlspecialchars($seller['citySeller']); ?>" />
 
 				<label for="tel" class="mr-2">Téléphone</label>
@@ -36,7 +36,7 @@
 				<div class="deleteAccount">
 					<a href="index.php?action=deleteAccountSeller">Supprimer mon compte</a>
 				</div>
-				<button class="mb-5 col-4 mx-auto" type="submit" value="Modifier">Modifier</button>
+				<button class="btn btn-primary mb-4 mx-auto text-white" type="submit" value="Modifier">Modifier</button>
 			</form>
 		</div>
 	</div>

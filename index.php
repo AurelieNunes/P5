@@ -235,7 +235,7 @@ try {
                 break;
 
             case 'submitUpdate':
-                submitUpdate($_GET['id']);
+                submitUpdate($_GET['id']);                
                 break;
 
             case 'submitUpdateCustomer':
@@ -243,8 +243,11 @@ try {
                 break;
 
             case 'submitUpdateSeller':
+                // var_dump('router');
+                // die();
                 submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_POST['descriptionShop'], $_SESSION['id']);
-                
+                var_dump(submitUpdateSeller($_POST['addressSeller'], $_POST['cpSeller'], $_POST['citySeller'], $_POST['telSeller'], $_POST['descriptionShop'], $_SESSION['id']));
+                die();
                 break;
             
             case 'subscribeCustomer':
@@ -261,7 +264,7 @@ try {
                 require('view/frontend/common/homeView.php');
         }
     } else {
-        require('view/frontend/common/homeView.php');
+        displayHome();
     }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();

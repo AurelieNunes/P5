@@ -158,15 +158,15 @@ class ItemsManager extends Manager
     /**
      * Update item
      * @return bool
-     * @param int $category_id $price $stock $itemId
+     * @param int $price $stock $itemId
      * @param string $ref, $nameItem, $descriptionItem, $size
      */
     // //Mettre à jour article
-    public function updateItem(int $category, string $ref, string $nameItem, string $descriptionItem, int $price,string $size, int $stock, int $itemId): bool
+    public function updateItem(string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, int $itemId): bool
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE items SET category_id=?, ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
-        $req->execute(array($category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
+        $req = $db->prepare('UPDATE items SET ref=?, nameItem=?,descriptionItem=?, price=?, size=?, stock=? WHERE id=?');
+        $req->execute(array($ref, $nameItem, $descriptionItem, $price, $size, $stock, $itemId));
         $itemUpdate = $req->fetch();
 
         return $itemUpdate;

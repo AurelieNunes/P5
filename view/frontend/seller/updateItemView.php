@@ -35,11 +35,7 @@
                         value="<?= htmlspecialchars($item['stock']); ?>" />
                 </div>
 
-                <!-- <label for="img" class="mt-5">Importer une image</label>
-                <input type="file" class="mb-3" name="img" />
-                <input type="submit" value="Envoyer le fichier" /> -->
-
-                <button class="mb-5 col-4 mx-auto" type="submit" value="Modifier">Modifier</button>
+                <button class="btn btn-primary mb-4 mx-auto text-white" type="submit" value="Modifier">Modifier</button>
             </form>
         </div>
     </div>

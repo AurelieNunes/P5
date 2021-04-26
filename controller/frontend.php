@@ -102,7 +102,7 @@ function deleteAccountSeller(int $sellerId)
     $_SESSION = array();
     session_destroy();
 
-    Header ('Location: index.php?action=home&delete-account=success');
+    Header('Location: index.php?action=home&delete-account=success');
 }
 
 /**
@@ -126,7 +126,7 @@ function descriptionItem(int $itemId)
 {
     $itemsManager = new ItemsManager();
     $itemsDetails = $itemsManager->getItem($itemId);
-    
+
     require('view/frontend/customer/descriptionProductView.php');
 }
 
@@ -148,6 +148,9 @@ function displayCardSeller(int $sellerId)
     $sellerManager = new SellerManager();
     $itemsManager = new ItemsManager();
     $seller = $sellerManager->getSellerCompanyById($sellerId);
+    $sellerAllInfo = $sellerManager->getSeller($sellerId);
+    // var_dump($sellerAllInfo);
+    // die();
     $allItems = $itemsManager->getItemsSeller($_GET['id_seller']);
 
     require 'view/frontend/customer/sellerView.php';
@@ -200,7 +203,7 @@ function displayHome()
     foreach ($itemsRandom as $item) {
         $sellerId = $item['id_seller'];
         $seller = $sellerManager->getSellerCompanyById($sellerId);
-    
+
         $sellers[$sellerId] = $seller;
     }
 
@@ -214,7 +217,7 @@ function displayHome()
 function displayItemsByCategory(int $category_id)
 {
     $itemsManager = new ItemsManager();
-    
+
     $itemsCategories = $itemsManager->getItemsByCategory($category_id);
     $categories = $itemsManager->getCategoryById($category_id);
 
@@ -285,11 +288,11 @@ function getCustomerById()
 {
     // var_dump('test controller');
     // die();
-    $customerManager= new CustomerManager();
+    $customerManager = new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
     // var_dump($customerCo);
     // die();
-    
+
     require('view/frontend/customer/accountClientView.php');
 }
 
@@ -388,10 +391,9 @@ function loginSubmitSeller(string $mail, string $pass): void
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $seller['id'];
             $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
-            if($_SESSION['isAdmin'] = $seller['isAdmin']){
+            if ($_SESSION['isAdmin'] = $seller['isAdmin']) {
                 Header('Location: index.php?action=admin');
-            }
-            else {
+            } else {
                 Header('Location: index.php?action=dashboardSeller');
             }
         } else {
@@ -423,7 +425,7 @@ function logout(): void
  * @param string $size
  * @return void
  */
-function newItem(int $id_seller,int $category, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
+function newItem(int $id_seller, int $category, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock): void
 {
     $utils = new Utils();
     if (!$utils->isEmpty([$ref, $nameItem, $descriptionItem, $price, $stock])) {
@@ -470,7 +472,7 @@ function newItem(int $id_seller,int $category, string $ref, string $nameItem, st
 function submitUpdate(): void
 {
     $itemsManager = new ItemsManager();
-    $updated = $itemsManager->updateItem($_POST['category_id'],$_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_POST['url_img'], $_GET['id']);
+    $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
 
     Header('Location:index.php?action=dashboardSeller&submit-update=success');
 }
@@ -502,38 +504,7 @@ function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $
  */
 function submitUpdateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, int $sellerId)
 {
-    if ($_FILES['pictureShop']['size'] !== 0) {
-        $extension = explode('/', $_FILES['pictureShop']['type'])[1];
-        // var_dump($extension);
-        // die();
-        if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
-            // var_dump($extension);
-            // die();
-            if ($_FILES['pictureShop']['size'] < 1000000) {
-                // var_dump('test');
-                // die();
-                $name = $_FILES['pictureShop']['name'];
-                // var_dump($name);
-                // die();
-                $tmp_name = $_FILES['pictureShop']['tmp_name'];
-                // var_dump($tmp_name);
-                // die();
-                $urlPathShop = 'assets/pictures/' . $name;
-                // var_dump($urlPathShop);
-                // die();
-                move_uploaded_file($tmp_name, $urlPathShop);
-
-                $sellerManager = new SellerManager();
-                $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $descriptionShop, $urlPathShop, $sellerId);
-                
-            } else {
-                throw new Exception('too big');
-            }
-        } else {
-            throw new Exception('no good extension');
-        }
-    } else {
-        throw new Exception('file is empty');
-    }
+    $sellerManager = new SellerManager();
+    $sellerManager->updateSeller($addressSeller, $cpSeller, $citySeller, $telSeller, $descriptionShop, $sellerId);
     Header('Location:index.php?action=dashboardSeller&submit-update-seller=success');
 }

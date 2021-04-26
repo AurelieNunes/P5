@@ -1,7 +1,7 @@
 <?php $title = "liste des commerçants"; ?>
 
 <?php ob_start(); ?>
-<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
+<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour à l'accueil</a></p>
 <section id="listingSellers">
 
     <h1 class="text-center mt-5 mb-5 pt-5 pb-5 bg-primary text-white col-8 mx-auto">Liste des commerçants</h1>
@@ -26,9 +26,9 @@
                     <p class="h6"><?= $sellers['addressSeller']; ?></p>
                     <p class="h6"><?= $sellers['cpSeller']; ?>
                         <?= $sellers['citySeller']; ?></p>
-                    <p class="h6">Tel : <?= $sellers['telSeller']; ?></p>
                     <p class="h5 text-primary">Nous contacter : </p>
-                    <p class="h6"><?= $sellers['mail']; ?></p>
+                    <p class="h6">Tel : <?= $sellers['telSeller']; ?></p>
+                    <a class="nav-link h6" href="mailto:<?= $sellers['mail'];?>?subject=Informations&body=Bonjour,"><?= $sellers['mail']; ?></p>
                     <p class="link-ReadMore text-center">
                         <a class="nav-link h4"
                             href="index.php?action=cardSeller&amp;id_seller=<?= $sellers['id']; ?>">Voir tous les

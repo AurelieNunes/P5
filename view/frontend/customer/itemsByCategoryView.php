@@ -18,12 +18,22 @@
         <article class="card mx-auto col-4">
             <img class="card-img-top mt-4" src="<?= $item['url_img']; ?>" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title"><?= $item['nameItem']; ?></h5>
+                <h5 class="card-title text-primary"><?= $item['nameItem']; ?></h5>
                 <p class="card-text">Ref :<?= $item['ref']; ?></p>
                 <p class="card-text">Descritpion :<?= $item['descriptionItem']; ?></p>
                 <p class="card-text">Prix :<?= $item['price']; ?> €</p>
+            <?php
+            if(!empty($item['size']))
+            {
+            ?>
                 <p class="card-text">Taille :<?= $item['size']; ?></p>
+            <?php
+            }
+            ?>
                 <p class="card-text">En stock :<?= $item['stock']; ?></p>
+                <a class="nav-link h4"
+                            href="index.php?action=cardSeller&amp;id_seller=<?= $item['id_seller']; ?>">Voir la fiche 
+                            vendeur</a>
         </article>
         <?php
             }
