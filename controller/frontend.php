@@ -22,11 +22,11 @@ function addCustomer(string $lastName, string $firstName, string $mail, string $
     $mailValidity = $customerManager->checkMail($mail);
 
     if ($usernameValidity) {
-        Header('Location: index.php?action=subscribe&error=invalidUsername');
+        Header('Location: index.php?action=subscribeCustomer&error=invalidUsername');
     }
 
     if ($mailValidity) {
-        Header('Location: index.php?action=subscribe&error=invalidMail');
+        Header('Location: index.php?action=subscribeCustomer&error=invalidMail');
     }
 
     if (!$usernameValidity && !$mailValidity) {
@@ -36,7 +36,7 @@ function addCustomer(string $lastName, string $firstName, string $mail, string $
         $newCustomer;
 
         // redirige vers page d'accueil avec le nouveau paramètre
-        Header('Location: index.php?account-status=account-successfully-created');
+        Header('Location: index.php?home&account-status=account-successfully-created');
     }
 }
 
@@ -55,15 +55,15 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
 
 
     if ($companySellerCheck) {
-        Header('Location: index.php?action=subscribe&error=invalidUsername');
+        Header('Location: index.php?action=subscribeSeller&error=invalidUsername');
     }
 
     if ($siretSellerCheck) {
-        Header('Location:index.php?action=subscribe&error=invalidSiret');
+        Header('Location:index.php?action=subscribeSeller&error=invalidSiret');
     }
 
     if ($mailSellerCheck) {
-        Header('Location: index.php?action=subscribe&error=invalidMail');
+        Header('Location: index.php?action=subscribeSeller&error=invalidMail');
     }
 
     if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck) {
@@ -128,6 +128,14 @@ function descriptionItem(int $itemId)
     $itemsDetails = $itemsManager->getItem($itemId);
 
     require('view/frontend/customer/descriptionProductView.php');
+}
+
+/**
+ * DIsplay About
+ */
+function displayAbout()
+{
+    require 'view/frontend/common/aboutView.php';
 }
 
 /**
@@ -360,14 +368,14 @@ function loginSubmitCustomer(string $mail, string $pass): void
     $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
 
     if (!$customer) {
-        Header('Location: index.php?action=login&account-status=unsuccess-login');
+        Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');
     } else {
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $customer['id'];
             $_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
             Header('Location: index.php');
         } else {
-            Header('Location: index.php?action=login&account-status=unsuccess-login');
+            Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');
         }
     }
 }
@@ -386,7 +394,7 @@ function loginSubmitSeller(string $mail, string $pass): void
     $isPasswordCorrect = password_verify($_POST['passSubmitSeller'], $seller['pass']);
 
     if (!$seller) {
-        Header('Location: index.php?action=login&account-status=unsuccess-login');
+        Header('Location: index.php?action=loginSeller&account-status=unsuccess-login');
     } else {
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $seller['id'];
@@ -397,7 +405,7 @@ function loginSubmitSeller(string $mail, string $pass): void
                 Header('Location: index.php?action=dashboardSeller');
             }
         } else {
-            Header('Location: index.php?action=login&account-status=unsuccess-login');
+            Header('Location: index.php?action=loginSeller&account-status=unsuccess-login');
         }
     }
 }

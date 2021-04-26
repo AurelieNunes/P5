@@ -97,17 +97,6 @@
                                 echo '<li class="h6 mb-0 nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
                             }
                         ?>
-
-                        <!-- <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=loginCustomer">Se connecter</a>
-                        </li> -->
-                        <!-- <li class="nav-item">
-                        <a class="nav-link text-light" href="index.php?action=subscribeCustomer">S'inscrire</a>
-                        </li> -->
-                        <!-- <li class="nav-item m-auto">
-                            <a class="nav-link text-light" href="view/frontend/dashboardClientView.php.php"><i
-                                    class="text-light fas fa-user"></i></a>
-                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -132,12 +121,12 @@
             <ul class="navbar-nav mr-auto w-100 justify-content-around">
                 <li class="nav-item active">
                     <a class="h6 nav-link text-light mb-0" href="index.php?action=about">
-                        <p class="mb-0">RGPD</p>
+                        <p class="mb-0">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link h6 nav-link text-light mb-0" href="#">
-                        <p class="mb-0">Mentions Légales</p>
+                        <p class="mb-0">RGPD</p>
                     </a>
                 </li>
                 <li class="nav-item">

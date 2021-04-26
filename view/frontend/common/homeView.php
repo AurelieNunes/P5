@@ -9,8 +9,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
   <h2 class="h6 featurette-heading col-12 text-center mt-3">Bienvenue sur mes p'tites emplettes narbonnaises !</h2>
   <div class="presentation d-flex col-12 align-items-center justify-center m-auto">
     <p class="lead text-justify col-6 h5">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits
-      ! En click&collect
-      ou en livraison, passez vos achats en toute sérénité !</p>
+      ! Grâce aux click&collect, réservez vos achats en toute sérénité !</p>
     <div class="img-logo m-auto col-4">
       <img class="img-presentation img-fluid mx-auto" src="public/img/logo2.png" alt="logo web" />
     </div>

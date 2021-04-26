@@ -13,6 +13,9 @@ require_once './utils/Utils.php';
 try {
     if (isset($_GET['action'])) {
         switch ($_GET['action']) {
+            case 'about':
+                displayAbout();
+                break;
 
             case 'accountCustomer' :
                 displayAccountCustomer();

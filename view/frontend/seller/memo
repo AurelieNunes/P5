@@ -225,10 +225,10 @@ Ce que je veux faire :
     -> Je veux que les featurette produits passent toutes seules
 
 Ce dont j ai besoin POUR SLIDER HTML/CSS :
-    -> ID SLIDER
+    -> ID SLIDER //OK
     -> TOUTES LES IMAGES
 
 Ce que j'ai :
     -> Une boucle 
-        -> qui contient 3 featurettes avec ses images
+        -> qui contient 3 featurettes avec ses images 33% pour 3 featurettes
 
