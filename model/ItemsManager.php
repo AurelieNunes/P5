@@ -8,16 +8,21 @@ class ItemsManager extends Manager
 {
     /**
      * Add item in DATABASE
-     * @param string
-     * @param int
+     * @param string $ref
+     * @param string $nameItem
+     * @param string $descriptionItem
+     * @param string $size
+     * @param string $path
+     * @param int $id_seller
+     * @param int $category
+     * @param int $price
+     * @param int $stock
      */
-    public function createItem(int $id_seller,int $category,string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, string $path): void
+    public function createItem(int $id_seller, int $category, string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, string $path): void
     {
         $db = $this->dbConnect();
         $addItem = $db->prepare('INSERT INTO items (id_seller, category_id, ref, nameItem, descriptionItem, price, size, stock, url_img) VALUES (?,?,?,?,?,?,?,?,?)');
-        $addItem->execute(array($id_seller,$category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path));
-        // var_dump($addItem);
-        // die();//OK
+        $addItem->execute(array($id_seller, $category, $ref, $nameItem, $descriptionItem, $price, $size, $stock, $path));
     }
 
     /**
@@ -26,13 +31,10 @@ class ItemsManager extends Manager
      */
     public function getAllCategories(): array
     {
-        // var_dump('test model');
-        // die(); OK
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM categories');
         $categories = $req->fetchAll();
-        // var_dump($categories);
-        // die();//return arrays
+
         return $categories;
     }
 
@@ -42,13 +44,10 @@ class ItemsManager extends Manager
      */
     public function getAllItems(): array
     {
-        // var_dump('ok');
-        // die();
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM items ORDER BY id');
         $items = $req->fetchAll();
-        // var_dump($items);
-        // die();
+
         return $items;
     }
 
@@ -60,7 +59,7 @@ class ItemsManager extends Manager
     {
         $db = $this->dbConnect();
         $req = $db->query('SELECT ref FROM items');
-        $refs = $req -> fetchAll();
+        $refs = $req->fetchAll();
 
         return $refs;
     }
@@ -72,10 +71,10 @@ class ItemsManager extends Manager
      */
     public function getCategoryById(int $category_id): array
     {
-        $db=$this->dbConnect();
+        $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, category_Name, path_cat, url_path FROM categories WHERE id=?');
         $req->execute(array($category_id));
-        $categoryId= $req->fetch();
+        $categoryId = $req->fetch();
 
         return $categoryId;
     }
@@ -90,8 +89,9 @@ class ItemsManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM items WHERE id = ?');
         $req->execute(array($itemId));
-        $item = $req ->fetch();
-
+        $item = $req->fetchAll();
+        // var_dump($item);
+        // die();
         return $item;
     }
 
@@ -111,8 +111,8 @@ class ItemsManager extends Manager
     }
 
 
-     /**
-    * Get all item of one seller
+    /**
+     * Get all item of one seller
      * @return array retourne un tableau contenant tous les articles d'un vendeur
      * @param int $sellerId
      */
@@ -133,33 +133,36 @@ class ItemsManager extends Manager
     public function randomItems(): array
     {
         $db = $this->dbConnect();
-        $req = $db-> query('SELECT * FROM items ORDER BY rand() LIMIT 3');
+        $req = $db->query('SELECT * FROM items ORDER BY rand() LIMIT 3');
         $randomItem = $req->fetchAll();
 
         return $randomItem;
     }
-    
+
     /**
      * Delete item by id
      * @param int $itemId
      * @return ...
      */
     // Sup article
-    public function removeItem(int $itemId)
+    public function removeItem(int $itemId): void
     {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM items WHERE id=?');
         $req->execute(array($itemId));
         $deleted = $req->fetch();
-
-        return $deleted;
     }
 
     /**
      * Update item
      * @return bool
-     * @param int $price $stock $itemId
-     * @param string $ref, $nameItem, $descriptionItem, $size
+     * @param int $price 
+     * @param int $stock 
+     * @param int $itemId
+     * @param string $ref
+     * @param string $nameItem
+     * @param string $descriptionItem
+     * @param string $size
      */
     // //Mettre à jour article
     public function updateItem(string $ref, string $nameItem, string $descriptionItem, int $price, string $size, int $stock, int $itemId): bool

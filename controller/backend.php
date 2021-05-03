@@ -1,4 +1,5 @@
 <?php
+
 use P5\model\CustomerManager;
 use P5\model\SellerManager;
 use P5\model\ItemsManager;
@@ -13,11 +14,11 @@ require_once './utils/Utils.php';
  */
 function deleteCustomer(int $customerId)
 {
-	$customerManager = new CustomerManager();
-	$deletedCustomer = $customerManager->deleteCustomer($customerId);
-	$_SESSION = array();
-	session_destroy();
-	Header ('Location: index.php?action=manageCustomers&delete-account=success');
+    $customerManager = new CustomerManager();
+    $deletedCustomer = $customerManager->deleteCustomer($customerId);
+    $_SESSION = array();
+    session_destroy();
+    Header('Location: index.php?action=manageCustomers&delete-account=success');
 }
 
 /**
@@ -44,7 +45,7 @@ function deleteSeller(int $sellerId)
     $_SESSION = array();
     session_destroy();
 
-    Header ('Location: index.php?action=manageSellers&delete-account=success');
+    Header('Location: index.php?action=manageSellers&delete-account=success');
 }
 
 function displayAdmin()
@@ -52,13 +53,13 @@ function displayAdmin()
     require 'view/backend/adminView.php';
 }
 
-function loginAdmin() 
+function loginAdmin()
 {
-	if (isset($_POST['pass']) AND $_POST['pass'] == "admin") {
-		header('Location: index.php?action=admin');
-	} else {
-		header('Location: index.php?action=admin-login-view&account-status=unsuccess-login');
-	}
+    if (isset($_POST['pass']) and $_POST['pass'] == "admin") {
+        header('Location: index.php?action=admin');
+    } else {
+        header('Location: index.php?action=admin-login-view&account-status=unsuccess-login');
+    }
 }
 
 /**

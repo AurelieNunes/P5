@@ -189,7 +189,6 @@ ETAPE 2
 ONGLET HOME =>          1/ API METEO //OK
                         2/ PARTIE VENDEURS
                             1/ Lien qui envoie sur le vendeur dans la description //OK
-                            2/ Slider
                         3/ FOOTER
                             1/ RGPD
                             2/ Mentions légales
@@ -217,18 +216,31 @@ Recuperer texte et photo du vendeur dans la vue SELLERVIEW //OK
 Pb epicerie fine 1 article/2
 Rajouter € dans les descriptions articles et listes articles //OK
 
+////////////////////////////////// RESTE A FAIRE //////////////////////////////////////////////////
+-> Vendeur random accueil 
+    -> Pb parfois 2 vendeurs / 3
+-> FOOTER
+    1/ RGPD
+    2/ Mentions légales
+
+-> ALERTES 
+    -> coté vendeur -> article en ligne //OK
+                    -> article supprimé //OK
+                    -> article modifié //OK
+                    -> compte modifié //OK
+                    -> compte supprimé //OK
+    -> coté client  -> compte modifié //OK
+                    -> compte supprimé //OK
 
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////// SLIDER /////////////////////////////////////////
-Ce que je veux faire : 
-    -> Je veux que les featurette produits passent toutes seules
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// A REVOIR  //////////////////////////////////////
+Vue SELLERVIEW  -> trop de blanc en bas de 350px/375px
+                -> nav trop large ?
+DescriptionItem ?? 
+ 
+-> COOKIES
 
-Ce dont j ai besoin POUR SLIDER HTML/CSS :
-    -> ID SLIDER //OK
-    -> TOUTES LES IMAGES
+-> MEDIAS QUERIES
 
-Ce que j'ai :
-    -> Une boucle 
-        -> qui contient 3 featurettes avec ses images 33% pour 3 featurettes
-
+-> VERIFIER SECU

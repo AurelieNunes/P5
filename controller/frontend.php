@@ -8,14 +8,15 @@ use P5\utils\Utils;
 require_once './model/Manager.php';
 require_once './utils/Utils.php';
 
-
 /**
  * Add Customer
- * @param string $lastName, $firstName, $mail, $pass
+ * @param string $lastName
+ * @param string $firstName
+ * @param string $mail
+ * @param string $pass
  */
 function addCustomer(string $lastName, string $firstName, string $mail, string $pass): void
 {
-
     $customerManager = new CustomerManager();
 
     $usernameValidity = $customerManager->checkLastName($lastName);
@@ -36,13 +37,15 @@ function addCustomer(string $lastName, string $firstName, string $mail, string $
         $newCustomer;
 
         // redirige vers page d'accueil avec le nouveau paramètre
-        Header('Location: index.php?home&account-status=account-successfully-created');
+        Header('Location: index.php?home&success=account-successfully-created');
     }
 }
 
 /**
  * Add seller
- * @param string $company, $mail, $pass
+ * @param string $company
+ * @param string $mail
+ * @param string $pass
  * @param int $siret
  */
 function addSeller(string $company, int $siret, string $mail, string $pass): void
@@ -52,7 +55,6 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
     $companySellerCheck = $sellerManager->checkCompany($company);
     $siretSellerCheck = $sellerManager->checkSiret($siret);
     $mailSellerCheck = $sellerManager->checkMail($mail);
-
 
     if ($companySellerCheck) {
         Header('Location: index.php?action=subscribeSeller&error=invalidUsername');
@@ -73,7 +75,7 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
         $newSeller;
         // redirige vers page d'accueil avec le nouveau paramètre
 
-        Header('Location: index.php?action=loginSeller');
+        Header('Location: index.php?action=loginSeller&success=account-successfully-created');
     }
 }
 
@@ -81,7 +83,7 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
  * Delete Account Customer
  * @param int $customerId
  */
-function deleteAccountCustomer(int $customerId)
+function deleteAccountCustomer(int $customerId): void
 {
     $customerManager = new CustomerManager();
     $deletedCustomer = $customerManager->deleteCustomer($customerId);
@@ -95,7 +97,7 @@ function deleteAccountCustomer(int $customerId)
  * Delete Account Seller
  * @param int $sellerId
  */
-function deleteAccountSeller(int $sellerId)
+function deleteAccountSeller(int $sellerId): void
 {
     $sellerManager = new SellerManager();
     $deletedSeller = $sellerManager->deleteSeller($sellerId);
@@ -122,16 +124,19 @@ function deleteItem(int $itemId): void
  * @param int $itemId
  * @return array
  */
-function descriptionItem(int $itemId)
+function descriptionItem(int $itemId): array
 {
     $itemsManager = new ItemsManager();
     $itemsDetails = $itemsManager->getItem($itemId);
+    // var_dump($itemsDetails);
+    // die();
+    return $itemsDetails;
 
     require('view/frontend/customer/descriptionProductView.php');
 }
 
 /**
- * DIsplay About
+ * Display About
  */
 function displayAbout()
 {
@@ -157,8 +162,6 @@ function displayCardSeller(int $sellerId)
     $itemsManager = new ItemsManager();
     $seller = $sellerManager->getSellerCompanyById($sellerId);
     $sellerAllInfo = $sellerManager->getSeller($sellerId);
-    // var_dump($sellerAllInfo);
-    // die();
     $allItems = $itemsManager->getItemsSeller($_GET['id_seller']);
 
     require 'view/frontend/customer/sellerView.php';
@@ -203,8 +206,6 @@ function displayHome()
     $sellerManager = new SellerManager();
     $itemsRandom = $itemsManager->randomItems();
     $sellerRandom = $sellerManager->randomSellers();
-    // var_dump($sellerRandom);
-    // die();
 
     $sellers = [];
 
@@ -253,12 +254,9 @@ function displaySubscribe()
  */
 function displayUpdate(): void
 {
-    // var_dump('testDisplay');
-    // die(); ok
     $itemsManager = new ItemsManager();
     $item = $itemsManager->getItem($_GET['id']);
-    // var_dump($item);
-    // die();
+
     require('view/frontend/seller/updateItemView.php');
 }
 
@@ -278,13 +276,10 @@ function displayUpdateSeller()
  */
 function getAllSellers()
 {
-    // var_dump('test controller');
-    // die();ok
     $sellerManager = new SellerManager();
     $itemsManager = new ItemsManager();
     $allSellers = $sellerManager->allSellers();
-    // var_dump($allItems);
-    // die(); //retourne plusieurs array
+
     require('view/frontend/customer/listSellersView.php');
 }
 
@@ -294,12 +289,8 @@ function getAllSellers()
  */
 function getCustomerById()
 {
-    // var_dump('test controller');
-    // die();
     $customerManager = new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
-    // var_dump($customerCo);
-    // die();
 
     require('view/frontend/customer/accountClientView.php');
 }
@@ -311,8 +302,7 @@ function getItemId(): void
 {
     $itemsManager = new ItemsManager();
     $item = $itemsManager->getItem($_GET['id']);
-    // var_dump($item);
-    // die();
+
     require('view/frontend/seller/itemView.php');
 }
 
@@ -324,12 +314,9 @@ function getItemsSellerId(): void
     $itemsManager = new ItemsManager();
     $sellerManager = new SellerManager();
     $items = $itemsManager->getItemsSeller($_SESSION['id']);
-    // var_dump($items);
-    // die();
+
     if ($items) {
         $seller = $sellerManager->getSeller($_SESSION['id']);
-        // var_dump($seller);
-        // die();
     } else {
         Header('Location : index.php?=dashboardSeller');
     }
@@ -456,13 +443,13 @@ function newItem(int $id_seller, int $category, string $ref, string $nameItem, s
 
                         Header('Location: index.php?action=dashboardSeller&new-item=success');
                     } else {
-                        throw new Exception('too big');
+                        throw new Exception('Le fichier est trop volumineux');
                     }
                 } else {
-                    throw new Exception('no good extension');
+                    throw new Exception("L'extension n'est pas valide");
                 }
             } else {
-                throw new Exception('file is empty');
+                throw new Exception('Le fichier est vide');
             }
         }
         // $refExist = $itemsManager->getItemsSeller(['ref']);

@@ -22,9 +22,9 @@ class SellerManager extends Manager
     /**
      * Check company name seller
      * @param string $company
-     * @return
+     * @return array
      */
-    public function checkCompany(string $company)
+    public function checkCompany(string $company): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT company FROM seller WHERE company = ?');
@@ -37,9 +37,9 @@ class SellerManager extends Manager
     /**
      * Check mail seller
      * @param string $mail
-     * @return
+     * @return array
      */
-    public function checkMail(string $mail)
+    public function checkMail(string $mail): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
@@ -52,14 +52,15 @@ class SellerManager extends Manager
     /**
      * Check siret number
      * @param int $siret
-     * 
+     * @return array
      */
-    public function checkSiret(int $siret)
+    public function checkSiret(int $siret): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
         $req->execute(array($siret));
         $siretCheck = $req->fetch();
+
         return $siretCheck;
     }
 
@@ -67,13 +68,11 @@ class SellerManager extends Manager
      * Delete seller by id
      * @param int $sellerId
      */
-    public function deleteSeller(int $sellerId)
+    public function deleteSeller(int $sellerId): void
     {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM seller WHERE id = ?');
         $deleteSeller = $req->execute((array($sellerId)));
-
-        return $deleteSeller;
     }
 
     /**
@@ -113,14 +112,14 @@ class SellerManager extends Manager
      * @param string $mail
      * @return array
      */
-    public function loginSeller(string $mail)
+    public function loginSeller(string $mail): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, pass, isAdmin FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $seller = $req->fetch();
-        // var_dump($seller);
-        // die();
+        // // var_dump($seller);
+        // // die();
         return $seller;
     }
 
@@ -139,7 +138,9 @@ class SellerManager extends Manager
 
     /**
      * Add seller in DATABASE
-     * @param string $company, $mail, $pass
+     * @param string $company, 
+     * @param string $mail
+     * @param string $pass
      * @param int $siret
      * @return void
      */
@@ -154,11 +155,13 @@ class SellerManager extends Manager
      * Update seller info
      * @param string $addressSeller
      * @param string $citySeller
+     * @param string $descriptionShop
      * @param int $cpSeller
      * @param int $telSeller
      * @param int $sellerId
+     * @return boolean
      */
-    public function updateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, int $sellerId)
+    public function updateSeller(string $addressSeller, string $cpSeller, string $citySeller, int $telSeller, string $descriptionShop, int $sellerId): bool
     {
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE seller SET addressSeller=?, cpSeller=?, citySeller=?, telSeller=?, descriptionShop=? WHERE id=?');

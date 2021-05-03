@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
 
-    <link rel="icon" type="image/png" href="../../public/img/logo2.png">
+    <link rel="icon" type="image/png" href="/public/img/Logo2.png">
     <meta name="description"
         content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
 
@@ -23,103 +23,139 @@
     <!-- <meta property="og:description" content="" /> -->
     <title>Mes P'tites Emplettes Narbonnaises</title>
 
-    <!-- Fonawesome -->
+    <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link href="./public/css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./public/css/style.css" /> -->
+
+
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="./public/css/bootstrap.css" />
+
 </head>
 
 <body>
     <header>
-        <div class="jumbotron fixed-top pt-4">
-            <div class="home-title d-flex justify-content-around align-items-center">
-                <p class="logo col-1">
-                    <img src="public/img/logo2.png" alt="logo site">
-                </p>
-                <h1 class="title text-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
-                <div id="widget">
-                    <div class="widgetCityName"></div>
-                    <div class="widgetCurrentTemp"></div>
-                    <!-- <div class="widgetMinTemp"></div>
-                    <div class="widgetMaxTemp"></div> -->
-                    <div class="widgetCurrentWeather"></div>
-                </div>
+        <div class="jumbotron-home fixed-top">
+            <p class="logo m-auto">
+                <img src="./public/img/Logo.png" alt="logo site">
+            </p>
+            <h1 class="title-website color-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
+            <div id="widget">
+                <div class="widgetCityName"></div>
+                <div class="widgetCurrentTemp"></div>
+                <div class="widgetCurrentWeather"></div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-md navbar bg-primary fixed-top">
-            <div class="collapse navbar-collapse justify-content-around primary" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="h6 mb-0 nav-link text-light" aria-current="page" href="index.php?action=home">Accueil</a>
+                        <a class="nav-link" href="index.php?action=home">Accueil
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=listSellers">Commerçants</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=category">Catégories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
-                        </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <?php 
-                        if (!empty($_SESSION))  {
-                            echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
-                        } else {
-                            echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginSeller">Connexion / Inscription</a></li>';
-                        }
-                        if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
-							echo '<li class="h6 mb-0 nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
-							}
-                        if (!empty($_SESSION)) {
-                            echo '<li class="h6 mb-0 nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
-                        }
-                        ?>
+                        <a class="nav-link" href="index.php?action=listSellers">Commerçants</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=category">Catégories</a>
+                    </li>
+
+                    <?php
+                        if(!empty($_SESSION['mailSubmitSeller'])){
+                            echo '<li class="nav-item">
+                            <a class= nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
+                        </li>';
+                        }
+
+                        if (!empty($_SESSION))  {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                        }
+                        
+                        if (!empty($_SESSION['mailSubmitCustomer'])) {
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></p></li>';
+                        }
+
+                        if(!empty($_SESSION['mailSubmitCustomer'])){
+                            echo '<li class="nav-item d-flex ml-auto p-2"><a class="nav-link text-light" href="index.php?action=getCustomer"><i
+                            class="text-light fas fa-user"></i></a></li>';
+                        }
+
+                        if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
+							echo '<li class="nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
+							}
+
+                            if(!empty($_SESSION['mailSubmitSeller'])){
+                                echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></p></li>';
+                            }
+                        ?>
                 </ul>
             </div>
         </nav>
+
+
     </header>
 
-
-    <main class="main-template-back">
+    <main class="main-template">
         <!-- Marketing messaging and featurettes
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <!-- /.container -->
-        <section class="container marketing">
+        <section class="container-expand-lg marketing">
 
             <?= $content ?>
 
         </section>
+
     </main>
     <!-- FOOTER -->
-    <footer class="footer-seller">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex mb-2">
-            <ul class="navbar-nav mr-auto w-100 justify-content-around">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php?action=about">
-                        <p class="mb-0">RGPD</p>
+    <footer>
+        <nav class="navbar navbar-footer navbar-expand-lg navbar-dark bg-primary">
+            <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
+                <li class="nav-item-expand-lg active">
+                    <a class="nav-link-expand-lg text-light text-center" href="index.php?action=about">
+                        <p class="expand-lg">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-light" href="listSellersView.php">
-                        <p class="mb-0">Mentions Légales</p>
+                <li class="nav-item-expand-lg active">
+                    <a class="nav-link-expand-lg text-light text-center" href="#">
+                        <p class="expand-lg">RGPD</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
-                        <p class="mb-0">Contact</p>
+                <li class="nav-item-expand-lg">
+                    <a class="nav-link-expand-lg text-light text-center"
+                        href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
+                        <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
+
             </ul>
         </nav>
     </footer>
+
     <!-- JS -->
     <script src="./public/JS/weather.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

@@ -1,20 +1,29 @@
 <?php $title = "Modifier un article"; ?>
 <?php ob_start(); ?>
 
-<section id="updateItem" class="mx-auto pt-5">
-    <h1 class="text-center">Modifier un article</h1>
+<?php
+    if (isset($_GET['submit-update']) && $_GET['submit-update'] == 'success') {
+        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-6 mx-auto h6 mb-4">Votre article a bien été mis à jour !</p>';
+    } 
+?>
+
+<section id="updateItem" class="mx-auto">
+    <p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
+    <div class="jumbotron bg-primary">
+        <h1 class="text-center text-white">Modifier un article</h1>
+    </div>
     <div class="mx-auto">
-        <p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
+
         <div id="updateBlock">
             <form class="d-flex flex-column" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>"
                 method="POST">
 
                 <label for="ref">Référence</label>
-                <input type="text" class="mb-2 col-2" name="ref" id="ref"
+                <input type="text" class="mb-2 col-4" name="ref" id="ref"
                     value="<?= htmlspecialchars($item['ref']); ?>" />
 
                 <label for="name">Nom du produit : </label>
-                <input class="mb-2 col-6" type="text" name="nameItem"
+                <input class="mb-2 col-8" type="text" name="nameItem"
                     value="<?= htmlspecialchars($item['nameItem']); ?>" />
 
                 <label for="description">Description </label>

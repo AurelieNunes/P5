@@ -13,30 +13,32 @@
     <div class="card border-primary mb-3 text-center">
         <div class="card-header h4"><?= $item['nameItem']; ?></div>
 
-        <div class="card-body d-flex row">
-            
-            <div class="img-item col-6">
+        <div class="card-body">
+
+            <div class="img-item">
                 <img class="card-img-top " src="<?= $item['url_img']; ?>" alt="Card image cap">
             </div>
-            <div class="info-item col-6 m-auto">
-                <p class="card-title h6">Ref : <?= $item['ref']; ?></p>
-                <p class="card-text h6"><?= $item['descriptionItem']; ?></p>
-                <p class="h6"><u>Prix</u>: <?= $item['price']; ?>€</p>
+            <div class="info-item m-auto">
+                <p class="card-title">Ref : <?= $item['ref']; ?></p>
+                <p class="card-text"><?= $item['descriptionItem']; ?></p>
+                <p class="price"><u>Prix</u>: <?= $item['price']; ?>€</p>
                 <?php
                     if(!empty($item['size']))
                     {
                 ?>
-                <p class="h6">Taille : <?= $item['size']; ?></p>
+                <p class="size">Taille : <?= $item['size']; ?></p>
                 <?php
                     }
                 ?>
-                <p class="h6 mb-4">En stock : <?= $item['stock']; ?></p>
+                <p class="mb-4">En stock : <?= $item['stock']; ?></p>
 
                 <p class="update-link">
-                    <a class="h6 text-primary" href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
+                    <a class="h6 text-primary"
+                        href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
                 </p>
                 <p class="delete-link">
-                    <a class="h6 text-primary" href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Supprimer cet article</a>
+                    <a class="h6 text-primary" href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Supprimer
+                        cet article</a>
                 </p>
             </div>
         </div>

@@ -2,12 +2,18 @@
 
 <?php ob_start(); ?>
 
-<section id="createItem" class="mx-auto pt-5">
+<?php
+    if (isset($_GET['new-item']) && $_GET['new-item'] == 'success') {
+        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-6 mx-auto h6 mb-4">Votre article a été publié</p>';
+    } 
+?>
+
+<section id="createItem" class="mx-auto">
     <p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
     <div class="jumbotron bg-primary">
         <h1 class="text-center text-white">Ajout Article</h1>
     </div>
-    <div id="managerBlock" class="mx-auto">
+    <div id="managerBlock" class="m-auto">
 
         <div id="addBlock">
             <form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST"
@@ -32,14 +38,13 @@
                     <label for="stock" class="mr-2">Stock</label>
                     <input class="mb-2 col-2 mr-2" type="number" name="stock" id="stock" />
                 </div>
-                <div
-                    class="img&category col-12 d-flex align-center justify-content-between align-items-center mx-auto mb-4">
-                    <div class="col-6">
+                <div class="img&category col-12 align-center justify-content-between align-items-center mx-auto mb-4">
+                    <div>
                         <label for="img" class="mt-5">Importer une image</label>
                         <input type="file" class="mb-3" name="picture" />
                     </div>
-                    <div class="bloc col-6">
-                        <div class="select col-12 mx-auto">
+                    <div class="bloc">
+                        <div class="select col-8 mx-auto">
                             <select name='categories'>
                                 <option value="">Choisissez la catégorie</option>
                                 <?php 
@@ -56,7 +61,7 @@
                 </div>
         </div>
 
-        <button class="mb-5 col-2 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button"
+        <button class="mb-5 col-4 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button"
             aria-pressed="true" type="submit" value="Ajouter">Ajouter</button>
         </form>
     </div>

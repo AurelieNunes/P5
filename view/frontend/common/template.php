@@ -28,60 +28,62 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./public/css/style.css" />
+    <!-- <link rel="stylesheet" href="./public/css/style.css" /> -->
+
+
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="./public/css/bootstrap.css" />
 
 </head>
 
 <body>
     <header>
-        <div class="jumbotron fixed-top pt-4">
-            <div class="home-title d-flex justify-content-around align-items-center">
-                <p class="logo">
-                    <img src="./public/img/Logo.png" alt="logo site">
-                </p>
-                <h1 class="title text-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
-                <div id="widget">
-                    <div class="widgetCityName"></div>
-                    <div class="widgetCurrentTemp"></div>
-                    <!-- <div class="widgetMinTemp"></div>
-                    <div class="widgetMaxTemp"></div> -->
-                    <div class="widgetCurrentWeather"></div>
-                </div>
+        <div class="jumbotron-home fixed-top">
+            <p class="logo m-auto">
+                <img src="./public/img/Logo.png" alt="logo site">
+            </p>
+            <h1 class="title-website color-primary font-italic">Mes P'tites Emplettes Narbonnaises</h1>
+            <div id="widget">
+                <div class="widgetCityName"></div>
+                <div class="widgetCurrentTemp"></div>
+                <div class="widgetCurrentWeather"></div>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <nav class="navbar navbar-expand-md navbar bg-primary fixed-top">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
-                        <li class="nav-item active">
-                            <a class="h6 nav-link text-light mb-0" aria-current="page"
-                                href="index.php?action=home">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="h6 nav-link text-light mb-0" href="index.php?action=listSellers">Commerçants</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="h6 nav-link text-light mb-0" href="index.php?action=category">Catégories</a>
-                        </li>
-                        <?php
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php?action=home">Accueil
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=listSellers">Commerçants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=category">Catégories</a>
+                    </li>
+
+                    <?php
                         if(!empty($_SESSION['mailSubmitSeller'])){
                             echo '<li class="nav-item">
-                            <a class="h6 mb-0 nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
+                            <a class="nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
                         </li>';
                         }
-                        ?>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <?php 
+
                         if (!empty($_SESSION))  {
-                            echo '<li class="nav-item ml-auto p-2"><a class="h6 mb-0 nav-link text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
                         } else {
-                            echo '<li class="nav-item ml-auto p-2"><a class="h6 mb-0 nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
                         }
                         
                         if (!empty($_SESSION['mailSubmitCustomer'])) {
-                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</li>';
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></p></li>';
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
@@ -94,13 +96,14 @@
 							}
 
                             if(!empty($_SESSION['mailSubmitSeller'])){
-                                echo '<li class="h6 mb-0 nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
+                                echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></p></li>';
                             }
                         ?>
-                    </ul>
-                </div>
+                </ul>
             </div>
         </nav>
+
+
     </header>
 
     <main class="main-template">
@@ -108,7 +111,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <!-- /.container -->
-        <section class="container marketing col-12">
+        <section class="container-expand-lg marketing">
 
             <?= $content ?>
 
@@ -117,22 +120,22 @@
     </main>
     <!-- FOOTER -->
     <footer>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex mb-2">
-            <ul class="navbar-nav mr-auto w-100 justify-content-around">
-                <li class="nav-item active">
-                    <a class="h6 nav-link text-light mb-0" href="index.php?action=about">
-                        <p class="mb-0">Qui se cache derrière ce projet ?</p>
+        <nav class="navbar navbar-footer navbar-expand-lg navbar-dark bg-primary">
+            <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
+                <li class="nav-item-expand-lg active">
+                    <a class="nav-link-expand-lg text-light text-center" href="index.php?action=about">
+                        <p class="expand-lg">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link h6 nav-link text-light mb-0" href="#">
-                        <p class="mb-0">RGPD</p>
+                <li class="nav-item-expand-lg active">
+                    <a class="nav-link-expand-lg text-light text-center" href="#">
+                        <p class="expand-lg">RGPD</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="h6 nav-link text-light mb-0"
+                <li class="nav-item-expand-lg">
+                    <a class="nav-link-expand-lg text-light text-center"
                         href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
-                        <p class="mb-0">Contact</p>
+                        <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
 
@@ -142,6 +145,17 @@
 
     <!-- JS -->
     <script src="./public/JS/weather.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

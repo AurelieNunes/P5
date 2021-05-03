@@ -4,7 +4,7 @@
 <div class="container-fluid d-flex">
   <a href="index.php?action=dashboardSeller"></a>
   <section id="adminPanel" class="col-12">
-    <div class="jumbotron mb-5 pb-5 bg-primary">
+    <div class="jumbotron-dashboard bg-primary">
       <h1 class="text-center">
         <p class="text-center text-white">Tableau de Bord</p>
       </h1>
