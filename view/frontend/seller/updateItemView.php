@@ -8,7 +8,7 @@
 ?>
 
 <section id="updateItem" class="mx-auto">
-    <p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
+    <p class="returnLink text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
     <div class="jumbotron bg-primary">
         <h1 class="text-center text-white">Modifier un article</h1>
     </div>

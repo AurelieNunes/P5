@@ -244,6 +244,8 @@ try {
                 break;
 
             case 'submitUpdateCustomer':
+                // var_dump('test');
+                // die();
                 submitUpdateCustomer($_POST['addressCustomer'], $_POST['cpCustomer'], $_POST['cityCustomer'], $_POST['telCustomer'], $_SESSION['id']);
                 break;
 

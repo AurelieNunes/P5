@@ -11,24 +11,24 @@
 	}
 ?>
 
-<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
+<p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
 <div id="updateAccountCustomer">
-	<form class="d-flex flex-column w-50 mx-auto"
+	<form class="d-flex flex-column col-10 m-auto"
 		action="index.php?action=submitUpdateCustomer&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
 
 		<label for="ref">Adresse</label>
-		<input type="text" class="mb-2 col-4" name="addressCustomer" />
+		<input type="text" class="mb-2 col-10" name="addressCustomer" />
 
 		<label for="cp">Code postal</label>
-		<input class="mb-2 col-2" type="number" name="cpCustomer" />
+		<input class="mb-2 col-4" type="number" name="cpCustomer" />
 
 		<label for="citySeller">Ville</label>
-		<input class="mb-2 col-4" type="text" name="cityCustomer" />
+		<input class="mb-2 col-8" type="text" name="cityCustomer" />
 
 		<label for="tel" class="mr-2">Téléphone</label>
-		<input class="mb-2 col-2 mr-2" type="number" name="telCustomer" />
+		<input class="mb-2 col-6 mr-2" type="number" name="telCustomer" />
 
-		<button class="mb-5 col-2 mx-auto" type="submit" value="Modifier">Modifier</button>
+		<button class="mb-5 col-6 bg-primary text-white h5 mx-auto" type="submit" value="Modifier">Modifier</button>
 	</form>
 </div>
 

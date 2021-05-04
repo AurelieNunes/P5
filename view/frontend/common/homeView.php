@@ -65,7 +65,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
     {
       if ($randomSeller['isAdmin'] != '1'){
     ?>
-    <div class="featurette-seller-expand-lg">
+    <div class="featurette-seller-home-expand-lg">
       <p class="link-seller-expand-lg">
         <a class="nav-link text-primary text-center h5"
           href="index.php?action=cardSeller&amp;id_seller= <?= $randomSeller['id']; ?>"><?= $randomSeller['company']; ?></a>

@@ -4,7 +4,7 @@
 <link href="../../../public/css/style.css" rel="stylesheet">
 
 <section id="viewItem">
-    <p class="returnLink">
+    <p class="returnLink text-center mx-auto pt-2">
         <a class="h6 text-primary" href="index.php?action=dashboardSeller">Retour au menu</a>
     </p>
     <div class="jumbotron bg-primary">

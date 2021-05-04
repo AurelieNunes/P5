@@ -68,7 +68,7 @@ class CustomerManager extends Manager
     public function getCustomer(int $customerId): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, lastName, firstName,addressCustomer, cpCustomer, cityCustomer, telCustomer, mail, pass FROM customer WHERE id=?');
+        $req = $db->prepare('SELECT * FROM customer WHERE id=?');
         $req->execute(array($customerId));
         $customer = $req->fetch();
 
@@ -83,7 +83,7 @@ class CustomerManager extends Manager
     public function loginCustomer(string $mail): array
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pass FROM customer WHERE mail = ?');
+        $req = $db->prepare('SELECT id, pass, isAdmin FROM customer WHERE mail = ?');
         $req->execute(array($mail));
         $customer = $req->fetch();
 
@@ -101,7 +101,7 @@ class CustomerManager extends Manager
     public function subscribeCustomer(string $lastName, string $firstName, string $mail, string $pass): void
     {
         $db = $this->dbConnect();
-        $newCustomer = $db->prepare('INSERT INTO customer (lastName, firstName, mail, pass, subscribe_date) VALUES (?, ?, ?, ?, CURDATE())');
+        $newCustomer = $db->prepare('INSERT INTO customer (lastName, firstName, mail, pass, isAdmin, subscribe_date) VALUES (?, ?, ?, ?, 0,CURDATE())');
         $newCustomer->execute(array($lastName, $firstName, $mail, $pass));
     }
 
@@ -112,7 +112,7 @@ class CustomerManager extends Manager
      * @param int $cpCustomer
      * @param int $telCustomer
      * @param int $customerId
-     * @return boolean
+     * @return boolean //false?
      */
     public function updateCustomer(string $addressCustomer, int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId): bool
     {
@@ -120,6 +120,8 @@ class CustomerManager extends Manager
         $req = $db->prepare('UPDATE customer SET addressCustomer=?, cpCustomer=?, cityCustomer=?, telCustomer=? WHERE id=?');
         $req->execute(array($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId));
         $customerUpdate = $req->fetch();
+        // var_dump($customerUpdate);
+        // die();
 
         return $customerUpdate;
     }

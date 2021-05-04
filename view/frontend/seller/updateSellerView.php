@@ -12,7 +12,7 @@
 ?>
 
 <section id="updateSeller" class="mx-auto">
-	<p class="returnLink"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
+	<p class="returnLink text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
 	<div class="jumbotron-dashboard">
 		<h1 class="text-center text-white bg-primary">Modifier mes informations</h1>
 	</div>

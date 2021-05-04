@@ -1,7 +1,7 @@
 <?php $title = "Catégories"; ?>
 
 <?php ob_start(); ?>
-<p class="returnLink w-50 mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour à l'accueil</a></p>
+<p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour à l'accueil</a></p>
 
 <section id="categoryList">
     <h1 class="text-center list-categories bg-primary text-white mx-auto">Toutes les catégories</h1>

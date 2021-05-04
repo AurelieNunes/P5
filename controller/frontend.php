@@ -122,17 +122,17 @@ function deleteItem(int $itemId): void
 /**
  * Description Item
  * @param int $itemId
- * @return array
+ * @return
  */
-function descriptionItem(int $itemId): array
+function descriptionItem(int $itemId)
 {
     $itemsManager = new ItemsManager();
     $itemsDetails = $itemsManager->getItem($itemId);
     // var_dump($itemsDetails);
     // die();
-    return $itemsDetails;
+    // return $itemsDetails;
 
-    require('view/frontend/customer/descriptionProductView.php');
+    require 'view/frontend/common/descriptionProductView.php';
 }
 
 /**
@@ -148,7 +148,9 @@ function displayAbout()
  */
 function displayAccountCustomer()
 {
-    require 'view/frontend/customer/updateCustomerView.php';
+    $customerManager = new CustomerManager();
+    $customer = $customerManager->getCustomer($_SESSION['id']);
+    require 'view/frontend/customer/accountClientView.php';
 }
 
 /**
@@ -164,7 +166,7 @@ function displayCardSeller(int $sellerId)
     $sellerAllInfo = $sellerManager->getSeller($sellerId);
     $allItems = $itemsManager->getItemsSeller($_GET['id_seller']);
 
-    require 'view/frontend/customer/sellerView.php';
+    require 'view/frontend/common/sellerView.php';
 }
 
 /**
@@ -175,7 +177,7 @@ function displayCategory()
     $itemsManager = new ItemsManager();
     $categories = $itemsManager->getAllCategories();
 
-    require 'view/frontend/customer/listCategoryView.php';
+    require 'view/frontend/common/listCategoryView.php';
 }
 
 /**
@@ -216,7 +218,7 @@ function displayHome()
         $sellers[$sellerId] = $seller;
     }
 
-    require('view/frontend/common/homeView.php');
+    require 'view/frontend/common/homeView.php';
 }
 
 /**
@@ -230,7 +232,7 @@ function displayItemsByCategory(int $category_id)
     $itemsCategories = $itemsManager->getItemsByCategory($category_id);
     $categories = $itemsManager->getCategoryById($category_id);
 
-    require('view/frontend/customer/itemsByCategoryView.php');
+    require 'view/frontend/common/itemsByCategoryView.php';
 }
 
 /**
@@ -238,7 +240,7 @@ function displayItemsByCategory(int $category_id)
  */
 function displayLogin()
 {
-    require('view/frontend/common/loginView.php');
+    require 'view/frontend/common/loginView.php';
 }
 
 /**
@@ -246,7 +248,7 @@ function displayLogin()
  */
 function displaySubscribe()
 {
-    require('view/frontend/common/subscribeView.php');
+    require 'view/frontend/common/subscribeView.php';
 }
 
 /**
@@ -257,7 +259,7 @@ function displayUpdate(): void
     $itemsManager = new ItemsManager();
     $item = $itemsManager->getItem($_GET['id']);
 
-    require('view/frontend/seller/updateItemView.php');
+    require 'view/frontend/seller/updateItemView.php';
 }
 
 /**
@@ -268,19 +270,21 @@ function displayUpdateSeller()
     $sellerManager = new SellerManager();
     $seller = $sellerManager->getSeller($_SESSION['id']);
 
-    require('view/frontend/seller/updateSellerView.php');
+    require 'view/frontend/seller/updateSellerView.php';
 }
 
 /**
  * Get All sellers
+ * @return array
  */
 function getAllSellers()
 {
     $sellerManager = new SellerManager();
     $itemsManager = new ItemsManager();
     $allSellers = $sellerManager->allSellers();
+    // return $allSellers;
 
-    require('view/frontend/customer/listSellersView.php');
+    require 'view/frontend/common/listSellersView.php';
 }
 
 /**
@@ -292,7 +296,7 @@ function getCustomerById()
     $customerManager = new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
 
-    require('view/frontend/customer/accountClientView.php');
+    require 'view/frontend/customer/accountClientView.php';
 }
 
 /**
@@ -303,7 +307,7 @@ function getItemId(): void
     $itemsManager = new ItemsManager();
     $item = $itemsManager->getItem($_GET['id']);
 
-    require('view/frontend/seller/itemView.php');
+    require 'view/frontend/seller/itemView.php';
 }
 
 /**
@@ -320,7 +324,7 @@ function getItemsSellerId(): void
     } else {
         Header('Location : index.php?=dashboardSeller');
     }
-    require('view/frontend/seller/listItemsView.php');
+    require 'view/frontend/seller/listItemsView.php';
 }
 
 /**
@@ -360,7 +364,12 @@ function loginSubmitCustomer(string $mail, string $pass): void
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $customer['id'];
             $_SESSION['mailSubmitCustomer'] = ucfirst(strtolower($mail));
+            $_SESSION['isAdmin'] = $customer['isAdmin'];
+            if ($_SESSION['isAdmin'] === 1) {
+                Header('Location: index.php?action=admin');
+            } else {
             Header('Location: index.php');
+            }
         } else {
             Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');
         }
@@ -386,7 +395,8 @@ function loginSubmitSeller(string $mail, string $pass): void
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $seller['id'];
             $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
-            if ($_SESSION['isAdmin'] = $seller['isAdmin']) {
+            $_SESSION['isAdmin'] = $seller['isAdmin'];
+            if ($_SESSION['isAdmin'] === 1) {
                 Header('Location: index.php?action=admin');
             } else {
                 Header('Location: index.php?action=dashboardSeller');
@@ -469,7 +479,7 @@ function submitUpdate(): void
     $itemsManager = new ItemsManager();
     $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
 
-    Header('Location:index.php?action=dashboardSeller&submit-update=success');
+    Header('Location:index.php?action=dashboardSellersubmit-update=success');
 }
 
 /**
@@ -484,8 +494,10 @@ function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $
 {
     $customerManager = new CustomerManager();
     $customerUp = $customerManager->updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId);
+    // var_dump($customerUp);
+    // die();//bool false
 
-    Header('Location:index.php?action=accountClientView&submit-update-customer=success');
+    Header('Location:index.php?action=getCustomer&submit-update-customer=success');
 }
 
 /**

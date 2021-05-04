@@ -15,7 +15,7 @@ class SellerManager extends Manager
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM seller');
         $sellers = $req->fetchAll();
-
+        
         return $sellers;
     }
 

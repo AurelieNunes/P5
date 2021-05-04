@@ -40,7 +40,7 @@
 
     <body>
         <header>
-            <div class="jumbotron-home fixed-top">
+            <div class="jumbotron-customerView fixed-top">
                 <p class="logo m-auto">
                     <img src="./public/img/Logo.png" alt="logo site">
                 </p>
@@ -85,7 +85,7 @@
                         }
                         
                         if (!empty($_SESSION['mailSubmitCustomer'])) {
-                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></p></li>';
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</li>';
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
@@ -93,12 +93,12 @@
                             class="text-light fas fa-user"></i></a></li>';
                         }
 
-                        if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
+                        if(!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
 							echo '<li class="nav-item ml-auto p-2"><a class="text-white nav-link" href="index.php?action=admin"> Administration</a></li>';
 							}
 
-                            if(!empty($_SESSION['mailSubmitSeller'])){
-                                echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></p></li>';
+                        if(!empty($_SESSION['mailSubmitSeller'])){
+                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="session m-auto pr-2 text-white text-uppercase">Bonjour<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</li>';
                             }
                         ?>
                     </ul>
