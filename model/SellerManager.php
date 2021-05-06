@@ -130,7 +130,7 @@ class SellerManager extends Manager
     public function randomSellers(): array
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM seller ORDER BY rand() LIMIT 3');
+        $req = $db->query("SELECT * FROM seller WHERE isAdmin!='1' ORDER BY rand() LIMIT 3");
         $randomSeller = $req->fetchAll();
 
         return $randomSeller;

@@ -25,23 +25,23 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
     <div id="subscribeForms" class="text-center">
 
       <div id="subscribe-Seller" class="mx-auto">
-        <h1 class="h5 text-center text-primary">Vous êtes un professionnel ? </h1>
+        <h1 class="h5 text-center orange">Vous êtes un professionnel ? </h1>
         <form class="subscribe-formSeller d-flex flex-column col-8 m-auto" action="index.php?action=addSeller"
           method="POST">
           <label for="companySeller" class="visually-hidden">Nom de la société</label>
-          <input type="text" id="companySeller" class="form-controlSeller" placeholder="Nom de la société"
+          <input type="text" id="companySeller" class="mb-2 form-controlSeller" placeholder="Nom de la société"
             name="companySeller" required autofocus>
           <label for="inputEmailSeller" class="visually-hidden mt-2">Adresse email</label>
-          <input type="email" id="mailSeller" class="form-controlSeller" placeholder="Email" name="mailSeller" required
+          <input type="email" id="mailSeller" class="mb-2 form-controlSeller" placeholder="Email" name="mailSeller" required
             autofocus>
           <label for="inputPasswordSeller" class="visually-hidden mt-2">Mot de passe</label>
-          <input type="password" id="inputPasswordSeller" class="form-controlSeller" placeholder="Mot de passe"
+          <input type="password" id="inputPasswordSeller" class="mb-2 form-controlSeller" placeholder="Mot de passe"
             name="passSeller" required>
           <label for="pass_confirm" class="visually-hidden mt-2">Confirmez votre mot de passe</label>
-          <input class="form-controlSeller" type="password" name="pass_confirmSeller" id="pass_confirmSeller"
+          <input class="mb-2 form-controlSeller" type="password" name="pass_confirmSeller" id="pass_confirmSeller"
             placeholder="Mot de Passe" name="pass_confirmSeller" required />
           <label for="siret" class="visually-hidden mt-2">N° de Siret</label>
-          <input class="form-controlSeller mb-4" type="siret" name="siret" id="siret" placeholder="00000000000000"
+          <input class="mb-2 form-controlSeller mb-4" type="siret" name="siret" id="siret" placeholder="00000000000000"
             name="siret" required />
           <button class="btn btn-lg btn-primary m-auto text-center d-flex justify-content-center text-white"
             type="submit" value="S'inscrire">S'inscrire </button>
@@ -50,23 +50,23 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
 
 
       <div id="subscribe-customer" class="mx-auto text-center mt-4">
-        <h1 class="h5 text-primary">Vous êtes un particulier ?</h1>
+        <h1 class="h5 orange">Vous êtes un particulier ?</h1>
         <form class="subscribe-formCustomer d-flex flex-column col-8 m-auto" action="index.php?action=addCustomer"
           method="POST">
 
           <label for="lastName" class="visually-hidden">Nom</label>
-          <input type="text" id="lastName" class="form-controlCustomer" placeholder="Nom" name="lastName" required
+          <input type="text" id="lastName" class="mb-2 form-controlCustomer" placeholder="Nom" name="lastName" required
             autofocus>
 
           <label for="firstName" class="visually-hidden mt-2">Prénom</label>
-          <input type="text" id="firstName" class="form-controlCustomer" placeholder="Prénom" name="firstName" required
+          <input type="text" id="firstName" class="mb-2 form-controlCustomer" placeholder="Prénom" name="firstName" required
             autofocus>
 
           <label for="mailCustomer" class="visually-hidden mt-2">Adresse email</label>
-          <input type="email" id="mailCustomer" class="form-controlCustomer" placeholder="Email" name="mailCustomer"
+          <input type="email" id="mailCustomer" class="mb-2 form-controlCustomer" placeholder="Email" name="mailCustomer"
             required>
           <label for="passCustomer" class="visually-hidden mt-2">Mot de passe</label>
-          <input type="password" id="passCustomer" class="form-controlCustomer" placeholder="Mot de passe"
+          <input type="password" id="passCustomer" class="mb-2 form-controlCustomer" placeholder="Mot de passe"
             name="passCustomer" required>
           <label for="pass_confirmCustomer" class="visually-hidden mt-2">Confirmez votre mot de passe</label>
           <input class="pass_confirmCustomer mb-4" type="password" name="pass_confirmCustomer" id="pass_confirmCustomer"
@@ -80,7 +80,7 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
       <a class="text-center text-primary h6" href="index.php?action=loginCustomer">Se connecter</a>
     </div>
   </div>
-  <p class="mt-2 mb-3 text-muted text-center">&copy; 2021-2025</p>
+  <p class="mt-2 mb-3 text-muted text-center m-auto">&copy; 2021-2025</p>
 </section>
 
 

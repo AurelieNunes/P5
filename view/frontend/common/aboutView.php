@@ -1,7 +1,7 @@
 <?php $title = "Qui se cache derrière ce projet ?";?>
 
 <?php ob_start();?>
-<p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
+<!-- <p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p> -->
 <section class="mx-auto" id="About">
     <div class="picture mx-auto text-center">
         <img class="col-8" src="./public/img/logo2.png"

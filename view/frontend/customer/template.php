@@ -124,7 +124,7 @@
     </main>
     <!-- FOOTER -->
     <footer>
-        <nav class="navbar-customer navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
+        <nav class="navbar-common navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
             <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
                 <li class="nav-item-expand-lg active">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="index.php?action=about">

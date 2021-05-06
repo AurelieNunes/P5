@@ -148,8 +148,6 @@ function displayAbout()
  */
 function displayAccountCustomer()
 {
-    // $customerManager = new CustomerManager();
-    // $customer = $customerManager->getCustomer($_SESSION['id']);
     require 'view/frontend/customer/accountClientView.php';
 }
 

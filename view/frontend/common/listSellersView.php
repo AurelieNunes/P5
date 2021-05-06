@@ -5,7 +5,7 @@
         l'accueil</a></p> -->
 <section id="listingSellers">
 
-    <h1 class="text-center list-sellers bg-primary text-white mx-auto">Liste des commerçants</h1>
+    <h1 class="text-center list-sellers bg-primary text-white mx-auto pb-2 pt-2 pr-2 pl-2">Tous les commerçants</h1>
 
     <ul class="list-group ">
         <?php   

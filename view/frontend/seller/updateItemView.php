@@ -10,37 +10,37 @@
 <section id="updateItem" class="mx-auto">
     <p class="returnLink text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
     <div class="jumbotron bg-primary">
-        <h1 class="text-center text-white">Modifier un article</h1>
+        <h1 class="text-center text-white bg-primary">Modifier un article</h1>
     </div>
     <div class="mx-auto">
 
         <div id="updateBlock">
-            <form class="d-flex flex-column" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>"
+            <form class="d-flex flex-column col-10 m-auto" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>"
                 method="POST">
 
                 <label for="ref">Référence</label>
-                <input type="text" class="mb-2 col-4" name="ref" id="ref"
+                <input type="text" class="mb-2 col-6" name="ref" id="ref"
                     value="<?= htmlspecialchars($item['ref']); ?>" />
 
                 <label for="name">Nom du produit : </label>
-                <input class="mb-2 col-8" type="text" name="nameItem"
+                <input class="mb-2 col-10" type="text" name="nameItem"
                     value="<?= htmlspecialchars($item['nameItem']); ?>" />
 
                 <label for="description">Description </label>
                 <textarea name="descriptionItem" rows="20" cols="40" class="mb-3"
                     id="descriptionItemUpdate"><?= htmlspecialchars($item['descriptionItem']); ?></textarea>
 
-                <div class="infos d-flex">
+                <div class="infos d-flex flex-column col-10 m-auto">
                     <label for="price" class="mr-2">Prix</label>
-                    <input class="mb-2 col-2 mr-2" type="number" name="price" id="price"
+                    <input class="mb-2 col-4 mr-2" type="number" name="price" id="price"
                         value="<?= htmlspecialchars($item['price']); ?>" />
 
                     <label for="size" class="mr-2">Taille</label>
-                    <input class="mb-2 col-2 mr-2" type="text" name="size" id="size"
+                    <input class="mb-2 col-4 mr-2" type="text" name="size" id="size"
                         value="<?= htmlspecialchars($item['size']); ?>" />
 
                     <label for="stock" class="mr-2">Stock</label>
-                    <input class="mb-2 col-2 mr-2" type="number" name="stock" id="stock"
+                    <input class="mb-2 col-4 mr-2" type="number" name="stock" id="stock"
                         value="<?= htmlspecialchars($item['stock']); ?>" />
                 </div>
 

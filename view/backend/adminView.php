@@ -3,7 +3,7 @@ $title = "Panel d'administration"; ?>
 
 <?php ob_start(); ?>
 
-<section id="admin">
+<section id="adminPanel">
 	<div class="jumbotron">
 		<h1 class="text-center">
 			<p class="text-center">Panel d'administration</p>

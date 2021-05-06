@@ -13,30 +13,30 @@
     <div class="jumbotron-dashboard bg-primary">
         <h1 class="text-center text-white">Ajout Article</h1>
     </div>
-    <div id="managerBlock" class="m-auto">
+    <div id="managerBlock" class="m-auto col-10">
 
         <div id="addBlock">
             <form class="d-flex flex-column" id="addItem" action="index.php?action=newItem" method="POST"
                 enctype="multipart/form-data">
 
                 <label for="ref">Référence</label>
-                <input class="mb-2 col-2" name="ref" id="ref" />
+                <input class="mb-2 col-4" name="ref" id="ref" />
 
                 <label for="name">Nom du produit : </label>
-                <input class="mb-2 col-6" type="text" name="nameItem" id="nameItem" />
+                <input class="mb-2 col-8" type="text" name="nameItem" id="nameItem" />
 
                 <label for="description">Description </label>
                 <textarea name="descriptionItem" rows="10" cols="40" class="mb-3"></textarea>
 
-                <div class="infos d-flex align-items-center justify-content-center mx-auto">
+                <div class="infos d-flex flex-column align-items-center mx-auto">
                     <label for="price" class="mr-2">Prix</label>
-                    <input class="mb-2 col-2 mr-2" type="number" name="price" id="price" />
+                    <input class="mb-2 col-8 mr-2" type="number" name="price" id="price" />
 
                     <label for="size" class="mr-2">Taille</label>
-                    <input class="mb-2 col-2 mr-2" type="text" name="size" id="size" />
+                    <input class="mb-2 col-8 mr-2" type="text" name="size" id="size" />
 
                     <label for="stock" class="mr-2">Stock</label>
-                    <input class="mb-2 col-2 mr-2" type="number" name="stock" id="stock" />
+                    <input class="mb-2 col-8 mr-2" type="number" name="stock" id="stock" />
                 </div>
                 <div class="img&category col-12 align-center justify-content-between align-items-center mx-auto mb-4">
                     <div>

@@ -63,7 +63,6 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
   <div class="newSeller-expand-lg m-auto mb-4">
     <?php foreach ($sellerRandom as $randomSeller) 
     {
-      if ($randomSeller['isAdmin'] != '1'){
     ?>
     <div class="featurette-seller-home-expand-lg col-10 m-auto mb-4">
       <p class="link-seller-expand-lg mb-4">
@@ -83,7 +82,6 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
     </div>
     <?php
     }
-  }
     ?>
   </div>
 
