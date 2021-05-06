@@ -1,6 +1,6 @@
 <?php
 
-namespace P5\utils;
+namespace P5\Utils;
 
 class Utils
 {

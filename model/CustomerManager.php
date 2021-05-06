@@ -114,7 +114,7 @@ class CustomerManager extends Manager
      * @param int $customerId
      * @return boolean //false?
      */
-    public function updateCustomer(string $addressCustomer, int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId): bool
+    public function updateCustomer(string $addressCustomer, int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE customer SET addressCustomer=?, cpCustomer=?, cityCustomer=?, telCustomer=? WHERE id=?');

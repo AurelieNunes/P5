@@ -33,7 +33,7 @@
 
 <body>
 	<header>
-		<div class="jumbotron fixed-top">
+		<div class="jumbotron-admin fixed-top">
 			<div class="home-title d-flex justify-content-around">
 				<p class="logo col-1">
 					<img src="public/img/logo2.png" alt="logo site">

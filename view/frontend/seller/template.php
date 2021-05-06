@@ -38,7 +38,7 @@
 
 <body>
     <header>
-        <div class="jumbotron-home fixed-top">
+        <div class="jumbotron-seller fixed-top">
             <p class="logo m-auto">
                 <img src="./public/img/Logo.png" alt="logo site">
             </p>

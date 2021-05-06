@@ -148,8 +148,8 @@ function displayAbout()
  */
 function displayAccountCustomer()
 {
-    $customerManager = new CustomerManager();
-    $customer = $customerManager->getCustomer($_SESSION['id']);
+    // $customerManager = new CustomerManager();
+    // $customer = $customerManager->getCustomer($_SESSION['id']);
     require 'view/frontend/customer/accountClientView.php';
 }
 
@@ -271,6 +271,13 @@ function displayUpdateSeller()
     $seller = $sellerManager->getSeller($_SESSION['id']);
 
     require 'view/frontend/seller/updateSellerView.php';
+}
+
+function displayUpdateCustomer()
+{
+    $customerManager = new CustomerManager();
+    $customer = $customerManager->getCustomer($_SESSION['id']);
+    require 'view/frontend/customer/updateCustomerView.php';
 }
 
 /**

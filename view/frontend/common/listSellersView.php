@@ -1,8 +1,8 @@
 <?php $title = "liste des commerçants"; ?>
 
 <?php ob_start(); ?>
-<p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour à
-        l'accueil</a></p>
+<!-- <p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour à
+        l'accueil</a></p> -->
 <section id="listingSellers">
 
     <h1 class="text-center list-sellers bg-primary text-white mx-auto">Liste des commerçants</h1>
@@ -15,7 +15,7 @@
         ?>
         <li class="card mx-auto mb-4">
             <p class="link-seller h2">
-                <a class="nav-link h3 text-primary text-center"
+                <a class="nav-link h3 orange text-center"
                     href="index.php?action=cardSeller&amp;id_seller= <?= $sellers['id']; ?>"><?= $sellers['company']; ?></a>
             </p>
             <div class="infoCard d-flex justify-content-around">

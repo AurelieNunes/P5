@@ -1,0 +1,447 @@
+/* ---------------------------------------- */
+/* ==            SUMMARY           		      */
+/*---------------------------------------- */
+
+/* L23		- 1 - Color codes				    */
+/* L45		- 2 - Définition Polices    */
+/* L59		- 3 - Éléments Principaux   */
+/* L71		- 4	- Class 				      	*/
+/* L245		- 5 - Header    				    */
+/* L273		- 6 - Section 1					    */
+/* L302		- 7 - Section 2					    */
+/* L402		- 8 - Section 3		          */
+/* L551		- 9 - Footer        			  */
+/* L621		- 10 - Media Queries 1			*/
+/* L1006	- 11 - Media Queries 2		  */
+/* L1143	- 12 - Media Queries 3 			*/
+/* L1250	- 13 - Media Queries 4 			*/
+
+/*---------------------------------------*/
+/*==			COLOR CODES 		       */
+/*---------------------------------------*/
+/* 	  
+/* ---------------------------------------- */
+/* ==              BASE                    */
+/*---------------------------------------- */
+
+/* ---------------------------------------- */
+/* == 		DÉFINITIONS DES POLICES			*/
+/*---------------------------------------- */
+
+
+
+
+
+
+/* ---------------------------------------- */
+/* == 		          CLASS 			    */
+/*---------------------------------------- */
+
+/*============== COLORS ==================*/
+/*  MAIN COLORS */
+.orange {
+    color: #ff9900;
+}
+
+.white {
+    color: white;
+}
+
+.bg-orange {
+    background-color: #ff9900;
+}
+
+/* TEMPLATE COMMON */
+header{
+    height: 30%;
+}
+
+.jumbotron-common, .jumbotron-customer{
+    height: 10%;
+}
+
+.logo {
+    height: 100%;
+}
+
+.title-website, #widget {
+    visibility: hidden;
+}
+
+.navbar-common, .navbar-customer {
+    top: 10%;
+}
+
+.navbar-light .navbar-brand,.navbar-light .navbar-toggler, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
+ 
+    color: white;
+}
+
+.nav-link-fas {
+    float: right;
+}
+
+/* HOMEVIEW - CATEGORYLIST */
+.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer {
+    margin-top: 50%;
+}
+
+/* SELLERVIEW */
+.hash-list {
+    list-style: none;
+}
+
+/* ---------------------------------------- */
+/* == 		         MEDIAS                 */
+/*                   QUERIES 			    */
+/*---------------------------------------- */
+
+/*
+----------- MAX - WIDTH 425 px ------------*/
+@media (min-width:425px)
+{
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #accountCustomer, #updateAccountCustomer {
+        margin-top: 45%;
+    }
+
+    .navbar-common, .navbar-customer {
+        top: 12%;
+    }
+
+    .jumbotron-common, .jumbotron-customer{
+        height: 12%;
+    }
+}
+
+/*
+----------- MAX - WIDTH 768 px ------------*/
+@media (min-width:768px)
+{
+    .jumbotron-common, .jumbotron-customer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 20%;
+        align-items: center;
+    }
+
+    .logo {
+        width: 30%;
+        height: auto;
+    }
+
+    .logo img {
+        width: 90%;
+    }
+
+    .title-website {
+        visibility: visible;
+        width: 45%;
+        text-align: center;
+        height: 50%;
+    }
+
+    #widget {
+        visibility: visible;
+        width: 20%;
+        height: 160px;
+    }
+
+    .navbar-common, .navbar-customer {
+        top: 20%;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer {
+        margin-top: 34%;
+    }
+
+    /* CARDSELLERVIEW */
+    .hash-list {
+        width: 100%;
+        flex-direction: row;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .hash-list li {
+        width: 30%;
+    }
+
+    .allProduct .description-product {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/*
+----------- MAX - WIDTH 1024 px ------------*/
+@media (min-width:1024px) 
+{
+    /* HOMEVIEW */
+    .session-users {
+        display: flex;
+    }
+
+    .session-users .nav-item-logout {
+        align-self: center;
+        margin-right: 6px;
+    }
+
+    .nav-item-mailCustomer {
+        align-self: center;
+        margin-right: 10px;
+    }
+
+    .nav-item-subCustomer {
+        align-self: center;
+    }
+
+    .session {
+        margin-bottom: 0rem;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer {
+        margin-top: 25%;
+    }
+
+    .link-seller-expand-lg .nav-link {
+        font-size: 2.5rem;
+    }
+
+    .sellerexpand-lg {
+        font-size: 24px;
+        align-self: center;
+    }
+
+    .addressSeller {
+        font-size: 2rem;
+    }
+
+    /* UPDATECUSTOMERVIEW */
+    .form-submit-customer {
+        width: 50%;
+        margin: auto;
+    }
+
+    .form-submit-customer label {
+        width: 50%;
+    }
+}
+
+/*
+----------- MAX - WIDTH 1440 px ------------*/
+@media (min-width:1440px) 
+{
+    .navbar-brand, .navbar-nav {
+        font-size: 22px;
+    }
+
+    .navbar-footer .navbar-nav-expand-lg {
+        display: flex;
+        justify-content: space-around;
+        font-size: 22px;
+        align-items: center;
+    }
+
+    .navbar-footer .navbar-nav-expand-lg .expand-lg {
+        margin-bottom: 0px;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer {
+        margin-top: 20%;
+    }
+
+    .featurette-heading-presentation-expand-lg {
+        font-size: 3.75rem;
+        width: 80%;
+    }
+
+    .presentation-expand-lg {
+        font-size: 26px;
+    }
+
+    .selectionWeek .h2 {
+        font-size: 3rem;
+    }
+
+    .productWeek-expand-lg {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .featurette-product-expand-lg {
+        width: 100%;
+    }
+
+    .img-product-expand-lg {
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+    }
+
+    .img-product1 {
+        width: 45%;
+    }
+
+    .product {
+        width: 40%;
+        align-self: center;
+    }
+
+    .title-product {
+        font-size: 2.50rem;
+    }
+
+    .link-ReadMore {
+        font-size: 2.25rem;
+    }
+
+    .featurette-seller-home-expand-lg
+     {
+        width: 80%;
+    }
+
+    .content-seller-expand-lg {
+        width: 90%;
+    }
+
+    .sellerexpand-lg {
+        width: 20%;
+    }
+
+    /* DESCRIPTION PRODUCT */
+    #detailProduct .h5 {
+        width: 80%;
+        margin: auto;
+    }
+
+    .img-product-seller {
+        width: 80%;
+        margin: auto;
+    }
+
+    .img-product {
+        width: 100%;
+    }
+
+    /* LISTSELLERVIEW */
+    .listing .card {
+        width: 60%;
+    }
+
+    .listing .card-body .card-title {
+        font-size: 2.5rem;
+    }
+
+    .listing .card-body .btn  {
+        font-size: 2rem;
+    }
+
+    /* CATEGORYVIEW */
+    .jumbotron-categories {
+        width: 60%;
+    }
+
+    #category {
+        margin-bottom: 20px;
+    }
+
+    #category .card {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #category .card .card-img-top {
+        width: 50%;
+    }
+
+    #category .card .card-body {
+        width: 50%;
+        align-self: center;
+    }
+
+    /* CARDSELLER */
+    .presentation-shop-expand-lg {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+        margin:auto;
+    }
+
+    .img-shop {
+        width: 50%;
+    }
+
+    .img-presentation {
+        width: 100%;
+    }
+
+    .lead-description-shop {
+        width: 40%;
+        align-self: center;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .productSeller {
+        display: flex;
+    }
+
+    .product {
+        margin: auto;
+    }
+
+    #reviews {
+        width: 60%;
+        margin: auto;
+    }
+
+    #reviews .container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .hash-list li {
+        width: 20%;
+    }
+}
+
+/*
+----------- MAX - WIDTH 2560 px ------------*/
+@media (min-width:2560px) {
+    .title-website {
+        font-size: 71px;
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+    #widget {
+        width: 17%;
+        height: 230px;
+    }
+
+    .navbar-brand, .navbar-nav {
+        font-size: 28px;
+    }
+
+    .featurette-heading-presentation-expand-lg {
+        font-size: 4.75rem;
+        width: 80%;
+    }
+
+    .presentation-expand-lg {
+        font-size: 42px;
+    }
+
+    .logo {
+        width: 15%;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer {
+        margin-top: 15%;
+    }
+}
+

@@ -2,9 +2,8 @@
 <?php ob_start(); ?>
 
 <section id="accountCustomer" class="mx-auto">
-	<p class="returnLink text-center mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
-	<h1 class="h2 text-center">Mes informations</h1>
-	<div class="mx-auto">
+	<!-- <p class="returnLink text-center mx-auto"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p> -->
+	<h1 class="h2 text-center bg-primary pt-2 pb-2 white col-12">Mes informations</h1>
 		<div class="infoCustomer">
 			<a href="index.php?action=getCustomer&amp;id=<?=intval($_SESSION['id']); ?>"></a>
 			<ul>
@@ -21,7 +20,7 @@
 				</li>
 			</ul>
 			<p class="update-link text-center">
-				<a href="index.php?action=submitUpdateCustomer&amp;id=<?= $customerCo['id']; ?>">Modifier mes
+				<a href="index.php?action=displayUpdateCustomer&amp;id=<?= $customerCo['id']; ?>">Modifier mes
 					informations</a>
 			</p>
 			<p class="delete-link text-center">
@@ -29,7 +28,6 @@
 					compte</a>
 			</p>
 		</div>
-	</div>
 </section>
 
 

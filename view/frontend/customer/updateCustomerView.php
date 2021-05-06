@@ -11,9 +11,10 @@
 	}
 ?>
 
-<p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p>
+<!-- <p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour au menu</a></p> -->
 <div id="updateAccountCustomer">
-	<form class="d-flex flex-column col-10 m-auto"
+	<h1 class="h2 text-center bg-primary pt-2 pb-2 pr-2 pl-2 white col-12">Mettre à jour mes informations</h1>
+	<form class="form-submit-customer d-flex flex-column col-10 m-auto"
 		action="index.php?action=submitUpdateCustomer&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
 
 		<label for="ref">Adresse</label>

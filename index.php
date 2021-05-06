@@ -135,8 +135,6 @@ try {
             case 'descriptionItem':
                 /*See more item of home*/
                 descriptionItem($_GET['itemId']);
-                // var_dump(descriptionItem($_GET['itemId']));
-                // die();
                 break;
 
             case 'displayAccountCustomer':
@@ -145,6 +143,10 @@ try {
 
             case 'displayItemsByCategory':
                 displayItemsByCategory($_GET['category_id']);
+                break;
+
+            case 'displayUpdateCustomer':
+                displayUpdateCustomer();
                 break;
 
             case 'displayUpdateItem':
