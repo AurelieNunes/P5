@@ -362,9 +362,13 @@ function loginSubmitCustomer(string $mail, string $pass): void
     $customer = $customerManager->loginCustomer($mail);
 
     $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
+    var_dump($isPasswordCorrect);
+    die();
 
     if (!$customer) {
         Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');
+        var_dump('test');
+        die();
     } else {
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $customer['id'];
@@ -401,7 +405,7 @@ function loginSubmitSeller(string $mail, string $pass): void
             $_SESSION['id'] = $seller['id'];
             $_SESSION['mailSubmitSeller'] = ucfirst(strtolower($mail));
             $_SESSION['isAdmin'] = $seller['isAdmin'];
-            if ($_SESSION['isAdmin'] === 1) {
+            if ($_SESSION['isAdmin'] === '1') {
                 Header('Location: index.php?action=admin');
             } else {
                 Header('Location: index.php?action=dashboardSeller');

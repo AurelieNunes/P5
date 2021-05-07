@@ -22,46 +22,43 @@ class SellerManager extends Manager
     /**
      * Check company name seller
      * @param string $company
-     * @return array
+     * @return 
      */
-    public function checkCompany(string $company): array
+    public function checkCompany(string $company)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT company FROM seller WHERE company = ?');
         $req->execute(array($company));
         $companySeller = $req->fetch();
-
-        return $companySeller;
     }
 
     /**
      * Check mail seller
      * @param string $mail
-     * @return array
+     * @return
      */
-    public function checkMail(string $mail): array
+    public function checkMail(string $mail)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $mailSeller = $req->fetch();
 
-        return $mailSeller;
     }
+        
 
     /**
      * Check siret number
      * @param int $siret
-     * @return array
+     * @return
      */
-    public function checkSiret(int $siret): array
+    public function checkSiret(int $siret)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
         $req->execute(array($siret));
         $siretCheck = $req->fetch();
 
-        return $siretCheck;
     }
 
     /**
@@ -112,14 +109,14 @@ class SellerManager extends Manager
      * @param string $mail
      * @return array
      */
-    public function loginSeller(string $mail): array
+    public function loginSeller(string $mail)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, pass, isAdmin FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $seller = $req->fetch();
-        // // var_dump($seller);
-        // // die();
+        // var_dump($seller);
+        // die();
         return $seller;
     }
 

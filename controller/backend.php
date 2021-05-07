@@ -86,13 +86,15 @@ function manageAllItems(): void
 
 /**
  * Get All sellers
- * @return array
+ *
  */
-function manageAllSellers(): array
+function manageAllSellers(): void
 {
     $sellerManager = new SellerManager();
     $allSellers = $sellerManager->allSellers();
-    return $allSellers;
+    // var_dump($allSellers);
+    // die();
+    
 
     require('view/backend/manageAllSellersView.php');
 }

@@ -212,6 +212,8 @@ try {
                 break;
 
             case 'manageSellers':
+                // var_dump('test');
+                // die();
                 manageAllSellers();
                 break;
 

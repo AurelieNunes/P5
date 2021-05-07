@@ -4,9 +4,10 @@ $title = "Gérer tous les vendeurs"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllSellers">
+<p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotron">
-        <h1 class="text-center">
-            <p class="text-center">Gérer les vendeurs</p>
+        <h1 class="text-center bg-orange white">
+            Gérer les vendeurs
         </h1>
     </div>
 
@@ -17,7 +18,7 @@ $title = "Gérer tous les vendeurs"; ?>
         ?>
 
     <div class="card text-center mb-2">
-        <div class="card-header h4">
+        <div class="card-header h3 text-primary">
             <?= $sellers['company']; ?>
         </div>
         <div class="card-body">

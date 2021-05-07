@@ -56,7 +56,8 @@ class CustomerManager extends Manager
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM customer');
         $customers = $req->fetchAll();
-
+        // var_dump($customers);
+        // die();
         return $customers;
     }
 
