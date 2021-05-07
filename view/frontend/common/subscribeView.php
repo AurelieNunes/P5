@@ -32,8 +32,8 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
           <input type="text" id="companySeller" class="mb-2 form-controlSeller" placeholder="Nom de la société"
             name="companySeller" required autofocus>
           <label for="inputEmailSeller" class="visually-hidden mt-2">Adresse email</label>
-          <input type="email" id="mailSeller" class="mb-2 form-controlSeller" placeholder="Email" name="mailSeller" required
-            autofocus>
+          <input type="email" id="mailSeller" class="mb-2 form-controlSeller" placeholder="Email" name="mailSeller"
+            required autofocus>
           <label for="inputPasswordSeller" class="visually-hidden mt-2">Mot de passe</label>
           <input type="password" id="inputPasswordSeller" class="mb-2 form-controlSeller" placeholder="Mot de passe"
             name="passSeller" required>
@@ -59,12 +59,12 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
             autofocus>
 
           <label for="firstName" class="visually-hidden mt-2">Prénom</label>
-          <input type="text" id="firstName" class="mb-2 form-controlCustomer" placeholder="Prénom" name="firstName" required
-            autofocus>
+          <input type="text" id="firstName" class="mb-2 form-controlCustomer" placeholder="Prénom" name="firstName"
+            required autofocus>
 
           <label for="mailCustomer" class="visually-hidden mt-2">Adresse email</label>
-          <input type="email" id="mailCustomer" class="mb-2 form-controlCustomer" placeholder="Email" name="mailCustomer"
-            required>
+          <input type="email" id="mailCustomer" class="mb-2 form-controlCustomer" placeholder="Email"
+            name="mailCustomer" required>
           <label for="passCustomer" class="visually-hidden mt-2">Mot de passe</label>
           <input type="password" id="passCustomer" class="mb-2 form-controlCustomer" placeholder="Mot de passe"
             name="passCustomer" required>

@@ -15,8 +15,8 @@
     <div class="mx-auto">
 
         <div id="updateBlock">
-            <form class="d-flex flex-column col-10 m-auto" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>"
-                method="POST">
+            <form class="d-flex flex-column col-10 m-auto"
+                action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>" method="POST">
 
                 <label for="ref">Référence</label>
                 <input type="text" class="mb-2 col-6" name="ref" id="ref"

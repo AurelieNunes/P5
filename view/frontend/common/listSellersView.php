@@ -1,8 +1,7 @@
 <?php $title = "liste des commerçants"; ?>
 
 <?php ob_start(); ?>
-<!-- <p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=home">Retour à
-        l'accueil</a></p> -->
+
 <section id="listingSellers">
 
     <h1 class="text-center list-sellers bg-primary text-white mx-auto pb-2 pt-2 pr-2 pl-2">Tous les commerçants</h1>

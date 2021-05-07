@@ -90,8 +90,7 @@ class ItemsManager extends Manager
         $req = $db->prepare('SELECT * FROM items WHERE id = ?');
         $req->execute(array($itemId));
         $item = $req->fetch();
-        // var_dump($item);
-        // die();
+
         return $item;
     }
 

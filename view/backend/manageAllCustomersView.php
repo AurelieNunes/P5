@@ -4,7 +4,7 @@ $title = "Gérer tous les clients"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllCustomers">
-<p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
+    <p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotronAllItems">
         <h1 class="text-center bg-orange white">Gérer les clients</h1>
     </div>
@@ -14,7 +14,7 @@ $title = "Gérer tous les clients"; ?>
     ?>
     <div class="card mb-2">
         <div class="card-header text-primary h2 text-center">
-            <?= $customers['lastName'];?> <?= $customers['firstName'];?> 
+            <?= $customers['lastName'];?> <?= $customers['firstName'];?>
         </div>
         <div class="card-body d-flex justify-content-around mx-auto">
             <div class="description">

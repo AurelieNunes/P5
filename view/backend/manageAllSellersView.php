@@ -4,7 +4,7 @@ $title = "Gérer tous les vendeurs"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllSellers">
-<p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
+    <p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotron">
         <h1 class="text-center bg-orange white">
             Gérer les vendeurs
@@ -13,8 +13,6 @@ $title = "Gérer tous les vendeurs"; ?>
 
     <?php   
         foreach($allSellers as $sellers){ 
-            // var_dump($sellers);
-            // die();
         ?>
 
     <div class="card text-center mb-2">
@@ -28,7 +26,7 @@ $title = "Gérer tous les vendeurs"; ?>
             <p>Mail : <?= $sellers['mail']; ?></p>
         </div>
         <div class="card-footer text-muted">
-        <p class="delete-link">
+            <p class="delete-link">
                 <a href="index.php?action=deleteSeller&amp;id=<?= $sellers['id']; ?>">Supprimer ce vendeur</a>
             </p>
         </div>

@@ -2,7 +2,6 @@
 
 <?php ob_start(); ?>
 <section id="category" class="text-center col-12 mx-auto">
-    <!-- <p class="returnLink text-center mx-auto pt-2"><a class="h6 text-primary" href="index.php?action=category">Retour à la liste</a></p> -->
 
     <div class="jumbotron-categories mb-0 p-0 col-10 m-auto">
         <img class="card-img-top mx-auto" src="<?= $categories['path_cat']; ?>" alt="<?= $categories['url_path'];?>">

@@ -32,23 +32,26 @@ try {
                         $_POST['passCustomer'] &&
                         $_POST['pass_confirmCustomer']
                 ])) {
-                    // if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mailCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer'])) {
-                    if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
-                        if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
-                            addCustomer(
-                                strip_tags($_POST['lastName']),
-                                strip_tags($_POST['firstName']),
-                                strip_tags($_POST['mailCustomer']),
-                                strip_tags($_POST['passCustomer'])
-                            );
+                    if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mailCustomer']) && !empty($_POST['passCustomer']) && !empty($_POST['pass_confirmCustomer'])) {
+                        if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
+                            if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
+                                addCustomer(
+                                    strip_tags($_POST['lastName']),
+                                    strip_tags($_POST['firstName']),
+                                    strip_tags($_POST['mailCustomer']),
+                                    strip_tags($_POST['passCustomer'])
+                                );
+                            } else {
+                                throw new Exception('Les deux mots de passe ne correspondent pas.');
+                            }
                         } else {
-                            throw new Exception('Les deux mots de passe ne correspondent pas.');
+                            throw new Exception('Pas d\'adresse mail valide.');
                         }
                     } else {
-                        throw new Exception('Pas d\'adresse mail valide.');
+                        throw new Exception('Tous les champs ne sont pas remplis !');
                     }
                 } else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    echo 'Un des champs est vide !';
                 }
                 break;
 
@@ -62,25 +65,29 @@ try {
                         $_POST['passSeller'] &&
                         $_POST['pass_confirmSeller']
                 ])) {
-                    // if (!empty($_POST['companySeller']) && !empty($_POST['siret']) && !empty($_POST['mailSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller'])) {
-                    if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
-                        if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
-                            addSeller(
-                                strip_tags($_POST['companySeller']),
-                                strip_tags($_POST['siret']),
-                                strip_tags($_POST['mailSeller']),
-                                strip_tags($_POST['passSeller']),
-                                strip_tags($_POST['pass_confirmSeller'])
-                            );
+                    if (!empty($_POST['companySeller']) && !empty($_POST['siret']) && !empty($_POST['mailSeller']) && !empty($_POST['passSeller']) && !empty($_POST['pass_confirmSeller'])) {
+                        if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
+                            if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
+                                addSeller(
+                                    strip_tags($_POST['companySeller']),
+                                    strip_tags($_POST['siret']),
+                                    strip_tags($_POST['mailSeller']),
+                                    strip_tags($_POST['passSeller']),
+                                    strip_tags($_POST['pass_confirmSeller'])
+                                );
+                            } else {
+                                throw new Exception('Les deux mots de passe ne correspondent pas.');
+                            }
                         } else {
-                            throw new Exception('Les deux mots de passe ne correspondent pas.');
+                            throw new Exception('Pas d\'adresse mail valide.');
                         }
                     } else {
-                        throw new Exception('Pas d\'adresse mail valide.');
+                        throw new Exception('Tous les champs ne sont pas remplis !');
                     }
                 } else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    echo 'un des champs est vide !';
                 }
+
                 break;
 
             case 'admin':
@@ -212,8 +219,6 @@ try {
                 break;
 
             case 'manageSellers':
-                // var_dump('test');
-                // die();
                 manageAllSellers();
                 break;
 
@@ -248,8 +253,6 @@ try {
                 break;
 
             case 'submitUpdateCustomer':
-                // var_dump('test');
-                // die();
                 submitUpdateCustomer($_POST['addressCustomer'], $_POST['cpCustomer'], $_POST['cityCustomer'], $_POST['telCustomer'], $_SESSION['id']);
                 break;
 
@@ -268,7 +271,6 @@ try {
                 break;
 
             default:
-                // require('view/frontend/common/homeView.php');
                 Header('Location : index.php?action=Home');
         }
     } else {

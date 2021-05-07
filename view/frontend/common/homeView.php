@@ -5,7 +5,8 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- START THE FEATURETTES -->
 <div class="featurette-expand-lg-presentation">
-  <h2 class="h3 featurette-heading-presentation-expand-lg pt-2 pb-2 text-center font-italic text-primary m-auto pb-3 pr-2 pl-2">
+  <h2
+    class="h3 featurette-heading-presentation-expand-lg pt-2 pb-2 text-center font-italic text-primary m-auto pb-3 pr-2 pl-2">
     Bienvenue sur mes p'tites emplettes narbonnaises !</h2>
   <div class="presentation-expand-lg">
     <p class="presentation-expand-lg text-center text-black col-10 m-auto">Ici, vous trouverez tous les commerçants de
@@ -19,7 +20,8 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- SELECTION PROFUCT OF THE WEEK -->
 <section class="selectionWeek">
-  <h1 class="text-center expand-lg bg-primary text-white mx-auto font-italic pb-2 pt-2 pr-2 pl-2 h2">La P'tite Sélection de la Semaine</h1>
+  <h1 class="text-center expand-lg bg-primary text-white mx-auto font-italic pb-2 pt-2 pr-2 pl-2 h2">La P'tite Sélection
+    de la Semaine</h1>
 
   <div class="productWeek-expand-lg col-10 m-auto">
     <?php
@@ -43,8 +45,7 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
               href="index.php?action=cardSeller&amp;id_seller= <?= $idSeller; ?>"><?= $seller[0]; ?></a>
           </p>
           <p class="link-ReadMore h6">
-            <a class="nav-link"
-              href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir
+            <a class="nav-link" href="index.php?action=descriptionItem&amp;itemId=<?= $randomItem['id']; ?>">Voir
               plus...</a>
           </p>
         </div>
@@ -89,4 +90,4 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('view/frontend/common/template.php'); ?>
+<?php require('template.php'); ?>

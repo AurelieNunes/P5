@@ -248,3 +248,5 @@ DescriptionItem ??  OK
 -> cardSELLER TROP GRANDE 320px
 
 -> boutique vendeur trop large
+
+-> error 404 si mdp ne correspond pas -> à modifier avec alerte 

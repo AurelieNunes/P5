@@ -154,7 +154,6 @@ function displayAccountCustomer()
 /**
  * Display Card Seller
  * @param $sellerId
- * @return array
  */
 function displayCardSeller(int $sellerId)
 {
@@ -280,21 +279,18 @@ function displayUpdateCustomer()
 
 /**
  * Get All sellers
- * @return array
  */
 function getAllSellers()
 {
     $sellerManager = new SellerManager();
     $itemsManager = new ItemsManager();
     $allSellers = $sellerManager->allSellers();
-    // return $allSellers;
 
     require 'view/frontend/common/listSellersView.php';
 }
 
 /**
  * Get customer by Id
- * 
  */
 function getCustomerById()
 {
@@ -471,11 +467,8 @@ function newItem(int $id_seller, int $category, string $ref, string $nameItem, s
                 throw new Exception('Le fichier est vide');
             }
         }
-        // $refExist = $itemsManager->getItemsSeller(['ref']);
-        // var_dump($refExist);
-        // die();
     } else {
-        throw new Error('Au moin champ est vide');
+        throw new Error('Au moins un champ est vide');
     }
 }
 
@@ -503,8 +496,6 @@ function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $
 {
     $customerManager = new CustomerManager();
     $customerUp = $customerManager->updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId);
-    // var_dump($customerUp);
-    // die();//bool false
 
     Header('Location:index.php?action=getCustomer&submit-update-customer=success');
 }

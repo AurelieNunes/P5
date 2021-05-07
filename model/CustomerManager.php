@@ -56,8 +56,7 @@ class CustomerManager extends Manager
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM customer');
         $customers = $req->fetchAll();
-        // var_dump($customers);
-        // die();
+
         return $customers;
     }
 
@@ -121,8 +120,6 @@ class CustomerManager extends Manager
         $req = $db->prepare('UPDATE customer SET addressCustomer=?, cpCustomer=?, cityCustomer=?, telCustomer=? WHERE id=?');
         $req->execute(array($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId));
         $customerUpdate = $req->fetch();
-        // var_dump($customerUpdate);
-        // die();
 
         return $customerUpdate;
     }

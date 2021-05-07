@@ -1,8 +1,6 @@
 <?php $title = "Produits en Ligne"; ?>
 <?php ob_start(); ?>
 
-<link href="../../../public/css/style.css" rel="stylesheet">
-
 <!-- Gestion des Artciles -->
 <section id="listItems" class="mx-auto pt-2">
 	<div id="managerBlockItems" class="mx-auto">

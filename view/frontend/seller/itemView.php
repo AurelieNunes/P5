@@ -1,8 +1,6 @@
 <?php $title = "Produit"; ?>
 <?php ob_start(); ?>
 
-<link href="../../../public/css/style.css" rel="stylesheet">
-
 <section id="viewItem">
     <p class="returnLink text-center mx-auto pt-2">
         <a class="h6 text-primary" href="index.php?action=dashboardSeller">Retour au menu</a>

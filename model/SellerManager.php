@@ -107,7 +107,6 @@ class SellerManager extends Manager
     /**
      * Login seller
      * @param string $mail
-     * @return array
      */
     public function loginSeller(string $mail)
     {
@@ -115,8 +114,7 @@ class SellerManager extends Manager
         $req = $db->prepare('SELECT id, pass, isAdmin FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $seller = $req->fetch();
-        // var_dump($seller);
-        // die();
+
         return $seller;
     }
 

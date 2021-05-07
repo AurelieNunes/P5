@@ -13,11 +13,11 @@ if(isset($_GET['success']) && $_GET['success'] == 'account-successfully-created'
 <section class="form-signin-expand-lg mx-auto">
 
   <div class="login-submit mx-auto text-center">
-  <div class="mx-auto mb-4">
-    <p class="text-center mx-auto mb-0">
-      <img class="col-4" src="public/img/logo2.png" alt="logo site"></p>
-    <h1 class="h4 mb-3 fw-normal text-center text-white bg-primary mx-auto pt-2 pb-2">Connexion</h1>
-  </div>
+    <div class="mx-auto mb-4">
+      <p class="text-center mx-auto mb-0">
+        <img class="col-4" src="public/img/logo2.png" alt="logo site"></p>
+      <h1 class="h4 mb-3 fw-normal text-center text-white bg-primary mx-auto pt-2 pb-2">Connexion</h1>
+    </div>
     <div id="loginForms" class="mx-auto text-center">
       <div id="login-Seller" class="mx-auto">
         <h1 class="h5 text-center orange">Professionnel </h1>
