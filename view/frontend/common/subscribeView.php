@@ -2,15 +2,7 @@
 
 <?php ob_start(); ?>
 
-<?php 
-if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
-	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 m-auto h6 mb-4">Nom déjà utilisé</p>';
-}
 
-if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
-	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Adresse email déjà utilisée</p>';
-}
-?>
 
 <section id="subscribeFrame" class="mx-auto">
 
@@ -21,6 +13,16 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
   </div>
 
   <div class="subscribes-expand-lg mx-auto text-center">
+
+  <?php 
+if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
+	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 m-auto h6 mb-4">Nom déjà utilisé</p>';
+}
+
+if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
+	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Adresse email déjà utilisée</p>';
+}
+?>
 
     <div id="subscribeForms" class="text-center">
 

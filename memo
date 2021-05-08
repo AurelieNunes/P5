@@ -235,18 +235,10 @@ Rajouter € dans les descriptions articles et listes articles //OK
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// A REVOIR  //////////////////////////////////////
-DescriptionItem ??  OK
- 
--> COOKIES
-
--> MEDIAS QUERIES
+-> MEDIAS QUERIES//OK
 
 -> VERIFIER SECU
 
 -> si update customer champs vide ????!
-
--> cardSELLER TROP GRANDE 320px
-
--> boutique vendeur trop large
 
 -> error 404 si mdp ne correspond pas -> à modifier avec alerte 

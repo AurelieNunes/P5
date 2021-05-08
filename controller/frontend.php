@@ -73,7 +73,6 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
         $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
         $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
         $newSeller;
-        // redirige vers page d'accueil avec le nouveau paramètre
 
         Header('Location: index.php?action=loginSeller&success=account-successfully-created');
     }
