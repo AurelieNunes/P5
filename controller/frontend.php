@@ -358,13 +358,9 @@ function loginSubmitCustomer(string $mail, string $pass): void
     $customer = $customerManager->loginCustomer($mail);
 
     $isPasswordCorrect = password_verify($_POST['passSubmitCustomer'], $customer['pass']);
-    var_dump($isPasswordCorrect);
-    die();
 
     if (!$customer) {
         Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');
-        var_dump('test');
-        die();
     } else {
         if ($isPasswordCorrect) {
             $_SESSION['id'] = $customer['id'];
@@ -481,18 +477,18 @@ function submitUpdate(): void
     $itemsManager = new ItemsManager();
     $updated = $itemsManager->updateItem($_POST['ref'], $_POST['nameItem'], $_POST['descriptionItem'], $_POST['price'], $_POST['size'], $_POST['stock'], $_GET['id']);
 
-    Header('Location:index.php?action=dashboardSellersubmit-update=success');
+    Header('Location:index.php?action=dashboardSeller&submit-update=success');
 }
 
 /**
  * Update customer info
  * @param string $addressCustomer
  * @param string $cityCustomer
- * @param int $cpCustomer
- * @param int $telCustomer
+ * @param string $cpCustomer
+ * @param string $telCustomer
  * @param int $customerId
  */
-function submitUpdateCustomer(string $addressCustomer, int $cpCustomer, string $cityCustomer, int $telCustomer, int $customerId)
+function submitUpdateCustomer(string $addressCustomer, string $cpCustomer, string $cityCustomer, string $telCustomer, int $customerId)
 {
     $customerManager = new CustomerManager();
     $customerUp = $customerManager->updateCustomer($addressCustomer, $cpCustomer, $cityCustomer, $telCustomer, $customerId);

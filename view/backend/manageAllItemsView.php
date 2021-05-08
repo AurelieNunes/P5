@@ -4,7 +4,7 @@ $title = "Gérer tous les articles"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllItems">
-    <p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
+    <p class="returnLink-admin text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotronAllItems bg-orange white">
         <h1 class="text-center">Gérer les articles</h1>
     </div>

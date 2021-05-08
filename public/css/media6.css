@@ -1,0 +1,57 @@
+/* 
+----------- MAX - WIDTH 1440 px ------------*/
+@media (min-width:1440px) 
+{
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
+        margin-top: 20%;
+    }
+
+
+    /* CARDSELLER */
+    .presentation-shop-expand-lg {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+        margin:auto;
+    }
+
+    .img-shop {
+        width: 50%;
+    } 
+
+    .form-submit-customer {
+        padding-top: 3%;
+        padding-bottom: 7%;
+    }
+
+    #updateAccountCustomer .h2, #accountCustomer .h2 {
+        width: 50%;
+        margin: auto;
+    }
+
+    .infoCustomer {
+        margin-top: 4%;
+        margin-bottom: 5%;
+    }
+
+    .footer-seller {
+        margin-top: 7.5%;
+    }
+
+    .returnLink {
+        margin-top: 14%;
+    }
+
+    .navbar-admin {
+        top: 14%;
+    }
+
+    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg {
+        width: 60%;
+    }
+
+    .product {
+        width: 80%;
+    }
+
+}

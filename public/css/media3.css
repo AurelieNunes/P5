@@ -1,0 +1,131 @@
+/*
+----------- MAX - WIDTH 768 px ------------*/
+@media (min-width:768px)
+{
+    .jumbotron-common, .jumbotron-customer, .jumbotron-seller{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 20%;
+        align-items: center;
+    }
+
+    #adminPanel {
+        margin-top: 25%;
+    }
+
+    .logo {
+        width: 30%;
+        height: auto;
+    }
+
+    .logo img {
+        width: 90%;
+    }
+
+    .title-website {
+        visibility: visible;
+        width: 45%;
+        text-align: center;
+        height: 50%;
+    }
+
+    #widget {
+        visibility: visible;
+        width: 20%;
+        height: 160px;
+    }
+
+    .navbar-common, .navbar-customer, .navbar-seller {
+        top: 20%;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
+        margin-top: 34%;
+    }
+
+    /* CARDSELLERVIEW */
+    .hash-list {
+        width: 100%;
+        flex-direction: row;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .hash-list li {
+        width: 30%;
+    }
+
+    .allProduct .description-product {
+        width: 80%;
+        margin: auto;
+    }
+
+    /* LOGIN / SUBSCRIVE VIEW */
+    #subscribeFrame p, .login-submit p{
+        width: 60%;
+    }
+
+    #subscribeFrame .h4, .login-submit .h4 {
+        width: 80%;
+    }
+
+    .subscribes-expand-lg, #loginForms {
+        width: 50%;
+    }
+
+    .form-submit-customer {
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+
+    #detailProduct .featurette-product-seller {
+        width: 50%;
+    }
+
+    .infoCustomer {
+        margin-top: 5%;
+        margin-bottom: 6%;
+    }
+
+    .headPost h3 {
+        font-size: 2.3rem;
+    }
+
+    #addItem, #listItems, #accountSeller {
+        font-size: 1.5rem;
+    }
+
+    .footer-seller{
+        margin-top: 5%;
+    }
+
+    .card-AllSellers, #adminPanel .card {
+        margin-top: 4%;
+    }
+
+    .returnLink {
+        margin-top: 24%;
+    }
+
+    #manageAllSellers, .jumbotronAllItems, #manageAllCustomers{
+        margin-top: 2%;
+    }
+
+    .navbar-admin {
+        top: 12%;
+    }
+
+    #updateBlock {
+        margin-top: 3%;
+    }
+
+    #viewItem .card {
+        width: 50%;
+        margin: auto;
+    }
+
+    .returnLink {
+        margin-top: 33%;
+    }
+}

@@ -1,0 +1,99 @@
+
+/*
+----------- MAX - WIDTH 2560 px ------------*/
+@media (min-width:2560px) {
+    .title-website {
+        font-size: 71px;
+    }
+
+    .logo-admin {
+        width: 22%;
+    }
+
+    #widget {
+        width: 17%;
+        height: 230px;
+    }
+
+    .navbar-brand, .navbar-nav {
+        font-size: 28px;
+    }
+
+    .featurette-heading-presentation-expand-lg {
+        font-size: 4.75rem;
+        width: 80%;
+    }
+
+    .presentation-expand-lg {
+        font-size: 42px;
+    }
+
+    .logo {
+        width: 15%;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
+        margin-top: 15%;
+    }
+
+    .infoCustomer, #updateAccountCustomer {
+        font-size: 24px;
+    }
+
+    .form-submit-customer {
+        padding-top: 140px;
+    }
+
+    .form-submit-customer .h5 {
+        font-size: 30px;
+        width: 20%;
+    }
+
+    #accountCustomer,#adminPanel {
+        margin-top: 18%;
+    }
+
+    .navbar-footer .navbar-nav-expand-lg {
+        font-size: 30px;
+    }
+
+    .jumbotron-dashboard {
+        width: 50%;
+        margin: auto;
+        height: 15%;
+    }
+
+    .jumbotron-dashboard h1 {
+        font-size: 3.5rem;
+    }
+
+    #addItem, #listItems, #accountSeller, #updateAccountSeller, .headPost h3 {
+        font-size: 2.5rem;
+    }
+
+    #addNewItem, #updateAccountSeller .btn {
+        font-size: 1.75rem;
+    }
+
+    .imgcategory {
+        display: flex;
+        place-content: center;
+    }
+
+    .bloc {
+        width: 25%;
+    }
+
+    #createItem, #managerBlockItems, #viewItem, #updateSeller {
+        margin-top: 15%;
+    }
+
+    .returnLink {
+        margin-top: 12%;
+        font-size: 2.5rem;
+    }
+
+    #manageAllCustomers .card {
+        font-size: 2rem;
+    }
+}

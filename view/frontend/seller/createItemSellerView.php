@@ -2,12 +2,6 @@
 
 <?php ob_start(); ?>
 
-<?php
-    if (isset($_GET['new-item']) && $_GET['new-item'] == 'success') {
-        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-6 mx-auto h6 mb-4">Votre article a été publié</p>';
-    } 
-?>
-
 <section id="createItem" class="mx-auto">
     <p class="returnLink text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
     <div class="jumbotron-dashboard bg-primary">

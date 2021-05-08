@@ -33,8 +33,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!--Bootstrap -->
+    <!--CSS -->
     <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="stylesheet" href="./public/css/media1.css"/>
+    <link rel="stylesheet" href="./public/css/media2.css"/>
+    <link rel="stylesheet" href="./public/css/media3.css"/>
+    <link rel="stylesheet" href="./public/css/media4.css"/>
+    <link rel="stylesheet" href="./public/css/media5.css"/>
+    <link rel="stylesheet" href="./public/css/media6.css"/>
+    <link rel="stylesheet" href="./public/css/media7.css"/>
+    <link rel="stylesheet" href="./public/css/media8.css"/>
 
 </head>
 
@@ -51,26 +59,23 @@
                 <div class="widgetCurrentWeather"></div>
             </div>
         </div>
-        <nav class="navbar navbar-customer navbar-expand-lg navbar-light bg-orange fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-customer navbar-light bg-orange fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand white" href="index.php?action=home">Accueil</a>
-                <button class="navbar-toggler white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupported">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 white">
-                        <li class="nav-item white">
-                            <a class="nav-link active white" aria-current="page"
-                                href="index.php?action=listSellers">Commerçants<span
-                                    class="sr-only">(current)</span></a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="index.php?action=listSellers">Commerçants</a>
                         </li>
-                        <li class="nav-item white">
-                            <a class="nav-link white" href="index.php?action=category">Catégories</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?action=category">Catégories</a>
                         </li>
-
-
                         <div class="session-users">
                             <?php
                         if(!empty($_SESSION['mailSubmitSeller'])){
@@ -107,7 +112,6 @@
                 </div>
             </div>
         </nav>
-
 
     </header>
 

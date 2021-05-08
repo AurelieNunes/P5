@@ -10,13 +10,16 @@
         
 ?>">
         </div>
-        <div class="product mt-5 mb-5 text-center m-auto">
+        <div class="product mt-5 text-center m-auto">
             <h4 class="card-title h6">Ref : <?= $itemsDetails['ref']; ?></h4>
             <p class="card-text">Description : <?= $itemsDetails['descriptionItem']; ?></p>
             <p>Prix : <?= $itemsDetails['price']; ?>€</p>
             <p>Taille : <?= $itemsDetails['size']; ?></p>
             <p>En stock : <?= $itemsDetails['stock']; ?></p>
         </div>
+        <a class="nav-link h5 text-center" href="index.php?action=cardSeller&amp;id_seller=<?= $itemsDetails['id_seller']; ?>">Voir
+                    la fiche
+                    vendeur</a>
     </article>
 </section>
 <?php $content = ob_get_clean(); ?>

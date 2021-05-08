@@ -1,0 +1,28 @@
+/* ---------------------------------------- */
+/* == 		         MEDIAS                 */
+/*                   QUERIES 			    */
+/*---------------------------------------- */
+/*
+----------- MAX - WIDTH 375 px ------------*/
+@media (min-width:375px) {
+    .returnLink {
+        margin-top: 50%;
+    }
+
+    #success {
+        margin-top: 55%;
+    }
+
+    .infoCustomer {
+        margin-top: 20%;
+        margin-bottom: 29%;
+    }
+
+    #accountCustomer {
+        margin-top: 45%;
+    }
+
+    #updateAccountCustomer {
+        margin-top: 51%;
+    }
+}

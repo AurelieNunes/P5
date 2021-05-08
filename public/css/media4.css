@@ -1,0 +1,29 @@
+/*
+----------- MAX - WIDTH 992 px ------------*/
+@media (min-width:992px) {
+    .session-users-sellerView {
+        display: flex;
+        width: 100%;
+        place-content: space-between;
+    }
+
+    .navbar-seller, .navbar-seller ul {
+        width: 100%;
+    }
+
+    #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
+        margin-top: 28%;
+    }
+
+    .session-users-sellerView .nav-item-logout, .session-users-sellerView .nav-item-mailSeller {
+        align-self: center;
+    }
+
+    .session-users-sellerView .nav-item-mailSeller .session {
+        margin: 0;
+    }
+
+    .logo-admin {
+        margin: auto;
+    }
+}

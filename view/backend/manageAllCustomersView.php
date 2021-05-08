@@ -4,7 +4,7 @@ $title = "Gérer tous les clients"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllCustomers">
-    <p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
+    <p class="returnLink-admin text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotronAllItems">
         <h1 class="text-center bg-orange white">Gérer les clients</h1>
     </div>
@@ -26,7 +26,7 @@ $title = "Gérer tous les clients"; ?>
         </div>
         <div class="card-footer text-muted">
             <p class="delete-link text-center">
-                <a href="index.php?action=deleteCustomer&amp;id=<?= $customers['id']; ?>">Supprimer cet article</a>
+                <a href="index.php?action=deleteCustomer&amp;id=<?= $customers['id']; ?>">Supprimer ce client</a>
             </p>
         </div>
     </div>

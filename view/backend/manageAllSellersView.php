@@ -4,7 +4,7 @@ $title = "Gérer tous les vendeurs"; ?>
 <?php ob_start(); ?>
 
 <section id="manageAllSellers">
-    <p class="returnLink text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
+    <p class="returnLink-admin text-center text-primary h4"><a href="index.php?action=admin">Retour</a></p>
     <div class="jumbotron">
         <h1 class="text-center bg-orange white">
             Gérer les vendeurs

@@ -1,0 +1,19 @@
+/*
+----------- MAX - WIDTH 1900 px ------------*/
+@media (min-width:1900px) {
+    .logo {
+        width: 20%;
+    }
+
+    .title-website {
+        margin-bottom: 0px;
+        font-size: 3rem;
+        width: 50%;
+    }
+
+    #widget {
+        font-size: 20px;
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+}
