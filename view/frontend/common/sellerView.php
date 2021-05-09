@@ -7,13 +7,12 @@ $title = "Boutique"; ?>
     <!-- START THE FEATURETTES -->
     <div class="featurette-seller-expand-lg mx-auto mb-5 col-10">
         <h2 class="title-welcome text-center bg-primary white m-auto pt-4 pb-4 mb-4">Bienvenue sur ma boutique</h2>
-        <div class="presentation-shop-expand-lg justify-center mb-4">
-            <div class="img-shop col-12 mb-4">
+        <div class="presentation-shop-expand-lg justify-center">
+            <div class="img-shop col-12">
                 <!--img boutique-->
                 <img class="img-presentation img-fluid mx-auto col-12" src="<?= $sellerAllInfo['url_pathShop'];?>" />
             </div>
             <p class="lead-description-shop text-center"><?= $sellerAllInfo['descriptionShop'];?></p>
-
         </div>
     </div>
 

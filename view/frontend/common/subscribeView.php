@@ -22,6 +22,10 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
 if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
 	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Adresse email déjà utilisée</p>';
 }
+
+if(isset($_GET['error']) && $_GET['error'] == 'passwordInvalid') {
+  echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Les mots de passe ne correspondent pas !</p>';
+}
 ?>
 
     <div id="subscribeForms" class="text-center">

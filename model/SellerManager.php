@@ -22,7 +22,6 @@ class SellerManager extends Manager
     /**
      * Check company name seller
      * @param string $company
-     * @return 
      */
     public function checkCompany(string $company)
     {
@@ -35,7 +34,6 @@ class SellerManager extends Manager
     /**
      * Check mail seller
      * @param string $mail
-     * @return
      */
     public function checkMail(string $mail)
     {
@@ -50,15 +48,14 @@ class SellerManager extends Manager
     /**
      * Check siret number
      * @param int $siret
-     * @return
      */
-    public function checkSiret(int $siret)
+    public function siretAlreadyExist(int $siret)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT siret FROM seller WHERE siret = ?');
         $req->execute(array($siret));
         $siretCheck = $req->fetch();
-
+        return $siretCheck;
     }
 
     /**
@@ -77,7 +74,7 @@ class SellerManager extends Manager
      * @param int $sellerId
      * @return array
      */
-    public function getSeller($sellerId): array
+    public function getSeller(int $sellerId): array
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM seller WHERE id = ?');

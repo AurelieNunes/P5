@@ -25,4 +25,8 @@
     #updateAccountCustomer {
         margin-top: 51%;
     }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
+        margin-top: 40%;
+    }
 }

@@ -33,14 +33,14 @@
 
     <!--CSS -->
     <link rel="stylesheet" href="./public/css/style.css" />
-    <link rel="stylesheet" href="./public/css/media1.css"/>
-    <link rel="stylesheet" href="./public/css/media2.css"/>
-    <link rel="stylesheet" href="./public/css/media3.css"/>
-    <link rel="stylesheet" href="./public/css/media4.css"/>
-    <link rel="stylesheet" href="./public/css/media5.css"/>
-    <link rel="stylesheet" href="./public/css/media6.css"/>
-    <link rel="stylesheet" href="./public/css/media7.css"/>
-    <link rel="stylesheet" href="./public/css/media8.css"/>
+    <link rel="stylesheet" href="./public/css/media375.css"/>
+    <link rel="stylesheet" href="./public/css/media425.css"/>
+    <link rel="stylesheet" href="./public/css/media768.css"/>
+    <link rel="stylesheet" href="./public/css/media992.css"/>
+    <link rel="stylesheet" href="./public/css/media1024.css"/>
+    <link rel="stylesheet" href="./public/css/media1440.css"/>
+    <link rel="stylesheet" href="./public/css/media1900.css"/>
+    <link rel="stylesheet" href="./public/css/media2560.css"/>
 
 </head>
 

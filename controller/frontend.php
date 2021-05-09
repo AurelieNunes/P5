@@ -53,22 +53,27 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
     $sellerManager = new SellerManager();
 
     $companySellerCheck = $sellerManager->checkCompany($company);
-    $siretSellerCheck = $sellerManager->checkSiret($siret);
+    $siretAlreadyExist = $sellerManager->siretAlreadyExist($siret);
     $mailSellerCheck = $sellerManager->checkMail($mail);
+
+    if(!preg_match('#^[0-9]{14}$#', strval($siret))){
+        Header('Location: index.php?action=subscribeSeller&error=invalidSiret');
+    }
+
+    if($siretAlreadyExist !== false){
+        // Change the alert
+        Header('Location: index.php?action=subscribeSeller&error=invalidSiret');
+    }
 
     if ($companySellerCheck) {
         Header('Location: index.php?action=subscribeSeller&error=invalidUsername');
-    }
-
-    if ($siretSellerCheck) {
-        Header('Location:index.php?action=subscribeSeller&error=invalidSiret');
     }
 
     if ($mailSellerCheck) {
         Header('Location: index.php?action=subscribeSeller&error=invalidMail');
     }
 
-    if (!$companySellerCheck && !$siretSellerCheck && !$mailSellerCheck) {
+    if (!$companySellerCheck && !$mailSellerCheck) {
         // Hachage du mot de passe
         $pass = password_hash($_POST['passSeller'], PASSWORD_DEFAULT);
         $newSeller = $sellerManager->subscribeSeller($company, $siret, $mail, $pass);
@@ -127,9 +132,6 @@ function descriptionItem(int $itemId)
 {
     $itemsManager = new ItemsManager();
     $itemsDetails = $itemsManager->getItem($itemId);
-    // var_dump($itemsDetails);
-    // die();
-    // return $itemsDetails;
 
     require 'view/frontend/common/descriptionProductView.php';
 }
@@ -152,7 +154,7 @@ function displayAccountCustomer()
 
 /**
  * Display Card Seller
- * @param $sellerId
+ * @param int $sellerId
  */
 function displayCardSeller(int $sellerId)
 {
@@ -349,7 +351,6 @@ function isUniqueRef(string $ref): bool
  * Submit login customer
  * @param string $mail
  * @param string $pass
- * @return void
  */
 function loginSubmitCustomer(string $mail, string $pass): void
 {
@@ -380,7 +381,6 @@ function loginSubmitCustomer(string $mail, string $pass): void
  * Submit login seller
  * @param string $mail
  * @param string $pass
- * @return void
  */
 function loginSubmitSeller(string $mail, string $pass): void
 {
@@ -501,7 +501,7 @@ function submitUpdateCustomer(string $addressCustomer, string $cpCustomer, strin
  * @param string $addressSeller
  * @param string $citySeller
  * @param int $cpSeller
- * @param int $telSeller
+ * @param string $telSeller
  * @param int $sellerId
  */
 function submitUpdateSeller(string $addressSeller, string $cpSeller, string $citySeller, string $telSeller, string $descriptionShop, int $sellerId)
