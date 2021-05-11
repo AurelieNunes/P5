@@ -43,7 +43,6 @@ function deleteSeller(int $sellerId)
     $sellerManager = new SellerManager();
     $deletedSeller = $sellerManager->deleteSeller($sellerId);
     $_SESSION = array();
-    session_destroy();
 
     Header('Location: index.php?action=manageSellers&delete-account=success');
 }

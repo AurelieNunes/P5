@@ -26,6 +26,18 @@
         margin-top: 51%;
     }
 
+    #adminPanel {
+        margin-top: 175px;
+    }
+
+    #manageAllCustomers {
+        margin-bottom: 31%;
+    }
+    
+    .returnLink-admin {
+        margin-bottom: 10%;
+    }
+
     .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
         margin-top: 40%;
     }

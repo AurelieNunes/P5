@@ -84,7 +84,7 @@ class WeatherWidget {
     });
     createNewHTMLElement(
       "p",
-      `Température actuelle: ${temp} °c`,
+      `${temp} °c`,
       weatherWidgetHTML,
       {
         className: "widgetCurrentTemp",

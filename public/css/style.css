@@ -56,7 +56,7 @@ header{
     height: 30%;
 }
 
-.jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotron-dashboard, .jumbotronAdmin {
+.jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotron-dashboard {
     height: 10%;
 }
 
@@ -101,7 +101,7 @@ header{
 }
 
 /* ACCOUNT CLIENT VIEW LOGIN / SUBSCRIBE VIEW */
-#accountCustomer, #updateAccountCustomer, #adminPanel{
+#accountCustomer, #updateAccountCustomer{
     margin-top: 60%;
 }
 
@@ -128,16 +128,50 @@ header{
     margin-top: 35%;
 }
 
+/* ADMIN */
+.navbar-brand, .session {
+    margin: 0;
+}
+
+#adminPanel {
+    margin-top: 191px;
+    margin-bottom: 20px;
+}
+
+.jumbotronAdmin {
+    margin-bottom: 12%;
+    height: 10%;
+}
+
+.returnLink-admin {
+    margin-bottom: 10%;
+}
+
+.jumbotronAllItems h1 {
+    margin-bottom: 15%;
+}
+
+.jumbotronAdmin .card {
+    margin-bottom: 5%;
+}
+
+.navbar-footer-admin {
+    margin-top: 15%;
+}
+
+#manageAllCustomers {
+    margin-bottom: 50%;
+}
+
 /*======================
     404 page
 =======================*/
-
 
 .page_404 { 
     padding:40px 0; 
     background:#fff; 
     font-family: 'Arvo', serif;
-    margin-top: 35%;
+    margin-top: 41%;
 }
 
 .page_404  img { 
@@ -153,7 +187,7 @@ header{
  
  
 .four_zero_four_bg h1 {
-    font-size:80px;
+    font-size:70px;
  }
  
 .four_zero_four_bg h3 {
@@ -172,3 +206,23 @@ header{
     margin-top:-50px;
 }
 
+/* ABOUT */
+#About {
+    margin-top: 40%;
+}
+
+.picture {
+    width: 50%;
+    margin-top: 13%;
+}
+
+.picture img {
+    width: 60%;
+    
+}
+
+#AboutMe {
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+}

@@ -2,7 +2,7 @@
 ----------- MAX - WIDTH 1440 px ------------*/
 @media (min-width:1440px) 
 {
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, #createItem, #managerBlockItems, #viewItem, #updateSeller {
         margin-top: 20%;
     }
 
@@ -42,10 +42,6 @@
         margin-top: 14%;
     }
 
-    .navbar-admin {
-        top: 14%;
-    }
-
     .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg {
         width: 60%;
     }
@@ -53,5 +49,43 @@
     .product {
         width: 80%;
     }
+
+     /* SUBSCRIBE / LOGIN */
+    #subscribeFrame, .form-signin-expand-lg {
+        margin-top: 15%; 
+    }
+
+    /* ADMIN */
+    .logo-admin img {
+        width: 60%;
+    }
+
+    .navbar-admin {
+        top: 15%;
+    }
+
+    #adminPanel {
+        margin-top: 16%;
+    }
+
+    .returnLink-admin {
+        margin-top: 16%;
+    }
+
+    #manageAllSellers .card {
+        width: 50%;
+        margin: auto;
+    }
+
+    .jumbotronAllItems, #manageAllSellers .jumbotron {
+        width: 50%;
+        margin: auto;
+    }
+
+    #manageAllItems .card .card-body {
+        width: 50%;
+        margin: auto;
+    }
+
 
 }

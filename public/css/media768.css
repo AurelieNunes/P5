@@ -6,16 +6,12 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        height: 20%;
+        height: 15%;
         align-items: center;
     }
 
-    #adminPanel {
-        margin-top: 25%;
-    }
-
     .logo {
-        width: 30%;
+        width: 25%;
         height: auto;
     }
 
@@ -33,15 +29,59 @@
     #widget {
         visibility: visible;
         width: 20%;
-        height: 160px;
+        height: 100px;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .widgetCityName, .widgetCurrentWeather {
+        text-align: center;
+    }
+
+    .widgetCurrentTemp {
+        padding-left: 50%;
     }
 
     .navbar-common, .navbar-customer, .navbar-seller {
-        top: 20%;
+        top: 15%;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
-        margin-top: 34%;
+    .featurette-expand-lg-presentation, #categoryList, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
+        margin-top: 25%;
+    }
+
+    /* HOMEVIEW */
+    .selectionWeek .h2, .newSellers-expand-lg .h2 {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .sellerexpand-lg {
+        width: 20%;
+        align-self: center;
+    }
+
+    .img-sellerShop {
+        width: 65%;
+    }
+
+    /* LISTINGSELLERS */
+    #listingSellers, #cardSeller {
+        margin-top: 30%;
+    }
+
+    #listingSellers h1 {
+        width: 80%;
+    }
+
+    #listingSellers .card {
+        width: 80%;
+    }
+
+    /* SELLERVIEW */
+    .featurette-product-seller {
+        width: 80%;
     }
 
     /* CARDSELLERVIEW */
@@ -53,10 +93,16 @@
     }
 
     .hash-list li {
-        width: 30%;
+        width: 20%;
     }
 
     .allProduct .description-product {
+        width: 80%;
+        margin: auto;
+    }
+
+    /* ITEMS BY CATEGORY */
+    #category .card, #category .card .card-img-top {
         width: 80%;
         margin: auto;
     }
@@ -112,10 +158,6 @@
         margin-top: 2%;
     }
 
-    .navbar-admin {
-        top: 12%;
-    }
-
     #updateBlock {
         margin-top: 3%;
     }
@@ -128,4 +170,60 @@
     .returnLink {
         margin-top: 33%;
     }
+    
+    /* ADMIN */
+    .jumbotronAdmin {
+        height: 18%;
+        margin-bottom: 0px;
+    }
+    
+    .jumbotronAdmin h1 {
+        width: 80%;
+        margin:auto;
+    }
+
+    .navbar-admin {
+        top: 18%;
+    }   
+
+    .returnLink-admin {
+        margin-top: 32%;
+        margin-bottom: 5%;
+    }
+    
+    #adminPanel {
+        margin-top: 252px;
+        margin-bottom: 0px;
+    }
+
+    #manageAllCustomer {
+        margin-bottom: 0%;
+    }
+
+    .jumbotronAllItems h1 {
+        margin-bottom: 4%;
+    }
+
+    #manageAllCustomers {
+        margin-bottom: 10%;
+    }
+
+    .navbar-footer-admin {
+       margin-top: 0%;
+    }
+
+    /* ERROR */
+    .page_404 {
+        margin-top: 22%;
+    }
+
+    .page_404 .container {
+        margin: auto;
+        width: 100%;
+    }
+
+    .page_404 .container .row .col-sm-12 .col-sm-10 {
+        margin: auto;
+    }
+
 }

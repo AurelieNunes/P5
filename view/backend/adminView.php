@@ -11,13 +11,12 @@ $title = "Panel d'administration"; ?>
   </div>
 
   <!-- TOUS LES VENDEURS -->
-  <div class="card-AllSellers text-center">
-
+  <div class="card text-center">
     <div class="card-sellers text-primary h3">
       Vendeurs
     </div>
-    <div class="card-body-sellers">
-      <h6 class="card-title-sellers">Gérer tous les vendeurs actifs</h6>
+    <div class="card-body">
+      <h6 class="card-title">Gérer tous les vendeurs</h6>
 
       <a href="index.php?action=manageSellers" class="btn btn-primary">Voir</a>
     </div>

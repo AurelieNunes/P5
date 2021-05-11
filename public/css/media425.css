@@ -34,4 +34,9 @@
     .returnLink {
         margin-top: 43%;
     }
+
+    .product {
+        width: 80%;
+        margin: auto;
+    }
 }

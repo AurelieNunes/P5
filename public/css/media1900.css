@@ -9,11 +9,99 @@
         margin-bottom: 0px;
         font-size: 3rem;
         width: 50%;
+        height: 60px;
+    }
+
+    .featurette-expand-lg-presentation, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
+        margin-top: 12%;
+    }
+
+    #subscribeFrame .h4, .login-submit .h4 {
+        width: 50%;
+    }
+
+    #subscribeFrame, .form-signin-expand-lg {
+        margin-top: 10%;
+    }
+
+    .navbar-footer {
+        margin-top: 70px;
+    }
+
+    #loginForms {
+        margin-top: 4%;
+        margin-bottom: 69px;
+    }
+
+    #categoryList {
+        margin-top: 15%;
+    }
+
+    .list-categories, .list-sellers, .title-welcome {
+        width: 50%!important;
+    }
+
+    .jumbotron-categories .card-img-top {
+        width: 60%;
+    }
+
+    .featurette-product-expand-lg {
+        width: 75%;
+        margin: auto;
+    }
+
+    .listing {
+        margin-top: 5%;
     }
 
     #widget {
+        height: 143px;
+        background-size: cover;
+        background-position: top;
         font-size: 20px;
         padding-left: 15px;
         padding-top: 15px;
+    }
+
+    /* ADMIN */
+
+    .logo-admin {
+        width: 80%;
+        margin: auto;
+    }
+
+    .logo-admin img {
+        width: 30%;
+    }
+
+    .navbar-admin {
+        top: 15%;
+    }
+
+    .returnLink-admin {
+        margin-top: 12%;
+        margin-bottom: 2%;
+    }
+
+    .navbar-brand {
+        margin: 0;
+    }
+
+    .session {
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-item-logout {
+        align-self: center;
+    }
+
+    #manageAllCustomers {
+        margin-bottom: 9%;
+    }
+
+    /* ERROR */
+    .page_404 {
+        margin-top: 10%;
     }
 }

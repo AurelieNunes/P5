@@ -83,7 +83,7 @@ try {
                 break;
 
             case 'admin':
-                if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
+                if (isset($_SESSION) && isset($_SESSION['isAdmin']) &&($_SESSION['isAdmin'] === '1')){
                     displayAdmin();
                 } else {
                     throw new Exception('Administrateur non identifié');

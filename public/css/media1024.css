@@ -3,19 +3,27 @@
 @media (min-width:1024px) 
 {
     /* HOMEVIEW */
+    .img-logo {
+        width: 16%;
+    }
+
+    .img-presentation {
+        width: 100%;
+    }
+    
     .logo {
         width: 20%;
     }
 
     .title-website {
-        font-size: 3rem;
-        width: 50%;
+        font-size: 2rem;
+        width: 51%;
+        height: 30px;
     }
 
     #widget {
-        width: 22%;
-        padding-left: 5px;
-        padding-top: 5px;
+        height: 113px;
+        background-size: cover;
     }
 
     .session-users {
@@ -41,13 +49,13 @@
     }
 
     .navbar-brand, .navbar-nav {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .navbar-footer .navbar-nav-expand-lg {
         display: flex;
         justify-content: space-around;
-        font-size: 22px;
+        font-size: 18px;
         align-items: center;
     }
 
@@ -55,12 +63,12 @@
         margin-bottom: 0px;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
         margin-top: 25%;
     }
 
     .featurette-heading-presentation-expand-lg {
-        font-size: 3.75rem;
+        font-size: 2.75rem;
         width: 80%;
     }
 
@@ -71,7 +79,7 @@
     .selectionWeek .h2, .newSellers-expand-lg .h2 {
         width: 80%;
         margin: auto;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 5%;
     }
 
@@ -91,7 +99,7 @@
     }
 
     .img-product1 {
-        width: 45%;
+        width: 60%;
     }
 
     .product {
@@ -100,11 +108,15 @@
     }
 
     .title-product {
-        font-size: 2.50rem;
+        font-size: 2rem;
     }
 
     .link-ReadMore {
         font-size: 1.5rem;
+    }
+
+    .content-seller-expand-lg {
+        width: 85%;
     }
 
     .link-seller-expand-lg .nav-link {
@@ -112,8 +124,13 @@
     }
 
     .sellerexpand-lg {
-        font-size: 24px;
+        font-size: 20px;
         align-self: center;
+        width: 40%;
+    }
+
+    .img-sellerShop {
+        width: 50%;
     }
 
     .addressSeller {
@@ -159,7 +176,7 @@
     }
 
     .listing .card-body .card-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .listing .card-body .btn  {
@@ -174,6 +191,11 @@
     #categoryList .listing .card {
         width: 34%;
     }
+
+    #categoryList .listing .card .card-img-top {
+        width: 80%;
+    }
+
 
     /* CATEGORYVIEW */
     .jumbotron-categories {
@@ -212,7 +234,7 @@
     }
 
     .img-shop {
-        width: 55%;
+        width: 50%;
         align-self: center;
     }
 
@@ -236,6 +258,7 @@
 
     .product {
         margin: auto;
+        width: 50%;
     }
 
     #reviews {
@@ -275,11 +298,39 @@
         padding-bottom: 7%;
     }
 
-    /* VIEW SELLER */
-    #adminPanel {
-        margin-top: 34%;
+     /* SUBSCRIBE / LOGIN */
+     #subscribeFrame, .form-signin-expand-lg {
+        margin-top: 20%;
+        width: 100%;
     }
 
+    .subscribes-expand-lg {
+        width: 100%;
+    }
+
+    #subscribeFrame img, .login-submit img {
+        width: 20%;
+    }
+
+    #subscribeForms, #loginForms {
+        display: flex;
+    }
+
+    #subscribe-Seller, #login-Seller {
+        width: 50%;
+        border-right: 2px solid orange;
+    }
+
+    #subscribe-customer, #loginCustomer {
+        width: 50%;
+        margin-top: 0px!important;
+    }
+
+    #error {
+        top: 40px;
+    }
+
+    /* VIEW SELLER */
     #createItem, #managerBlockItems, #viewItem, #updateSeller {
         margin-top: 28%;
     }
@@ -301,7 +352,27 @@
         margin-top: 18%;
     }
 
+    /* ADMIN */
     .logo-admin {
-        width: 30%;
+        width: 50%;
     }
+
+    .logo-admin img {
+        width: 70%;
+    }
+
+    .navbar-admin {
+        top: 15%;
+    }
+
+    #adminPanel {
+        margin-top: 20%;
+    }
+
+    .returnLink-admin {
+        margin-top: 21%;
+        margin-bottom: 3%;
+    }
+
+
 }
