@@ -1,4 +1,3 @@
-
 /*
 ----------- MAX - WIDTH 2560 px ------------*/
 @media (min-width:2560px) {
@@ -20,12 +19,67 @@
         top: 18%;
     }
 
+    .jumbotron-common {
+        height: 15%;
+    }
+
     .presentation-expand-lg {
         font-size: 42px;
     }
 
+    .lead-description-shop {
+        font-size: 28px;
+    }
+
     .logo {
         width: 15%;
+    }
+
+    #widget {
+        width: 17%;
+        height: 147px;
+    }
+
+    .featurette-product-seller .title-product {
+        font-size: 2.5rem;
+    }
+
+    .title-product {
+        font-size: 3rem;
+    }
+
+    .price, .stock, .link-seller, .link-ReadMore {
+        font-size: 2rem;
+    }
+
+    .sellerexpand-lg, .addressSeller {
+        font-size: 22px;
+    }
+
+    .lead-description-shop {
+        font-size: 25px;
+    }
+
+    .title-welcome {
+        font-size: 3.5rem;
+    }
+
+    .jumbotron-categories {
+        font-size: 2rem;
+    }
+
+    .product {
+        font-size: 22px;
+    }
+
+    #category .card-title, #category .card-text {
+        font-size: 2.5rem;
+    }
+
+    .jumbotron-categories .card 
+
+    .featurette-product-seller .title-product {
+        font-size: 2rem;
     }
 
     .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
@@ -107,8 +161,12 @@
         font-size: 2.5rem;
     }
 
-    #login-Seller .h5,  #login-Seller .form .btn, #loginCustomer .h5, #loginCustomer .form .btn{
+    #login-Seller .h5,  #login-Seller .form .btn, #loginCustomer .h5, #loginCustomer .form .btn, #subscribe-Seller .h5, #subscribe-customer .h5, #subscribe-formSeller .form .btn, #subscribe-formCustomer .form .btn {
         font-size: 3.25rem;
+    }
+
+    .subscribes-expand-lg .submit {
+        font-size: 3rem;
     }
 
     /* ADMIN */

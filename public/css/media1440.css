@@ -65,9 +65,13 @@
     }
 
     #adminPanel {
-        margin-top: 16%;
+        margin-top: 20%;
     }
-
+    
+    .jumbotron-dashboard h1 {
+         margin-bottom: 20px;
+    }
+   
     .returnLink-admin {
         margin-top: 16%;
     }

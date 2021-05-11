@@ -87,8 +87,12 @@ header{
 }
 
 /* LOGIN - SUBSCRIBEVIEW */
-.form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
-    margin-top: 40%;
+.form-signin-expand-lg, #subscribeFrame, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
+    margin-top: 50%;
+}
+
+#createItem {
+    margin-top: 48%;
 }
 
 .returnLink-admin {
@@ -218,7 +222,6 @@ header{
 
 .picture img {
     width: 60%;
-    
 }
 
 #AboutMe {

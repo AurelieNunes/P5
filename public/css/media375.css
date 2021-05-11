@@ -5,8 +5,17 @@
 /*
 ----------- MAX - WIDTH 375 px ------------*/
 @media (min-width:375px) {
-    .returnLink {
-        margin-top: 50%;
+
+    #managerBlockItems {
+        margin-top: 40%;
+    }
+
+    .form-signin-expand-lg, #subscribeFrame, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
+        margin-top: 42%;
+    }
+
+    .navbar-nav {
+        align-items: center;
     }
 
     #success {
