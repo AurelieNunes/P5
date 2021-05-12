@@ -16,7 +16,7 @@
         margin-top: 12%;
     }
 
-    #subscribeFrame .h4, .login-submit .h4 {
+    #subscribeFrame .h4, .login-submit .h4, .list-categories, .list-sellers, .title-welcome {
         width: 50%;
     }
 
@@ -35,10 +35,6 @@
 
     #categoryList {
         margin-top: 15%;
-    }
-
-    .list-categories, .list-sellers, .title-welcome {
-        width: 50%!important;
     }
 
     .jumbotron-categories .card-img-top {

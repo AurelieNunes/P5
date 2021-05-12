@@ -81,16 +81,12 @@ header{
     float: right;
 }
 
-/* HOMEVIEW - CATEGORYLIST */
-.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
+/* HOMEVIEW - CATEGORYLIST LOGIN - SUBSCRIBEVIEW */
+.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
     margin-top: 50%;
 }
 
 /* LOGIN - SUBSCRIBEVIEW */
-.form-signin-expand-lg, #subscribeFrame, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
-    margin-top: 50%;
-}
-
 #createItem {
     margin-top: 48%;
 }
@@ -137,12 +133,12 @@ header{
     margin: 0;
 }
 
-#adminPanel {
+#adminPanel, #adminSeller {
     margin-top: 191px;
     margin-bottom: 20px;
 }
 
-.jumbotronAdmin {
+.jumbotronAdmin, .jumbotron-dashboard {
     margin-bottom: 12%;
     height: 10%;
 }
@@ -151,12 +147,8 @@ header{
     margin-bottom: 10%;
 }
 
-.jumbotronAllItems h1 {
+.jumbotronAllItems h1, .jumbotronAdmin .card {
     margin-bottom: 15%;
-}
-
-.jumbotronAdmin .card {
-    margin-bottom: 5%;
 }
 
 .navbar-footer-admin {

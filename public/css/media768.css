@@ -71,16 +71,7 @@
         margin-top: 30%;
     }
 
-    #listingSellers h1 {
-        width: 80%;
-    }
-
-    #listingSellers .card {
-        width: 80%;
-    }
-
-    /* SELLERVIEW */
-    .featurette-product-seller {
+    #listingSellers h1, #listingSellers .card, .featurette-product-seller {
         width: 80%;
     }
 
@@ -96,13 +87,8 @@
         width: 20%;
     }
 
-    .allProduct .description-product {
-        width: 80%;
-        margin: auto;
-    }
-
     /* ITEMS BY CATEGORY */
-    #category .card, #category .card .card-img-top {
+    #category .card, #category .card .card-img-top, .allProduct .description-product, #subscribeFrame .h4, .login-submit .h4, .jumbotronAdmin h1 {
         width: 80%;
         margin: auto;
     }
@@ -112,21 +98,13 @@
         width: 60%;
     }
 
-    #subscribeFrame .h4, .login-submit .h4 {
-        width: 80%;
-    }
-
-    .subscribes-expand-lg, #loginForms {
+    .subscribes-expand-lg, #loginForms, #detailProduct .featurette-product-seller {
         width: 50%;
     }
 
     .form-submit-customer {
         padding-top: 7%;
         padding-bottom: 7%;
-    }
-
-    #detailProduct .featurette-product-seller {
-        width: 50%;
     }
 
     .infoCustomer {
@@ -177,11 +155,6 @@
         margin-bottom: 0px;
     }
     
-    .jumbotronAdmin h1 {
-        width: 80%;
-        margin:auto;
-    }
-
     .navbar-admin {
         top: 18%;
     }   
@@ -212,6 +185,25 @@
        margin-top: 0%;
     }
 
+    /* SELLLER */
+    #adminSeller {
+        margin-top: 250px;
+        margin-bottom: 20px;
+    }
+
+    .jumbotron-dashboard {
+        margin-bottom: 7%;
+        height: 10%;
+    }
+
+    #createItem, #managerBlockItems, #viewItem, #updateSeller {
+        margin-top: 26%;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
     /* ERROR */
     .page_404 {
         margin-top: 22%;
@@ -224,6 +216,11 @@
 
     .page_404 .container .row .col-sm-12 .col-sm-10 {
         margin: auto;
+    }
+
+    /* ALERTE */
+    #success, #error {
+        margin-top: 28%;
     }
 
 }

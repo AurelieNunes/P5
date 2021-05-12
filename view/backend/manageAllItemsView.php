@@ -25,11 +25,28 @@ $title = "Gérer tous les articles"; ?>
                 <p>Stock : <?= $items['stock'];?></p>
             </div>
         </div>
-        <div class="card-footer text-muted">
-            <p class="delete-link text-center">
-                <a href="index.php?action=deleteItemByAdmin&amp;id=<?= $items['id']; ?>">Supprimer cet article</a>
-            </p>
-        </div>
+        <div class="modalContent m-auto">
+			<button class="btnModal btn btn-secondary bg-primary">Supprimer cet article</button>
+		</div>
+
+		<div class="modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Supprimer</h5>
+					</div>
+					<div class="modal-body">
+						<p>Voulez-vous vraiment supprimer
+							<?=  $items['nameItem']; ?>?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary"> 
+                        <a class="text-white" href="index.php?action=deleteItemByAdmin&amp;id=<?= $items['id']; ?>">Oui</a></button>
+						<button type="button" class="btn btn-secondary closeBtn" data-dismiss="close">Non</button>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
     <?php
     }

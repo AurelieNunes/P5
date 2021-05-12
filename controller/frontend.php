@@ -37,7 +37,7 @@ function addCustomer(string $lastName, string $firstName, string $mail, string $
         $newCustomer;
 
         // redirige vers page d'accueil avec le nouveau paramètre
-        Header('Location: index.php?home&success=account-successfully-created');
+        Header('Location: index.php?action=loginCustomer&success=account-successfully-created');
     }
 }
 

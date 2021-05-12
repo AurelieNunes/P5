@@ -16,8 +16,7 @@ function deleteCustomer(int $customerId)
 {
     $customerManager = new CustomerManager();
     $deletedCustomer = $customerManager->deleteCustomer($customerId);
-    $_SESSION = array();
-    session_destroy();
+
     Header('Location: index.php?action=manageCustomers&delete-account=success');
 }
 
@@ -42,7 +41,6 @@ function deleteSeller(int $sellerId)
 {
     $sellerManager = new SellerManager();
     $deletedSeller = $sellerManager->deleteSeller($sellerId);
-    $_SESSION = array();
 
     Header('Location: index.php?action=manageSellers&delete-account=success');
 }

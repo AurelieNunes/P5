@@ -23,7 +23,7 @@ try {
                 break;
 
             case 'addCustomer':
-                /* Inscription Client*/
+                /* subscribe customer */
                 $utils = new Utils();
                 if (!$utils->isEmpty([
                     $_POST['lastName'] &&
@@ -53,7 +53,7 @@ try {
                 break;
 
             case 'addSeller':
-                /* Ajout vendeur */
+                /* subscribe seller */
                 $utils = new Utils();
                 if (!$utils->isEmpty([
                     $_POST['companySeller'] &&
@@ -83,7 +83,8 @@ try {
                 break;
 
             case 'admin':
-                if (isset($_SESSION) && isset($_SESSION['isAdmin']) &&($_SESSION['isAdmin'] === '1')){
+                /* dashboard admin */
+                if (isset($_SESSION) && isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin'] === '1')){
                     displayAdmin();
                 } else {
                     throw new Exception('Administrateur non identifié');
@@ -178,22 +179,18 @@ try {
                 break;
 
             case 'loginCustomer':
-                /* Affichage connexion Client*/
                 displayLogin();
                 break;
 
             case 'loginSeller':
-                /* Affichage connexion Vendeur*/
                 displayLogin();
                 break;
 
             case 'loginSubmitCustomer':
-                /* Connexion client */
                 loginSubmitCustomer(strip_tags($_POST['mailSubmitCustomer']), strip_tags($_POST['passSubmitCustomer']));
                 break;
 
             case 'loginSubmitSeller':
-                /* connexion vendeur */
                 loginSubmitSeller(strip_tags($_POST['mailSubmitSeller']), strip_tags($_POST['passSubmitSeller']));
                 break;
 
@@ -253,12 +250,10 @@ try {
                 break;
 
             case 'subscribeCustomer':
-                /* Affichage inscription Client*/
                 displaySubscribe();
                 break;
 
             case 'subscribeSeller':
-                /* Affichage inscription vendeur */
                 displaySubscribe();
                 break;
 

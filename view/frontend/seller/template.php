@@ -135,11 +135,6 @@
                         <p class="expand-lg">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
-                <li class="nav-item-expand-lg active">
-                    <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="#">
-                        <p class="expand-lg">RGPD</p>
-                    </a>
-                </li>
                 <li class="nav-item-expand-lg">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none"
                         href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
@@ -153,6 +148,7 @@
 
     <!-- JS -->
     <script src="./public/JS/weather.js"></script>
+    <script src="./public/JS/modal.js"></script>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"

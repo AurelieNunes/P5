@@ -4,7 +4,7 @@
 <!-- Gestion des Artciles -->
 <section id="listItems" class="mx-auto pt-2">
 	<div id="managerBlockItems" class="mx-auto">
-		<p class="returnLink text-center mx-auto pt-2">
+		<p class="returnLink-seller text-center mx-auto pt-2">
 			<a href="index.php?action=dashboardSeller">Retour au menu</a>
 		</p>
 		<div class="jumbotron bg-primary">

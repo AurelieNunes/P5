@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <section id="createItem" class="mx-auto">
-    <p class="returnLink text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
+    <p class="returnLink-seller text-center mx-auto pt-2"><a href="index.php?action=dashboardSeller">Retour au menu</a></p>
     <div class="jumbotron-dashboard bg-primary">
         <h1 class="text-center text-white">Ajout Article</h1>
     </div>

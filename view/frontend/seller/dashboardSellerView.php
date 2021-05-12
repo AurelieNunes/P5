@@ -3,8 +3,8 @@
 <?php ob_start(); ?>
 <div class="container-fluid d-flex">
   <a href="index.php?action=dashboardSeller"></a>
-  <section id="adminPanel" class="col-12">
-    <div class="jumbotron-dashboard bg-primary">
+  <section id="adminSeller" class="col-12">
+    <div class="jumbotron-dashboard bg-primary pt-2 pb-2">
       <h1 class="text-center white">Tableau de Bord</h1>
     </div>
 
@@ -22,7 +22,7 @@
     }
 
     if (isset($_GET['new-item']) && $_GET['new-item'] == 'success') {
-      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a été publié</p>';
+      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a bien été publié</p>';
     }
     ?>
 

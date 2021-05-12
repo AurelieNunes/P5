@@ -2,7 +2,7 @@
 ----------- MAX - WIDTH 1440 px ------------*/
 @media (min-width:1440px) 
 {
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, #createItem, #managerBlockItems, #viewItem, #updateSeller {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
         margin-top: 20%;
     }
 
@@ -24,11 +24,6 @@
         padding-bottom: 7%;
     }
 
-    #updateAccountCustomer .h2, #accountCustomer .h2 {
-        width: 50%;
-        margin: auto;
-    }
-
     .infoCustomer {
         margin-top: 4%;
         margin-bottom: 5%;
@@ -42,7 +37,7 @@
         margin-top: 14%;
     }
 
-    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg {
+    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg, .logo-admin img, .listItems .list-group .card, .listItems .card {
         width: 60%;
     }
 
@@ -51,45 +46,34 @@
     }
 
      /* SUBSCRIBE / LOGIN */
-    #subscribeFrame, .form-signin-expand-lg {
+    #subscribeFrame, .form-signin-expand-lg, .returnLink-admin {
         margin-top: 15%; 
     }
 
     /* ADMIN */
-    .logo-admin img {
-        width: 60%;
-    }
-
     .navbar-admin {
         top: 15%;
-    }
-
-    #adminPanel {
-        margin-top: 20%;
     }
     
     .jumbotron-dashboard h1 {
          margin-bottom: 20px;
     }
-   
-    .returnLink-admin {
+
+    #updateAccountCustomer .h2, #accountCustomer .h2, #manageAllSellers .card, #manageAllItems .card .card-body, .jumbotronAllItems, #manageAllSellers .jumbotron {
+        width: 50%;
+        margin: auto;
+    }
+
+    /* SELLER */
+    #createItem, #managerBlockItems, #viewItem, #updateSeller, #success, #error  {
         margin-top: 16%;
     }
 
-    #manageAllSellers .card {
-        width: 50%;
-        margin: auto;
+    .jumbotron-dashboard {
+        margin-bottom: 5%;
     }
 
-    .jumbotronAllItems, #manageAllSellers .jumbotron {
-        width: 50%;
-        margin: auto;
+    .footer-seller {
+        margin-top: 2.5%;
     }
-
-    #manageAllItems .card .card-body {
-        width: 50%;
-        margin: auto;
-    }
-
-
 }

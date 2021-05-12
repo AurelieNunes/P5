@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 
 <section id="viewItem">
-    <p class="returnLink text-center mx-auto pt-2">
+    <p class="returnLink-seller text-center mx-auto pt-2">
         <a class="h6 text-primary" href="index.php?action=dashboardSeller">Retour au menu</a>
     </p>
     <div class="jumbotron bg-primary">
@@ -30,17 +30,36 @@
                 ?>
                 <p class="mb-4">En stock : <?= $item['stock']; ?></p>
 
-                <p class="update-link">
-                    <a class="h6 text-primary"
-                        href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
-                </p>
-                <p class="delete-link">
-                    <a class="h6 text-primary" href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Supprimer
-                        cet article</a>
-                </p>
+                <div class="modalContent m-auto">
+                    <button class="btn btn-secondary bg-primary mb-4"><a class="text-decoration-none h6 white" href="index.php?action=displayUpdateItem&amp;id=<?= $item['id']; ?>">Modifier cet article</a>
+                    </button>
+                </div>
+                <div class="modalContent m-auto">
+                    <button class="btnModal btn btn-secondary bg-primary">Supprimer cet article</button>
+                </div>
+
+                <div class="modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Supprimer</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>Voulez-vous vraiment supprimer
+                                    <?= $item['nameItem']; ?>?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">
+                                    <a class="text-white"
+                                        href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Oui</a></button>
+                                <button type="button" class="btn btn-secondary closeBtn"
+                                    data-dismiss="close">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 <?php $content = ob_get_clean(); ?>

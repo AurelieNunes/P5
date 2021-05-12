@@ -105,7 +105,7 @@
 							}
 
                         if(!empty($_SESSION['mailSubmitSeller'])){
-                            echo '<li class="nav-item-mailSeller"><p class="session white text-center">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                            echo '<li class="nav-item-mailSeller"><p class="session white text-center">Bonjour' . '  ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
                             }
                         ?>
                         </div>
@@ -135,11 +135,6 @@
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none"
                         href="index.php?action=about">
                         <p class="expand-lg">Qui se cache derrière ce projet ?</p>
-                    </a>
-                </li>
-                <li class="nav-item-expand-lg active">
-                    <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="#">
-                        <p class="expand-lg">RGPD</p>
                     </a>
                 </li>
                 <li class="nav-item-expand-lg">

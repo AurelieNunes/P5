@@ -137,18 +137,12 @@
                         <p class="expand-lg">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
-                <li class="nav-item-expand-lg active">
-                    <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="#">
-                        <p class="expand-lg">RGPD</p>
-                    </a>
-                </li>
                 <li class="nav-item-expand-lg">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none"
                         href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
                         <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </footer>

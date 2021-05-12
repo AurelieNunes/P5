@@ -40,19 +40,19 @@
         height: 147px;
     }
 
-    .featurette-product-seller .title-product {
+    .featurette-product-seller .title-product, #category .card-title, #category .card-text, #addItem, #listItems, #accountSeller, #updateAccountSeller, .headPost h3, #subscribeFrame .h4, .login-submit .h4  {
         font-size: 2.5rem;
     }
 
-    .title-product {
+    .title-product, .subscribes-expand-lg .submit, .card-sellers {
         font-size: 3rem;
     }
 
-    .price, .stock, .link-seller, .link-ReadMore {
+    .price, .stock, .link-seller, .link-ReadMore, .jumbotron-categories, .featurette-product-seller .title-product, #manageAllCustomers .card, .returnLink-admin,.returnLink-seller, .login-submit .submit .h6, #adminPanel .card .card-body .card-title,  #adminPanel .card .card-body .btn, .returnLink-seller .h6   {
         font-size: 2rem;
     }
 
-    .sellerexpand-lg, .addressSeller {
+    .sellerexpand-lg, .addressSeller, .product {
         font-size: 22px;
     }
 
@@ -60,29 +60,11 @@
         font-size: 25px;
     }
 
-    .title-welcome {
+    .title-welcome, .jumbotron-dashboard h1, .jumbotronAdmin h1, #manageAllSellers .jumbotron h1 {
         font-size: 3.5rem;
     }
 
-    .jumbotron-categories {
-        font-size: 2rem;
-    }
-
-    .product {
-        font-size: 22px;
-    }
-
-    #category .card-title, #category .card-text {
-        font-size: 2.5rem;
-    }
-
-    .jumbotron-categories .card 
-
-    .featurette-product-seller .title-product {
-        font-size: 2rem;
-    }
-
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller {
         margin-top: 15%;
     }
 
@@ -91,7 +73,8 @@
     }
 
     .form-submit-customer {
-        padding-top: 140px;
+        padding-top: 95px;
+        padding-bottom: 6%;
     }
 
     .form-submit-customer .h5 {
@@ -111,14 +94,7 @@
         width: 50%;
         margin: auto;
         height: 15%;
-    }
-
-    .jumbotron-dashboard h1 {
-        font-size: 3.5rem;
-    }
-
-    #addItem, #listItems, #accountSeller, #updateAccountSeller, .headPost h3 {
-        font-size: 2.5rem;
+        margin-bottom: 3%;
     }
 
     #addNewItem, #updateAccountSeller .btn {
@@ -134,17 +110,9 @@
         width: 25%;
     }
 
-    #createItem, #managerBlockItems, #viewItem, #updateSeller {
-        margin-top: 15%;
-    }
-
     .returnLink {
         margin-top: 12%;
         font-size: 2.5rem;
-    }
-
-    #manageAllCustomers .card, .returnLink-admin, .login-submit .submit .h6 {
-        font-size: 2rem;
     }
 
     /* LOGIN / SUBSCRIBE */
@@ -157,16 +125,8 @@
         width: 15%;
     }
 
-    #subscribeFrame .h4, .login-submit .h4 {
-        font-size: 2.5rem;
-    }
-
     #login-Seller .h5,  #login-Seller .form .btn, #loginCustomer .h5, #loginCustomer .form .btn, #subscribe-Seller .h5, #subscribe-customer .h5, #subscribe-formSeller .form .btn, #subscribe-formCustomer .form .btn {
         font-size: 3.25rem;
-    }
-
-    .subscribes-expand-lg .submit {
-        font-size: 3rem;
     }
 
     /* ADMIN */
@@ -176,18 +136,6 @@
 
     #adminPanel {
         margin-top: 14%;
-    }
-
-    .jumbotronAdmin h1, #manageAllSellers .jumbotron h1 {
-        font-size: 3.5rem;
-    }
-
-    .card-sellers {
-        font-size: 3rem;
-    }
-
-    #adminPanel .card .card-body .card-title,  #adminPanel .card .card-body .btn {
-        font-size: 2rem;
     }
 
     #manageAllSellers .card .card-header {
@@ -200,5 +148,20 @@
 
     #manageAllItems .card-body .description {
         font-size: 1.5rem;
+    }
+
+    /* SELLER */
+    #adminSeller {
+        margin-top: 410px;
+        margin-bottom: 78px;
+    }
+
+    #managerBlock .btn {
+        width: 12%;
+    }
+
+    #managerBlockItems .jumbotron, #viewItem .jumbotron {
+        width: 50%;
+        margin: auto;
     }
 }
