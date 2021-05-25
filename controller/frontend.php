@@ -147,10 +147,10 @@ function displayAbout()
 /**
  * Display Account Customer
  */
-function displayAccountCustomer()
-{
-    require 'view/frontend/customer/accountClientView.php';
-}
+// function displayAccountCustomer()
+// {
+//     require 'view/frontend/customer/accountClientView.php';
+// }
 
 /**
  * Display Card Seller
@@ -298,7 +298,13 @@ function getCustomerById()
     $customerManager = new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
 
-    require 'view/frontend/customer/accountClientView.php';
+    if(isset($_SESSION) && ($_SESSION['id'])){
+        // die(var_dump($_SESSION['id']));
+        require 'view/frontend/customer/accountClientView.php';
+    }
+    else {
+        throw new Exception('Vous devez être connecté pour accéder à cet espace');
+    }
 }
 
 /**

@@ -1,14 +1,11 @@
 <?php
 namespace P5\model;
-
 class Manager
 {
-    //Fonction qui permet de ne pas répéter du code
     protected function dbConnect()
     {
-        $db = new \PDO('mysql:host=localhost;dbname=p5;charset=utf8', 'root', '');
+        $db = new \PDO('mysql:host=db5002476520.hosting-data.io;dbname=dbs1973700;charset=utf8', 'dbu487326', 'zgW:SqsRQ6S.pE3');
         return $db;
     }
 }
-
 ?>

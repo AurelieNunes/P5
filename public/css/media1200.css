@@ -1,0 +1,47 @@
+/*
+----------- MAX - WIDTH 1200 px ------------*/
+@media (min-width:1200px) 
+{
+
+.featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
+    margin-top: 18%;
+}
+
+.infoCustomer {
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+#accountCustomer, #updateAccountCustomer {
+    margin-top: 22%;
+}
+
+.form-submit-customer {
+    padding-top: 8%;
+    padding-bottom: 7%;
+}
+
+#MyProjects {
+    margin-bottom: 72px;
+}
+
+.jumbotron-dashboard {
+    margin-bottom: 5%;
+}
+
+#About, #adminPanel {
+    margin-top: 16%;
+}
+
+#About .picture {
+    width: 20%;
+}
+
+.picture img {
+    width: 80%;
+}
+
+.form-signin-expand-lg {
+    margin-bottom: 119px;
+}
+}

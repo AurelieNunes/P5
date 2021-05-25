@@ -10,17 +10,16 @@
     <div id="managerBlock" class="m-auto col-10">
 
         <div id="addBlock">
-            <form class="d-flex flex-column" id="addNewItem" action="index.php?action=newItem" method="POST"
-                enctype="multipart/form-data">
+            <form class="d-flex flex-column" id="addNewItem" action="index.php?action=newItem" method="POST" enctype="multipart/form-data">
 
                 <label for="ref">Référence</label>
                 <input class="mb-2 col-4" name="ref" id="ref" />
 
-                <label for="name">Nom du produit : </label>
+                <label for="nameItem">Nom du produit : </label>
                 <input class="mb-2 col-8" type="text" name="nameItem" id="nameItem" />
 
-                <label for="description">Description </label>
-                <textarea name="descriptionItem" rows="10" cols="40" class="mb-3"></textarea>
+                <label for="descriptionItem">Description </label>
+                <textarea name="descriptionItem" id="descriptionItem" rows="10" cols="40" class="mb-3"></textarea>
 
                 <div class="infos d-flex flex-column align-items-center mx-auto">
                     <label for="price" class="mr-2">Prix</label>
@@ -35,7 +34,7 @@
                 <div class="imgcategory col-12 align-center justify-content-between align-items-center mx-auto mb-4">
                     <div>
                         <label for="img" class="mt-5">Importer une image</label>
-                        <input type="file" class="mb-3" name="picture" />
+                        <input type="file" class="mb-3" name="picture" id="img"/>
                     </div>
                     <div class="bloc">
                         <div class="select col-8 mx-auto">
@@ -53,12 +52,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-
-        <button class="mb-5 col-4 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button"
-            aria-pressed="true" type="submit" value="Ajouter">Ajouter</button>
+            <button class="mb-5 col-4 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button" aria-pressed="true" type="submit" value="Ajouter">Ajouter</button>
         </form>
-    </div>
+        </div>
     </div>
 </section>
 

@@ -12,7 +12,6 @@
         <div class="card-header h4"><?= $item['nameItem']; ?></div>
 
         <div class="card-body">
-
             <div class="img-item">
                 <img class="card-img-top " src="<?= $item['url_img']; ?>" alt="Card image cap">
             </div>
@@ -45,21 +44,19 @@
                                 <h5 class="modal-title">Supprimer</h5>
                             </div>
                             <div class="modal-body">
-                                <p>Voulez-vous vraiment supprimer
-                                    <?= $item['nameItem']; ?>?</p>
+                                <p>Voulez-vous vraiment supprimer <?= $item['nameItem']; ?>?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary">
-                                    <a class="text-white"
-                                        href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Oui</a></button>
-                                <button type="button" class="btn btn-secondary closeBtn"
-                                    data-dismiss="close">Non</button>
+                                    <a class="text-white" href="index.php?action=deleteItem&amp;id=<?= $item['id']; ?>">Oui</a></button>
+                                <button type="button" class="btn btn-secondary closeBtn" data-dismiss="close">Non</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <?php $content = ob_get_clean(); ?>

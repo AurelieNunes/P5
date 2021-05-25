@@ -21,35 +21,28 @@ if(isset($_GET['success']) && $_GET['success'] == 'account-successfully-created'
       <div id="login-Seller" class="mx-auto">
         <h1 class="h5 text-center orange">Professionnel </h1>
         <form action="index.php?action=loginSubmitSeller" class="d-flex flex-column col-8 m-auto" method="POST">
-          <label for="mailSubmit" class="visually-hidden">Mail</label>
-          <input type="text" id="mailSubmitSeller" class="mb-2 form-control" name="mailSubmitSeller" placeholder="Email"
-            required autofocus>
+          <label for="mailSubmitSeller" class="visually-hidden">Mail</label>
+          <input type="text" id="mailSubmitSeller" class="mb-2 form-control" name="mailSubmitSeller" placeholder="Email" required>
           <label for="passSubmitSeller" class="visually-hidden">Mot de passe</label>
-          <input type="password" id="passSubmitSeller" class="form-control" placeholder="Password"
-            name="passSubmitSeller" required>
-          <button class="mt-4 m-auto test-center d-flex justify-content-center btn btn-lg btn-primary text-white"
-            type="submit">Se connecter</button>
+          <input type="password" id="passSubmitSeller" class="form-control" placeholder="Password" name="passSubmitSeller" required>
+          <button class="mt-4 m-auto test-center d-flex justify-content-center btn btn-lg btn-primary text-white" type="submit">Se connecter</button>
         </form>
       </div>
 
       <div id="loginCustomer" class="mx-auto text-center mt-4">
         <h1 class="h5 text-center orange">Particulier</h1>
         <form action="index.php?action=loginSubmitCustomer" class="d-flex flex-column col-8 mx-auto" method="POST">
-          <label for="mailSubmit" class="visually-hidden">Mail</label>
-          <input type="text" id="mailSubmitCustomer" class="form-control mb-2" name="mailSubmitCustomer"
-            placeholder="Email" required autofocus>
-          <label for="inputPassword" class="visually-hidden">Mot de passe</label>
-          <input type="password" id="passSubmitCustomer" class="form-control" placeholder="Mot de Passe"
-            name="passSubmitCustomer" required>
-          <button class="mt-4 m-auto btn btn-lg btn-primary text-center d-flex justify-content-center text-white"
-            type="submit">Se connecter</button>
+          <label for="mailSubmitCustomer" class="visually-hidden">Mail</label>
+          <input type="text" id="mailSubmitCustomer" class="form-control mb-2" name="mailSubmitCustomer" placeholder="Email" required>
+          <label for="passSubmitCustomer" class="visually-hidden">Mot de passe</label>
+          <input type="password" id="passSubmitCustomer" class="form-control" placeholder="Mot de Passe" name="passSubmitCustomer" required>
+          <button class="mt-4 m-auto btn btn-lg btn-primary text-center d-flex justify-content-center text-white" type="submit">Se connecter</button>
         </form>
       </div>
     </div>
 
     <div class="submit text-center mt-4">
-      <a class="text-center text-primary h6" href="index.php?action=subscribeCustomer">Pas encore inscrit ? C'est
-        ici</a>
+      <a class="text-center text-primary h6" href="index.php?action=subscribeCustomer">Pas encore inscrit ? C'est ici</a>
     </div>
   </div>
 

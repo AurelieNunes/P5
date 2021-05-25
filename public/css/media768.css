@@ -2,7 +2,7 @@
 ----------- MAX - WIDTH 768 px ------------*/
 @media (min-width:768px)
 {
-    .jumbotron-common, .jumbotron-customer, .jumbotron-seller{
+    .jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotron-dashboard{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -10,12 +10,13 @@
         align-items: center;
     }
 
-    .logo {
-        width: 25%;
+    .jumbotron-common .logo, .jumbotron-seller .logo, .jumbotron-customer .logo {
         height: auto;
+        width: 25%!important;
+        display: flex;
     }
 
-    .logo img {
+    .logo img, .jumbotron-dashboard .logo img, .jumbotron-customer .logo img {
         width: 90%;
     }
 
@@ -30,8 +31,6 @@
         visibility: visible;
         width: 20%;
         height: 100px;
-        background-size: cover;
-        background-position: top;
     }
 
     .widgetCityName, .widgetCurrentWeather {
@@ -46,8 +45,12 @@
         top: 15%;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame {
+    .featurette-expand-lg-presentation, #categoryList, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame {
         margin-top: 25%;
+    }
+
+    #accountCustomer, #updateAccountCustomer {
+        margin-top: 35%;
     }
 
     /* HOMEVIEW */
@@ -103,13 +106,13 @@
     }
 
     .form-submit-customer {
-        padding-top: 7%;
-        padding-bottom: 7%;
+        padding-top: 8%;
+        padding-bottom: 10%;
     }
 
     .infoCustomer {
         margin-top: 5%;
-        margin-bottom: 6%;
+        margin-bottom: 11%;
     }
 
     .headPost h3 {
@@ -188,12 +191,20 @@
     /* SELLLER */
     #adminSeller {
         margin-top: 250px;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     .jumbotron-dashboard {
-        margin-bottom: 7%;
+        margin-bottom: 8%;
         height: 10%;
+    }
+
+    #adminSeller .headPost {
+        margin-bottom: 0px;
+    }
+
+    .footer-seller {
+        margin-top: 0;
     }
 
     #createItem, #managerBlockItems, #viewItem, #updateSeller {

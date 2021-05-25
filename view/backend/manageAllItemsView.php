@@ -36,8 +36,7 @@ $title = "Gérer tous les articles"; ?>
 						<h5 class="modal-title">Supprimer</h5>
 					</div>
 					<div class="modal-body">
-						<p>Voulez-vous vraiment supprimer
-							<?=  $items['nameItem']; ?>?</p>
+						<p>Voulez-vous vraiment supprimer <?=  $items['nameItem']; ?>?</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary"> 

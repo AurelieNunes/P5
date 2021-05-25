@@ -20,7 +20,11 @@
     }
 
     .jumbotron-common {
-        height: 15%;
+        height: 20%;
+    }
+
+    .navbar-common {
+        top: 20%;
     }
 
     .presentation-expand-lg {
@@ -35,13 +39,12 @@
         width: 15%;
     }
 
-    #widget {
-        width: 17%;
-        height: 147px;
+    .featurette-product-seller .title-product, #category .card-title, #category .card-text, #addItem, #listItems, .headPost h3, #subscribeFrame .h4, .login-submit .h4  {
+        font-size: 2.5rem;
     }
 
-    .featurette-product-seller .title-product, #category .card-title, #category .card-text, #addItem, #listItems, #accountSeller, #updateAccountSeller, .headPost h3, #subscribeFrame .h4, .login-submit .h4  {
-        font-size: 2.5rem;
+    #accountCustomer {
+        margin-top: 17%;
     }
 
     .title-product, .subscribes-expand-lg .submit, .card-sellers {
@@ -64,12 +67,16 @@
         font-size: 3.5rem;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #updateAccountCustomer, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller {
         margin-top: 15%;
     }
 
     .infoCustomer, #updateAccountCustomer {
         font-size: 24px;
+    }
+
+    #updateAccountCustomer, #accountCustomer {
+        margin-top: 17%;
     }
 
     .form-submit-customer {
@@ -80,10 +87,6 @@
     .form-submit-customer .h5 {
         font-size: 30px;
         width: 20%;
-    }
-
-    #accountCustomer {
-        margin-top: 18%;
     }
 
     .navbar-footer .navbar-nav-expand-lg {
@@ -150,6 +153,10 @@
         font-size: 1.5rem;
     }
 
+    .navbar-footer {
+        margin-top: 22px;
+    }
+
     /* SELLER */
     #adminSeller {
         margin-top: 410px;
@@ -161,6 +168,24 @@
     }
 
     #managerBlockItems .jumbotron, #viewItem .jumbotron {
+        width: 50%;
+        margin: auto;
+    }
+
+    #About .picture {
+        width: 13%;
+    }
+
+    #AboutMe h3, #MyProjects h3 {
+        font-size: 2.75rem;
+    }
+
+    #About {
+        margin-top: 14%;
+    }
+
+    #AboutMe p, #MyProjects .list-group {
+        font-size: 28px;
         width: 50%;
         margin: auto;
     }

@@ -18,9 +18,9 @@ try {
                 displayAbout();
                 break;
 
-            case 'accountCustomer':
-                displayAccountCustomer();
-                break;
+            // case 'accountCustomer':
+            //     displayAccountCustomer();
+            //     break;
 
             case 'addCustomer':
                 /* subscribe customer */
@@ -137,9 +137,9 @@ try {
                 descriptionItem($_GET['itemId']);
                 break;
 
-            case 'displayAccountCustomer':
-                displayAccountCustomer();
-                break;
+            // case 'displayAccountCustomer':
+            //     displayAccountCustomer();
+            //     break;
 
             case 'displayItemsByCategory':
                 displayItemsByCategory($_GET['category_id']);
@@ -158,7 +158,11 @@ try {
                 break;
 
             case 'getCustomer':
-                getCustomerById($_SESSION['id']);
+                if(isset($_SESSION) && isset($_SESSION['id'])){
+                    getCustomerById($_SESSION['id']);
+                } else {
+                    displayHome();
+                }
                 break;
 
             case 'home':

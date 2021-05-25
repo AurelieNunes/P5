@@ -2,10 +2,9 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= $title ?></title>
 
     <link rel="icon" type="image/png" href="/public/img/Logo2.png">
     <meta name="description"
@@ -19,8 +18,10 @@
     <!--Open Graph data -->
     <meta property="og:title" content="Mes P'tites Emplettes Narbonnaises!" />
     <meta property="og:type" content="website" />
-    <!-- <meta property="og:url" content="" /> -->
-    <!-- <meta property="og:description" content="" /> -->
+    <meta property="og:url" content="http://p5-mesptitscommerces.aurelie-nunes.fr/" />
+    <meta property="og:description" content="Ici, vous trouverez tous les commerçants de
+      votre ville, ainsi que leurs produits
+      ! Grâce aux click&collect, réservez vos achats en toute sérénité !" />
     <title>Mes P'tites Emplettes Narbonnaises</title>
 
     <!-- Fontawesome -->
@@ -37,9 +38,13 @@
     <link rel="stylesheet" href="./public/css/style.css" />
     <link rel="stylesheet" href="./public/css/media375.css"/>
     <link rel="stylesheet" href="./public/css/media425.css"/>
+    <link rel="stylesheet" href="./public/css/media478.css"/>
+    <link rel="stylesheet" href="./public/css/media544.css"/>
+    <link rel="stylesheet" href="./public/css/media700.css"/>
     <link rel="stylesheet" href="./public/css/media768.css"/>
     <link rel="stylesheet" href="./public/css/media992.css"/>
     <link rel="stylesheet" href="./public/css/media1024.css"/>
+    <link rel="stylesheet" href="./public/css/media1200.css"/>
     <link rel="stylesheet" href="./public/css/media1440.css"/>
     <link rel="stylesheet" href="./public/css/media1900.css"/>
     <link rel="stylesheet" href="./public/css/media2560.css"/>
@@ -49,7 +54,7 @@
 <body>
     <header>
         <div class="jumbotron-customer fixed-top bg-white">
-            <p class="logo text-center col-12 mt-3">
+            <p class="logo text-center col-12">
                 <img class="col-8" src="./public/img/Logo.png" alt="logo site">
             </p>
             <h1 class="title-website orange font-italic">Mes P'tites Emplettes Narbonnaises</h1>
@@ -76,7 +81,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?action=category">Catégories</a>
                         </li>
-                        <div class="session-users">
+                    </ul>
+
+                    <ul class="session-users list-unstyled mb-0">
                             <?php
                         if(!empty($_SESSION['mailSubmitSeller'])){
                             echo '<li class="nav-item-dashboard white">
@@ -107,7 +114,6 @@
                             echo '<li class="nav-item-mailSeller"><p class="session white text-center">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
                             }
                         ?>
-                        </div>
                     </ul>
                 </div>
             </div>

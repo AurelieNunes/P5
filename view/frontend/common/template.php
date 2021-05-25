@@ -5,12 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= $title ?></title>
-
     <link rel="icon" type="image/png" href="/public/img/Logo2.png">
-    <meta name="description"
-        content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
-
+    <meta name="description" content="Mes P'tites Emplettes Narbonnaises, le site des commerces de proximité à votre portée !">
     <meta name="author" content="NUNES Aurélie" />
 
     <!-- Twitter Card data -->
@@ -19,16 +15,17 @@
     <!--Open Graph data -->
     <meta property="og:title" content="Mes P'tites Emplettes Narbonnaises!" />
     <meta property="og:type" content="website" />
-    <!-- <meta property="og:url" content="" /> -->
-    <!-- <meta property="og:description" content="" /> -->
+    <meta property="og:url" content="http://p5-mesptitscommerces.aurelie-nunes.fr/" />
+    <meta property="og:description" content="Ici, vous trouverez tous les commerçants de
+      votre ville, ainsi que leurs produits
+      ! Grâce aux click&collect, réservez vos achats en toute sérénité !" />
     <title>Mes P'tites Emplettes Narbonnaises</title>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
-    <!-- CSS -->
-    <!-- <link rel="stylesheet" href="./public/css/style.css" /> -->
+    
     <!-- CSS only CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -37,9 +34,13 @@
     <link rel="stylesheet" href="./public/css/style.css" />
     <link rel="stylesheet" href="./public/css/media375.css"/>
     <link rel="stylesheet" href="./public/css/media425.css"/>
+    <link rel="stylesheet" href="./public/css/media478.css"/>
+    <link rel="stylesheet" href="./public/css/media544.css"/>
+    <link rel="stylesheet" href="./public/css/media700.css"/>
     <link rel="stylesheet" href="./public/css/media768.css"/>
     <link rel="stylesheet" href="./public/css/media992.css"/>
     <link rel="stylesheet" href="./public/css/media1024.css"/>
+    <link rel="stylesheet" href="./public/css/media1200.css"/>
     <link rel="stylesheet" href="./public/css/media1440.css"/>
     <link rel="stylesheet" href="./public/css/media1900.css"/>
     <link rel="stylesheet" href="./public/css/media2560.css"/>
@@ -49,7 +50,7 @@
 <body>
     <header>
         <div class="jumbotron-common fixed-top bg-white">
-            <p class="logo text-center col-12 mt-3">
+            <p class="logo text-center col-12">
                 <img class="col-8" src="./public/img/Logo.png" alt="logo site">
             </p>
             <h1 class="title-website orange font-italic">Mes P'tites Emplettes Narbonnaises</h1>
@@ -77,38 +78,38 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?action=category">Catégories</a>
                         </li>
-                        <div class="session-users">
+                    </ul>
+                    <ul class="session-users list-unstyled mb-0">
                             <?php
                         if(!empty($_SESSION['mailSubmitSeller'])){
-                            echo '<li class="nav-item-dashboard white">
+                            echo '<li class="nav-item-dashboard white text-center">
                             <a class="nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
                         </li>';
                         }
 
                         if (!empty($_SESSION))  {
-                            echo '<li class="nav-item-logout white"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                            echo '<li class="nav-item-logout white text-center"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
                         } else {
-                            echo '<li class="nav-item-login"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                            echo '<li class="nav-item-login text-center"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
                         }
                         
                         if (!empty($_SESSION['mailSubmitCustomer'])) {
-                            echo '<li class="nav-item-mailCustomer white"><p class ="session text-white text-center">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
+                            echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
-                            echo '<li class="nav-item-subCustomer"><a class="nav-link-fas white text-light" href="index.php?action=getCustomer"><i
+                            echo '<li class="nav-item-subCustomer text-center"><a class="nav-link-fas white text-light" href="index.php?action=getCustomer"><i
                             class="text-light fas fa-user"></i></a></li>';
                         }
 
                         if(!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
-							echo '<li class="nav-item-admin"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
+							echo '<li class="nav-item-admin text-center"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
 							}
 
                         if(!empty($_SESSION['mailSubmitSeller'])){
-                            echo '<li class="nav-item-mailSeller"><p class="session white text-center">Bonjour' . '  ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                            echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center">Bonjour' . '  ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
                             }
                         ?>
-                        </div>
                     </ul>
                 </div>
             </div>
@@ -120,11 +121,11 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <!-- /.container -->
-        <section class="container-expand-lg marketing">
+        <!-- <section class="container-expand-lg marketing"> -->
 
             <?= $content ?>
 
-        </section>
+        <!-- </section> -->
 
     </main>
     <!-- FOOTER -->

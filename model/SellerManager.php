@@ -94,10 +94,8 @@ class SellerManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT company FROM seller WHERE id= ?');
         $req->execute(array($sellerId));
-
         $company = $req->fetch();
-        // var_dump($company);
-        // die();
+        
         return $company;
     }
 

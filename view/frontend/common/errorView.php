@@ -8,7 +8,7 @@ $title = "Erreur"; ?>
 			<div class="col-sm-12 ">
 				<div class="col-sm-10 col-sm-offset-1  text-center">
 					<div class="four_zero_four_bg">
-						<h1 class="text-center text-primary">ERREUR</h1>
+						<h1 class="text-center text-primary">OOPS !</h1>
 
 
 					</div>
@@ -20,8 +20,7 @@ $title = "Erreur"; ?>
 
 						<p class="h4">La page que vous recherchez n'est pas disponible!</p>
 
-						<a href="index.php?action=home" class="link_404 h5">Retourner à l'accueil... C'est plus prudent
-							!</a>
+						<a href="index.php?action=home" class="link_404 h5">Retourner à l'accueil... C'est plus prudent !</a>
 					</div>
 				</div>
 			</div>

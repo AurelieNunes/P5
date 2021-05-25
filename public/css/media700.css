@@ -1,0 +1,42 @@
+/*
+----------- MAX - WIDTH 700 px ------------*/
+@media (min-width:700px) {
+
+    .navbar-common {
+        top: 20%;
+    }
+
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #manageAllSellers, #updateAccountCustomer {
+        margin-top: 40%;
+    }
+
+    #adminPanel {
+        margin-top: 34%;
+    }
+
+    #adminSeller {
+        margin-top: 272px;
+    }
+
+    .jumbotronAdmin {
+        margin-bottom: 3%;
+    }
+
+    .form-submit-customer {
+        padding-top: 10%;
+        padding-bottom: 8%;
+    }
+
+    .navbar-customer {
+        top: 18%;
+    }
+
+    #accountCustomer {
+        margin-top: 38%;
+    }
+
+    .infoCustomer {
+        margin-top: 9%;
+        margin-bottom: 9%;
+    }
+}

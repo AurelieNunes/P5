@@ -2,11 +2,15 @@
 ----------- MAX - WIDTH 1440 px ------------*/
 @media (min-width:1440px) 
 {
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #accountCustomer, #updateAccountCustomer, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
-        margin-top: 20%;
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
+        margin-top: 16%;
     }
 
+    .jumbotron-dashboard {
+        margin-bottom: 1.5%;
+    }
 
+    
     /* CARDSELLER */
     .presentation-shop-expand-lg {
         display: flex;
@@ -54,23 +58,23 @@
     .navbar-admin {
         top: 15%;
     }
-    
-    .jumbotron-dashboard h1 {
-         margin-bottom: 20px;
-    }
 
     #updateAccountCustomer .h2, #accountCustomer .h2, #manageAllSellers .card, #manageAllItems .card .card-body, .jumbotronAllItems, #manageAllSellers .jumbotron {
         width: 50%;
         margin: auto;
     }
 
+    #accountCustomer {
+        margin-top: 20%;
+    }
+
+    #updateAccountCustomer {
+        margin-top: 21%;
+    }
+
     /* SELLER */
     #createItem, #managerBlockItems, #viewItem, #updateSeller, #success, #error  {
         margin-top: 16%;
-    }
-
-    .jumbotron-dashboard {
-        margin-bottom: 5%;
     }
 
     .footer-seller {

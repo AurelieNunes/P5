@@ -13,8 +13,7 @@
 
 <div id="updateAccountCustomer">
 	<h1 class="h2 text-center bg-primary pt-2 pb-2 pr-2 pl-2 white col-12">Mettre à jour mes informations</h1>
-	<form class="form-submit-customer d-flex flex-column col-10"
-		action="index.php?action=submitUpdateCustomer&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
+	<form class="form-submit-customer d-flex flex-column col-10" action="index.php?action=submitUpdateCustomer&amp;id=<?=intval($_SESSION['id']); ?>" method="POST">
 
 		<label for="ref">Adresse</label>
 		<input type="text" class="mb-2 col-10" name="addressCustomer" />

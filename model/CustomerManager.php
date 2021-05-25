@@ -112,7 +112,7 @@ class CustomerManager extends Manager
      * @param int $cpCustomer
      * @param int $telCustomer
      * @param int $customerId
-     * @return boolean //false?
+     * @return boolean
      */
     public function updateCustomer(string $addressCustomer, string $cpCustomer, string $cityCustomer, string $telCustomer, int $customerId)
     {

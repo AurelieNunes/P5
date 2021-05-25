@@ -75,7 +75,7 @@ class WeatherWidget {
 
   setHtmlWidget(main, name, weather) {
     const { createNewHTMLElement, weatherWidgetHTML } = this;
-    const { temp, temp_max, temp_min } = main;
+    const { temp } = main;
     const { description, id } = weather[0];
     const image = this.getImageToDisplay(id);
 
@@ -90,22 +90,7 @@ class WeatherWidget {
         className: "widgetCurrentTemp",
       }
     );
-    // createNewHTMLElement(
-    //   "p",
-    //   `Température min: ${temp_min} °c`,
-    //   weatherWidgetHTML,
-    //   {
-    //     className: "widgetMinTemp",
-    //   }
-    // );
-    // createNewHTMLElement(
-    //   "p",
-    //   `Température max: ${temp_max} °c`,
-    //   weatherWidgetHTML,
-    //   {
-    //     className: "widgetMaxTemp",
-    //   }
-    //);
+
     createNewHTMLElement("p", description, weatherWidgetHTML, {
       className: "widgetCurrentWeather",
     });

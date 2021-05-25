@@ -2,12 +2,21 @@
 ----------- MAX - WIDTH 425 px ------------*/
 @media (min-width:425px)
 {
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #manageAllSellers, #accountCustomer, #updateAccountCustomer, #adminPanel {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #manageAllSellers, #adminPanel {
         margin-top: 45%;
     }
 
-    .navbar-common, .navbar-customer {
+    .navbar-common, .navbar-customer, .navbar-seller {
         top: 12%;
+    }
+
+    #accountCustomer, #updateAccountCustomer {
+        margin-top: 54%;
+    }
+
+    #adminSeller {
+        margin-top: 191px;
+        margin-bottom: 18px;
     }
 
     .jumbotron-common, .jumbotron-customer{
@@ -39,4 +48,11 @@
         width: 80%;
         margin: auto;
     }
+
+    .jumbotron-dashboard {
+        margin-bottom: 18%;
+        height: 10%;
+    }
+
+
 }

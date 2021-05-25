@@ -12,19 +12,17 @@
 					<p>Prénom : <?= $customerCo['firstName']; ?></p>
 					<p>Adresse : <?= $customerCo['addressCustomer']; ?></p>
 					<p>Code Postal : <?= $customerCo['cpCustomer']; ?>
-						<p>Ville : <?= $customerCo['cityCustomer']; ?></p>
-						<p>Tel : <?= $customerCo['telCustomer']; ?></p>
-						<p>Mail : <?= $customerCo['mail']; ?></p>
+					<p>Ville : <?= $customerCo['cityCustomer']; ?></p>
+					<p>Tel : <?= $customerCo['telCustomer']; ?></p>
+					<p>Mail : <?= $customerCo['mail']; ?></p>
 				</div>
 			</li>
 		</ul>
 		<p class="update-link text-center">
-			<a href="index.php?action=displayUpdateCustomer&amp;id=<?= $customerCo['id']; ?>">Modifier mes
-				informations</a>
+			<a href="index.php?action=displayUpdateCustomer&amp;id=<?= $customerCo['id']; ?>">Modifier mes informations</a>
 		</p>
 		<p class="delete-link text-center">
-			<a href="index.php?action=deleteAccountCustomer&amp;id=<?= $customerCo['id']; ?>">Supprimer mon
-				compte</a>
+			<a href="index.php?action=deleteAccountCustomer&amp;id=<?= $customerCo['id']; ?>">Supprimer mon compte</a>
 		</p>
 	</div>
 </section>

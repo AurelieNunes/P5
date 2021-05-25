@@ -23,7 +23,6 @@
 
     #widget {
         height: 113px;
-        background-size: cover;
     }
 
     .session-users, .productSeller, #subscribeForms, #loginForms {
@@ -46,6 +45,10 @@
 
     .session {
         margin-bottom: 0rem;
+    }
+
+    #adminSeller .headPost {
+        margin-bottom: 11px;
     }
 
     .navbar-brand, .navbar-nav {
@@ -136,6 +139,10 @@
         width: 70%;
     }
 
+    #listingSellers .list-group .card .infoCard, #listingSellers .card .infoCard {
+        display: flex;
+    }
+
     .listing .card {
         width: 60%;
     }
@@ -206,12 +213,17 @@
     }
 
     #accountCustomer, #updateAccountCustomer {
-        margin-top: 30%;
+        margin-top: 26%;
+    }
+
+    .infoCustomer {
+        margin-top: 5%;
+        margin-bottom: 10%;
     }
 
     .form-submit-customer {
-        padding-top: 6%;
-        padding-bottom: 7%;
+        padding-top: 8%;
+        padding-bottom: 9%;
     }
 
      /* SUBSCRIBE / LOGIN */
@@ -266,5 +278,8 @@
         margin-bottom: 3%;
     }
 
-
+    /* ABOUT */
+    .picture img {
+        width: 49%;
+    }
 }

@@ -27,8 +27,7 @@
 						<p><u>Prix :</u> <?= $item['price'];?> €</p>
 						<p>Stock : <?= $item['stock'];?></p>
 						<div class="link-ReadMore">
-							<a class="nav-link" href="index.php?action=item&amp;id=<?= $item['id']; ?>">Lire la suite
-								...</a>
+							<a class="nav-link" href="index.php?action=item&amp;id=<?= $item['id']; ?>">Lire la suite ...</a>
 						</div>
 					</li>
 				</div>

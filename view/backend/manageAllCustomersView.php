@@ -35,8 +35,7 @@ $title = "Gérer tous les clients"; ?>
 						<h5 class="modal-title">Supprimer</h5>
 					</div>
 					<div class="modal-body">
-						<p>Voulez-vous vraiment supprimer
-							<?=  $customers['firstName']; ?>?</p>
+						<p>Voulez-vous vraiment supprimer <?=  $customers['firstName']; ?>?</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary"> 

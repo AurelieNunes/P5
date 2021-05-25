@@ -9,33 +9,26 @@
     <div class="mx-auto">
 
         <div id="updateBlock">
-            <form class="d-flex flex-column col-10 m-auto"
-                action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>" method="POST">
+            <form class="d-flex flex-column col-10 m-auto" action="index.php?action=submitUpdate&amp;id=<?= intval($item['id']); ?>" method="POST">
 
                 <label for="ref">Référence</label>
-                <input type="text" class="mb-2 col-6" name="ref" id="ref"
-                    value="<?= htmlspecialchars($item['ref']); ?>" />
+                <input type="text" class="mb-2 col-6" name="ref" id="ref" value="<?= htmlspecialchars($item['ref']); ?>" />
 
-                <label for="name">Nom du produit : </label>
-                <input class="mb-2 col-10" type="text" name="nameItem"
-                    value="<?= htmlspecialchars($item['nameItem']); ?>" />
+                <label for="nameItem">Nom du produit : </label>
+                <input class="mb-2 col-10" type="text" name="nameItem" value="<?= htmlspecialchars($item['nameItem']); ?>" />
 
-                <label for="description">Description </label>
-                <textarea name="descriptionItem" rows="20" cols="40" class="mb-3"
-                    id="descriptionItemUpdate"><?= htmlspecialchars($item['descriptionItem']); ?></textarea>
+                <label for="descriptionItemUpdate">Description </label>
+                <textarea name="descriptionItem" rows="20" cols="40" class="mb-3" id="descriptionItemUpdate"><?= htmlspecialchars($item['descriptionItem']); ?></textarea>
 
                 <div class="infos d-flex flex-column col-10 m-auto">
                     <label for="price" class="mr-2">Prix</label>
-                    <input class="mb-2 col-4 mr-2" type="number" name="price" id="price"
-                        value="<?= htmlspecialchars($item['price']); ?>" />
+                    <input class="mb-2 col-4 mr-2" type="number" name="price" id="price" value="<?= htmlspecialchars($item['price']); ?>" />
 
                     <label for="size" class="mr-2">Taille</label>
-                    <input class="mb-2 col-4 mr-2" type="text" name="size" id="size"
-                        value="<?= htmlspecialchars($item['size']); ?>" />
+                    <input class="mb-2 col-4 mr-2" type="text" name="size" id="size" value="<?= htmlspecialchars($item['size']); ?>" />
 
                     <label for="stock" class="mr-2">Stock</label>
-                    <input class="mb-2 col-4 mr-2" type="number" name="stock" id="stock"
-                        value="<?= htmlspecialchars($item['stock']); ?>" />
+                    <input class="mb-2 col-4 mr-2" type="number" name="stock" id="stock" value="<?= htmlspecialchars($item['stock']); ?>" />
                 </div>
 
                 <button class="btn btn-primary mb-4 mx-auto text-white" type="submit" value="Modifier">Modifier</button>
