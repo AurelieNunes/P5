@@ -35,7 +35,6 @@
 
     <!--CSS -->
     <link rel="stylesheet" href="./public/css/style.css" />
-    <link rel="stylesheet" href="./public/css/media375.css"/>
     <link rel="stylesheet" href="./public/css/media425.css"/>
     <link rel="stylesheet" href="./public/css/media478.css"/>
     <link rel="stylesheet" href="./public/css/media544.css"/>
@@ -44,52 +43,74 @@
     <link rel="stylesheet" href="./public/css/media992.css"/>
     <link rel="stylesheet" href="./public/css/media1024.css"/>
     <link rel="stylesheet" href="./public/css/media1200.css"/>
-    <link rel="stylesheet" href="./public/css/media1440.css"/>
     <link rel="stylesheet" href="./public/css/media1900.css"/>
-    <link rel="stylesheet" href="./public/css/media2560.css"/>
 
 </head>
 
 <body>
     <header>
         <div class="jumbotronAdmin fixed-top bg-white">
-            <p class="logo-admin text-center col-12">
+            <p class="logo-admin text-center col-12 mb-0">
                 <img class="col-8" src="./public/img/Logo.png" alt="logo site">
             </p>
+            <h1 class="title-website orange font-italic mb-0">Mes P'tites Emplettes Narbonnaises</h1>
+            <div id="widget" class="white">
+                <div class="widgetCityName"></div>
+                <div class="widgetCurrentTemp"></div>
+                <div class="widgetCurrentWeather"></div>
+            </div>
         </div>
-        <nav class="navbar navbar-admin navbar-expand-lg navbar-light bg-orange fixed-top">
+
+        <nav class="navbar navbar-expand-lg navbar-admin navbar-light bg-orange fixed-top">
             <div class="container-fluid">
-                <h1 class="navbar-brand white">
-                    <?php if(!empty($_SESSION['mailSubmitSeller'])){
-                        echo '<p class="session white text-center">'.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p>';
-                        }
-                    ?>
-                </h1>
-                <button class="navbar-toggler white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand white" href="index.php?action=home">Accueil</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 white">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="index.php?action=listSellers">Commerçants</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?action=category">Catégories</a>
+                        </li>
+                    </ul>
+                    <ul class="session-users list-unstyled mb-0">
                         <?php
-                            if(!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
-							echo '<li class="nav-item-admin"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
+                       
+                        
+                        if (!empty($_SESSION['mailSubmitCustomer'])) {
+                            echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center mb-0">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
+                        }
+
+                        if(!empty($_SESSION['mailSubmitCustomer'])){
+                            echo '<li class="nav-item-subCustomer text-center"><a class="nav-link-fas white text-light" href="index.php?action=getCustomer"><i
+                            class="text-light fas fa-user"></i></a></li>';
+                        }
+
+                        if(!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
+							echo '<li class="nav-item-admin text-center"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
 							}
 
+                        if(!empty($_SESSION['mailSubmitSeller'])){
+                            echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center mb-0">Bonjour' . '  ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                            }
+
+                         
                             if (!empty($_SESSION))  {
-                                echo '<li class="nav-item-logout white"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                                echo '<li class="nav-item-logout white text-center"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
                             } else {
-                                echo '<li class="nav-item-login"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                                echo '<li class="nav-item-login text-center"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
                             }
                         ?>
+                    </ul>
                 </div>
-                </ul>
-            </div>
             </div>
         </nav>
-
-
     </header>
 
     <main class="main-template">
@@ -97,7 +118,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <!-- /.container -->
-        <section class="container-expand-lg marketing">
+        <section class="container marketing">
 
             <?= $content ?>
 
@@ -106,7 +127,7 @@
     </main>
     <!-- FOOTER -->
     <footer>
-        <nav class="navbar-footer-admin navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
+        <nav class="navbar-admin-footer navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
             <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
                 <li class="nav-item-expand-lg active">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none"
@@ -120,7 +141,6 @@
                         <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </footer>

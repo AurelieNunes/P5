@@ -4,8 +4,8 @@ $title = "Panel d'administration"; ?>
 <?php ob_start(); ?>
 
 <section id="adminPanel">
-  <div class="jumbotronAdmin">
-    <h1 class="text-center bg-orange text-white">
+  <div class="jumbotron-admin">
+    <h1 class="text-center bg-orange text-white mb-5">
       Panel d'administration
     </h1>
   </div>

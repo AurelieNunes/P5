@@ -17,7 +17,6 @@
 
     .title-website {
         font-size: 2rem;
-        width: 51%;
         height: 30px;
     }
 
@@ -124,7 +123,7 @@
         width: 40%;
     }
 
-    .img-sellerShop, .form-submit-customer label, #category .card .card-img-top, #About .picture, .logo-admin {
+    .img-sellerShop, .form-submit-customer label, #category .card .card-img-top, #About .picture {
         width: 50%;
     }
 
@@ -135,7 +134,7 @@
     }
 
     /* LISTSELLERVIEW */
-    #listingSellers .list-group .card,  #listingSellers .card, .logo-admin img {
+    #listingSellers .list-group .card,  #listingSellers .card {
         width: 70%;
     }
 
@@ -208,17 +207,13 @@
     }
 
     /* ABOUTVIEW */
-    #About, #adminPanel {
+    #About {
         margin-top: 20%;
     }
 
     #accountCustomer, #updateAccountCustomer {
-        margin-top: 26%;
-    }
-
-    .infoCustomer {
-        margin-top: 5%;
-        margin-bottom: 10%;
+        margin-top: 255px;
+        margin-bottom: 109px;
     }
 
     .form-submit-customer {
@@ -227,9 +222,19 @@
     }
 
      /* SUBSCRIBE / LOGIN */
-     #subscribeFrame, .form-signin-expand-lg {
-        margin-top: 20%;
+    .form-signin-expand-lg {
+        margin-top: 265px;
+        margin-bottom: 134px;
+    }
+
+    #subscribeFrame {
+        margin-top: 220px;
         width: 100%;
+        margin-bottom: 81px;
+    }
+
+    #subscribeFrame p, .login-submit p {
+        width: 51%;
     }
 
     #subscribeFrame img, .login-submit img, .hash-list li {
@@ -246,13 +251,9 @@
         margin-top: 0px!important;
     }
 
-    #error {
-        top: 40px;
-    }
-
     /* VIEW SELLER */
-    #createItem, #managerBlockItems, #viewItem, #updateSeller, #updateItem {
-        margin-top: 22%;
+    #adminSeller {
+        margin-bottom: 85px;
     }
 
     #navbarSupportedContent ul, .session-users {
@@ -269,17 +270,27 @@
     }
 
     /* ADMIN */
-    .navbar-admin {
-        top: 15%;
+    .jumbotronAdmin {
+        height: 120px;
     }
 
-    .returnLink-admin {
-        margin-top: 21%;
-        margin-bottom: 3%;
+    .logo-admin {
+        width: 20%;
     }
 
+    #adminPanel {
+        margin-top: 238px;
+        margin-bottom: 56px;
+    }
+    
     /* ABOUT */
     .picture img {
-        width: 49%;
+        width: 42%;
+    }
+
+    /* ERROR */
+    .page_404 {
+        margin-top: 220px;
+        margin-bottom: 15px;
     }
 }

@@ -1,15 +1,19 @@
 /* 
 ----------- MAX - WIDTH 1440 px ------------*/
 @media (min-width:1440px) 
-{
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
-        margin-top: 16%;
+{  
+    .form-signin-expand-lg {
+        margin-top: 235px;
+        margin-bottom: 121px;
     }
 
-    .jumbotron-dashboard {
-        margin-bottom: 1.5%;
+    #subscribeFrame {
+        margin-bottom: 56px;
     }
 
+    #accountCustomer, #updateAccountCustomer {
+        margin-top: 252px;
+    }
     
     /* CARDSELLER */
     .presentation-shop-expand-lg {
@@ -23,25 +27,7 @@
         width: 50%;
     } 
 
-    .form-submit-customer {
-        padding-top: 3%;
-        padding-bottom: 7%;
-    }
-
-    .infoCustomer {
-        margin-top: 4%;
-        margin-bottom: 5%;
-    }
-
-    .footer-seller {
-        margin-top: 7.5%;
-    }
-
-    .returnLink {
-        margin-top: 14%;
-    }
-
-    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg, .logo-admin img, .listItems .list-group .card, .listItems .card {
+    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg, .listItems .list-group .card, .listItems .card {
         width: 60%;
     }
 
@@ -49,35 +35,11 @@
         width: 80%;
     }
 
-     /* SUBSCRIBE / LOGIN */
-    #subscribeFrame, .form-signin-expand-lg, .returnLink-admin {
-        margin-top: 15%; 
+    #adminSeller {
+        margin-bottom: 60px;
     }
 
-    /* ADMIN */
-    .navbar-admin {
-        top: 15%;
-    }
-
-    #updateAccountCustomer .h2, #accountCustomer .h2, #manageAllSellers .card, #manageAllItems .card .card-body, .jumbotronAllItems, #manageAllSellers .jumbotron {
-        width: 50%;
-        margin: auto;
-    }
-
-    #accountCustomer {
-        margin-top: 20%;
-    }
-
-    #updateAccountCustomer {
-        margin-top: 21%;
-    }
-
-    /* SELLER */
-    #createItem, #managerBlockItems, #viewItem, #updateSeller, #success, #error  {
-        margin-top: 16%;
-    }
-
-    .footer-seller {
-        margin-top: 2.5%;
+    #createItem {
+        margin-top: 210px;
     }
 }

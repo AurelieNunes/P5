@@ -7,15 +7,6 @@
     margin-top: 18%;
 }
 
-.infoCustomer {
-    margin-top: 5%;
-    margin-bottom: 8%;
-}
-
-#accountCustomer, #updateAccountCustomer {
-    margin-top: 22%;
-}
-
 .form-submit-customer {
     padding-top: 8%;
     padding-bottom: 7%;
@@ -29,7 +20,7 @@
     margin-bottom: 5%;
 }
 
-#About, #adminPanel {
+#About {
     margin-top: 16%;
 }
 
@@ -42,6 +33,19 @@
 }
 
 .form-signin-expand-lg {
-    margin-bottom: 119px;
+    margin-bottom: 230px;
+}
+
+#subscribeFrame, .form-signin-expand-lg {
+    margin-top: 151px;
+}
+
+/* ADMIN */
+#adminPanel {
+    margin-top: 230px;
+}
+
+#adminSeller {
+    margin-bottom: 72px;
 }
 }

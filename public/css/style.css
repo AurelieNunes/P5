@@ -1,34 +1,4 @@
 /* ---------------------------------------- */
-/* ==            SUMMARY           		    */
-/*----------------------------------------- */
-
-/* L23		- 1 - Color codes				*/
-/* L45		- 2 - Définition Polices        */
-/* L59		- 3 - Éléments Principaux       */
-/* L71		- 4	- Class 				    */
-/* L245		- 5 - Header    				*/
-/* L273		- 6 - Section 1					*/
-/* L302		- 7 - Section 2					*/
-/* L402		- 8 - Section 3		            */
-/* L551		- 9 - Footer        			*/
-
-/*------------------------------------------*/
-/*==			   COLOR CODES 		        */
-/*------------------------------------------*/
-/* orange #ff9900 texte                     */
-/* white                                    */
-/* primary  	                            */
-/* ---------------------------------------- */
-/* ==              BASE                     */
-/*----------------------------------------  */
-
-
-
-
-
-
-
-/* ---------------------------------------- */
 /* == 		          CLASS 			    */
 /*----------------------------------------- */
 
@@ -45,27 +15,30 @@
 .bg-orange {
     background-color: #ff9900;
 }
+
 /* ---------------------------------------- */
-/* TEMPLATE */
-header{
-    height: 30%;
+/* == 		     TEMPLATE 		    	    */
+/*----------------------------------------- */
+
+/* JUMBOTRON */
+.jumbotronAdmin, .jumbotron-common, .jumbotron-customer, .jumbotron-seller {
+    height: 80px;
 }
 
-.jumbotron-common, .jumbotron-customer, .jumbotron-dashboard, .jumbotron-admin {
-    height: 10%;
-}
-
-.jumbotron-common .logo, .jumbotron-seller .logo, .logo-admin, .jumbotron-customer .logo {
+/* LOGO */
+.logo-common, .jumbotron-seller .logo, .logo-admin, .jumbotron-customer .logo, .jumbotron-seller .logo  {
     height: 100%;
-    width: 100%;
-    display: flex;
-}
-
-.jumbotron-common .logo img, .jumbotron-seller .logo img, .logo-admin img, .jumbotron-customer .logo img {
-    margin: auto;
     width: 80%;
+    display: flex;
+    margin: auto;
 }
 
+.logo-common img, .jumbotron-seller .logo img, .logo-admin img, .jumbotron-customer .logo img, .jumbotron-seller .logo img {
+    margin: auto;
+    width: 100%;
+}
+
+/* TITLE & WIDGET */
 .title-website, #widget {
     visibility: hidden;
     height: 0px;
@@ -76,13 +49,9 @@ header{
     background-position: top!important;
 }
 
-.navbar-common, .navbar-customer, .navbar-seller, .navbar-admin {
-    top: 10%;
-}
-
-.jumbotron-dashboard {
-    margin-bottom: 20%;
-    height: 12%;
+/* NAVBAR */
+.navbar-admin, .navbar-common, .navbar-customer, .navbar-seller {
+    top: 80px;
 }
 
 .navbar-light .navbar-brand,.navbar-light .navbar-toggler, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
@@ -93,91 +62,58 @@ header{
     float: right;
 }
 
-/* HOMEVIEW - CATEGORYLIST LOGIN - SUBSCRIBEVIEW */
-.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame, #managerBlockItems, #viewItem, #updateSeller, .returnLink {
-    margin-top: 50%;
+/*============== COMMON ==================*/
+/* DESCRIPTION PRODUCT */
+#detailProduct {
+margin-top: 190px;
+margin-bottom: 88px;
 }
 
-/* LOGIN - SUBSCRIBEVIEW */
-#createItem {
-    margin-top: 48%;
+/* LOGINVIEW - SUBSCRIBEVIEW */
+.form-signin-expand-lg {
+    margin-top: 134px;
 }
 
-.returnLink-admin {
-    margin-top: 53%;
+/* HOMEVIEW - CATEGORYLIST */
+.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #subscribeFrame, #managerBlockItems, #viewItem, #updateItem, #updateSeller,.returnLink, #createItem {
+    margin-top: 150px;
+}
+
+#viewItem {
+    margin-bottom: 37px;
+}
+
+#adminSeller {
+    margin-top: 230px;
+    margin-bottom: 147px;
+}
+
+#adminSeller .headPost {
+    margin-top: 50px;
 }
 
 /* SELLERVIEW */
+#accountCustomer {
+    margin-top: 200px;
+    margin-bottom: 96px;
+}
+
+#accountCustomer .h2 {
+    margin-bottom: 84px;
+}
+
 .hash-list {
     list-style: none;
 }
 
-/* ACCOUNT CLIENT VIEW LOGIN / SUBSCRIBE VIEW */
-#updateAccountCustomer{
-    margin-top: 60%;
-}
-
-#accountCustomer {
-    margin-top: 71%;
-}
-
-.infoCustomer {
-    margin-top: 20%;
-    margin-bottom: 32%;
-}
-
-.infoCustomer ul {
-    padding: 0;
-    margin: auto;
-    width: 80%;
-}
-
-.form-submit-customer {
-    width: 80%;
-    padding-top: 25%;
-    padding-bottom: 24%;
-    margin: auto;
-}
-
-/* SELLER DASHBOARD */
-#managerBlock {
-    margin-top: 35%;
-}
-
 /* ADMIN */
-.navbar-brand, .session {
-    margin: 0;
+#adminPanel {
+    margin-top: 200px;
+    margin-bottom: 69px;
 }
 
-#adminSeller {
-    margin-top: 191px;
-    margin-bottom: 31px;
-}
-
-.jumbotronAdmin {
-    margin-bottom: 12%;
-    height: 10%;
-}
-
-.jumbotron-dashboard {
-    margin-bottom: 22%;
-    height: 10%;
-}
-
-#addItem, #listItems, #accountSeller, #adminSeller .headPost {
-    margin-bottom: 40px;
-}
-
-.returnLink-admin {
-    margin-bottom: 10%;
-}
-
-.jumbotronAllItems h1, .jumbotronAdmin .card, .navbar-footer-admin {
-    margin-bottom: 15%;
-}
-
-#manageAllCustomers {
-    margin-bottom: 50%;
+#manageAllSellers, #manageAllItems, #manageAllCustomers {
+    margin-top: 150px;
 }
 
 /*======================
@@ -188,7 +124,7 @@ header{
     padding:40px 0; 
     background:#fff; 
     font-family: 'Arvo', serif;
-    margin-top: 41%;
+    margin-top: 170px;
 }
 
 .page_404  img { 
@@ -223,18 +159,17 @@ header{
     margin-top:-50px;
 }
 
-/* ABOUT */
+/* ABOUTVIEW */
 #About {
-    margin-top: 43%;
+    margin-top: 167px;
 }
 
 .picture {
-    width: 50%;
-    margin-top: 13%;
+    width: 30%;
 }
 
 .picture img {
-    width: 60%;
+    width: 100%;
 }
 
 #AboutMe {
@@ -243,11 +178,7 @@ header{
     margin: auto;
 }
 
-#adminPanel {
-    margin-top: 200px;
-    margin-bottom: 78px;
-}
-
-.navbar-footer-admin {
-    margin-bottom: 15%;
+/* ALERT */
+.alert-dismissible {
+    padding-right: 0rem;
 }

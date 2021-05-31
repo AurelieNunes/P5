@@ -50,10 +50,10 @@
 <body>
     <header>
         <div class="jumbotron-common fixed-top bg-white">
-            <p class="logo text-center col-12">
+            <p class="logo-common m-auto text-center col-12 mb-0">
                 <img class="col-8" src="./public/img/Logo.png" alt="logo site">
             </p>
-            <h1 class="title-website orange font-italic">Mes P'tites Emplettes Narbonnaises</h1>
+            <h1 class="title-website orange font-italic mb-0">Mes P'tites Emplettes Narbonnaises</h1>
             <div id="widget" class="white">
                 <div class="widgetCityName"></div>
                 <div class="widgetCurrentTemp"></div>
@@ -81,7 +81,7 @@
                     </ul>
                     <ul class="session-users list-unstyled mb-0">
                             <?php
-                        if(!empty($_SESSION['mailSubmitSeller'])){
+                        if(!empty($_SESSION['mailSubmitSeller']) && $_SESSION['isAdmin'] != '1'){
                             echo '<li class="nav-item-dashboard white text-center">
                             <a class="nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
                         </li>';
@@ -117,20 +117,13 @@
     </header>
 
     <main class="main-template">
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-        <!-- /.container -->
-        <!-- <section class="container-expand-lg marketing"> -->
 
-            <?= $content ?>
-
-        <!-- </section> -->
+        <?= $content ?>
 
     </main>
     <!-- FOOTER -->
     <footer>
-        <nav class="navbar-common navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
+        <nav class="navbar-common-footer navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
             <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
                 <li class="nav-item-expand-lg active">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none"

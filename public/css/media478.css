@@ -1,39 +1,9 @@
 /*
 ----------- MAX - WIDTH 478 px ------------*/
 @media (min-width:478px) {
-    .jumbotron-common, .jumbotron-customer{
-        height: 16%;
-    }
-
-    .navbar-common, .navbar-customer, .navbar-admin {
-        top: 16%;
-    }
-
-    #adminSeller {
-        margin-bottom: 8px;
-    }
-
-    #adminPanel {
-        margin-top: 214px;
-        margin-bottom: 40px;
-    }
-
-    .jumbotronAdmin {
-        margin-bottom: 12%;
-        height: 16%;
-    }
-
-    .form-submit-customer {
-        padding-top: 16%;
-        padding-bottom: 17%;
-    }
-
-    #accountCustomer {
-        margin-top: 48%;
-    }
-
-    .infoCustomer {
-        margin-top: 14%;
-        margin-bottom: 20%;
+    /* ERROR */
+    .page_404 {
+    margin-top: 190px;
+    margin-bottom: 26px;
     }
 }

@@ -2,27 +2,24 @@
 ----------- MAX - WIDTH 768 px ------------*/
 @media (min-width:768px)
 {
-    .jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotron-dashboard{
+    .jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotronAdmin {
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
-        height: 15%;
+        height: 132px;
         align-items: center;
     }
 
-    .jumbotron-common .logo, .jumbotron-seller .logo, .jumbotron-customer .logo {
-        height: auto;
-        width: 25%!important;
-        display: flex;
+    .logo-common, .jumbotron-seller .logo, .jumbotron-customer .logo, .jumbotronAdmin .logo {
+        width: 20%!important;
     }
 
-    .logo img, .jumbotron-dashboard .logo img, .jumbotron-customer .logo img {
+    .logo img, .jumbotron-dashboard .logo img, .jumbotron-customer .logo img, .jumbotronAdmin .logo img {
         width: 90%;
     }
 
     .title-website {
         visibility: visible;
-        width: 45%;
+        width: 55%;
         text-align: center;
         height: 50%;
     }
@@ -31,6 +28,7 @@
         visibility: visible;
         width: 20%;
         height: 100px;
+        margin-right: 5px;
     }
 
     .widgetCityName, .widgetCurrentWeather {
@@ -42,15 +40,11 @@
     }
 
     .navbar-common, .navbar-customer, .navbar-seller {
-        top: 15%;
+        top: 132px;
     }
 
     .featurette-expand-lg-presentation, #categoryList, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame {
         margin-top: 25%;
-    }
-
-    #accountCustomer, #updateAccountCustomer {
-        margin-top: 35%;
     }
 
     /* HOMEVIEW */
@@ -87,11 +81,11 @@
     }
 
     .hash-list li {
-        width: 20%;
+        width: 22%;
     }
 
     /* ITEMS BY CATEGORY */
-    #category .card, #category .card .card-img-top, .allProduct .description-product, #subscribeFrame .h4, .login-submit .h4, .jumbotronAdmin h1 {
+    #category .card, #category .card .card-img-top, .allProduct .description-product, #subscribeFrame .h4, .login-submit .h4 {
         width: 80%;
         margin: auto;
     }
@@ -110,11 +104,6 @@
         padding-bottom: 10%;
     }
 
-    .infoCustomer {
-        margin-top: 5%;
-        margin-bottom: 11%;
-    }
-
     .headPost h3 {
         font-size: 2.3rem;
     }
@@ -127,16 +116,8 @@
         margin-top: 5%;
     }
 
-    .card-AllSellers, #adminPanel .card {
-        margin-top: 4%;
-    }
-
     .returnLink {
         margin-top: 24%;
-    }
-
-    #manageAllSellers, .jumbotronAllItems, #manageAllCustomers{
-        margin-top: 2%;
     }
 
     #updateBlock {
@@ -153,50 +134,21 @@
     }
     
     /* ADMIN */
-    .jumbotronAdmin {
-        height: 18%;
-        margin-bottom: 0px;
-    }
-    
-    .navbar-admin {
-        top: 18%;
-    }   
 
     .returnLink-admin {
-        margin-top: 32%;
-        margin-bottom: 5%;
-    }
-    
-    #adminPanel {
-        margin-top: 252px;
-        margin-bottom: 0px;
+        margin-top: 215px;
     }
 
-    #manageAllCustomer {
-        margin-bottom: 0%;
+    .logo-admin {
+        height: 100%;
+        width: 30%;
+        margin: unset;
     }
 
-    .jumbotronAllItems h1 {
-        margin-bottom: 4%;
-    }
-
-    #manageAllCustomers {
-        margin-bottom: 10%;
-    }
-
-    .navbar-footer-admin {
-       margin-top: 0%;
-    }
 
     /* SELLLER */
     #adminSeller {
-        margin-top: 250px;
-        margin-bottom: 0px;
-    }
-
-    .jumbotron-dashboard {
-        margin-bottom: 8%;
-        height: 10%;
+        margin-bottom: 63px;
     }
 
     #adminSeller .headPost {
@@ -208,7 +160,7 @@
     }
 
     #createItem, #managerBlockItems, #viewItem, #updateSeller {
-        margin-top: 26%;
+        margin-top: 200px;
     }
 
     .navbar-nav {
@@ -217,16 +169,7 @@
 
     /* ERROR */
     .page_404 {
-        margin-top: 22%;
-    }
-
-    .page_404 .container {
-        margin: auto;
-        width: 100%;
-    }
-
-    .page_404 .container .row .col-sm-12 .col-sm-10 {
-        margin: auto;
+        margin-top: 212px;
     }
 
     /* ALERTE */

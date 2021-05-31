@@ -1,50 +1,52 @@
 /*
 ----------- MAX - WIDTH 544 px ------------*/
 @media (min-width:544px) {
-    .featurette-heading-presentation-expand-lg {
-        width: 80%;
+
+    /* ADMIN */
+    .navbar-admin, .navbar-common, .navbar-customer, .navbar-seller {
+        top: 120px;
+    }
+    
+    #adminPanel {
+        margin-top: 210px;
+        margin-bottom: 52px;
     }
 
-    .jumbotron-common, .jumbotron-customer {
-        height: 18%;
+    #accountCustomer {
+        margin-top: 215px;
     }
 
-    .jumbotron-seller {
-        height: 160px;
-    }
-
-    .navbar-common, .navbar-customer, .navbar-seller {
-        top: 18%;
-    }
-
-    #adminSeller {
-        margin-top: 250px;
-    }
-
-    #adminSeller .headPost {
-        margin-bottom: 33px;
+    #viewItem {
+        margin-top: 200px;
     }
 
     #adminSeller {
-        margin-top: 250px;
-        margin-bottom: 18px;
+        margin-top: 230px;
     }
 
-    .jumbotron-dashboard {
-        margin-bottom: 6%;
+    .jumbotronAdmin, .jumbotron-common, .jumbotron-seller {
+        height: 120px;
     }
 
-    .infoCustomer {
-        margin-top: 10%;
-        margin-bottom: 14%;
+    #managerBlockItems {
+        margin-top: 180px;
     }
 
-    .form-submit-customer {
-        padding-top: 12%;
-        padding-bottom: 13%;
+    .login-submit p {
+        width: 60%;
     }
 
-    #updateAccountCustomer {
-        margin-top: 51%;
+    .form-signin-expand-lg {
+        margin-top: 180px;
     }
+
+    .content-seller-expand-lg {
+        align-items: center;
+    }
+
+    /* ALERT */
+    .alert-dismissible {
+        top: 22px;
+    }
+    
 }

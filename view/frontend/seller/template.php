@@ -89,7 +89,7 @@
                                 }
                                 
                                 if (!empty($_SESSION['mailSubmitCustomer'])) {
-                                    echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
+                                    echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center mb-0">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
                                 }
 
                                 if(!empty($_SESSION['mailSubmitCustomer'])){
@@ -102,7 +102,7 @@
                                     }
 
                                 if(!empty($_SESSION['mailSubmitSeller'])){
-                                    echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                                    echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center mb-0">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
                                     }
                         ?>
                     </ul>
@@ -126,7 +126,7 @@
     </main>
     <!-- FOOTER -->
     <footer class="footer-seller">
-        <nav class="navbar-seller navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
+        <nav class="navbar-footer-seller navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
             <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
                 <li class="nav-item-expand-lg active">
                     <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="index.php?action=about">
@@ -138,7 +138,6 @@
                         <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </footer>

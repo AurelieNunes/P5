@@ -1,6 +1,10 @@
 /*
 ----------- MAX - WIDTH 992 px ------------*/
 @media (min-width:992px) {
+    #widget {
+        width: 23%;
+    }
+
     .session-users-sellerView, .session-users {
         display: flex;
         width: 100%;
@@ -15,18 +19,6 @@
         width: 40%;
     }
 
-    #createItem, #managerBlockItems, #viewItem, #updateSeller, #adminPanel {
-        margin-top: 28%;
-    }
-
-    #accountCustomer, #updateAccountCustomer {
-        margin-top: 23%;
-    }
-
-    .jumbotron-dashboard {
-        margin-bottom: 6%;
-    }
-
     .session-users-sellerView .nav-item-logout, .session-users-sellerView .nav-item-mailSeller, .nav-item-dashboard , .nav-item-logout, .nav-item-mailSeller {
         align-self: center;
     }
@@ -35,20 +27,25 @@
         margin: 0;
     }
 
-    .logo-admin {
-        margin: auto;
-    }
-
-    .logo-admin img {
-        margin: auto;
-        width: 50%;
-    }
-
     .session-users {
         font-size: 18px;
     }
 
     #updateItem {
         margin-top: 210px;
+    }
+
+    #accountCustomer {
+        margin-bottom: 0px;
+    }
+
+    /* ADMIN */
+    #adminPanel {
+        margin-top: 203px;
+    }
+
+    /* ERROR */
+    .page_404 {
+        margin-top: 208px;
     }
 }

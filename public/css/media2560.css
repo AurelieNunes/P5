@@ -5,10 +5,6 @@
         font-size: 71px;
     }
 
-    .logo-admin {
-        width: 22%;
-    }
-
     #widget {
         width: 17%;
         height: 230px;
@@ -51,7 +47,7 @@
         font-size: 3rem;
     }
 
-    .price, .stock, .link-seller, .link-ReadMore, .jumbotron-categories, .featurette-product-seller .title-product, #manageAllCustomers .card, .returnLink-admin,.returnLink-seller, .login-submit .submit .h6, #adminPanel .card .card-body .card-title,  #adminPanel .card .card-body .btn, .returnLink-seller .h6   {
+    .price, .stock, .link-seller, .link-ReadMore, .jumbotron-categories, .featurette-product-seller .title-product, #manageAllCustomers .card,.returnLink-seller, .login-submit .submit .h6,.returnLink-seller .h6   {
         font-size: 2rem;
     }
 
@@ -67,7 +63,7 @@
         font-size: 3.5rem;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame, #createItem, #managerBlockItems, #viewItem, #updateSeller {
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #createItem, #managerBlockItems, #viewItem, #updateSeller {
         margin-top: 15%;
     }
 
@@ -120,8 +116,8 @@
 
     /* LOGIN / SUBSCRIBE */
     .form-signin-expand-lg, #subscribeFrame {
-        margin-top: 13%;
-        margin-bottom: 4%;
+        margin-top: 360px;
+        margin-bottom: 137px;
     }
 
     #subscribeFrame img, .login-submit img {
@@ -130,31 +126,6 @@
 
     #login-Seller .h5,  #login-Seller .form .btn, #loginCustomer .h5, #loginCustomer .form .btn, #subscribe-Seller .h5, #subscribe-customer .h5, #subscribe-formSeller .form .btn, #subscribe-formCustomer .form .btn {
         font-size: 3.25rem;
-    }
-
-    /* ADMIN */
-    .logo-admin {
-        width: 70%;
-    }
-
-    #adminPanel {
-        margin-top: 14%;
-    }
-
-    #manageAllSellers .card .card-header {
-        font-size: 2.75rem;
-    }
-
-    #manageAllSellers .card .card-body p, .delete-link {
-        font-size: 1.5rem;
-    }
-
-    #manageAllItems .card-body .description {
-        font-size: 1.5rem;
-    }
-
-    .navbar-footer {
-        margin-top: 22px;
     }
 
     /* SELLER */

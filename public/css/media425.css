@@ -2,42 +2,39 @@
 ----------- MAX - WIDTH 425 px ------------*/
 @media (min-width:425px)
 {
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #manageAllSellers, #adminPanel {
-        margin-top: 45%;
-    }
-
-    .navbar-common, .navbar-customer, .navbar-seller {
-        top: 12%;
-    }
-
-    #accountCustomer, #updateAccountCustomer {
-        margin-top: 54%;
+    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller {
+        margin-top: 180px;
     }
 
     #adminSeller {
-        margin-top: 191px;
-        margin-bottom: 18px;
+        margin-top: 230px;
+        margin-bottom: 142px;
     }
 
-    .jumbotron-common, .jumbotron-customer{
-        height: 12%;
+    #createItem, #updateSeller {
+        margin-top: 170px;
     }
 
-    .infoCustomer {
-        margin-bottom: 19%;
+    .jumbotronAdmin, .jumbotron-common, .jumbotron-customer, .jumbotron-seller {
+        height: 100px;
+    }
+
+    .navbar-customer, .navbar-seller {
+        top: 100px;
+    }
+
+    #accountCustomer {
+        margin-top: 216px;
+        margin-bottom: 117px;
+    }
+
+    #accountCustomer .h2 {
+        margin-bottom: 45px;
     }
 
     .form-submit-customer {
         padding-top: 21%;
         padding-bottom: 22%;
-    }
-
-    #createItem, #managerBlockItems, #viewItem, #updateSeller {
-        margin-top: 35%;
-    }
-
-    #updateBlock {
-        margin-top: 20%;
     }
 
     .returnLink {
@@ -49,10 +46,32 @@
         margin: auto;
     }
 
-    .jumbotron-dashboard {
-        margin-bottom: 18%;
-        height: 10%;
+    /* ABOUT */
+    #About {
+        margin-top: 167px;
+        margin-bottom: 38px;
     }
 
+    /* ADMIN */
+    .navbar-admin, .navbar-common {
+        top: 100px;
+    }
 
+    #adminPanel {
+        margin-top: 196px;
+    }
+
+    #manageAllSellers, #manageAllItems, #manageAllCustomers {
+        margin-top: 180px;
+    }
+
+    /* ERROR */
+    .page_404 {
+        margin-top: 190px;
+    }
+
+    /* ALERT */
+    .alert-dismissible {
+        top: 38px;
+    }
 }

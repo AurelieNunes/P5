@@ -98,7 +98,7 @@
                         }
                         
                         if (!empty($_SESSION['mailSubmitCustomer'])) {
-                            echo '<li class="nav-item-mailCustomer white"><p class ="session text-white text-center">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
+                            echo '<li class="nav-item-mailCustomer white"><p class ="session text-white text-center mb-0">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
                         }
 
                         if(!empty($_SESSION['mailSubmitCustomer'])){
@@ -111,7 +111,7 @@
 							}
 
                         if(!empty($_SESSION['mailSubmitSeller'])){
-                            echo '<li class="nav-item-mailSeller"><p class="session white text-center">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                            echo '<li class="nav-item-mailSeller"><p class="session white text-center mb-0">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
                             }
                         ?>
                     </ul>
@@ -134,18 +134,16 @@
 
     </main>
     <!-- FOOTER -->
-    <footer>
-        <nav class="navbar-common navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
+    <footer class="footer-customer">
+        <nav class="navbar-footer-customer navbar navbar-footer navbar-expand-lg navbar-dark bg-orange">
             <ul class="navbar-nav-expand-lg list-unstyled col-12 m-auto">
                 <li class="nav-item-expand-lg active">
-                    <a class="nav-link-expand-lg text-light text-center text-decoration-none"
-                        href="index.php?action=about">
+                    <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="index.php?action=about">
                         <p class="expand-lg">Qui se cache derrière ce projet ?</p>
                     </a>
                 </li>
                 <li class="nav-item-expand-lg">
-                    <a class="nav-link-expand-lg text-light text-center text-decoration-none"
-                        href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
+                    <a class="nav-link-expand-lg text-light text-center text-decoration-none" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
                         <p class="expand-lg mb-0">Contact</p>
                     </a>
                 </li>
