@@ -9,7 +9,7 @@
 	<div class="mx-auto">
 
 		<div id="updateAccountSeller">
-			<form class="d-flex flex-column col-10 m-auto" action="index.php?action=submitUpdateSeller&amp;id=<?=intval($_SESSION['id']); ?>" method="POST" enctype="multipart/form-data">
+			<form class="d-flex flex-column col-10 m-auto" action="index.php?action=submitUpdateSeller&amp;id=<?= intval($_SESSION['id']); ?>" method="POST" enctype="multipart/form-data">
 
 				<label for="description">Description de ma boutique </label>
 				<textarea name="descriptionShop" rows="10" cols="40" class="mb-3"></textarea>

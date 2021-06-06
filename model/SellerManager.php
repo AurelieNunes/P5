@@ -15,7 +15,7 @@ class SellerManager extends Manager
         $db = $this->dbConnect();
         $req = $db->query('SELECT * FROM seller');
         $sellers = $req->fetchAll();
-        
+
         return $sellers;
     }
 
@@ -41,9 +41,8 @@ class SellerManager extends Manager
         $req = $db->prepare('SELECT mail FROM seller WHERE mail = ?');
         $req->execute(array($mail));
         $mailSeller = $req->fetch();
-
     }
-        
+
 
     /**
      * Check siret number
@@ -95,7 +94,7 @@ class SellerManager extends Manager
         $req = $db->prepare('SELECT company FROM seller WHERE id= ?');
         $req->execute(array($sellerId));
         $company = $req->fetch();
-        
+
         return $company;
     }
 

@@ -3,10 +3,13 @@
 @media (min-width:544px) {
 
     /* ADMIN */
-    .navbar-admin, .navbar-common, .navbar-customer, .navbar-seller {
+    .navbar-admin,
+    .navbar-common,
+    .navbar-customer,
+    .navbar-seller {
         top: 120px;
     }
-    
+
     #adminPanel {
         margin-top: 210px;
         margin-bottom: 52px;
@@ -24,7 +27,9 @@
         margin-top: 230px;
     }
 
-    .jumbotronAdmin, .jumbotron-common, .jumbotron-seller {
+    .jumbotronAdmin,
+    .jumbotron-common,
+    .jumbotron-seller {
         height: 120px;
     }
 
@@ -48,5 +53,5 @@
     .alert-dismissible {
         top: 22px;
     }
-    
+
 }

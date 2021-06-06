@@ -88,7 +88,7 @@ function manageAllItems(): void
 function manageAllSellers(): void
 {
     $sellerManager = new SellerManager();
-    $allSellers = $sellerManager->allSellers();  
+    $allSellers = $sellerManager->allSellers();
 
     require('view/backend/manageAllSellersView.php');
 }

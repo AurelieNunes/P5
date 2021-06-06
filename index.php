@@ -18,10 +18,6 @@ try {
                 displayAbout();
                 break;
 
-            // case 'accountCustomer':
-            //     displayAccountCustomer();
-            //     break;
-
             case 'addCustomer':
                 /* subscribe customer */
                 $utils = new Utils();
@@ -32,21 +28,21 @@ try {
                         $_POST['passCustomer'] &&
                         $_POST['pass_confirmCustomer']
                 ])) {
-                        if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
-                            if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
-                                addCustomer(
-                                    strip_tags($_POST['lastName']),
-                                    strip_tags($_POST['firstName']),
-                                    strip_tags($_POST['mailCustomer']),
-                                    strip_tags($_POST['passCustomer']),
-                                    strip_tags($_POST['pass_confirmCustomer'])
-                                );
-                            } else {
-                                Header('Location : index.php?action=subscribeCustomer&error=passwordInvalid');
-                            }
+                    if (filter_var($_POST['mailCustomer'], FILTER_VALIDATE_EMAIL)) {
+                        if ($_POST['passCustomer'] == $_POST['pass_confirmCustomer']) {
+                            addCustomer(
+                                strip_tags($_POST['lastName']),
+                                strip_tags($_POST['firstName']),
+                                strip_tags($_POST['mailCustomer']),
+                                strip_tags($_POST['passCustomer']),
+                                strip_tags($_POST['pass_confirmCustomer'])
+                            );
                         } else {
-                            Header('Location : index.php?action=subscribeCustomer&error=invalidMail');
+                            Header('Location : index.php?action=subscribeCustomer&error=passwordInvalid');
                         }
+                    } else {
+                        Header('Location : index.php?action=subscribeCustomer&error=invalidMail');
+                    }
                 } else {
                     echo 'Un des champs est vide !';
                 }
@@ -62,21 +58,21 @@ try {
                         $_POST['passSeller'] &&
                         $_POST['pass_confirmSeller']
                 ])) {
-                     if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
-                            if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
-                                addSeller(
-                                    strip_tags($_POST['companySeller']),
-                                    strip_tags($_POST['siret']),
-                                    strip_tags($_POST['mailSeller']),
-                                    strip_tags($_POST['passSeller']),
-                                    strip_tags($_POST['pass_confirmSeller'])
-                                );
-                            } else {
-                                Header('Location : index.php?action=subscribeSeller&error=passwordInvalid');
-                            }
+                    if (filter_var($_POST['mailSeller'], FILTER_VALIDATE_EMAIL)) {
+                        if ($_POST['passSeller'] == $_POST['pass_confirmSeller']) {
+                            addSeller(
+                                strip_tags($_POST['companySeller']),
+                                strip_tags($_POST['siret']),
+                                strip_tags($_POST['mailSeller']),
+                                strip_tags($_POST['passSeller']),
+                                strip_tags($_POST['pass_confirmSeller'])
+                            );
                         } else {
-                            Header('Location : index.php?action=subscribeSeller&error=invalidMail');
+                            Header('Location : index.php?action=subscribeSeller&error=passwordInvalid');
                         }
+                    } else {
+                        Header('Location : index.php?action=subscribeSeller&error=invalidMail');
+                    }
                 } else {
                     echo 'un des champs est vide !';
                 }
@@ -84,7 +80,7 @@ try {
 
             case 'admin':
                 /* dashboard admin */
-                if (isset($_SESSION) && isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin'] === '1')){
+                if (isset($_SESSION) && isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin'] === '1')) {
                     displayAdmin();
                 } else {
                     throw new Exception('Administrateur non identifié');
@@ -137,10 +133,6 @@ try {
                 descriptionItem($_GET['itemId']);
                 break;
 
-            // case 'displayAccountCustomer':
-            //     displayAccountCustomer();
-            //     break;
-
             case 'displayItemsByCategory':
                 displayItemsByCategory($_GET['category_id']);
                 break;
@@ -158,7 +150,7 @@ try {
                 break;
 
             case 'getCustomer':
-                if(isset($_SESSION) && isset($_SESSION['id'])){
+                if (isset($_SESSION) && isset($_SESSION['id'])) {
                     getCustomerById($_SESSION['id']);
                 } else {
                     displayHome();

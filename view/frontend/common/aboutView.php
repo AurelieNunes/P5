@@ -1,11 +1,10 @@
-<?php $title = "Qui se cache derrière ce projet ?";?>
+<?php $title = "Qui se cache derrière ce projet ?"; ?>
 
-<?php ob_start();?>
+<?php ob_start(); ?>
 
 <section class="mx-auto" id="About">
     <div class="picture mx-auto text-center">
-        <img class="col-8" src="./public/img/logo2.png"
-            alt="Logo ressemblant à une boutique sur laquelle on clique avec la souris de l'ordinateur" />
+        <img class="col-8" src="./public/img/logo2.png" alt="Logo ressemblant à une boutique sur laquelle on clique avec la souris de l'ordinateur" />
     </div>
     <div class="pb-4 text-center" id="AboutMe">
         <h3 class="text-primary"><u>Qui suis-je ?</u></h3>

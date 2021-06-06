@@ -4,7 +4,7 @@
 <section id="accountCustomer">
 	<h1 class="h2 text-center bg-primary pt-2 pb-2 white col-12">Mes informations</h1>
 	<div class="infoCustomer">
-		<a href="index.php?action=getCustomer&amp;id=<?=intval($_SESSION['id']); ?>"></a>
+		<a href="index.php?action=getCustomer&amp;id=<?= intval($_SESSION['id']); ?>"></a>
 		<ul>
 			<li class="card-customer d-flex flex-row mx-auto list-group-item justify-content-around align-items-center">
 				<div class="info-customer">

@@ -1,8 +1,12 @@
 /*
 ----------- MAX - WIDTH 425 px ------------*/
-@media (min-width:425px)
-{
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller {
+@media (min-width:425px) {
+
+    .featurette-expand-lg-presentation,
+    #categoryList,
+    #listingSellers,
+    #category,
+    #cardSeller {
         margin-top: 180px;
     }
 
@@ -11,15 +15,20 @@
         margin-bottom: 142px;
     }
 
-    #createItem, #updateSeller {
+    #createItem,
+    #updateSeller {
         margin-top: 170px;
     }
 
-    .jumbotronAdmin, .jumbotron-common, .jumbotron-customer, .jumbotron-seller {
+    .jumbotronAdmin,
+    .jumbotron-common,
+    .jumbotron-customer,
+    .jumbotron-seller {
         height: 100px;
     }
 
-    .navbar-customer, .navbar-seller {
+    .navbar-customer,
+    .navbar-seller {
         top: 100px;
     }
 
@@ -53,7 +62,8 @@
     }
 
     /* ADMIN */
-    .navbar-admin, .navbar-common {
+    .navbar-admin,
+    .navbar-common {
         top: 100px;
     }
 
@@ -61,7 +71,9 @@
         margin-top: 196px;
     }
 
-    #manageAllSellers, #manageAllItems, #manageAllCustomers {
+    #manageAllSellers,
+    #manageAllItems,
+    #manageAllCustomers {
         margin-top: 180px;
     }
 

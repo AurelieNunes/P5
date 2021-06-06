@@ -21,40 +21,58 @@
 /*----------------------------------------- */
 
 /* JUMBOTRON */
-.jumbotronAdmin, .jumbotron-common, .jumbotron-customer, .jumbotron-seller {
+.jumbotronAdmin,
+.jumbotron-common,
+.jumbotron-customer,
+.jumbotron-seller {
     height: 80px;
 }
 
 /* LOGO */
-.logo-common, .jumbotron-seller .logo, .logo-admin, .jumbotron-customer .logo, .jumbotron-seller .logo  {
+.logo-common,
+.jumbotron-seller .logo,
+.logo-admin,
+.jumbotron-customer .logo,
+.jumbotron-seller .logo {
     height: 100%;
     width: 80%;
     display: flex;
     margin: auto;
 }
 
-.logo-common img, .jumbotron-seller .logo img, .logo-admin img, .jumbotron-customer .logo img, .jumbotron-seller .logo img {
+.logo-common img,
+.jumbotron-seller .logo img,
+.logo-admin img,
+.jumbotron-customer .logo img,
+.jumbotron-seller .logo img {
     margin: auto;
     width: 100%;
 }
 
 /* TITLE & WIDGET */
-.title-website, #widget {
+.title-website,
+#widget {
     visibility: hidden;
     height: 0px;
 }
 
 #widget {
-    background-size: cover!important;
-    background-position: top!important;
+    background-size: cover !important;
+    background-position: top !important;
 }
 
 /* NAVBAR */
-.navbar-admin, .navbar-common, .navbar-customer, .navbar-seller {
+.navbar-admin,
+.navbar-common,
+.navbar-customer,
+.navbar-seller {
     top: 80px;
 }
 
-.navbar-light .navbar-brand,.navbar-light .navbar-toggler, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
+.navbar-light .navbar-brand,
+.navbar-light .navbar-toggler,
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
     color: white;
 }
 
@@ -65,8 +83,8 @@
 /*============== COMMON ==================*/
 /* DESCRIPTION PRODUCT */
 #detailProduct {
-margin-top: 190px;
-margin-bottom: 88px;
+    margin-top: 190px;
+    margin-bottom: 88px;
 }
 
 /* LOGINVIEW - SUBSCRIBEVIEW */
@@ -75,7 +93,18 @@ margin-bottom: 88px;
 }
 
 /* HOMEVIEW - CATEGORYLIST */
-.featurette-expand-lg-presentation,#categoryList, #listingSellers, #category, #cardSeller, #subscribeFrame, #managerBlockItems, #viewItem, #updateItem, #updateSeller,.returnLink, #createItem {
+.featurette-expand-lg-presentation,
+#categoryList,
+#listingSellers,
+#category,
+#cardSeller,
+#subscribeFrame,
+#managerBlockItems,
+#viewItem,
+#updateItem,
+#updateSeller,
+.returnLink,
+#createItem {
     margin-top: 150px;
 }
 
@@ -112,7 +141,9 @@ margin-bottom: 88px;
     margin-bottom: 69px;
 }
 
-#manageAllSellers, #manageAllItems, #manageAllCustomers {
+#manageAllSellers,
+#manageAllItems,
+#manageAllCustomers {
     margin-top: 150px;
 }
 
@@ -120,35 +151,35 @@ margin-bottom: 88px;
     404 page
 =======================*/
 
-.page_404 { 
-    padding:40px 0; 
-    background:#fff; 
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
     font-family: 'Arvo', serif;
     margin-top: 170px;
 }
 
-.page_404  img { 
-    width:100%;
+.page_404 img {
+    width: 100%;
 }
 
-.four_zero_four_bg{
- 
- background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+.four_zero_four_bg {
+
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
     height: 400px;
     background-position: center;
- }
- 
- 
-.four_zero_four_bg h1 {
-    font-size:70px;
- }
- 
-.four_zero_four_bg h3 {
-	font-size:80px;
 }
-			 
-.link_404{			 
-	color: #fff!important;
+
+
+.four_zero_four_bg h1 {
+    font-size: 70px;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 80px;
+}
+
+.link_404 {
+    color: #fff !important;
     padding: 10px 20px;
     background: #39ac31;
     margin: 20px 0;
@@ -156,7 +187,7 @@ margin-bottom: 88px;
 }
 
 .contant_box_404 {
-    margin-top:-50px;
+    margin-top: -50px;
 }
 
 /* ABOUTVIEW */

@@ -1,51 +1,80 @@
 /*
 ----------- MAX - WIDTH 1200 px ------------*/
-@media (min-width:1200px) 
-{
+@media (min-width:1200px) {
 
-.featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct {
-    margin-top: 18%;
-}
+    .featurette-seller-home-expand-lg {
+        height: 360px;
+    }
 
-.form-submit-customer {
-    padding-top: 8%;
-    padding-bottom: 7%;
-}
+    .featurette-expand-lg-presentation,
+    #categoryList,
+    #listingSellers,
+    #category,
+    #cardSeller {
+        margin-top: 230px;
+    }
 
-#MyProjects {
-    margin-bottom: 72px;
-}
+    #detailProduct {
+        margin-top: 300px;
+        margin-bottom: 178px;
+    }
 
-.jumbotron-dashboard {
-    margin-bottom: 5%;
-}
+    .img-sellerShop {
+        height: 163px;
+    }
 
-#About {
-    margin-top: 16%;
-}
+    .img-sellerShop img {
+        object-fit: contain;
+        height: 163px;
+    }
 
-#About .picture {
-    width: 20%;
-}
+    .form-submit-customer {
+        padding-top: 8%;
+        padding-bottom: 7%;
+    }
 
-.picture img {
-    width: 80%;
-}
+    .jumbotron-dashboard {
+        margin-bottom: 5%;
+    }
 
-.form-signin-expand-lg {
-    margin-bottom: 230px;
-}
+    /* ABOUT */
+    #About {
+        margin-top: 16%;
+    }
 
-#subscribeFrame, .form-signin-expand-lg {
-    margin-top: 151px;
-}
+    #About .picture {
+        width: 20%;
+    }
 
-/* ADMIN */
-#adminPanel {
-    margin-top: 230px;
-}
+    #MyProjects {
+        margin-bottom: 72px;
+    }
 
-#adminSeller {
-    margin-bottom: 72px;
-}
+    .picture img {
+        width: 80%;
+    }
+
+    .img-product1 {
+        height: 170px;
+        object-fit: contain;
+    }
+
+    /* CONNEXION / INSCRIPTION*/
+    .form-signin-expand-lg {
+        margin-top: 241px;
+        margin-bottom: 140px;
+    }
+
+    #subscribeFrame {
+        margin-top: 202px;
+    }
+
+    /* ADMIN */
+    #adminPanel {
+        margin-top: 230px;
+    }
+
+    #adminSeller {
+        margin-bottom: 72px;
+    }
 }

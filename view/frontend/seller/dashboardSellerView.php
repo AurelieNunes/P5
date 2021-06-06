@@ -9,21 +9,21 @@
     </div>
 
     <?php
-      if (isset($_GET['submit-update']) && $_GET['submit-update'] == 'success') {
-        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a bien été mis à jour !</p>';
-      }
+    if (isset($_GET['submit-update']) && $_GET['submit-update'] == 'success') {
+      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a bien été mis à jour !</p>';
+    }
 
-      if (isset($_GET['submit-update-seller']) && $_GET['submit-update-seller'] == 'success') {
-        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre compte a bien été mis à jour !</p>';
-      }
+    if (isset($_GET['submit-update-seller']) && $_GET['submit-update-seller'] == 'success') {
+      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre compte a bien été mis à jour !</p>';
+    }
 
-      if (isset($_GET['delete-account']) && $_GET['delete-account'] == 'success') {
-        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre compte a bien été supprimé !</p>';
-      }
+    if (isset($_GET['delete-account']) && $_GET['delete-account'] == 'success') {
+      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre compte a bien été supprimé !</p>';
+    }
 
-      if (isset($_GET['new-item']) && $_GET['new-item'] == 'success') {
-        echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a bien été publié</p>';
-      }
+    if (isset($_GET['new-item']) && $_GET['new-item'] == 'success') {
+      echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 m-auto h6 mb-4 mt-4 p-0">Votre article a bien été publié</p>';
+    }
     ?>
 
     <!-- Ajouter un produit -->
@@ -45,6 +45,6 @@
     </div>
   </section>
 </div>
-    <?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
-    <?php require('template.php'); ?>
+<?php require('template.php'); ?>

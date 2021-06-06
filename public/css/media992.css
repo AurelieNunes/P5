@@ -5,13 +5,15 @@
         width: 23%;
     }
 
-    .session-users-sellerView, .session-users {
+    .session-users-sellerView,
+    .session-users {
         display: flex;
         width: 100%;
         place-content: space-between;
     }
 
-    .navbar-seller, .navbar-seller ul {
+    .navbar-seller,
+    .navbar-seller ul {
         width: 100%;
     }
 
@@ -19,7 +21,11 @@
         width: 40%;
     }
 
-    .session-users-sellerView .nav-item-logout, .session-users-sellerView .nav-item-mailSeller, .nav-item-dashboard , .nav-item-logout, .nav-item-mailSeller {
+    .session-users-sellerView .nav-item-logout,
+    .session-users-sellerView .nav-item-mailSeller,
+    .nav-item-dashboard,
+    .nav-item-logout,
+    .nav-item-mailSeller {
         align-self: center;
     }
 

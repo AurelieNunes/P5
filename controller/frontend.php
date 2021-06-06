@@ -56,11 +56,11 @@ function addSeller(string $company, int $siret, string $mail, string $pass): voi
     $siretAlreadyExist = $sellerManager->siretAlreadyExist($siret);
     $mailSellerCheck = $sellerManager->checkMail($mail);
 
-    if(!preg_match('#^[0-9]{14}$#', strval($siret))){
+    if (!preg_match('#^[0-9]{14}$#', strval($siret))) {
         Header('Location: index.php?action=subscribeSeller&error=invalidSiret');
     }
 
-    if($siretAlreadyExist !== false){
+    if ($siretAlreadyExist !== false) {
         // Change the alert
         Header('Location: index.php?action=subscribeSeller&error=invalidSiret');
     }
@@ -298,11 +298,10 @@ function getCustomerById()
     $customerManager = new CustomerManager();
     $customerCo = $customerManager->getCustomer($_SESSION['id']);
 
-    if(isset($_SESSION) && ($_SESSION['id'])){
+    if (isset($_SESSION) && ($_SESSION['id'])) {
         // die(var_dump($_SESSION['id']));
         require 'view/frontend/customer/accountClientView.php';
-    }
-    else {
+    } else {
         throw new Exception('Vous devez être connecté pour accéder à cet espace');
     }
 }
@@ -375,7 +374,7 @@ function loginSubmitCustomer(string $mail, string $pass): void
             if ($_SESSION['isAdmin'] === 1) {
                 Header('Location: index.php?action=admin');
             } else {
-            Header('Location: index.php');
+                Header('Location: index.php');
             }
         } else {
             Header('Location: index.php?action=loginCustomer&account-status=unsuccess-login');

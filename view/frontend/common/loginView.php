@@ -2,19 +2,20 @@
 <?php ob_start(); ?>
 
 <section class="form-signin-expand-lg mx-auto">
-<?php
-if (isset($_GET['account-status']) && $_GET['account-status'] == 'unsuccess-login') {
-	echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-12 m-auto h6">Mauvais identifiant ou mot de passe !<p>';
-} 
+  <?php
+  if (isset($_GET['account-status']) && $_GET['account-status'] == 'unsuccess-login') {
+    echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-12 m-auto h6">Mauvais identifiant ou mot de passe !<p>';
+  }
 
-if(isset($_GET['success']) && $_GET['success'] == 'account-successfully-created'){
-  echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 mx-auto h6 mb-4">Votre compte a bien été créé, veuillez vous connecter !</p>';
-}?>
+  if (isset($_GET['success']) && $_GET['success'] == 'account-successfully-created') {
+    echo '<p id="success" class="alert alert-dismissible alert-success text-center col-12 mx-auto h6 mb-4">Votre compte a bien été créé, veuillez vous connecter !</p>';
+  } ?>
 
   <div class="login-submit mx-auto text-center">
     <div class="mx-auto mb-4">
       <p class="text-center mx-auto mb-0">
-        <img class="col-4" src="public/img/logo2.png" alt="logo site"></p>
+        <img class="col-4" src="public/img/logo2.png" alt="logo site">
+      </p>
       <h1 class="h4 mb-3 fw-normal text-center text-white bg-primary mx-auto pt-2 pb-2">Connexion</h1>
     </div>
     <div id="loginForms" class="mx-auto text-center">

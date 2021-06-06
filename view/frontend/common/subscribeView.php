@@ -5,25 +5,26 @@
 
   <div class="mx-auto mb-4">
     <p class="text-center mx-auto mb-0">
-      <img class="col-4" src="public/img/logo2.png" alt="logo site"></p>
+      <img class="col-4" src="public/img/logo2.png" alt="logo site">
+    </p>
     <h1 class="h4 mb-3 fw-normal text-center text-white bg-primary mx-auto pt-2 pb-2">Inscription</h1>
   </div>
 
   <div class="subscribes-expand-lg mx-auto text-center">
 
-  <?php 
-      if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
-        echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 m-auto h6 mb-4">Nom déjà utilisé</p>';
-      }
+    <?php
+    if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
+      echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 m-auto h6 mb-4">Nom déjà utilisé</p>';
+    }
 
-      if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
-        echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Adresse email déjà utilisée</p>';
-      }
+    if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
+      echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Adresse email déjà utilisée</p>';
+    }
 
-      if(isset($_GET['error']) && $_GET['error'] == 'passwordInvalid') {
-        echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Les mots de passe ne correspondent pas !</p>';
-      }
-  ?>
+    if (isset($_GET['error']) && $_GET['error'] == 'passwordInvalid') {
+      echo '<p id="error" class="alert alert-dismissible alert-danger text-center col-6 mx-auto h6 mb-4">Les mots de passe ne correspondent pas !</p>';
+    }
+    ?>
 
     <div id="subscribeForms" class="text-center">
 

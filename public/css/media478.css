@@ -1,9 +1,10 @@
 /*
 ----------- MAX - WIDTH 478 px ------------*/
 @media (min-width:478px) {
+
     /* ERROR */
     .page_404 {
-    margin-top: 190px;
-    margin-bottom: 26px;
+        margin-top: 190px;
+        margin-bottom: 26px;
     }
 }

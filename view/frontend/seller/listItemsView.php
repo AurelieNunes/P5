@@ -14,28 +14,27 @@
 		<div class="listItems mx-auto">
 			<ul class="list-group">
 				<?php
-				foreach($items as $item) 
-					{
-						if (!empty($items)) {
-					?>
-				<div class="card border-primary mb-2 text-center">
-					<li class="list-group-item justify-content-between align-items-center">
-						<div class="card-header">
-							<p class="text-center"><?= $item['nameItem'];?></p>
+				foreach ($items as $item) {
+					if (!empty($items)) {
+				?>
+						<div class="card border-primary mb-2 text-center">
+							<li class="list-group-item justify-content-between align-items-center">
+								<div class="card-header">
+									<p class="text-center"><?= $item['nameItem']; ?></p>
+								</div>
+								<p class="pt-4">Référence : <?= $item['ref']; ?></p>
+								<p><u>Prix :</u> <?= $item['price']; ?> €</p>
+								<p>Stock : <?= $item['stock']; ?></p>
+								<div class="link-ReadMore">
+									<a class="nav-link" href="index.php?action=item&amp;id=<?= $item['id']; ?>">Lire la suite ...</a>
+								</div>
+							</li>
 						</div>
-						<p class="pt-4">Référence : <?= $item['ref'];?></p>
-						<p><u>Prix :</u> <?= $item['price'];?> €</p>
-						<p>Stock : <?= $item['stock'];?></p>
-						<div class="link-ReadMore">
-							<a class="nav-link" href="index.php?action=item&amp;id=<?= $item['id']; ?>">Lire la suite ...</a>
-						</div>
-					</li>
-				</div>
 			</ul>
-			<?php
-						}
-				}	
-		?>
+	<?php
+					}
+				}
+	?>
 		</div>
 	</div>
 </section>

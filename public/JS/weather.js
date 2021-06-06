@@ -6,7 +6,11 @@ class WeatherWidget {
 
   async init() {
     const apiData = await this.getApiData();
-    const { main, name, weather } = apiData;
+    const {
+      main,
+      name,
+      weather
+    } = apiData;
     this.setHtmlWidget(main, name, weather);
   }
 
@@ -22,8 +26,10 @@ class WeatherWidget {
   createNewHTMLElement(
     htmlTypeNode,
     content,
-    parent,
-    { className = undefined, id = undefined } = {}
+    parent, {
+      className = undefined,
+      id = undefined
+    } = {}
   ) {
     const node = document.createElement(htmlTypeNode);
     node.textContent = content;
@@ -74,9 +80,17 @@ class WeatherWidget {
   }
 
   setHtmlWidget(main, name, weather) {
-    const { createNewHTMLElement, weatherWidgetHTML } = this;
-    const { temp } = main;
-    const { description, id } = weather[0];
+    const {
+      createNewHTMLElement,
+      weatherWidgetHTML
+    } = this;
+    const {
+      temp
+    } = main;
+    const {
+      description,
+      id
+    } = weather[0];
     const image = this.getImageToDisplay(id);
 
     createNewHTMLElement("p", name, weatherWidgetHTML, {
@@ -85,10 +99,9 @@ class WeatherWidget {
     createNewHTMLElement(
       "p",
       `${temp} °c`,
-      weatherWidgetHTML,
-      {
-        className: "widgetCurrentTemp",
-      }
+      weatherWidgetHTML, {
+      className: "widgetCurrentTemp",
+    }
     );
 
     createNewHTMLElement("p", description, weatherWidgetHTML, {

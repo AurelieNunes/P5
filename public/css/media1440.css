@@ -1,7 +1,6 @@
 /* 
 ----------- MAX - WIDTH 1440 px ------------*/
-@media (min-width:1440px) 
-{  
+@media (min-width:1440px) {
     .form-signin-expand-lg {
         margin-top: 235px;
         margin-bottom: 121px;
@@ -11,23 +10,25 @@
         margin-bottom: 56px;
     }
 
-    #accountCustomer, #updateAccountCustomer {
+    #accountCustomer,
+    #updateAccountCustomer {
         margin-top: 252px;
     }
-    
+
     /* CARDSELLER */
     .presentation-shop-expand-lg {
         display: flex;
         width: 80%;
         justify-content: space-around;
-        margin:auto;
+        margin: auto;
     }
 
     .img-shop {
         width: 50%;
-    } 
+    }
 
-    .newSellers-expand-lg .newSeller-expand-lg .featurette-seller-home-expand-lg, .listItems .list-group .card, .listItems .card {
+    .listItems .list-group .card,
+    .listItems .card {
         width: 60%;
     }
 

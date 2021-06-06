@@ -10,9 +10,9 @@ $title = "Boutique"; ?>
         <div class="presentation-shop-expand-lg justify-center">
             <div class="img-shop col-12">
                 <!--img boutique-->
-                <img class="img-presentation img-fluid mx-auto col-12" src="<?= $sellerAllInfo['url_pathShop'];?>" alt="<?= $sellerAllInfo['alt-seller']; ?>" />
+                <img class="img-presentation img-fluid mx-auto col-12" src="<?= $sellerAllInfo['url_pathShop']; ?>" alt="<?= $sellerAllInfo['alt-seller']; ?>" />
             </div>
-            <p class="lead-description-shop text-center mt-4"><?= $sellerAllInfo['descriptionShop'];?></p>
+            <p class="lead-description-shop text-center mt-4"><?= $sellerAllInfo['descriptionShop']; ?></p>
         </div>
     </div>
 
@@ -22,31 +22,30 @@ $title = "Boutique"; ?>
         <div class="productSeller">
             <?php
             foreach ($allItems as $allItem) {
-        ?>
-            <article class="featurette-product-seller mt-5 text-center m-auto">
-                <h5 class="title-product orange mb-4 mt-4"><?= $allItem['nameItem'];?></h5>
-                <div class="img-product-seller mx-auto mt-2 col-10">
-                    <img class="img-product1 col-12" src="<?= $allItem['url_img'];?>" alt="<?= $allItem['alt-item'];?>" />
-                </div>
-                <div class="product">
-                    <p><?= $allItem['ref'];?></p>
-                    <p class="description-product pr-2 pl-2 col-10 m-auto"><?= $allItem['descriptionItem'];?></p>
-                    <p class="price "><u>Prix :</u> <?= $allItem['price'];?>€</p>
-                    <p class="stock mb-4">En stock : <?= $allItem['stock'];?></p>
-                    <?php
-                        if(!empty($allItem['size']))
-                        {
-                    ?>
-                    <p class="size mb-4">Taille : <?= $allItem['size'];?></p>
-                    <?php
+            ?>
+                <article class="featurette-product-seller mt-5 text-center m-auto">
+                    <h5 class="title-product orange mb-4 mt-4"><?= $allItem['nameItem']; ?></h5>
+                    <div class="img-product-seller mx-auto mt-2 col-10">
+                        <img class="img-product1 col-12" src="<?= $allItem['url_img']; ?>" alt="<?= $allItem['alt-item']; ?>" />
+                    </div>
+                    <div class="product">
+                        <p><?= $allItem['ref']; ?></p>
+                        <p class="description-product pr-2 pl-2 col-10 m-auto"><?= $allItem['descriptionItem']; ?></p>
+                        <p class="price "><u>Prix :</u> <?= $allItem['price']; ?>€</p>
+                        <p class="stock mb-4">En stock : <?= $allItem['stock']; ?></p>
+                        <?php
+                        if (!empty($allItem['size'])) {
+                        ?>
+                            <p class="size mb-4">Taille : <?= $allItem['size']; ?></p>
+                        <?php
                         }
-                    ?>
-                    <button class="btn btn-primary mb-4"><a class="nav-link text-white" href="mailto:<?= $sellerAllInfo['mail'];?>?subject=Informations<?= $allItem['ref'];?>&body=Bonjour,">Contacter le vendeur</a></button>
-                </div>
-            </article>
+                        ?>
+                        <button class="btn btn-primary mb-4"><a class="nav-link text-white" href="mailto:<?= $sellerAllInfo['mail']; ?>?subject=Informations<?= $allItem['ref']; ?>&body=Bonjour,">Contacter le vendeur</a></button>
+                    </div>
+                </article>
             <?php
             }
-        ?>
+            ?>
         </div>
     </section>
 

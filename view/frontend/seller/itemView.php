@@ -20,12 +20,11 @@
                 <p class="card-text"><?= $item['descriptionItem']; ?></p>
                 <p class="price"><u>Prix</u>: <?= $item['price']; ?>€</p>
                 <?php
-                    if(!empty($item['size']))
-                    {
+                if (!empty($item['size'])) {
                 ?>
-                <p class="size">Taille : <?= $item['size']; ?></p>
+                    <p class="size">Taille : <?= $item['size']; ?></p>
                 <?php
-                    }
+                }
                 ?>
                 <p class="mb-4">En stock : <?= $item['stock']; ?></p>
 

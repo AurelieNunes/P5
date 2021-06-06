@@ -13,7 +13,7 @@ class Utils
     public function isEmpty(array $properties): bool
     {
         foreach ($properties as $property) {
-            if(empty($property)){
+            if (empty($property)) {
                 return true;
             }
         }
@@ -27,8 +27,8 @@ class Utils
      */
     public function isIsset(array $values): bool
     {
-        foreach ($values as $value){
-            if(!isset($value)){
+        foreach ($values as $value) {
+            if (!isset($value)) {
                 return false;
             }
         }

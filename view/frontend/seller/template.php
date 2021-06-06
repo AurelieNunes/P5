@@ -23,8 +23,7 @@
     <title>Mes P'tites Emplettes Narbonnaises</title>
 
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <!-- CSS only CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -76,34 +75,34 @@
                     </ul>
                     <ul class="session-users list-unstyled mb-0 ">
                         <?php
-                                if(!empty($_SESSION['mailSubmitSeller'])){
-                                    echo '<li class="nav-item-dashboard white text-center">
+                        if (!empty($_SESSION['mailSubmitSeller'])) {
+                            echo '<li class="nav-item-dashboard white text-center">
                                     <a class="nav-link text-light" href="index.php?action=dashboardSeller">Tableau de bord</a>
                                 </li>';
-                                }
+                        }
 
-                                if (!empty($_SESSION))  {
-                                    echo '<li class="nav-item-logout white text-center"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
-                                } else {
-                                    echo '<li class="nav-item-login text-center"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
-                                }
-                                
-                                if (!empty($_SESSION['mailSubmitCustomer'])) {
-                                    echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center mb-0">Bonjour ' . ' '.htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
-                                }
+                        if (!empty($_SESSION)) {
+                            echo '<li class="nav-item-logout white text-center"><a class="nav-link-logout text-light" href="index.php?action=logout">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item-login text-center"><a class="nav-link text-light" href="index.php?action=loginCustomer">Connexion / Inscription</a></li>';
+                        }
 
-                                if(!empty($_SESSION['mailSubmitCustomer'])){
-                                    echo '<li class="nav-item-subCustomer text-center"><a class="nav-link-fas white text-light" href="index.php?action=getCustomer"><i
+                        if (!empty($_SESSION['mailSubmitCustomer'])) {
+                            echo '<li class="nav-item-mailCustomer white text-center"><p class ="session text-white text-center mb-0">Bonjour ' . ' ' . htmlspecialchars($_SESSION['mailSubmitCustomer']) . '</p></li>';
+                        }
+
+                        if (!empty($_SESSION['mailSubmitCustomer'])) {
+                            echo '<li class="nav-item-subCustomer text-center"><a class="nav-link-fas white text-light" href="index.php?action=getCustomer"><i
                                     class="text-light fas fa-user"></i></a></li>';
-                                }
+                        }
 
-                                if(!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
-                                    echo '<li class="nav-item-admin text-center"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
-                                    }
+                        if (!empty($_SESSION) && $_SESSION['isAdmin'] === '1') {
+                            echo '<li class="nav-item-admin text-center"><a class="white nav-link" href="index.php?action=admin"> Administration</a></li>';
+                        }
 
-                                if(!empty($_SESSION['mailSubmitSeller'])){
-                                    echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center mb-0">Bonjour' . ' . ' . ' '.htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
-                                    }
+                        if (!empty($_SESSION['mailSubmitSeller'])) {
+                            echo '<li class="nav-item-mailSeller text-center"><p class="session white text-center mb-0">Bonjour' . ' . ' . ' ' . htmlspecialchars($_SESSION['mailSubmitSeller']) . '</p></li>';
+                        }
                         ?>
                     </ul>
                 </div>

@@ -34,26 +34,25 @@
                 <div class="imgcategory col-12 align-center justify-content-between align-items-center mx-auto mb-4">
                     <div>
                         <label for="img" class="mt-5">Importer une image</label>
-                        <input type="file" class="mb-3" name="picture" id="img"/>
+                        <input type="file" class="mb-3" name="picture" id="img" />
                     </div>
                     <div class="bloc">
                         <div class="select col-8 mx-auto">
                             <select name='categories'>
                                 <option value="">Choisissez la catégorie</option>
-                                <?php 
-                                    foreach($categories as $category)
-                                    {
-                                ?>
-                                <option value='<?= $category['id']; ?>'><?= $category['category_Name'];?></option>
                                 <?php
-                                    }
+                                foreach ($categories as $category) {
+                                ?>
+                                    <option value='<?= $category['id']; ?>'><?= $category['category_Name']; ?></option>
+                                <?php
+                                }
                                 ?>
                             </select>
                         </div>
                     </div>
                 </div>
-            <button class="mb-5 col-4 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button" aria-pressed="true" type="submit" value="Ajouter">Ajouter</button>
-        </form>
+                <button class="mb-5 col-4 mx-auto d-flex justify-content-center btn btn-primary btn-lg active" role="button" aria-pressed="true" type="submit" value="Ajouter">Ajouter</button>
+            </form>
         </div>
     </div>
 </section>

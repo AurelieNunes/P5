@@ -10,7 +10,8 @@
         height: 230px;
     }
 
-    .navbar-brand, .navbar-nav {
+    .navbar-brand,
+    .navbar-nav {
         font-size: 28px;
         top: 18%;
     }
@@ -35,7 +36,14 @@
         width: 15%;
     }
 
-    .featurette-product-seller .title-product, #category .card-title, #category .card-text, #addItem, #listItems, .headPost h3, #subscribeFrame .h4, .login-submit .h4  {
+    .featurette-product-seller .title-product,
+    #category .card-title,
+    #category .card-text,
+    #addItem,
+    #listItems,
+    .headPost h3,
+    #subscribeFrame .h4,
+    .login-submit .h4 {
         font-size: 2.5rem;
     }
 
@@ -43,15 +51,28 @@
         margin-top: 17%;
     }
 
-    .title-product, .subscribes-expand-lg .submit, .card-sellers {
+    .title-product,
+    .subscribes-expand-lg .submit,
+    .card-sellers {
         font-size: 3rem;
     }
 
-    .price, .stock, .link-seller, .link-ReadMore, .jumbotron-categories, .featurette-product-seller .title-product, #manageAllCustomers .card,.returnLink-seller, .login-submit .submit .h6,.returnLink-seller .h6   {
+    .price,
+    .stock,
+    .link-seller,
+    .link-ReadMore,
+    .jumbotron-categories,
+    .featurette-product-seller .title-product,
+    #manageAllCustomers .card,
+    .returnLink-seller,
+    .login-submit .submit .h6,
+    .returnLink-seller .h6 {
         font-size: 2rem;
     }
 
-    .sellerexpand-lg, .addressSeller, .product {
+    .sellerexpand-lg,
+    .addressSeller,
+    .product {
         font-size: 22px;
     }
 
@@ -59,19 +80,34 @@
         font-size: 25px;
     }
 
-    .title-welcome, .jumbotron-dashboard h1, .jumbotronAdmin h1, #manageAllSellers .jumbotron h1 {
+    .title-welcome,
+    .jumbotron-dashboard h1,
+    .jumbotronAdmin h1,
+    #manageAllSellers .jumbotron h1 {
         font-size: 3.5rem;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #listingSellers, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #createItem, #managerBlockItems, #viewItem, #updateSeller {
+    .featurette-expand-lg-presentation,
+    #categoryList,
+    #listingSellers,
+    #category,
+    #cardSeller,
+    #detailProduct,
+    .form-signin-expand-lg,
+    #createItem,
+    #managerBlockItems,
+    #viewItem,
+    #updateSeller {
         margin-top: 15%;
     }
 
-    .infoCustomer, #updateAccountCustomer {
+    .infoCustomer,
+    #updateAccountCustomer {
         font-size: 24px;
     }
 
-    #updateAccountCustomer, #accountCustomer {
+    #updateAccountCustomer,
+    #accountCustomer {
         margin-top: 17%;
     }
 
@@ -96,7 +132,8 @@
         margin-bottom: 3%;
     }
 
-    #addNewItem, #updateAccountSeller .btn {
+    #addNewItem,
+    #updateAccountSeller .btn {
         font-size: 1.75rem;
     }
 
@@ -115,16 +152,25 @@
     }
 
     /* LOGIN / SUBSCRIBE */
-    .form-signin-expand-lg, #subscribeFrame {
+    .form-signin-expand-lg,
+    #subscribeFrame {
         margin-top: 360px;
         margin-bottom: 137px;
     }
 
-    #subscribeFrame img, .login-submit img {
+    #subscribeFrame img,
+    .login-submit img {
         width: 15%;
     }
 
-    #login-Seller .h5,  #login-Seller .form .btn, #loginCustomer .h5, #loginCustomer .form .btn, #subscribe-Seller .h5, #subscribe-customer .h5, #subscribe-formSeller .form .btn, #subscribe-formCustomer .form .btn {
+    #login-Seller .h5,
+    #login-Seller .form .btn,
+    #loginCustomer .h5,
+    #loginCustomer .form .btn,
+    #subscribe-Seller .h5,
+    #subscribe-customer .h5,
+    #subscribe-formSeller .form .btn,
+    #subscribe-formCustomer .form .btn {
         font-size: 3.25rem;
     }
 
@@ -138,7 +184,8 @@
         width: 12%;
     }
 
-    #managerBlockItems .jumbotron, #viewItem .jumbotron {
+    #managerBlockItems .jumbotron,
+    #viewItem .jumbotron {
         width: 50%;
         margin: auto;
     }
@@ -147,7 +194,8 @@
         width: 13%;
     }
 
-    #AboutMe h3, #MyProjects h3 {
+    #AboutMe h3,
+    #MyProjects h3 {
         font-size: 2.75rem;
     }
 
@@ -155,7 +203,8 @@
         margin-top: 14%;
     }
 
-    #AboutMe p, #MyProjects .list-group {
+    #AboutMe p,
+    #MyProjects .list-group {
         font-size: 28px;
         width: 50%;
         margin: auto;

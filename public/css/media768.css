@@ -1,19 +1,28 @@
 /*
 ----------- MAX - WIDTH 768 px ------------*/
-@media (min-width:768px)
-{
-    .jumbotron-common, .jumbotron-customer, .jumbotron-seller, .jumbotronAdmin {
+@media (min-width:768px) {
+
+    .jumbotron-common,
+    .jumbotron-customer,
+    .jumbotron-seller,
+    .jumbotronAdmin {
         display: flex;
         justify-content: space-around;
         height: 132px;
         align-items: center;
     }
 
-    .logo-common, .jumbotron-seller .logo, .jumbotron-customer .logo, .jumbotronAdmin .logo {
-        width: 20%!important;
+    .logo-common,
+    .jumbotron-seller .logo,
+    .jumbotron-customer .logo,
+    .jumbotronAdmin .logo {
+        width: 20% !important;
     }
 
-    .logo img, .jumbotron-dashboard .logo img, .jumbotron-customer .logo img, .jumbotronAdmin .logo img {
+    .logo img,
+    .jumbotron-dashboard .logo img,
+    .jumbotron-customer .logo img,
+    .jumbotronAdmin .logo img {
         width: 90%;
     }
 
@@ -31,7 +40,8 @@
         margin-right: 5px;
     }
 
-    .widgetCityName, .widgetCurrentWeather {
+    .widgetCityName,
+    .widgetCurrentWeather {
         text-align: center;
     }
 
@@ -39,16 +49,25 @@
         padding-left: 50%;
     }
 
-    .navbar-common, .navbar-customer, .navbar-seller {
+    .navbar-common,
+    .navbar-customer,
+    .navbar-seller {
         top: 132px;
     }
 
-    .featurette-expand-lg-presentation, #categoryList, #category, #cardSeller, #detailProduct, .form-signin-expand-lg, #subscribeFrame {
+    .featurette-expand-lg-presentation,
+    #categoryList,
+    #category,
+    #cardSeller,
+    #detailProduct,
+    .form-signin-expand-lg,
+    #subscribeFrame {
         margin-top: 25%;
     }
 
     /* HOMEVIEW */
-    .selectionWeek .h2, .newSellers-expand-lg .h2 {
+    .selectionWeek .h2,
+    .newSellers-expand-lg .h2 {
         width: 80%;
         margin: auto;
         margin-bottom: 15px;
@@ -64,11 +83,14 @@
     }
 
     /* LISTINGSELLERS */
-    #listingSellers, #cardSeller {
+    #listingSellers,
+    #cardSeller {
         margin-top: 30%;
     }
 
-    #listingSellers h1, #listingSellers .card, .featurette-product-seller {
+    #listingSellers h1,
+    #listingSellers .card,
+    .featurette-product-seller {
         width: 80%;
     }
 
@@ -85,17 +107,24 @@
     }
 
     /* ITEMS BY CATEGORY */
-    #category .card, #category .card .card-img-top, .allProduct .description-product, #subscribeFrame .h4, .login-submit .h4 {
+    #category .card,
+    #category .card .card-img-top,
+    .allProduct .description-product,
+    #subscribeFrame .h4,
+    .login-submit .h4 {
         width: 80%;
         margin: auto;
     }
 
     /* LOGIN / SUBSCRIVE VIEW */
-    #subscribeFrame p, .login-submit p{
+    #subscribeFrame p,
+    .login-submit p {
         width: 60%;
     }
 
-    .subscribes-expand-lg, #loginForms, #detailProduct .featurette-product-seller {
+    .subscribes-expand-lg,
+    #loginForms,
+    #detailProduct .featurette-product-seller {
         width: 50%;
     }
 
@@ -108,11 +137,13 @@
         font-size: 2.3rem;
     }
 
-    #addItem, #listItems, #accountSeller {
+    #addItem,
+    #listItems,
+    #accountSeller {
         font-size: 1.5rem;
     }
 
-    .footer-seller{
+    .footer-seller {
         margin-top: 5%;
     }
 
@@ -132,7 +163,7 @@
     .returnLink {
         margin-top: 33%;
     }
-    
+
     /* ADMIN */
 
     .returnLink-admin {
@@ -159,7 +190,10 @@
         margin-top: 0;
     }
 
-    #createItem, #managerBlockItems, #viewItem, #updateSeller {
+    #createItem,
+    #managerBlockItems,
+    #viewItem,
+    #updateSeller {
         margin-top: 200px;
     }
 
@@ -173,7 +207,8 @@
     }
 
     /* ALERTE */
-    #success, #error {
+    #success,
+    #error {
         margin-top: 28%;
     }
 

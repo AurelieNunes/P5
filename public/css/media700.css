@@ -2,7 +2,10 @@
 ----------- MAX - WIDTH 700 px ------------*/
 @media (min-width:700px) {
 
-    .logo-common, .jumbotron-seller .logo, .logo-admin, .jumbotron-customer .logo {
+    .logo-common,
+    .jumbotron-seller .logo,
+    .logo-admin,
+    .jumbotron-customer .logo {
         width: 50%;
     }
 
@@ -16,7 +19,7 @@
     }
 
     .jumbotron-admin h1 {
-        margin-bottom: 2rem!important;
+        margin-bottom: 2rem !important;
     }
 
     #adminPanel {
@@ -29,10 +32,11 @@
     }
 
     .jumbotron-admin h1 {
-        margin-bottom: 2rem!important;
+        margin-bottom: 2rem !important;
     }
 
-    #createItem, #updateSeller {
+    #createItem,
+    #updateSeller {
         margin-top: 210px;
     }
 
