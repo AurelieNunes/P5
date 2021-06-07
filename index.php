@@ -149,6 +149,10 @@ try {
                 displayUpdateSeller();
                 break;
 
+            case 'error':
+                displayError();
+                break;
+
             case 'getCustomer':
                 if (isset($_SESSION) && isset($_SESSION['id'])) {
                     getCustomerById($_SESSION['id']);

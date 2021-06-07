@@ -5,8 +5,8 @@ $title = "Mes P'tites Emplettes Narbonnaises"; ?>
 
 <!-- START THE FEATURETTES -->
 <div class="featurette-expand-lg-presentation">
-  <h3 class="h3 featurette-heading-presentation-expand-lg pt-2 pb-2 text-center font-italic text-primary m-auto pb-3 pr-2 pl-2">
-    Bienvenue sur mes p'tites emplettes narbonnaises !</h3>
+  <h1 class="h3 featurette-heading-presentation-expand-lg pt-2 pb-2 text-center font-italic text-primary m-auto pb-3 pr-2 pl-2">
+    Bienvenue sur mes p'tites emplettes narbonnaises !</h1>
   <div class="presentation-expand-lg">
     <p class="presentation-expand-lg-text text-center text-black col-10 m-auto">Ici, vous trouverez tous les commerçants de votre ville, ainsi que leurs produits ! Grâce aux click&collect, réservez vos achats en toute sérénité !</p>
     <div class="img-logo m-auto col-3">

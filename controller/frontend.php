@@ -145,14 +145,6 @@ function displayAbout()
 }
 
 /**
- * Display Account Customer
- */
-// function displayAccountCustomer()
-// {
-//     require 'view/frontend/customer/accountClientView.php';
-// }
-
-/**
  * Display Card Seller
  * @param int $sellerId
  */
@@ -195,6 +187,14 @@ function displayCreateItem()
 function displayDashboardSeller()
 {
     require 'view/frontend/seller/dashboardSellerView.php';
+}
+
+/**
+ * Display error view for exam
+ */
+function displayError()
+{
+    require 'view/frontend/common/errorView.php';
 }
 
 /**
